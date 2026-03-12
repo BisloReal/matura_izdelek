@@ -1,0 +1,4240 @@
+{
+	"tables": {
+		"d5c700ea-726f-486b-a05b-9da78b972faf": {
+			"id": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"visible": true,
+			"name": "zivali",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1c6f6907-cff1-4973-8054-ec0e9b151654",
+					"name": "ime",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7ea3894b-7cf6-404d-8994-47cba99816ab",
+					"name": "datum_roj",
+					"datatype": "DATETIME",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "918adc39-bdb0-41c5-a16e-02c7cd9bfce2",
+					"name": "pasma",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5be25d21-9df7-4e71-bd82-990be2460134",
+					"name": "spol",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5215d1ed-b6f3-437a-85a6-5b62e72b2684",
+					"name": "ime_mame",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "29aa7a0f-2157-4520-9361-b82079538b30",
+					"name": "ime_oceta",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fd15fc43-41d6-4adf-8863-30923e7a7be6",
+					"name": "tip_zivali_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4a9f190d-fa06-4be0-9a31-900d669b5c3d",
+					"name": "laktacija",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8c673201-c31a-4daf-9800-01ad37faf226",
+					"name": "odsvetovani_biki",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "110b84cd-b5d1-4689-aa20-4aaa469d9437",
+					"name": "primerni_biki",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "eadeff51-c931-4e05-b705-d81f6451d798",
+					"name": "najbolj_primerni_biki",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c013e582-28ba-4c89-a4b5-b7625a827cfe",
+					"name": "teza",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ce413b9d-cc5d-4b76-9e46-c2c2cc33ecba",
+					"name": "iztok_mleka_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "659110ec-7949-41c8-8588-ba98a58bdddb",
+					"name": "obseg_prsi_cm",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0442db77-8567-4e5b-bd10-b668971f7ca7",
+					"name": "visina_kriza_cm",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3d9bcf63-165e-4570-a8a8-055882602166",
+					"name": "globina_telesa_cm",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2c484639-e84c-4b72-a311-d963c613fa63",
+					"name": "sirina_spredaj_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2d1cea0d-71f8-4186-a066-9989ee072f1f",
+					"name": "hrbet_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "046f6203-193a-434e-931f-0868c5b85639",
+					"name": "dolzina_kriza_cm",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3f6109f4-bdcd-4b6f-bb88-a3f4f5ebba16",
+					"name": "sedna_sirina_cm",
+					"datatype": "REAL",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f30c8175-c605-43c1-aefd-7881269b40e1",
+					"name": "nagib_kriza_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4bb7aeba-29c2-4e7c-80f3-eaa109c92ac3",
+					"name": "polozaj_kolka_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "70564678-0560-43af-bd7c-dbc50079c960",
+					"name": "skocni_sklep_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c3e22e34-51dc-4326-a27a-c8218afe4322",
+					"name": "izraz_skoc_sklepa_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5ac86435-c0f1-446f-81d9-90a98529255c",
+					"name": "bicelj_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "28370bb9-5031-4fc6-bdeb-1803018e298d",
+					"name": "parklji_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fe33b8fb-8ca6-446c-8b0b-46f4ca86ee1b",
+					"name": "dolzina_vimena_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8d8df416-56e2-46ec-a47c-d029e439249b",
+					"name": "pripetost_vimena_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4c2070be-1161-4ceb-9fa7-f5061f166495",
+					"name": "visina_mlecnega_zrcala_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "eec4f73c-3de8-4d86-a333-31b24cfa2db1",
+					"name": "sirina_mlenega_zrcala_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3d9bc57b-5eaf-435b-8ea3-382f76a27c25",
+					"name": "globina_vimena_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "14ad94c4-95c1-4b18-8f2a-58599c66e83e",
+					"name": "dno_vimena_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5d22bc62-ab61-498e-b655-c74d5ccb1485",
+					"name": "globina_cent_vezi_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7999b232-e03d-4baf-b375-0aba5ac56881",
+					"name": "dolzina_seskov_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "41746718-6fe1-416d-bf05-b740608057ad",
+					"name": "debelina_seskov_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7664029a-7b54-461c-822e-30ec5acd1725",
+					"name": "namenost_prednjih_seskov_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0ee2f6c3-1889-4112-a027-77870e66d38d",
+					"name": "namenbnost_zadnjih_seskov_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fe88aec6-3b49-4f83-9838-28ea04264dfa",
+					"name": "polozaj_zadnjih_seskov_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "767636ea-21e5-49bb-9587-fe52b4e2dcaa",
+					"name": "omisicanost_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "e86b3514-7853-4632-b07c-963177be74bf",
+					"name": "kondicija_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8bfc84c0-99f0-47ec-b785-81c1e3ad1dea",
+					"name": "visina_kriza_izracun_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "884239a4-e926-42bb-92d9-4eb5f13d8727",
+					"name": "globina_telesa_izracun_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "6440f09f-a5c8-45a1-b632-9fbdb3944da6",
+					"name": "dolzina_kriza_izracun_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7c496079-f542-467b-83a0-9280d19f5609",
+					"name": "sedna_sirina_izracun_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1cf875a6-d1fe-4ff4-972b-be230f8f1fd4",
+					"name": "okvir_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7f5ef1dd-886f-4bf8-a652-6d7da88bc851",
+					"name": "kriz_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8a3c894c-f7bd-4e50-88dc-8e7208daccec",
+					"name": "noge_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d05ebfec-4d76-459a-83ee-ba909da1ba0b",
+					"name": "vime_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "6bcc08db-ec0c-4a7f-b26b-8d786ee50c0f",
+					"name": "telesne_lastnosti_skupaj_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"f83d7830-94aa-46a4-a550-fc59d934ace9",
+				"acb340d1-053e-47b1-929f-8cbcabe60a84",
+				"ff0913ea-d002-44f7-836f-c0026b6dc1eb",
+				"98fde10e-7d28-4ca4-9ff6-8e93a6c4262f",
+				"27e37e36-731f-42e1-ae8c-2102d5e88c1b",
+				"f13bb96d-1bc2-4116-b280-8dea9337c76c",
+				"704cbbc6-8aeb-453f-84cc-170a9bb0b802",
+				"e64bc09e-d5fb-4a3f-96af-79c295b0565b",
+				"153915e5-3f3a-4230-ae54-0b51884d91ef",
+				"2ecb3c49-34f4-4871-a3c4-5c88574aa1aa",
+				"1752108b-8234-4c7e-a485-46292278a21c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "dfd96f28-37c1-4f59-be73-b999d1280e45",
+							"colid": "85fbf8ae-0fcf-4f30-8568-1e1502d44236"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"7b4c608a-9eac-4e76-a21f-0e019558296d": {
+			"id": "7b4c608a-9eac-4e76-a21f-0e019558296d",
+			"visible": true,
+			"name": "osemenitve",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "f58d7858-9ded-46e2-a8ba-b77901efbde0",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c7836a30-4af8-4888-aa90-d98b691e15ca",
+					"name": "zap_os",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4f084a13-139c-4626-ad2a-d7c7991058fd",
+					"name": "datum",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "d2a5f1cb-1780-4986-ac92-abebecef51a5",
+					"name": "veterinar_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "150ddcb2-8743-4e12-b710-20a8c854208c",
+					"name": "opombe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3ae96e5e-e51a-468e-ac2b-d488e5f123eb",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "31ef06e0-410a-4729-8e57-9882d35ab6c7",
+					"name": "bik_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9f8d0c6f-8a50-475b-ae31-f363cb28d055",
+					"name": "datum_pregleda",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "db002465-a553-4bcc-8cc8-4b9165a191e1",
+					"name": "izzid_pregleda",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5d2431f8-0f84-49ac-a4ec-38b8ebc8a7ec",
+					"name": "nacin_pregleda",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "837dd953-bd1a-4c07-b192-f3d3a7a520ac",
+					"name": "opombe_pregleda",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "a2fc3e48-ce60-49b7-819f-61e96e0ce1a8",
+					"name": "veterinar_pregleda_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "b44adf45-a9e4-4bdf-bba4-c4dbe3785015",
+					"name": "datum_presusitve",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "cd314ca7-b5da-4ab0-9fd6-9df6eaaf2387",
+					"name": "opombe_presusitve",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fcb71fbb-edfe-4019-afbf-dd58734c0191",
+					"name": "kondicija_ob_presusitvi",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"77bcc699-8b4f-405c-aed9-a726776b2944",
+				"f83d7830-94aa-46a4-a550-fc59d934ace9",
+				"153915e5-3f3a-4230-ae54-0b51884d91ef",
+				"1b35cb19-ec6c-44c3-aef3-0e44e013eb46"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "9c52945a-9d81-4e7d-8158-736c45346c50",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "8c1d114f-a82a-4d26-a630-cfed0ed27942",
+							"colid": "f58d7858-9ded-46e2-a8ba-b77901efbde0"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"e7bfb49f-f476-4fc2-b55b-b92cee6042e7": {
+			"id": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"visible": true,
+			"name": "osebe",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "14c0bcb4-92ce-4116-93d3-8cb67fa1c571",
+					"name": "ime",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2a18e251-8396-4913-97d8-4a2f5818fcfc",
+					"name": "priimek",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "74baef0a-b0da-42e4-869e-577b5b7773b0",
+					"name": "tel",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2f42c484-b6cb-4871-969c-44a5eca79297",
+					"name": "email",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c00a55fa-a86e-4498-b97f-573459932794",
+					"name": "zadolzitev_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"da5a3822-484f-4e67-b00c-0481cd606d90",
+				"77bcc699-8b4f-405c-aed9-a726776b2944",
+				"f11f9176-a513-4f86-ab05-3ee8554728c6",
+				"d462cef0-c724-44e6-ab36-b3c307ccbd2b",
+				"936fb7c6-b46a-4bdd-ba31-e5d9289e858b",
+				"1b35cb19-ec6c-44c3-aef3-0e44e013eb46",
+				"aa93f372-9d21-4a79-a81a-472676239b8f"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "84d1aa4c-7217-462a-9fa4-1c2218dce0cf",
+							"colid": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"db43c19f-77c1-4dc4-a17a-0de305907fa4": {
+			"id": "db43c19f-77c1-4dc4-a17a-0de305907fa4",
+			"visible": true,
+			"name": "zadolzitve_oseb",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "7961a45d-9799-4020-8f2c-236f0165afb7",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5332f2f4-e76b-4872-b0b3-d5e0ba346e36",
+					"name": "zadolzitev",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"da5a3822-484f-4e67-b00c-0481cd606d90"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "88d5c33a-c88c-44a8-a1d4-7c358b890986",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "e98ae7bd-0ce2-44fc-bf8d-cf97a73a9cc3",
+							"colid": "7961a45d-9799-4020-8f2c-236f0165afb7"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"05d279b5-60b8-4b31-8fe9-a2c4fab829e8": {
+			"id": "05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+			"visible": true,
+			"name": "zdravljenja",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "8ea7fd3b-a6a0-4281-9c8f-02e9a5e1372c",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "b6e5eb10-10b4-4ea3-a268-585d8eb4580d",
+					"name": "zaporedno_st",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "09562bae-bf62-402a-bfc1-04530ecef92b",
+					"name": "datum",
+					"datatype": "DATETIME",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7777dfb9-d2f6-4760-99fb-ad14e680b642",
+					"name": "vzrok",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c6c86b8f-fb83-4cef-9285-f6b21eccfd4f",
+					"name": "veterinar_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "32df50ea-dc5d-47a7-a058-5c8ff8bed172",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"acb340d1-053e-47b1-929f-8cbcabe60a84",
+				"f11f9176-a513-4f86-ab05-3ee8554728c6",
+				"2f914555-8e5c-4815-a6cc-11022359034e",
+				"921e0a9c-715d-41cd-8d22-5ad5ee256975"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "1a5c7890-51fc-49b6-8b58-82ea4d2b4cfa",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "98353ad1-4e38-424b-9b0a-e3064f32d51b",
+							"colid": "8ea7fd3b-a6a0-4281-9c8f-02e9a5e1372c"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"c1e91989-42d9-4b2e-8022-50a71887a52c": {
+			"id": "c1e91989-42d9-4b2e-8022-50a71887a52c",
+			"visible": true,
+			"name": "zdravila_zdravljenja",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "b162d552-6758-45aa-8504-763346f14aa3",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "75d8698f-6128-4e38-b1e1-8b336b5b750d",
+					"name": "zdravljenje_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f154f809-e9b5-428e-98da-7a1b03cd62f2",
+					"name": "zdravilo_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"2f914555-8e5c-4815-a6cc-11022359034e",
+				"5defdbd1-0c29-4c83-92e3-3ba0724714a9"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "e06c4fc7-758a-4a89-992a-2b1c98a76fff",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "2d1c2780-47ef-4385-8ebd-211ee3159fdd",
+							"colid": "b162d552-6758-45aa-8504-763346f14aa3"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"3e9834f5-758f-46a3-8801-c8ca2c63b4d4": {
+			"id": "3e9834f5-758f-46a3-8801-c8ca2c63b4d4",
+			"visible": true,
+			"name": "zdravila",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "1c3d775f-f42a-4bc5-91d7-776990c9bece",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "06df6218-90f8-4634-9123-e7c19e5b3258",
+					"name": "zdravilo",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"5defdbd1-0c29-4c83-92e3-3ba0724714a9"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "bd111201-a604-4434-9aca-3b0d469cb6b4",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "9c2e8d6e-9267-4900-ad5b-be3f40797525",
+							"colid": "1c3d775f-f42a-4bc5-91d7-776990c9bece"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"b66c7250-3965-4fae-a8cc-bc5ab4f9dcea": {
+			"id": "b66c7250-3965-4fae-a8cc-bc5ab4f9dcea",
+			"visible": true,
+			"name": "korekcije_parkljev",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "b65678cb-c345-4d95-8238-2b1644bb3c4c",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "52baea45-0556-4556-9bfc-8f243b87d593",
+					"name": "datum",
+					"datatype": "DATETIME",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ca329742-6bc5-402f-a7ec-32636b5e5d8b",
+					"name": "stanje",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "9cd5cd60-de63-4b2e-864c-558c7b8de92c",
+					"name": "pripombe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "c2b0a275-5dd8-4269-91fd-e7a47e434352",
+					"name": "izvajalec_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5a5b4c60-81d4-4eab-a7ae-4f06cc0d6e16",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"d462cef0-c724-44e6-ab36-b3c307ccbd2b",
+				"ff0913ea-d002-44f7-836f-c0026b6dc1eb"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "f5963f9e-80a5-440f-9831-0ec22b27324e",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "68010174-f842-40f1-83bb-9a98e1f78c05",
+							"colid": "b65678cb-c345-4d95-8238-2b1644bb3c4c"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"9cafdff9-64ef-4bfc-ac09-c2fa10c6ef39": {
+			"id": "9cafdff9-64ef-4bfc-ac09-c2fa10c6ef39",
+			"visible": true,
+			"name": "odhodi_krav",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "82ee3749-5d16-4404-9b55-e41064f2fd74",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "88a3b5f2-0f76-4d82-b107-8f2c99575fcf",
+					"name": "datum",
+					"datatype": "DATETIME",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3c9ad6db-7b62-4291-85d9-9e615dba395f",
+					"name": "g-mid",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "bc720078-0076-4c33-a4ce-27cc72f5f072",
+					"name": "lokacija",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "4ca73f37-37a5-40d1-873e-5ffdd825a2a0",
+					"name": "vzrok",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "377330b6-d819-4653-a454-7725d850d2d9",
+					"name": "opombe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "16733e9f-6e01-4e3a-9f72-be69082bc3d7",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"98fde10e-7d28-4ca4-9ff6-8e93a6c4262f"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "d2a94f4a-d3a2-4fd4-87e0-8cd0ce67cd64",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "d9abe71a-3f14-4444-9879-05b7957cba44",
+							"colid": "82ee3749-5d16-4404-9b55-e41064f2fd74"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"31bccd76-f3e8-40c7-930d-91ee2d4442f1": {
+			"id": "31bccd76-f3e8-40c7-930d-91ee2d4442f1",
+			"visible": true,
+			"name": "mlecne_kontrole",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "0a7f547d-fec0-418a-858b-f30b3cc3d949",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8ee87b3d-8b59-4264-87aa-e12baf95695c",
+					"name": "datum",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "a5de7fb3-9a4d-4c1b-b5aa-47a0f4830f09",
+					"name": "zap_st",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "5351ae8e-b003-4b7f-83ff-93628bbf49ad",
+					"name": "kontrolor_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "54f83e81-9a2e-41d2-885b-718791568a7f",
+					"name": "del_dneva",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ccf3f992-d9d3-4c6e-8453-481dea5888f1",
+					"name": "mlecnost",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "1221dae5-8668-4bbc-9a20-886a587d30fc",
+					"name": "vsebnost_mascobe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fbfc3279-d5d9-4f61-9fd7-c3f8ca705005",
+					"name": "vsebnost_beljakovin",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3917dde7-7485-4cd4-b2bf-6c06ce47b8f0",
+					"name": "vsebnost_laktoze",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "08087d45-5c85-4115-94b9-ebc0efa104b1",
+					"name": "vsebnost_secnine",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "3162c917-e6ec-4377-b9ea-00b24e8922a3",
+					"name": "somatske_celice",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ce765f13-7805-42b9-a8fe-015c7b78bd90",
+					"name": "opombe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ead9c61e-cda7-41f1-844b-2e0299086a08",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"936fb7c6-b46a-4bdd-ba31-e5d9289e858b",
+				"27e37e36-731f-42e1-ae8c-2102d5e88c1b"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "c174b92c-3925-4c72-b9ed-a2e6aced20d6",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "7007af63-2545-46fc-bcd8-3cc51ab59e33",
+							"colid": "0a7f547d-fec0-418a-858b-f30b3cc3d949"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"b592439c-9fab-441d-aa7c-09da4353a084": {
+			"id": "b592439c-9fab-441d-aa7c-09da4353a084",
+			"visible": true,
+			"name": "ostale_specifike",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "2dc33437-1da4-4498-92fd-a475dd296a47",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "07b2dba0-e77b-4394-adb6-a03b8d0570d4",
+					"name": "specifika",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fc80f944-4920-4837-9c2f-b9aafef0ba0c",
+					"name": "datum",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "73e701b0-8166-417e-8052-e75a6cf9621c",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"f13bb96d-1bc2-4116-b280-8dea9337c76c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "960ec32c-bb95-43e0-b832-9c19d66dbadc",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "dbd6b853-dd31-46f7-a9f2-c9747d712bec",
+							"colid": "2dc33437-1da4-4498-92fd-a475dd296a47"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"47f3bae2-8655-4323-b62a-0000f061160d": {
+			"id": "47f3bae2-8655-4323-b62a-0000f061160d",
+			"visible": true,
+			"name": "telitve",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "1d58c169-2c41-4265-abb3-5a11c2990b7f",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "b0ce8832-61b4-4440-b154-81cc96aafa5e",
+					"name": "zap_telitev",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "8bc6e28e-27d8-4f9d-86fe-90516f48e146",
+					"name": "potek",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "6badd537-e6ca-4794-8a98-d3cca88fc51d",
+					"name": "rojstvo",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "61d57015-7a84-4be7-8581-afa54ea2e9fc",
+					"name": "kakovost_mleziva",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "92503c6b-95cb-45f2-878a-8fba56f34385",
+					"name": "datum",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "32710986-6935-4e90-9c4e-5b0482c2eb8b",
+					"name": "krava_mama_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "713212ff-7719-45e6-9701-1af8f8028ae5",
+					"name": "tele_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"704cbbc6-8aeb-453f-84cc-170a9bb0b802",
+				"e64bc09e-d5fb-4a3f-96af-79c295b0565b"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "8a419768-a553-4221-b1cf-32152f4dfda4",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "ee55e620-be6b-41b8-88ba-b9c49e0f8fe0",
+							"colid": "1d58c169-2c41-4265-abb3-5a11c2990b7f"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"be9e8e2c-a683-4c35-910b-198e55d145d9": {
+			"id": "be9e8e2c-a683-4c35-910b-198e55d145d9",
+			"visible": true,
+			"name": "pojatve",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "b54ea2ae-c93c-4e0e-8a44-bb43e3387f84",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "26418b17-61d2-4f68-8e5a-c909c7f035e3",
+					"name": "zap_st",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "25feec82-87d3-4058-b360-728386ce530a",
+					"name": "datum",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "651a841b-ec1a-4856-abd3-93874f7b074d",
+					"name": "opombe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7d936cee-bed5-4a6e-90d0-fe6aa7fc1e89",
+					"name": "konec_datum",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "54ae23f7-2300-4275-918b-49c9f30b9d86",
+					"name": "krava_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"2ecb3c49-34f4-4871-a3c4-5c88574aa1aa"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "d8d30af5-21e4-45af-8cb7-e5a13800b678",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "1ff8b65b-756d-4c99-8cd6-322422c5104f",
+							"colid": "b54ea2ae-c93c-4e0e-8a44-bb43e3387f84"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"8c93fec6-cffc-4aa5-b9ff-2b085d4a38be": {
+			"id": "8c93fec6-cffc-4aa5-b9ff-2b085d4a38be",
+			"visible": true,
+			"name": "karence",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "6cf3d2cb-4186-49b8-8bf1-3107263c8986",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ce6e1323-f298-40da-9e5c-a6ff503f2abc",
+					"name": "vrsta_karence",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "29af1d8f-9ce4-4384-ac2b-43e68e27da24",
+					"name": "zdravljenje_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "24f37b21-7419-4aff-b828-4da74c3ba81d",
+					"name": "veterinar_id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": true,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "f1e9c6bc-dc27-4213-b772-2f59c1026aff",
+					"name": "datum_konca",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "7753df6a-ea3b-45b1-b6b0-889275ab86b6",
+					"name": "opombe",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"921e0a9c-715d-41cd-8d22-5ad5ee256975",
+				"aa93f372-9d21-4a79-a81a-472676239b8f"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "333bba35-92a1-47cb-b61c-1d7c2bf5ce84",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "896c503f-418e-45b2-bc8c-37ebed0a4a85",
+							"colid": "6cf3d2cb-4186-49b8-8bf1-3107263c8986"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		},
+		"31926e6b-0be7-4497-9369-0ddebd98c10f": {
+			"id": "31926e6b-0be7-4497-9369-0ddebd98c10f",
+			"visible": true,
+			"name": "tip_zivali",
+			"desc": "",
+			"estimatedSize": "",
+			"cols": [
+				{
+					"id": "8f9919f7-e357-4588-abf4-f730568ea745",
+					"name": "id",
+					"datatype": "INTEGER",
+					"param": "",
+					"pk": true,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ba414bc0-97ea-455b-aa6b-ba34864f0307",
+					"name": "tip",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				}
+			],
+			"relations": [
+				"1752108b-8234-4c7e-a485-46292278a21c"
+			],
+			"lines": [],
+			"keys": [
+				{
+					"id": "ca61e4d7-282f-41e4-aa7d-aabc3ba41e0b",
+					"name": "Primary key",
+					"isPk": true,
+					"cols": [
+						{
+							"id": "971a9961-750b-4a65-a747-3c843032b17b",
+							"colid": "8f9919f7-e357-4588-abf4-f730568ea745"
+						}
+					]
+				}
+			],
+			"indexes": [],
+			"embeddable": false,
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": "",
+			"sqlite": {
+				"withoutrowid": false,
+				"strict": false
+			}
+		}
+	},
+	"relations": {
+		"da5a3822-484f-4e67-b00c-0481cd606d90": {
+			"id": "da5a3822-484f-4e67-b00c-0481cd606d90",
+			"name": "vrste_oseb_osebe",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "88d5c33a-c88c-44a8-a1d4-7c358b890986",
+			"parent": "db43c19f-77c1-4dc4-a17a-0de305907fa4",
+			"child": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "61d041bb-c100-4df7-b4a7-86d48ca7dc25",
+					"parentcol": "7961a45d-9799-4020-8f2c-236f0165afb7",
+					"childcol": "c00a55fa-a86e-4498-b97f-573459932794"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"77bcc699-8b4f-405c-aed9-a726776b2944": {
+			"id": "77bcc699-8b4f-405c-aed9-a726776b2944",
+			"name": "osebe_semenitve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+			"parent": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"child": "7b4c608a-9eac-4e76-a21f-0e019558296d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "2a727612-4be2-42a7-8616-27ab95c00b81",
+					"parentcol": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"childcol": "d2a5f1cb-1780-4986-ac92-abebecef51a5"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"f83d7830-94aa-46a4-a550-fc59d934ace9": {
+			"id": "f83d7830-94aa-46a4-a550-fc59d934ace9",
+			"name": "krave_semenitve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "7b4c608a-9eac-4e76-a21f-0e019558296d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "b4272b37-1a53-49db-891a-60a7ba4a5ce5",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "3ae96e5e-e51a-468e-ac2b-d488e5f123eb"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"acb340d1-053e-47b1-929f-8cbcabe60a84": {
+			"id": "acb340d1-053e-47b1-929f-8cbcabe60a84",
+			"name": "krave_zdravljenja",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "f2eea1d0-c063-4424-acff-c85a2f1d0960",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "32df50ea-dc5d-47a7-a058-5c8ff8bed172"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"f11f9176-a513-4f86-ab05-3ee8554728c6": {
+			"id": "f11f9176-a513-4f86-ab05-3ee8554728c6",
+			"name": "osebe_zdravljenja",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+			"parent": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"child": "05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "5746b58f-1876-47e6-87cb-a53d2871c94b",
+					"parentcol": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"childcol": "c6c86b8f-fb83-4cef-9285-f6b21eccfd4f"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"2f914555-8e5c-4815-a6cc-11022359034e": {
+			"id": "2f914555-8e5c-4815-a6cc-11022359034e",
+			"name": "zdravljenja_zdravila_zdravljenja",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "1a5c7890-51fc-49b6-8b58-82ea4d2b4cfa",
+			"parent": "05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+			"child": "c1e91989-42d9-4b2e-8022-50a71887a52c",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "f3dab871-f36f-49cd-a8df-a4d898f81c65",
+					"parentcol": "8ea7fd3b-a6a0-4281-9c8f-02e9a5e1372c",
+					"childcol": "75d8698f-6128-4e38-b1e1-8b336b5b750d"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"5defdbd1-0c29-4c83-92e3-3ba0724714a9": {
+			"id": "5defdbd1-0c29-4c83-92e3-3ba0724714a9",
+			"name": "zdravila_zdravila_zdravljenja",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "bd111201-a604-4434-9aca-3b0d469cb6b4",
+			"parent": "3e9834f5-758f-46a3-8801-c8ca2c63b4d4",
+			"child": "c1e91989-42d9-4b2e-8022-50a71887a52c",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "af18eb45-667e-46ee-9299-ae4e9fbac643",
+					"parentcol": "1c3d775f-f42a-4bc5-91d7-776990c9bece",
+					"childcol": "f154f809-e9b5-428e-98da-7a1b03cd62f2"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"d462cef0-c724-44e6-ab36-b3c307ccbd2b": {
+			"id": "d462cef0-c724-44e6-ab36-b3c307ccbd2b",
+			"name": "osebe_korekcije_parkljev",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+			"parent": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"child": "b66c7250-3965-4fae-a8cc-bc5ab4f9dcea",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "f9d6942b-4a8f-4d6c-b04d-ee20c5e61ddf",
+					"parentcol": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"childcol": "c2b0a275-5dd8-4269-91fd-e7a47e434352"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"ff0913ea-d002-44f7-836f-c0026b6dc1eb": {
+			"id": "ff0913ea-d002-44f7-836f-c0026b6dc1eb",
+			"name": "krave_korekcije_parkljev",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "b66c7250-3965-4fae-a8cc-bc5ab4f9dcea",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "913de0be-3749-4186-b28b-4316faa94187",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "5a5b4c60-81d4-4eab-a7ae-4f06cc0d6e16"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"98fde10e-7d28-4ca4-9ff6-8e93a6c4262f": {
+			"id": "98fde10e-7d28-4ca4-9ff6-8e93a6c4262f",
+			"name": "krave_odhodi_krav",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "9cafdff9-64ef-4bfc-ac09-c2fa10c6ef39",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "ffd11bdc-27d3-4efb-b7e0-7843bcc11a48",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "16733e9f-6e01-4e3a-9f72-be69082bc3d7"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"936fb7c6-b46a-4bdd-ba31-e5d9289e858b": {
+			"id": "936fb7c6-b46a-4bdd-ba31-e5d9289e858b",
+			"name": "osebe_mlecne_kontrole",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+			"parent": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"child": "31bccd76-f3e8-40c7-930d-91ee2d4442f1",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "d50fa836-3cef-47a6-bc7f-2654d8abee67",
+					"parentcol": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"childcol": "5351ae8e-b003-4b7f-83ff-93628bbf49ad"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"27e37e36-731f-42e1-ae8c-2102d5e88c1b": {
+			"id": "27e37e36-731f-42e1-ae8c-2102d5e88c1b",
+			"name": "krave_mlecne_kontrole",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "31bccd76-f3e8-40c7-930d-91ee2d4442f1",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "4b4ca69e-3314-4a4e-8576-129b30ba5efd",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "ead9c61e-cda7-41f1-844b-2e0299086a08"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"f13bb96d-1bc2-4116-b280-8dea9337c76c": {
+			"id": "f13bb96d-1bc2-4116-b280-8dea9337c76c",
+			"name": "krave_ostale_specifike",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "b592439c-9fab-441d-aa7c-09da4353a084",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "fb5ce966-ece5-454b-ab2b-e229cefe3348",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "73e701b0-8166-417e-8052-e75a6cf9621c"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"704cbbc6-8aeb-453f-84cc-170a9bb0b802": {
+			"id": "704cbbc6-8aeb-453f-84cc-170a9bb0b802",
+			"name": "krave_telitve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "47f3bae2-8655-4323-b62a-0000f061160d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "1cad3b84-3e87-4d7c-a811-3e27246b4de5",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "32710986-6935-4e90-9c4e-5b0482c2eb8b"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"e64bc09e-d5fb-4a3f-96af-79c295b0565b": {
+			"id": "e64bc09e-d5fb-4a3f-96af-79c295b0565b",
+			"name": "krave_telitve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "47f3bae2-8655-4323-b62a-0000f061160d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "bd1e4d49-2821-42da-a9ad-7cde265383c2",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "713212ff-7719-45e6-9701-1af8f8028ae5"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"153915e5-3f3a-4230-ae54-0b51884d91ef": {
+			"id": "153915e5-3f3a-4230-ae54-0b51884d91ef",
+			"name": "krave_osemenitve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "7b4c608a-9eac-4e76-a21f-0e019558296d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "ec8db6c3-70e3-41b0-8221-1e582b4bcdb3",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "31ef06e0-410a-4729-8e57-9882d35ab6c7"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"2ecb3c49-34f4-4871-a3c4-5c88574aa1aa": {
+			"id": "2ecb3c49-34f4-4871-a3c4-5c88574aa1aa",
+			"name": "zivali_pojatve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ae9c68d5-9289-45e7-bdf5-8b7daac64be5",
+			"parent": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"child": "be9e8e2c-a683-4c35-910b-198e55d145d9",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "ae6cdadc-18cf-491b-9aba-f70054b0129f",
+					"parentcol": "85fbf8ae-0fcf-4f30-8568-1e1502d44236",
+					"childcol": "54ae23f7-2300-4275-918b-49c9f30b9d86"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"1b35cb19-ec6c-44c3-aef3-0e44e013eb46": {
+			"id": "1b35cb19-ec6c-44c3-aef3-0e44e013eb46",
+			"name": "osebe_osemenitve",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+			"parent": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"child": "7b4c608a-9eac-4e76-a21f-0e019558296d",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "99ed1133-30fb-40a5-913b-580475b3da73",
+					"parentcol": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"childcol": "a2fc3e48-ce60-49b7-819f-61e96e0ce1a8"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"921e0a9c-715d-41cd-8d22-5ad5ee256975": {
+			"id": "921e0a9c-715d-41cd-8d22-5ad5ee256975",
+			"name": "zdravljenja_karence",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "1a5c7890-51fc-49b6-8b58-82ea4d2b4cfa",
+			"parent": "05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+			"child": "8c93fec6-cffc-4aa5-b9ff-2b085d4a38be",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "9f412a96-409f-43ee-9448-5caa3225eb58",
+					"parentcol": "8ea7fd3b-a6a0-4281-9c8f-02e9a5e1372c",
+					"childcol": "29af1d8f-9ce4-4384-ac2b-43e68e27da24"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"aa93f372-9d21-4a79-a81a-472676239b8f": {
+			"id": "aa93f372-9d21-4a79-a81a-472676239b8f",
+			"name": "osebe_karence",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "85d7899b-6b7d-4d74-a8ab-bf8703809817",
+			"parent": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+			"child": "8c93fec6-cffc-4aa5-b9ff-2b085d4a38be",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "035ea786-80c2-4f16-83f2-fc2dbb40303a",
+					"parentcol": "2e8d91e4-e6ea-4b22-bf5e-29b0680d8000",
+					"childcol": "24f37b21-7419-4aff-b828-4da74c3ba81d"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		},
+		"1752108b-8234-4c7e-a485-46292278a21c": {
+			"id": "1752108b-8234-4c7e-a485-46292278a21c",
+			"name": "tip_zivali_zivali",
+			"desc": "",
+			"type": "identifying",
+			"parent_key": "ca61e4d7-282f-41e4-aa7d-aabc3ba41e0b",
+			"parent": "31926e6b-0be7-4497-9369-0ddebd98c10f",
+			"child": "d5c700ea-726f-486b-a05b-9da78b972faf",
+			"c_mp": "true",
+			"c_mch": "true",
+			"c_p": "one",
+			"c_ch": "many",
+			"c_cp": "",
+			"c_cch": "",
+			"cols": [
+				{
+					"id": "0fa688b2-edb0-4859-89fd-6725cf646aad",
+					"parentcol": "8f9919f7-e357-4588-abf4-f730568ea745",
+					"childcol": "fd15fc43-41d6-4adf-8863-30923e7a7be6"
+				}
+			],
+			"generate": true,
+			"generateCustomCode": true,
+			"customCode": ""
+		}
+	},
+	"notes": {},
+	"lines": {},
+	"model": {
+		"name": "KraveBaza",
+		"id": "cb8dd517-18cc-4ca2-b119-37352b10c83c",
+		"activeDiagram": "07f734a1-a257-4243-9047-d5e77791efb7",
+		"desc": "",
+		"path": "",
+		"type": "SQLITE",
+		"version": 1,
+		"parentTableInFkCols": true,
+		"caseConvention": "under",
+		"replaceSpace": "_",
+		"color": "transparent",
+		"sideSelections": true,
+		"isDirty": true,
+		"storedin": {
+			"major": 13,
+			"minor": 0,
+			"extra": 0
+		},
+		"laststoredin": {
+			"major": 13,
+			"minor": 0,
+			"extra": 0
+		},
+		"writeFileParam": false,
+		"authorName": "",
+		"companyDetails": "",
+		"companyUrl": "",
+		"subType": "",
+		"appName": "LunaModeler",
+		"def_coltopk": true,
+		"sqlSettings": {
+			"wrapLines": true,
+			"wrapOffset": 80,
+			"indent": true,
+			"indentationString": "spaces",
+			"indentationSize": 2,
+			"limitItemsOnLine": true,
+			"maxListItemsOnLine": 3,
+			"statementDelimiter": ";",
+			"routineDelimiter": ";",
+			"keywordCase": "upper",
+			"identiferCase": "original",
+			"quotationExistance": "if_needed"
+		},
+		"synchronizationSettings": {
+			"preserveData": "use_temporary_tables",
+			"ignoreSystemDefaults": "yes",
+			"includeWarnings": "yes",
+			"includeCreationSql": "no"
+		},
+		"connectionVersion": "",
+		"lastSaved": 1773061635755
+	},
+	"otherObjects": {},
+	"diagrams": {
+		"07f734a1-a257-4243-9047-d5e77791efb7": {
+			"name": "Main Diagram",
+			"description": "",
+			"id": "07f734a1-a257-4243-9047-d5e77791efb7",
+			"keysgraphics": true,
+			"linegraphics": "detailed",
+			"zoom": 0.7,
+			"background": "transparent",
+			"lineColor": "transparent",
+			"isOpen": true,
+			"main": true,
+			"diagramItems": {
+				"d5c700ea-726f-486b-a05b-9da78b972faf": {
+					"referencedItemId": "d5c700ea-726f-486b-a05b-9da78b972faf",
+					"x": 374,
+					"y": 177,
+					"gHeight": 927,
+					"gWidth": 312,
+					"color": "#ffffff",
+					"background": "#ff0000",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"7b4c608a-9eac-4e76-a21f-0e019558296d": {
+					"referencedItemId": "7b4c608a-9eac-4e76-a21f-0e019558296d",
+					"x": 958,
+					"y": 30,
+					"gHeight": 297,
+					"gWidth": 274,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"e7bfb49f-f476-4fc2-b55b-b92cee6042e7": {
+					"referencedItemId": "e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+					"x": 1062,
+					"y": 500,
+					"gHeight": 135,
+					"gWidth": 211,
+					"color": "#ffffff",
+					"background": "#0000ff",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"db43c19f-77c1-4dc4-a17a-0de305907fa4": {
+					"referencedItemId": "db43c19f-77c1-4dc4-a17a-0de305907fa4",
+					"x": 1095,
+					"y": 668,
+					"gHeight": 63,
+					"gWidth": 200,
+					"color": "#ffffff",
+					"background": "#9c27b0",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"05d279b5-60b8-4b31-8fe9-a2c4fab829e8": {
+					"referencedItemId": "05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+					"x": 83,
+					"y": 596,
+					"gHeight": 135,
+					"gWidth": 216,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"c1e91989-42d9-4b2e-8022-50a71887a52c": {
+					"referencedItemId": "c1e91989-42d9-4b2e-8022-50a71887a52c",
+					"x": 78,
+					"y": 759,
+					"gHeight": 81,
+					"gWidth": 216,
+					"color": "#ffffff",
+					"background": "#999999",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"3e9834f5-758f-46a3-8801-c8ca2c63b4d4": {
+					"referencedItemId": "3e9834f5-758f-46a3-8801-c8ca2c63b4d4",
+					"x": 104,
+					"y": 867,
+					"gHeight": 63,
+					"gWidth": 188,
+					"color": "#ffffff",
+					"background": "#9c27b0",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"b66c7250-3965-4fae-a8cc-bc5ab4f9dcea": {
+					"referencedItemId": "b66c7250-3965-4fae-a8cc-bc5ab4f9dcea",
+					"x": 1008,
+					"y": 346,
+					"gHeight": 135,
+					"gWidth": 202,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"9cafdff9-64ef-4bfc-ac09-c2fa10c6ef39": {
+					"referencedItemId": "9cafdff9-64ef-4bfc-ac09-c2fa10c6ef39",
+					"x": 45,
+					"y": 267,
+					"gHeight": 153,
+					"gWidth": 191,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"31bccd76-f3e8-40c7-930d-91ee2d4442f1": {
+					"referencedItemId": "31bccd76-f3e8-40c7-930d-91ee2d4442f1",
+					"x": 732,
+					"y": 389,
+					"gHeight": 261,
+					"gWidth": 257,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"b592439c-9fab-441d-aa7c-09da4353a084": {
+					"referencedItemId": "b592439c-9fab-441d-aa7c-09da4353a084",
+					"x": 68,
+					"y": 453,
+					"gHeight": 99,
+					"gWidth": 193,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"47f3bae2-8655-4323-b62a-0000f061160d": {
+					"referencedItemId": "47f3bae2-8655-4323-b62a-0000f061160d",
+					"x": 48,
+					"y": 60,
+					"gHeight": 171,
+					"gWidth": 242,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"be9e8e2c-a683-4c35-910b-198e55d145d9": {
+					"referencedItemId": "be9e8e2c-a683-4c35-910b-198e55d145d9",
+					"x": 727,
+					"y": 30,
+					"gHeight": 135,
+					"gWidth": 198,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"8c93fec6-cffc-4aa5-b9ff-2b085d4a38be": {
+					"referencedItemId": "8c93fec6-cffc-4aa5-b9ff-2b085d4a38be",
+					"x": 746,
+					"y": 669,
+					"gHeight": 135,
+					"gWidth": 222,
+					"color": "#ffffff",
+					"background": "#8bc34a",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				},
+				"31926e6b-0be7-4497-9369-0ddebd98c10f": {
+					"referencedItemId": "31926e6b-0be7-4497-9369-0ddebd98c10f",
+					"x": 758,
+					"y": 280,
+					"gHeight": 63,
+					"gWidth": 159,
+					"color": "#ffffff",
+					"background": "#9c27b0",
+					"resized": false,
+					"autoExpand": true,
+					"backgroundOpacity": "10",
+					"collapsed": false,
+					"borderColor": "#666666",
+					"borderStyle": "none",
+					"borderWidth": 2,
+					"assetAspectRatio": "none",
+					"assetTextPosition": "right",
+					"assetShowText": true,
+					"areaHeaderDisplayed": true,
+					"areaHeaderColor": "transparent",
+					"areaHeaderBackground": "transparent",
+					"cardBackground": "transparent"
+				}
+			},
+			"diagramLinks": {
+				"da5a3822-484f-4e67-b00c-0481cd606d90": {
+					"referencedItemId": "da5a3822-484f-4e67-b00c-0481cd606d90",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"77bcc699-8b4f-405c-aed9-a726776b2944": {
+					"referencedItemId": "77bcc699-8b4f-405c-aed9-a726776b2944",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"f83d7830-94aa-46a4-a550-fc59d934ace9": {
+					"referencedItemId": "f83d7830-94aa-46a4-a550-fc59d934ace9",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"acb340d1-053e-47b1-929f-8cbcabe60a84": {
+					"referencedItemId": "acb340d1-053e-47b1-929f-8cbcabe60a84",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"f11f9176-a513-4f86-ab05-3ee8554728c6": {
+					"referencedItemId": "f11f9176-a513-4f86-ab05-3ee8554728c6",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"2f914555-8e5c-4815-a6cc-11022359034e": {
+					"referencedItemId": "2f914555-8e5c-4815-a6cc-11022359034e",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "right",
+					"width": 2
+				},
+				"5defdbd1-0c29-4c83-92e3-3ba0724714a9": {
+					"referencedItemId": "5defdbd1-0c29-4c83-92e3-3ba0724714a9",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"d462cef0-c724-44e6-ab36-b3c307ccbd2b": {
+					"referencedItemId": "d462cef0-c724-44e6-ab36-b3c307ccbd2b",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "right",
+					"anchorDetailedEnd": "right",
+					"width": 2
+				},
+				"ff0913ea-d002-44f7-836f-c0026b6dc1eb": {
+					"referencedItemId": "ff0913ea-d002-44f7-836f-c0026b6dc1eb",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"98fde10e-7d28-4ca4-9ff6-8e93a6c4262f": {
+					"referencedItemId": "98fde10e-7d28-4ca4-9ff6-8e93a6c4262f",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"936fb7c6-b46a-4bdd-ba31-e5d9289e858b": {
+					"referencedItemId": "936fb7c6-b46a-4bdd-ba31-e5d9289e858b",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "left",
+					"anchorDetailedEnd": "right",
+					"width": 2
+				},
+				"27e37e36-731f-42e1-ae8c-2102d5e88c1b": {
+					"referencedItemId": "27e37e36-731f-42e1-ae8c-2102d5e88c1b",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "right",
+					"anchorDetailedEnd": "left",
+					"width": 2
+				},
+				"f13bb96d-1bc2-4116-b280-8dea9337c76c": {
+					"referencedItemId": "f13bb96d-1bc2-4116-b280-8dea9337c76c",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"704cbbc6-8aeb-453f-84cc-170a9bb0b802": {
+					"referencedItemId": "704cbbc6-8aeb-453f-84cc-170a9bb0b802",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "left",
+					"anchorDetailedEnd": "right",
+					"width": 2
+				},
+				"e64bc09e-d5fb-4a3f-96af-79c295b0565b": {
+					"referencedItemId": "e64bc09e-d5fb-4a3f-96af-79c295b0565b",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "left",
+					"anchorDetailedEnd": "right",
+					"width": 2
+				},
+				"153915e5-3f3a-4230-ae54-0b51884d91ef": {
+					"referencedItemId": "153915e5-3f3a-4230-ae54-0b51884d91ef",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"2ecb3c49-34f4-4871-a3c4-5c88574aa1aa": {
+					"referencedItemId": "2ecb3c49-34f4-4871-a3c4-5c88574aa1aa",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"1b35cb19-ec6c-44c3-aef3-0e44e013eb46": {
+					"referencedItemId": "1b35cb19-ec6c-44c3-aef3-0e44e013eb46",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"921e0a9c-715d-41cd-8d22-5ad5ee256975": {
+					"referencedItemId": "921e0a9c-715d-41cd-8d22-5ad5ee256975",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"aa93f372-9d21-4a79-a81a-472676239b8f": {
+					"referencedItemId": "aa93f372-9d21-4a79-a81a-472676239b8f",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				},
+				"1752108b-8234-4c7e-a485-46292278a21c": {
+					"referencedItemId": "1752108b-8234-4c7e-a485-46292278a21c",
+					"color": "transparent",
+					"mode": "default",
+					"anchorStart": "default",
+					"anchorEnd": "default",
+					"anchorDetailedStart": "default",
+					"anchorDetailedEnd": "default",
+					"width": 2
+				}
+			},
+			"scroll": {
+				"x": 0,
+				"y": 0
+			},
+			"type": "erd",
+			"showHorizontal": true,
+			"showDescriptions": true,
+			"showIndicators": true,
+			"showProgress": true,
+			"lineWidth": "2",
+			"boxSize": "0",
+			"boxSpacing": "2",
+			"boxAlign": "center",
+			"showIndicatorCaptions": true,
+			"showEstimatedSize": false,
+			"showSchemaContainer": false,
+			"showEmbeddedInParents": true,
+			"showCardinalityCaptions": true,
+			"showRelationshipNames": false,
+			"showLineCaptions": true,
+			"showDependencyCaptions": false,
+			"showColumns": true,
+			"showColumnDataTypes": true,
+			"showSampleData": false,
+			"showTableIndexes": false,
+			"showTableDescriptions": false,
+			"showRelations": true,
+			"showLines": true,
+			"showDependencies": true,
+			"backgroundImage": "na",
+			"descriptionsColor": "transparent",
+			"embeddedSpacing": "2",
+			"showMainIcon": true,
+			"showLabels": true,
+			"showCustomizations": false,
+			"showExportDimensions": false,
+			"showCompleted": true,
+			"showAnimations": false
+		}
+	},
+	"diagramsOrder": [],
+	"order": [
+		"b66c7250-3965-4fae-a8cc-bc5ab4f9dcea",
+		"8c93fec6-cffc-4aa5-b9ff-2b085d4a38be",
+		"31bccd76-f3e8-40c7-930d-91ee2d4442f1",
+		"9cafdff9-64ef-4bfc-ac09-c2fa10c6ef39",
+		"e7bfb49f-f476-4fc2-b55b-b92cee6042e7",
+		"7b4c608a-9eac-4e76-a21f-0e019558296d",
+		"b592439c-9fab-441d-aa7c-09da4353a084",
+		"be9e8e2c-a683-4c35-910b-198e55d145d9",
+		"47f3bae2-8655-4323-b62a-0000f061160d",
+		"db43c19f-77c1-4dc4-a17a-0de305907fa4",
+		"3e9834f5-758f-46a3-8801-c8ca2c63b4d4",
+		"c1e91989-42d9-4b2e-8022-50a71887a52c",
+		"05d279b5-60b8-4b31-8fe9-a2c4fab829e8",
+		"d5c700ea-726f-486b-a05b-9da78b972faf",
+		"31926e6b-0be7-4497-9369-0ddebd98c10f",
+		"ff0913ea-d002-44f7-836f-c0026b6dc1eb",
+		"27e37e36-731f-42e1-ae8c-2102d5e88c1b",
+		"98fde10e-7d28-4ca4-9ff6-8e93a6c4262f",
+		"153915e5-3f3a-4230-ae54-0b51884d91ef",
+		"f13bb96d-1bc2-4116-b280-8dea9337c76c",
+		"f83d7830-94aa-46a4-a550-fc59d934ace9",
+		"704cbbc6-8aeb-453f-84cc-170a9bb0b802",
+		"e64bc09e-d5fb-4a3f-96af-79c295b0565b",
+		"acb340d1-053e-47b1-929f-8cbcabe60a84",
+		"aa93f372-9d21-4a79-a81a-472676239b8f",
+		"d462cef0-c724-44e6-ab36-b3c307ccbd2b",
+		"936fb7c6-b46a-4bdd-ba31-e5d9289e858b",
+		"1b35cb19-ec6c-44c3-aef3-0e44e013eb46",
+		"77bcc699-8b4f-405c-aed9-a726776b2944",
+		"f11f9176-a513-4f86-ab05-3ee8554728c6",
+		"da5a3822-484f-4e67-b00c-0481cd606d90",
+		"5defdbd1-0c29-4c83-92e3-3ba0724714a9",
+		"921e0a9c-715d-41cd-8d22-5ad5ee256975",
+		"2f914555-8e5c-4815-a6cc-11022359034e",
+		"2ecb3c49-34f4-4871-a3c4-5c88574aa1aa",
+		"1752108b-8234-4c7e-a485-46292278a21c"
+	],
+	"collapsedTreeItems": [],
+	"reverseStats": {}
+}
