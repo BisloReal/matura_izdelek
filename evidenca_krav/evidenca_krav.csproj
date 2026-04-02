@@ -72,10 +72,47 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\Biki.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Biki.Designer.cs">
+      <DependentUpon>Biki.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Glavno_okno.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Glavno_okno.Designer.cs">
+      <DependentUpon>Glavno_okno.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Krave.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Krave.Designer.cs">
+      <DependentUpon>Krave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Telice.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Telice.Designer.cs">
+      <DependentUpon>Telice.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationNadzor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Biki.resx">
+      <DependentUpon>Biki.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Glavno_okno.resx">
+      <DependentUpon>Glavno_okno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Krave.resx">
+      <DependentUpon>Krave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Telice.resx">
+      <DependentUpon>Telice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
