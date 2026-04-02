@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="evidenca_krav.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="0"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="8246"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><table title="biki_os" custom_title="0" dock_id="1" table="4,7:mainbiki_os"/><dock_state state="000000ff00000000fd0000000100000002000005bb0000038efc0100000001fb000000160064006f0063006b00420072006f00770073006500310100000000000005bb0000011e00ffffff000002690000000000000004000000040000000800000008fc00000000"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="SQL 1*">CREATE TABLE korekcije_parkljev(
+  id INTEGER NOT NULL,
+  datum DATETIME NOT NULL,
+  stanje VARCHAR NOT NULL,
+  pripombe VARCHAR NOT NULL,
+  izvajalec_id INTEGER NOT NULL,
+  krava_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT osebe_korekcije_parkljev
+    FOREIGN KEY (izvajalec_id) REFERENCES osebe (id),
+  CONSTRAINT krave_korekcije_parkljev
+    FOREIGN KEY (krava_id) REFERENCES zivali (id)
+);
+
+
+CREATE TABLE karence(
+  id INTEGER NOT NULL,
+  vrsta_karence VARCHAR NOT NULL,
+  zdravljenje_id INTEGER NOT NULL,
+  veterinar_id INTEGER NOT NULL,
+  datum_konca DATE NOT NULL,
+  opombe VARCHAR,
+  PRIMARY KEY(id),
+  CONSTRAINT zdravljenja_karence
+    FOREIGN KEY (zdravljenje_id) REFERENCES zdravljenja (id),
+  CONSTRAINT osebe_karence FOREIGN KEY (veterinar_id) REFERENCES osebe (id)
+);
+
+
+CREATE TABLE mlecne_kontrole(
+  id INTEGER NOT NULL,
+  datum DATE NOT NULL,
+  zap_st INT NOT NULL,
+  kontrolor_id INTEGER NOT NULL,
+  del_dneva VARCHAR NOT NULL,
+  mlecnost VARCHAR NOT NULL,
+  vsebnost_mascobe VARCHAR,
+  vsebnost_beljakovin VARCHAR,
+  vsebnost_laktoze VARCHAR,
+  vsebnost_secnine VARCHAR,
+  somatske_celice VARCHAR,
+  opombe VARCHAR,
+  krava_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT osebe_mlecne_kontrole
+    FOREIGN KEY (kontrolor_id) REFERENCES osebe (id),
+  CONSTRAINT krave_mlecne_kontrole FOREIGN KEY (krava_id) REFERENCES zivali (id)
+);
+
+
+CREATE TABLE odhodi_krav(
+  id INTEGER NOT NULL,
+  datum DATETIME NOT NULL,
+  &quot;g-mid&quot; VARCHAR NOT NULL,
+  lokacija VARCHAR NOT NULL,
+  vzrok VARCHAR NOT NULL,
+  opombe VARCHAR,
+  krava_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT krave_odhodi_krav FOREIGN KEY (krava_id) REFERENCES zivali (id)
+);
+
+
+CREATE TABLE osebe(
+  id INTEGER NOT NULL,
+  ime VARCHAR NOT NULL,
+  priimek VARCHAR NOT NULL,
+  tel VARCHAR NOT NULL,
+  email VARCHAR NOT NULL,
+  zadolzitev_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT vrste_oseb_osebe
+    FOREIGN KEY (zadolzitev_id) REFERENCES zadolzitve_oseb (id)
+);
+
+
+CREATE TABLE osemenitve(
+  id INTEGER NOT NULL,
+  zap_os INTEGER NOT NULL,
+  datum DATE NOT NULL,
+  veterinar_id INTEGER NOT NULL,
+  opombe VARCHAR,
+  krava_id INTEGER NOT NULL,
+  bik_id INTEGER NOT NULL,
+  datum_pregleda DATE,
+  izzid_pregleda VARCHAR,
+  nacin_pregleda VARCHAR,
+  opombe_pregleda VARCHAR,
+  veterinar_pregleda_id INTEGER,
+  datum_presusitve DATE,
+  opombe_presusitve VARCHAR,
+  kondicija_ob_presusitvi VARCHAR,
+  PRIMARY KEY(id),
+  CONSTRAINT osebe_semenitve FOREIGN KEY (veterinar_id) REFERENCES osebe (id),
+  CONSTRAINT krave_semenitve FOREIGN KEY (krava_id) REFERENCES zivali (id),
+  CONSTRAINT osebe_osemenitve
+    FOREIGN KEY (veterinar_pregleda_id) REFERENCES osebe (id),
+  CONSTRAINT biki_os_bik_id FOREIGN KEY (bik_id) REFERENCES biki_os (id)
+);
+
+
+CREATE TABLE ostale_specifike(
+  id INTEGER NOT NULL,
+  specifika VARCHAR NOT NULL,
+  datum DATE,
+  krava_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT krave_ostale_specifike FOREIGN KEY (krava_id) REFERENCES zivali (id)
+);
+
+
+CREATE TABLE pojatve(
+  id INTEGER NOT NULL,
+  zap_st INTEGER NOT NULL,
+  datum DATE NOT NULL,
+  opombe VARCHAR,
+  konec_datum DATE,
+  krava_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT zivali_pojatve FOREIGN KEY (krava_id) REFERENCES zivali (id)
+);
+
+
+CREATE TABLE telitve(
+  id INTEGER NOT NULL,
+  zap_telitev INTEGER NOT NULL,
+  potek VARCHAR NOT NULL,
+  rojstvo VARCHAR NOT NULL,
+  kakovost_mleziva VARCHAR NOT NULL,
+  datum DATE NOT NULL,
+  krava_mama_id INTEGER NOT NULL,
+  tele_id INTEGER NOT NULL,
+  biki_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT krave_telitve FOREIGN KEY (krava_mama_id) REFERENCES zivali (id),
+  CONSTRAINT krave_telitve FOREIGN KEY (tele_id) REFERENCES zivali (id),
+  CONSTRAINT biki_os_telitve FOREIGN KEY (biki_id) REFERENCES biki_os (id)
+);
+
+
+CREATE TABLE zadolzitve_oseb
+  (id INTEGER NOT NULL, zadolzitev VARCHAR NOT NULL, PRIMARY KEY(id))
+;
+
+
+CREATE TABLE zdravila
+  (id INTEGER NOT NULL, zdravilo VARCHAR NOT NULL, PRIMARY KEY(id))
+;
+
+
+CREATE TABLE zdravila_zdravljenja(
+  id INTEGER NOT NULL,
+  zdravljenje_id INTEGER NOT NULL,
+  zdravilo_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT zdravljenja_zdravila_zdravljenja
+    FOREIGN KEY (zdravljenje_id) REFERENCES zdravljenja (id),
+  CONSTRAINT zdravila_zdravila_zdravljenja
+    FOREIGN KEY (zdravilo_id) REFERENCES zdravila (id)
+);
+
+
+CREATE TABLE zdravljenja(
+  id INTEGER NOT NULL,
+  zaporedno_st INTEGER NOT NULL,
+  datum DATETIME NOT NULL,
+  vzrok VARCHAR,
+  veterinar_id INTEGER NOT NULL,
+  krava_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT krave_zdravljenja FOREIGN KEY (krava_id) REFERENCES zivali (id),
+  CONSTRAINT osebe_zdravljenja FOREIGN KEY (veterinar_id) REFERENCES osebe (id)
+);
+
+
+CREATE TABLE zivali(
+  id INTEGER NOT NULL,
+  ime VARCHAR NOT NULL,
+  datum_roj DATETIME NOT NULL,
+  pasma VARCHAR NOT NULL,
+  ime_mame VARCHAR,
+  ime_oceta VARCHAR,
+  tip_zivali_id INTEGER NOT NULL,
+  laktacija VARCHAR,
+  odsvetovani_biki VARCHAR,
+  primerni_biki VARCHAR,
+  najbolj_primerni_biki VARCHAR,
+  teza REAL,
+  iztok_mleka_ocena INT,
+  obseg_prsi_cm REAL,
+  visina_kriza_cm REAL,
+  globina_telesa_cm REAL,
+  sirina_spredaj_ocena INT,
+  hrbet_ocena INT,
+  dolzina_kriza_cm REAL,
+  sedna_sirina_cm REAL,
+  nagib_kriza_ocena INT,
+  polozaj_kolka_ocena INT,
+  skocni_sklep_ocena INT,
+  izraz_skoc_sklepa_ocena INT,
+  bicelj_ocena INT,
+  parklji_ocena INT,
+  dolzina_vimena_ocena INT,
+  pripetost_vimena_ocena INT,
+  visina_mlecnega_zrcala_ocena INT,
+  sirina_mlenega_zrcala_ocena INT,
+  globina_vimena_ocena INT,
+  dno_vimena_ocena INT,
+  globina_cent_vezi_ocena INT,
+  dolzina_seskov_ocena INT,
+  debelina_seskov_ocena INT,
+  namenost_prednjih_seskov_ocena INT,
+  namenbnost_zadnjih_seskov_ocena INT,
+  polozaj_zadnjih_seskov_ocena INT,
+  omisicanost_ocena INT,
+  kondicija_ocena INT,
+  visina_kriza_izracun_ocena INT,
+  globina_telesa_izracun_ocena INT,
+  dolzina_kriza_izracun_ocena INT,
+  sedna_sirina_izracun_ocena INT,
+  okvir_ocena INT,
+  kriz_ocena INT,
+  noge_ocena INT,
+  vime_ocena INT,
+  telesne_lastnosti_skupaj_ocena INT,
+  PRIMARY KEY(id),
+  CONSTRAINT tip_zivali_zivali
+    FOREIGN KEY (tip_zivali_id) REFERENCES tip_zivali (id)
+);
+
+
+CREATE TABLE tip_zivali
+  (id INTEGER NOT NULL, tip VARCHAR NOT NULL, PRIMARY KEY(id))
+;
+
+
+CREATE TABLE biki_os(
+  id INTEGER NOT NULL,
+  datum_roj DATE NOT NULL,
+  rejec VARCHAR NOT NULL,
+  izboljsuje VARCHAR,
+  biki_pasma_id INTEGER NOT NULL,
+  PRIMARY KEY(id),
+  CONSTRAINT biki_pasme_biki_os
+    FOREIGN KEY (biki_pasma_id) REFERENCES biki_pasme (id)
+);
+
+
+CREATE TABLE biki_pasme
+  (id INTEGER NOT NULL, pasma VARCHAR NOT NULL, PRIMARY KEY(id))
+;
+</sql><current_tab id="0"/></tab_sql></sqlb_project>
