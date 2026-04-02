@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{12A073D4-09E5-4065-80F2-765FDC219A94}</ProjectGuid>
+    <ProjectGuid>{3C911F2C-1344-4C19-8AB2-67947516DE83}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>evidenca_krav</RootNamespace>
     <AssemblyName>evidenca_krav</AssemblyName>
