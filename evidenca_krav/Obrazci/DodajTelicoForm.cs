@@ -1,0 +1,60 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace evidenca_krav.Obrazci
+{
+    public partial class DodajTelicoForm : Form
+    {
+        private DatabaseHelper db;
+        public DodajTelicoForm(DatabaseHelper dbHelper)
+        {
+            InitializeComponent();
+            db = dbHelper;
+        }
+
+        private void buttonPotrdi_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (string.IsNullOrWhiteSpace(textBoxImeTel.Text) ||
+                    string.IsNullOrWhiteSpace(textBoxPasmaTel.Text) ||
+                    string.IsNullOrWhiteSpace(textBoxImeMameTel.Text) ||
+                    string.IsNullOrWhiteSpace(textBoxImeOcetaTel.Text))
+                {
+                    MessageBox.Show("Izpolnite vsa polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                string imeTel = textBoxImeTel.Text.Trim();
+                string datumRojstva = dateTimePicker.Value.ToString("yyyy-MM-dd");
+                string pasma = textBoxPasmaTel.Text.Trim();
+                string imeMame = textBoxImeMameTel.Text.Trim();
+                string imeOceta = textBoxImeOcetaTel.Text.Trim();
+
+                int uspeh = db.DodajTelico(imeTel, datumRojstva, pasma, imeMame, imeOceta);
+                if (uspeh == 0) 
+                {
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+        }
+
+        private void buttonPreklici_Click(object sender, EventArgs e)
+        {
+            this.DialogResult = DialogResult.Abort;
+            this.Close();
+        }
+    }
+}

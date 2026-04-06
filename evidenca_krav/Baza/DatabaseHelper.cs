@@ -48,5 +48,37 @@ namespace evidenca_krav
                 MessageBox.Show("Zaprejte povezave do baze ni bilo uspešno: " + ex.Message);
             }
         }
+
+        // Telice
+        public int DodajTelico(string ime, string datumRojstva, string pasma, string imeMame, string imeOceta)
+        {
+            int TipZivaliId = -1;
+
+            using (var cmd = new SQLiteCommand("SELECT id FROM tip_zivali WHERE tip = @tipZiv", _connection))
+            {
+                cmd.Parameters.AddWithValue("@tipZiv", "Telica");
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read()) 
+                    {
+                        TipZivaliId = reader.GetInt32(0); 
+                    }
+                }
+            }
+
+            using (SQLiteCommand command = new SQLiteCommand("INSERT INTO Zivali (ime, datum_roj, pasma, ime_mame, ime_oceta, tip_zivali_id) VALUES (@Ime, @DatumRojstva, @Pasma, @ImeMame, @ImeOceta, @TipZivali)", _connection))
+            {
+                command.Parameters.AddWithValue("@Ime", ime);
+                command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
+                command.Parameters.AddWithValue("@Pasma", pasma);
+                command.Parameters.AddWithValue("@ImeMame", imeMame);
+                command.Parameters.AddWithValue("@ImeOceta", imeOceta);
+                command.Parameters.AddWithValue("@TipZivali", TipZivaliId);
+                command.ExecuteNonQuery();
+            }
+
+            return 0; // izvedeno
+        }
     }
 }
