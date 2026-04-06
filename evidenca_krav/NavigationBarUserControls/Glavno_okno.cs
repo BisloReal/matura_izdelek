@@ -12,9 +12,11 @@ namespace evidenca_krav.NavigationBar
 {
     public partial class Glavno_okno : UserControl
     {
-        public Glavno_okno()
+        private DatabaseHelper db;
+        public Glavno_okno(DatabaseHelper dbHelper)
         {
             InitializeComponent();
+            db = dbHelper;
         }
     }
 }

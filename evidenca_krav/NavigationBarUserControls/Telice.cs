@@ -12,9 +12,16 @@ namespace evidenca_krav.NavigationBar
 {
     public partial class Telice : UserControl
     {
-        public Telice()
+        private DatabaseHelper db;
+        public Telice(DatabaseHelper dbHelper)
         {
             InitializeComponent();
+            db = dbHelper;
+        }
+
+        private void buttonDodajTelico_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

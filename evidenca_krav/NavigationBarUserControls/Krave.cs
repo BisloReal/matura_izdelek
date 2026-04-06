@@ -12,9 +12,12 @@ namespace evidenca_krav.NavigationBar
 {
     public partial class Krave : UserControl
     {
-        public Krave()
+        private DatabaseHelper db;
+
+        public Krave(DatabaseHelper dbHelper)
         {
             InitializeComponent();
+            db = dbHelper;
         }
     }
 }

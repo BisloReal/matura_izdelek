@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonDodajTelico = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -42,10 +43,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Telice";
             // 
+            // buttonDodajTelico
+            // 
+            this.buttonDodajTelico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajTelico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajTelico.Location = new System.Drawing.Point(524, 72);
+            this.buttonDodajTelico.Name = "buttonDodajTelico";
+            this.buttonDodajTelico.Size = new System.Drawing.Size(141, 69);
+            this.buttonDodajTelico.TabIndex = 2;
+            this.buttonDodajTelico.Text = "Dodaj telico";
+            this.buttonDodajTelico.UseVisualStyleBackColor = true;
+            this.buttonDodajTelico.Click += new System.EventHandler(this.buttonDodajTelico_Click);
+            // 
             // Telice
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonDodajTelico);
             this.Controls.Add(this.label1);
             this.Name = "Telice";
             this.Size = new System.Drawing.Size(700, 400);
@@ -57,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonDodajTelico;
     }
 }

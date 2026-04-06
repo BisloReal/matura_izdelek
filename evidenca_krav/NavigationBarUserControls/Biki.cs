@@ -12,9 +12,12 @@ namespace evidenca_krav.NavigationBar
 {
     public partial class Biki : UserControl
     {
-        public Biki()
+        private DatabaseHelper db;
+
+        public Biki(DatabaseHelper dbHelper)
         {
             InitializeComponent();
+            db = dbHelper;
         }
     }
 }

@@ -14,17 +14,27 @@ namespace evidenca_krav
     public partial class Form1 : Form
     {
         NavigationNadzor navNadzor;
+        private DatabaseHelper db;
         public Form1()
         {
             InitializeComponent();
+
+            db = new DatabaseHelper();
+            db.Odpri();
+
             Initializacija();
         }
 
         private void Initializacija()
         {
             List<UserControl> userControlList = new List<UserControl>()
-            { new Glavno_okno(), new Krave(), new Biki(), new Telice()};
-            
+            {
+                new Glavno_okno(db),
+                new Krave(db),
+                new Biki(db),
+                new Telice(db)
+            };
+
             navNadzor = new NavigationNadzor(userControlList, panelPrikaz);
             navNadzor.Prikaz(0);
         }
