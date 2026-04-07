@@ -1,4 +1,6 @@
-﻿using System;
+﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.Razredi;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
@@ -79,6 +81,26 @@ namespace evidenca_krav
             }
 
             return 0; // izvedeno
+        }
+
+        public List<TeliceRazred> PridobiTelice()
+        {
+            List<TeliceRazred> telice = new List<TeliceRazred>();
+            using (var cmd = new SQLiteCommand("SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta " +
+                                                "FROM zivali z INNER JOIN tip_zivali tz WHERE tz.tip = @tipZiv", _connection))
+            {
+                cmd.Parameters.AddWithValue("@tipZiv", "Telica");
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        TeliceRazred te = new TeliceRazred(reader.GetInt32(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetString(5), reader.GetString(6));
+                        telice.Add(te);
+                    }
+                }
+            }
+            return telice;
         }
     }
 }

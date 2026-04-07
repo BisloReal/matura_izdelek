@@ -47,9 +47,9 @@
             // 
             this.buttonDodajTelico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonDodajTelico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDodajTelico.Location = new System.Drawing.Point(524, 72);
+            this.buttonDodajTelico.Location = new System.Drawing.Point(544, 72);
             this.buttonDodajTelico.Name = "buttonDodajTelico";
-            this.buttonDodajTelico.Size = new System.Drawing.Size(141, 69);
+            this.buttonDodajTelico.Size = new System.Drawing.Size(121, 44);
             this.buttonDodajTelico.TabIndex = 2;
             this.buttonDodajTelico.Text = "Dodaj telico";
             this.buttonDodajTelico.UseVisualStyleBackColor = true;
