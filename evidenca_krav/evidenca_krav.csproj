@@ -90,6 +90,12 @@
     <Compile Include="NavigationBarUserControls\Krave.Designer.cs">
       <DependentUpon>Krave.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\TelicaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\TelicaCard.Designer.cs">
+      <DependentUpon>TelicaCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\Telice.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -102,6 +108,12 @@
     </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.Designer.cs">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\UrediTelicaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediTelicaForm.Designer.cs">
+      <DependentUpon>UrediTelicaForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -118,11 +130,17 @@
     <EmbeddedResource Include="NavigationBarUserControls\Krave.resx">
       <DependentUpon>Krave.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\TelicaCard.resx">
+      <DependentUpon>TelicaCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Telice.resx">
       <DependentUpon>Telice.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajTelicoForm.resx">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediTelicaForm.resx">
+      <DependentUpon>UrediTelicaForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

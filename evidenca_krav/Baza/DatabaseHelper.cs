@@ -62,11 +62,16 @@ namespace evidenca_krav
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    if (reader.Read()) 
+                    if (reader.Read())
                     {
-                        TipZivaliId = reader.GetInt32(0); 
+                        TipZivaliId = reader.GetInt32(0);
                     }
                 }
+            }
+
+            if (TipZivaliId == -1) 
+            {
+                return -1; 
             }
 
             using (SQLiteCommand command = new SQLiteCommand("INSERT INTO Zivali (ime, datum_roj, pasma, ime_mame, ime_oceta, tip_zivali_id) VALUES (@Ime, @DatumRojstva, @Pasma, @ImeMame, @ImeOceta, @TipZivali)", _connection))
@@ -80,27 +85,95 @@ namespace evidenca_krav
                 command.ExecuteNonQuery();
             }
 
-            return 0; // izvedeno
+            return 0; 
         }
 
         public List<TeliceRazred> PridobiTelice()
         {
             List<TeliceRazred> telice = new List<TeliceRazred>();
-            using (var cmd = new SQLiteCommand("SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta " +
-                                                "FROM zivali z INNER JOIN tip_zivali tz WHERE tz.tip = @tipZiv", _connection))
+
+            using (var cmd = new SQLiteCommand(
+                "SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta " +
+                "FROM zivali z " +
+                "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
+                "WHERE tz.tip = @tipZiv", _connection))
             {
                 cmd.Parameters.AddWithValue("@tipZiv", "Telica");
 
                 using (var reader = cmd.ExecuteReader())
                 {
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        TeliceRazred te = new TeliceRazred(reader.GetInt32(1), reader.GetString(2), reader.GetDateTime(3), reader.GetString(4), reader.GetString(5), reader.GetString(6));
+                        TeliceRazred te = new TeliceRazred(
+                            reader.GetInt32(0),
+                            reader.GetString(1),
+                            reader.GetDateTime(2),
+                            reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5)
+                        );
+
                         telice.Add(te);
                     }
                 }
             }
+
             return telice;
+        }
+
+        public TeliceRazred PridobiTelico(int id)
+        {
+            TeliceRazred telica = null;
+
+            using (var cmd = new SQLiteCommand(
+                "SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta " +
+                "FROM zivali z " +
+                "WHERE z.id = @telId", _connection))
+            {
+                cmd.Parameters.AddWithValue("@telId", id);
+
+                using (var reader = cmd.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        telica = new TeliceRazred(
+                            reader.GetInt32(0),
+                            reader.GetString(1),
+                            reader.GetDateTime(2),
+                            reader.GetString(3),
+                            reader.GetString(4),
+                            reader.GetString(5)
+                        );
+                    }
+                }
+            }
+
+            return telica;
+        }
+
+        public int UrediTelico(int id, string ime, string datumRojstva, string pasma, string imeMame, string imeOceta)
+        {
+            using (SQLiteCommand command = new SQLiteCommand(
+                "UPDATE zivali SET ime = @Ime, datum_roj = @DatumRojstva, pasma = @Pasma, ime_mame = @ImeMame, ime_oceta = @ImeOceta WHERE id = @Id",
+                _connection))
+            {
+                command.Parameters.AddWithValue("@Ime", ime);
+                command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
+                command.Parameters.AddWithValue("@Pasma", pasma);
+                command.Parameters.AddWithValue("@ImeMame", imeMame);
+                command.Parameters.AddWithValue("@ImeOceta", imeOceta);
+                command.Parameters.AddWithValue("@Id", id);
+
+                int vrstice = command.ExecuteNonQuery();
+                if (vrstice > 0)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
         }
     }
 }

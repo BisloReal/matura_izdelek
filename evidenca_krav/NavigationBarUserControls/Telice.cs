@@ -1,4 +1,6 @@
-﻿using evidenca_krav.Obrazci;
+﻿using evidenca_krav.NavigationBarUserControls;
+using evidenca_krav.Obrazci;
+using evidenca_krav.Razredi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,7 +19,9 @@ namespace evidenca_krav.NavigationBar
         public Telice(DatabaseHelper dbHelper)
         {
             InitializeComponent();
+
             db = dbHelper;
+            NaloziTelice();
         }
 
         private void buttonDodajTelico_Click(object sender, EventArgs e)
@@ -28,12 +32,25 @@ namespace evidenca_krav.NavigationBar
 
                 if (dodajTelicoForm.ShowDialog() == DialogResult.OK)
                 {
+                    NaloziTelice();
                     MessageBox.Show("Telica uspešno dodana!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri dodajanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void NaloziTelice()
+        {
+            flowLayoutPanel1.Controls.Clear();
+
+            List<TeliceRazred> telice = db.PridobiTelice();
+
+            foreach (TeliceRazred t in telice)
+            {
+                flowLayoutPanel1.Controls.Add(new TelicaCard(db, t));
             }
         }
     }

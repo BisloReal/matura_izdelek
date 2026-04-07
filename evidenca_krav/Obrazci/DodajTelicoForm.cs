@@ -40,8 +40,12 @@ namespace evidenca_krav.Obrazci
                 int uspeh = db.DodajTelico(imeTel, datumRojstva, pasma, imeMame, imeOceta);
                 if (uspeh == 0) 
                 {
-                    this.DialogResult = DialogResult.OK;
-                    this.Close();
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                if (uspeh == -1)
+                {
+                    MessageBox.Show("Tip živali ne obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
@@ -53,8 +57,8 @@ namespace evidenca_krav.Obrazci
 
         private void buttonPreklici_Click(object sender, EventArgs e)
         {
-            this.DialogResult = DialogResult.Abort;
-            this.Close();
+            DialogResult = DialogResult.Abort;
+            Close();
         }
     }
 }

@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelPrikaz = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.buttonGlavnoOkno = new System.Windows.Forms.Button();
-            this.buttonKrave = new System.Windows.Forms.Button();
-            this.buttonTelice = new System.Windows.Forms.Button();
             this.buttonBiki = new System.Windows.Forms.Button();
+            this.buttonTelice = new System.Windows.Forms.Button();
+            this.buttonKrave = new System.Windows.Forms.Button();
+            this.buttonGlavnoOkno = new System.Windows.Forms.Button();
+            this.panelPrikaz = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,15 +50,6 @@
             this.panel1.Size = new System.Drawing.Size(150, 452);
             this.panel1.TabIndex = 0;
             // 
-            // panelPrikaz
-            // 
-            this.panelPrikaz.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panelPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelPrikaz.Location = new System.Drawing.Point(150, 0);
-            this.panelPrikaz.Name = "panelPrikaz";
-            this.panelPrikaz.Size = new System.Drawing.Size(650, 452);
-            this.panelPrikaz.TabIndex = 1;
-            // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -72,61 +63,70 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66666F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(146, 450);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
-            // buttonGlavnoOkno
+            // buttonBiki
             // 
-            this.buttonGlavnoOkno.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonGlavnoOkno.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonGlavnoOkno.Location = new System.Drawing.Point(3, 3);
-            this.buttonGlavnoOkno.Name = "buttonGlavnoOkno";
-            this.buttonGlavnoOkno.Size = new System.Drawing.Size(140, 68);
-            this.buttonGlavnoOkno.TabIndex = 0;
-            this.buttonGlavnoOkno.Text = "Glavno okno";
-            this.buttonGlavnoOkno.UseVisualStyleBackColor = true;
-            this.buttonGlavnoOkno.Click += new System.EventHandler(this.buttonGlavnoOkno_Click);
-            // 
-            // buttonKrave
-            // 
-            this.buttonKrave.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonKrave.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonKrave.Location = new System.Drawing.Point(3, 77);
-            this.buttonKrave.Name = "buttonKrave";
-            this.buttonKrave.Size = new System.Drawing.Size(140, 68);
-            this.buttonKrave.TabIndex = 1;
-            this.buttonKrave.Text = "Krave";
-            this.buttonKrave.UseVisualStyleBackColor = true;
-            this.buttonKrave.Click += new System.EventHandler(this.buttonKrave_Click);
+            this.buttonBiki.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonBiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonBiki.Location = new System.Drawing.Point(3, 213);
+            this.buttonBiki.Name = "buttonBiki";
+            this.buttonBiki.Size = new System.Drawing.Size(140, 64);
+            this.buttonBiki.TabIndex = 3;
+            this.buttonBiki.Text = "Biki";
+            this.buttonBiki.UseVisualStyleBackColor = true;
+            this.buttonBiki.Click += new System.EventHandler(this.buttonBiki_Click);
             // 
             // buttonTelice
             // 
-            this.buttonTelice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.buttonTelice.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonTelice.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonTelice.Location = new System.Drawing.Point(3, 151);
+            this.buttonTelice.Location = new System.Drawing.Point(3, 143);
             this.buttonTelice.Name = "buttonTelice";
-            this.buttonTelice.Size = new System.Drawing.Size(140, 68);
+            this.buttonTelice.Size = new System.Drawing.Size(140, 64);
             this.buttonTelice.TabIndex = 2;
             this.buttonTelice.Text = "Telice";
             this.buttonTelice.UseVisualStyleBackColor = true;
             this.buttonTelice.Click += new System.EventHandler(this.buttonTelice_Click);
             // 
-            // buttonBiki
+            // buttonKrave
             // 
-            this.buttonBiki.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.buttonBiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBiki.Location = new System.Drawing.Point(3, 225);
-            this.buttonBiki.Name = "buttonBiki";
-            this.buttonBiki.Size = new System.Drawing.Size(140, 69);
-            this.buttonBiki.TabIndex = 3;
-            this.buttonBiki.Text = "Biki";
-            this.buttonBiki.UseVisualStyleBackColor = true;
-            this.buttonBiki.Click += new System.EventHandler(this.buttonBiki_Click);
+            this.buttonKrave.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonKrave.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKrave.Location = new System.Drawing.Point(3, 73);
+            this.buttonKrave.Name = "buttonKrave";
+            this.buttonKrave.Size = new System.Drawing.Size(140, 64);
+            this.buttonKrave.TabIndex = 1;
+            this.buttonKrave.Text = "Krave";
+            this.buttonKrave.UseVisualStyleBackColor = true;
+            this.buttonKrave.Click += new System.EventHandler(this.buttonKrave_Click);
+            // 
+            // buttonGlavnoOkno
+            // 
+            this.buttonGlavnoOkno.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonGlavnoOkno.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonGlavnoOkno.Location = new System.Drawing.Point(3, 3);
+            this.buttonGlavnoOkno.Name = "buttonGlavnoOkno";
+            this.buttonGlavnoOkno.Size = new System.Drawing.Size(140, 64);
+            this.buttonGlavnoOkno.TabIndex = 0;
+            this.buttonGlavnoOkno.Text = "Glavno okno";
+            this.buttonGlavnoOkno.UseVisualStyleBackColor = true;
+            this.buttonGlavnoOkno.Click += new System.EventHandler(this.buttonGlavnoOkno_Click);
+            // 
+            // panelPrikaz
+            // 
+            this.panelPrikaz.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panelPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelPrikaz.Location = new System.Drawing.Point(150, 0);
+            this.panelPrikaz.Name = "panelPrikaz";
+            this.panelPrikaz.Size = new System.Drawing.Size(650, 452);
+            this.panelPrikaz.TabIndex = 1;
             // 
             // Form1
             // 
