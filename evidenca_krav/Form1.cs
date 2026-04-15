@@ -20,7 +20,6 @@ namespace evidenca_krav
             InitializeComponent();
 
             db = new DatabaseHelper();
-            db.Odpri();
 
             Initializacija();
         }

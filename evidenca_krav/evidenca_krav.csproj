@@ -72,6 +72,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\BikCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\BikCard.Designer.cs">
+      <DependentUpon>BikCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\Biki.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -120,6 +126,9 @@
     <Compile Include="Razredi\TeliceRazred.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\BikCard.resx">
+      <DependentUpon>BikCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Biki.resx">
       <DependentUpon>Biki.cs</DependentUpon>

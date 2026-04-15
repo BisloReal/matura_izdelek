@@ -79,7 +79,7 @@
             this.buttonBiki.Name = "buttonBiki";
             this.buttonBiki.Size = new System.Drawing.Size(140, 64);
             this.buttonBiki.TabIndex = 3;
-            this.buttonBiki.Text = "Biki";
+            this.buttonBiki.Text = "Biki os centra";
             this.buttonBiki.UseVisualStyleBackColor = true;
             this.buttonBiki.Click += new System.EventHandler(this.buttonBiki_Click);
             // 
