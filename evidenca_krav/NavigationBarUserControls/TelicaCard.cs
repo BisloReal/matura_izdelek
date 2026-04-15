@@ -23,10 +23,10 @@ namespace evidenca_krav.NavigationBarUserControls
             db = dbHelper;
 
             labelIme.Text = Telica.imeTel;
-            labelDatumRoj.Text = "Datum rojstva: " + Telica.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = "Pasma: " + Telica.pasmaTel;
-            labelImeMame.Text = "Ime mame: " + Telica.imeMameTel;
-            labelImeOceta.Text = "Ime očeta: " + Telica.imeOcetaTel;
+            labelDatumRoj.Text = Telica.datumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Telica.pasmaTel;
+            labelImeMame.Text = Telica.imeMameTel;
+            labelImeOceta.Text = Telica.imeOcetaTel;
         }
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
