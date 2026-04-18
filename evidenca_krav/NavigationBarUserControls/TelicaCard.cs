@@ -27,6 +27,7 @@ namespace evidenca_krav.NavigationBarUserControls
             labelPasma.Text = Telica.pasmaTel;
             labelImeMame.Text = Telica.imeMameTel;
             labelImeOceta.Text = Telica.imeOcetaTel;
+            labelUsSt.Text = Telica.usesnaStTel;
         }
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
@@ -49,13 +50,13 @@ namespace evidenca_krav.NavigationBarUserControls
 
         public void PosodobiPodatke()
         {
-
             Telica = db.PridobiTelico(Telica.idTel);
             labelIme.Text = Telica.imeTel;
-            labelDatumRoj.Text = "Datum rojstva: " + Telica.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = "Pasma: " + Telica.pasmaTel;
-            labelImeMame.Text = "Ime mame: " + Telica.imeMameTel;
-            labelImeOceta.Text = "Ime očeta: " + Telica.imeOcetaTel;
+            labelDatumRoj.Text = Telica.datumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Telica.pasmaTel;
+            labelImeMame.Text = Telica.imeMameTel;
+            labelImeOceta.Text = Telica.imeOcetaTel;
+            labelUsSt.Text =  Telica.usesnaStTel;
         }
     }
 }

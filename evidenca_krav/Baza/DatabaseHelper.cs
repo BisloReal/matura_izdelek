@@ -62,7 +62,7 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var cmd = new SQLiteCommand(
-                    "SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta " +
+                    "SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta, z.usesna_stevilka " +
                     "FROM zivali z " +
                     "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
                     "LEFT JOIN odhodi_krav ok ON z.id = ok.krava_id " +
@@ -80,7 +80,8 @@ namespace evidenca_krav
                                 reader.GetDateTime(2),
                                 reader.GetString(3),
                                 reader.GetString(4),
-                                reader.GetString(5)
+                                reader.GetString(5),
+                                reader.GetString(6)
                             ));
                         }
                     }
@@ -97,7 +98,7 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var cmd = new SQLiteCommand(
-                    "SELECT id, ime, datum_roj, pasma, ime_mame, ime_oceta " +
+                    "SELECT id, ime, datum_roj, pasma, ime_mame, ime_oceta, usesna_stevilka " +
                     "FROM zivali WHERE id = @Id", conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
@@ -112,7 +113,8 @@ namespace evidenca_krav
                                 reader.GetDateTime(2),
                                 reader.GetString(3),
                                 reader.GetString(4),
-                                reader.GetString(5)
+                                reader.GetString(5),
+                                reader.GetString(6)
                             );
                         }
                     }
@@ -122,14 +124,14 @@ namespace evidenca_krav
             return null;
         }
 
-        public int UrediTelico(int id, string ime, string datumRojstva, string pasma, string imeMame, string imeOceta)
+        public int UrediTelico(int id, string ime, string datumRojstva, string pasma, string imeMame, string imeOceta, string usesna_stevilka)
         {
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
 
                 using (var command = new SQLiteCommand(
-                    "UPDATE zivali SET ime = @Ime, datum_roj = @DatumRojstva, pasma = @Pasma, ime_mame = @ImeMame, ime_oceta = @ImeOceta WHERE id = @Id",
+                    "UPDATE zivali SET ime = @Ime, datum_roj = @DatumRojstva, pasma = @Pasma, ime_mame = @ImeMame, ime_oceta = @ImeOceta, usesna_stevilka = @UsesnaStevilka WHERE id = @Id",
                     conn))
                 {
                     command.Parameters.AddWithValue("@Ime", ime);
@@ -137,9 +139,19 @@ namespace evidenca_krav
                     command.Parameters.AddWithValue("@Pasma", pasma);
                     command.Parameters.AddWithValue("@ImeMame", imeMame);
                     command.Parameters.AddWithValue("@ImeOceta", imeOceta);
+                    command.Parameters.AddWithValue("@UsesnaStevilka", usesna_stevilka);
                     command.Parameters.AddWithValue("@Id", id);
 
-                    return command.ExecuteNonQuery() > 0 ? 0 : -1;
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
                 }
             }
         }

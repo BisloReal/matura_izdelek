@@ -49,8 +49,14 @@ namespace evidenca_krav.Obrazci
                 string pasma = textBoxPasmaTel.Text.Trim();
                 string imeMame = textBoxImeMameTel.Text.Trim();
                 string imeOceta = textBoxImeOcetaTel.Text.Trim();
+                string usesna_stevilka = textBoxUsStTel.Text.Trim();
 
-                int izvedba = db.UrediTelico(Telica.idTel, imeTel, datumRojstva, pasma, imeMame, imeOceta);
+                if (string.IsNullOrWhiteSpace(usesna_stevilka))
+                {
+                    usesna_stevilka = "/";
+                }
+
+                int izvedba = db.UrediTelico(Telica.idTel, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
 
                 if (izvedba == 0)
                 {
