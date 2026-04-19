@@ -109,11 +109,23 @@
       <DependentUpon>Telice.cs</DependentUpon>
     </Compile>
     <Compile Include="NavigationNadzor.cs" />
+    <Compile Include="Obrazci\DodajBikaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajBikaForm.Designer.cs">
+      <DependentUpon>DodajBikaForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.Designer.cs">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\PasmeBikovForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\PasmeBikovForm.Designer.cs">
+      <DependentUpon>PasmeBikovForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Obrazci\UrediTelicaForm.cs">
       <SubType>Form</SubType>
@@ -146,8 +158,14 @@
     <EmbeddedResource Include="NavigationBarUserControls\Telice.resx">
       <DependentUpon>Telice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajBikaForm.resx">
+      <DependentUpon>DodajBikaForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajTelicoForm.resx">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\PasmeBikovForm.resx">
+      <DependentUpon>PasmeBikovForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTelicaForm.resx">
       <DependentUpon>UrediTelicaForm.cs</DependentUpon>

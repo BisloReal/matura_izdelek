@@ -78,6 +78,7 @@
             this.buttonUrediTel.TabIndex = 12;
             this.buttonUrediTel.Text = "Uredi";
             this.buttonUrediTel.UseVisualStyleBackColor = true;
+            this.buttonUrediTel.Click += new System.EventHandler(this.buttonUrediTel_Click);
             // 
             // label3
             // 
@@ -113,11 +114,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(73, 122);
+            this.label4.Location = new System.Drawing.Point(98, 122);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 25);
+            this.label4.Size = new System.Drawing.Size(85, 25);
             this.label4.TabIndex = 16;
-            this.label4.Text = "Pasma";
+            this.label4.Text = "Pasma:";
             // 
             // labelIzboljsuje
             // 
@@ -133,6 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.Controls.Add(this.labelIzboljsuje);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelPasma);
@@ -143,7 +145,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BikCard";
-            this.Size = new System.Drawing.Size(548, 230);
+            this.Size = new System.Drawing.Size(544, 226);
             this.ResumeLayout(false);
             this.PerformLayout();
 

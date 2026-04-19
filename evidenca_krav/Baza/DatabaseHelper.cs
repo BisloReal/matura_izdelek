@@ -3,6 +3,7 @@ using evidenca_krav.Razredi;
 using System;
 using System.Collections.Generic;
 using System.Data.SQLite;
+using System.Security.Policy;
 
 namespace evidenca_krav
 {
@@ -166,9 +167,9 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var cmd = new SQLiteCommand(
-                    "SELECT b.id, b.rejec, b.datum_roj, b.izboljsuje, bp.pasma" +
+                    "SELECT b.id, b.rejec, b.datum_roj, b.izboljsuje, bp.pasma " +
                     "FROM biki_os b " +
-                    "INNER JOIN biki_pasme tz bp b.biki_pasma_id = bp.id", conn))
+                    "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id", conn))
                 {
 
                     using (var reader = cmd.ExecuteReader())
@@ -179,8 +180,8 @@ namespace evidenca_krav
                                 reader.GetInt32(0),
                                 reader.GetString(1),
                                 reader.GetDateTime(2),
-                                reader.GetString(3),
-                                reader.GetString(4)
+                                reader.GetString(4),  
+                                reader.GetString(3)
                             ));
                         }
                     }
@@ -190,6 +191,141 @@ namespace evidenca_krav
             return biki;
         }
 
+        public BikiOsRazred PridobiBikaOs(int id)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT b.id, b.rejec, b.datum_roj, b.izboljsuje, bp.pasma, bp.id" +
+                    "FROM biki_os b " +
+                    "INNER JOIN biki_pasme tz bp b.biki_pasma_id = bp.id WHERE b.id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new BikiOsRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetDateTime(2),
+                                reader.GetInt16(3),
+                                reader.GetString(4),
+                                reader.GetString(5)
+                            );
+                        }
+                    }
+                }
+            }
+            return null;
+        }
 
+        public string PridobiPasmoPrekoId(int id)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT pasma FROM biki_pasme WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetString(0);
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int PridobiIdPasmePrekoImena(string imePasme)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT id FROM biki_pasme WHERE pasma = @ImePasme", conn))
+                {
+                    cmd.Parameters.AddWithValue("@ImePasme", imePasme);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            return -1;
+        }
+
+        public void DodajPasmoBikov(string imePasme)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO biki_pasme (pasma) VALUES (@ImePasme)", conn))
+                {
+                    command.Parameters.AddWithValue("@ImePasme", imePasme);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public void UrediPasmoBikov(int id, string imePasme)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var command = new SQLiteCommand(
+                    "UPDATE biki_pasme SET pasma = @ImePasme WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@ImePasme", imePasme);
+                    command.Parameters.AddWithValue("@Id", id);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public List<string> PridobiPasmeBikov()
+        {
+            List<string> pasme = new List<string>();
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT pasma FROM biki_pasme", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            pasme.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            return pasme;
+        }
+
+        public void DodajBikaOs(string rejec, string datumRojstva, int pasmaBikId, string izboljsuje)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO biki_os (rejec, datum_roj, biki_pasma_id, izboljsuje) " +
+                    "VALUES (@Rejec, @DatumRojstva, @PasmaBikId, @Izboljsuje)", conn))
+                {
+                    command.Parameters.AddWithValue("@Rejec", rejec);
+                    command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
+                    command.Parameters.AddWithValue("@PasmaBikId", pasmaBikId);
+                    command.Parameters.AddWithValue("@Izboljsuje", izboljsuje);
+                    command.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }
