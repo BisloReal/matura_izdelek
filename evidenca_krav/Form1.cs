@@ -1,4 +1,5 @@
 ﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.NavigationBarUserControls;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,7 +32,8 @@ namespace evidenca_krav
                 new Glavno_okno(db),
                 new Krave(db),
                 new Biki(db),
-                new Telice(db)
+                new Telice(db),
+                new Odhodi(db)
             };
 
             navNadzor = new NavigationNadzor(userControlList, panelPrikaz);
@@ -55,6 +57,11 @@ namespace evidenca_krav
         private void buttonTelice_Click(object sender, EventArgs e)
         {
             navNadzor.Prikaz(3);
+        }
+
+        private void buttonOdhodi_Click(object sender, EventArgs e)
+        {
+            navNadzor.Prikaz(4);
         }
     }
 }

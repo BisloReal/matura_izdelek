@@ -329,5 +329,10 @@ namespace evidenca_krav
                 }
             }
         }
+
+
+        // KRAVE
+
+        public Krav
     }
 }

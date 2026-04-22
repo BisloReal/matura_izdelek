@@ -102,6 +102,12 @@
     <Compile Include="NavigationBarUserControls\Krave.Designer.cs">
       <DependentUpon>Krave.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\Odhodi.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Odhodi.Designer.cs">
+      <DependentUpon>Odhodi.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\TelicaCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -142,6 +148,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razredi\BikiOsRazred.cs" />
+    <Compile Include="Razredi\KraveRazred.cs" />
     <Compile Include="Razredi\TeliceRazred.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -160,6 +167,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Krave.resx">
       <DependentUpon>Krave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Odhodi.resx">
+      <DependentUpon>Odhodi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\TelicaCard.resx">
       <DependentUpon>TelicaCard.cs</DependentUpon>
