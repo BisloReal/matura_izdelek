@@ -90,6 +90,12 @@
     <Compile Include="NavigationBarUserControls\Glavno_okno.Designer.cs">
       <DependentUpon>Glavno_okno.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\KravaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\KravaCard.Designer.cs">
+      <DependentUpon>KravaCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\Krave.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -148,6 +154,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Glavno_okno.resx">
       <DependentUpon>Glavno_okno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\KravaCard.resx">
+      <DependentUpon>KravaCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Krave.resx">
       <DependentUpon>Krave.cs</DependentUpon>

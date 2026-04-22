@@ -34,8 +34,10 @@ namespace evidenca_krav
                 }
 
                 if (TipZivaliId == -1)
+                {
                     return -1;
-
+                }
+                    
                 using (var command = new SQLiteCommand(
                     "INSERT INTO zivali (ime, datum_roj, pasma, ime_mame, ime_oceta, tip_zivali_id) " +
                     "VALUES (@Ime, @DatumRojstva, @Pasma, @ImeMame, @ImeOceta, @TipZivali)", conn))
