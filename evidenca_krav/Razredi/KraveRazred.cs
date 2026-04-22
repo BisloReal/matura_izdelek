@@ -53,11 +53,6 @@ namespace evidenca_krav.RazredSi
         public int telesneSposobnostiSkupajOcena { get; set; }
 
 
-        public KraveRazred(int idTel, string imeTel, DateTime datumRoj, string pasmaTel, string imeMameTel, string imeOcetaTel, string usesnaStTel, string laktacija, float teza, int iztokMlekaOcena) : base(idTel, imeTel, datumRoj, pasmaTel, imeMameTel, imeOcetaTel, usesnaStTel)
-        {
-            this.laktacija = laktacija;
-            this.teza = teza;
-            this.iztokMlekaOcena = iztokMlekaOcena;
-        }
+        public KraveRazred(int idTel, string imeTel, DateTime datumRoj, string pasmaTel, string imeMameTel, string imeOcetaTel, string usesnaStTel, string laktacija) : base(idTel, imeTel, datumRoj, pasmaTel, imeMameTel, imeOcetaTel, usesnaStTel) { }
     }
 }
