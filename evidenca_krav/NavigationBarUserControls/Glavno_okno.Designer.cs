@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
+            this.buttonPosodobi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -42,10 +43,23 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Glavno okno";
             // 
+            // buttonPosodobi
+            // 
+            this.buttonPosodobi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPosodobi.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPosodobi.Location = new System.Drawing.Point(525, 76);
+            this.buttonPosodobi.Name = "buttonPosodobi";
+            this.buttonPosodobi.Size = new System.Drawing.Size(147, 70);
+            this.buttonPosodobi.TabIndex = 2;
+            this.buttonPosodobi.Text = "Posodobi stanja";
+            this.buttonPosodobi.UseVisualStyleBackColor = true;
+            this.buttonPosodobi.Click += new System.EventHandler(this.buttonPosodobi_Click);
+            // 
             // Glavno_okno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonPosodobi);
             this.Controls.Add(this.label1);
             this.Name = "Glavno_okno";
             this.Size = new System.Drawing.Size(700, 400);
@@ -57,5 +71,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonPosodobi;
     }
 }

@@ -108,6 +108,18 @@
     <Compile Include="NavigationBarUserControls\Odhodi.Designer.cs">
       <DependentUpon>Odhodi.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\TeleCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\TeleCard.Designer.cs">
+      <DependentUpon>TeleCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Teleta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Teleta.Designer.cs">
+      <DependentUpon>Teleta.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\TelicaCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +150,12 @@
     </Compile>
     <Compile Include="Obrazci\PasmeBikovForm.Designer.cs">
       <DependentUpon>PasmeBikovForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\UrediTeleForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediTeleForm.Designer.cs">
+      <DependentUpon>UrediTeleForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Obrazci\UrediTelicaForm.cs">
       <SubType>Form</SubType>
@@ -171,6 +189,12 @@
     <EmbeddedResource Include="NavigationBarUserControls\Odhodi.resx">
       <DependentUpon>Odhodi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\TeleCard.resx">
+      <DependentUpon>TeleCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Teleta.resx">
+      <DependentUpon>Teleta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\TelicaCard.resx">
       <DependentUpon>TelicaCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -185,6 +209,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\PasmeBikovForm.resx">
       <DependentUpon>PasmeBikovForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediTeleForm.resx">
+      <DependentUpon>UrediTeleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTelicaForm.resx">
       <DependentUpon>UrediTelicaForm.cs</DependentUpon>

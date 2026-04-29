@@ -1,4 +1,5 @@
-﻿using evidenca_krav.NavigationBarUserControls;
+﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.NavigationBarUserControls;
 using evidenca_krav.Razredi;
 using System;
 using System.Collections.Generic;
@@ -12,23 +13,24 @@ using System.Windows.Forms;
 
 namespace evidenca_krav.Obrazci
 {
-    public partial class UrediTelicaForm : Form
+    public partial class UrediTeleForm : Form
     {
-        TeliceRazred Telica;
-        TelicaCard telicaCard;
+        TeliceRazred Tele;
+        TeleCard teleCard;
         private DatabaseHelper db;
-        public UrediTelicaForm(DatabaseHelper dbHelper, int idTel, TelicaCard tc)
+        public UrediTeleForm(DatabaseHelper dbHelper, int idTel, TeleCard tc)
         {
             InitializeComponent();
-            db = dbHelper;
-            telicaCard = tc;
 
-            Telica = db.PridobiTelico(idTel);
-            textBoxImeTel.Text = Telica.ime;
-            dateTimePicker.Value = Telica.datumRoj;
-            textBoxPasmaTel.Text = Telica.pasma;
-            textBoxImeMameTel.Text = Telica.imeMame;
-            textBoxImeOcetaTel.Text = Telica.imeOceta;
+            db = dbHelper;
+            teleCard = tc;
+
+            Tele = db.PridobiTelico(idTel);
+            textBoxImeTel.Text = Tele.ime;
+            dateTimePicker.Value = Tele.datumRoj;
+            textBoxPasmaTel.Text = Tele.pasma;
+            textBoxImeMameTel.Text = Tele.imeMame;
+            textBoxImeOcetaTel.Text = Tele.imeOceta;
         }
 
         private void buttonPotrdi_Click(object sender, EventArgs e)
@@ -56,11 +58,11 @@ namespace evidenca_krav.Obrazci
                     usesna_stevilka = "/";
                 }
 
-                int izvedba = db.UrediTelico(Telica.id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
+                int izvedba = db.UrediTelico(Tele.id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
 
                 if (izvedba == 0)
                 {
-                    telicaCard.PosodobiPodatke();
+                    teleCard.PosodobiPodatke();
                     DialogResult = DialogResult.OK;
                     Close();
                 }
@@ -69,7 +71,7 @@ namespace evidenca_krav.Obrazci
                     MessageBox.Show("Telica ni bila najdena.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri urejanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

@@ -1,6 +1,7 @@
 ﻿using evidenca_krav.NavigationBarUserControls;
 using evidenca_krav.Obrazci;
 using evidenca_krav.Razredi;
+using evidenca_krav;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +14,7 @@ using System.Windows.Forms;
 
 namespace evidenca_krav.NavigationBar
 {
-    public partial class Biki : UserControl
+    public partial class Biki : UserControl, IRefreshable
     {
         private DatabaseHelper db;
 
@@ -42,7 +43,7 @@ namespace evidenca_krav.NavigationBar
             }
         }
 
-        public void NaloziBike()
+        private void NaloziBike()
         {
             flowLayoutPanelBiki.Controls.Clear();
 
@@ -52,6 +53,11 @@ namespace evidenca_krav.NavigationBar
             {
                 flowLayoutPanelBiki.Controls.Add(new BikCard(db, b));
             }
+        }
+
+        public void Posodobi()
+        {
+            NaloziBike();
         }
     }
 }

@@ -18,5 +18,10 @@ namespace evidenca_krav.NavigationBar
             InitializeComponent();
             db = dbHelper;
         }
+
+        private void buttonPosodobi_Click(object sender, EventArgs e)
+        {
+            db.PosodobiStanja();
+        }
     }
 }

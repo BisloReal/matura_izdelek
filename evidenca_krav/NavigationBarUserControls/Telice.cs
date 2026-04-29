@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace evidenca_krav.NavigationBar
 {
-    public partial class Telice : UserControl
+    public partial class Telice : UserControl, IRefreshable
     {
         private DatabaseHelper db;
         public Telice(DatabaseHelper dbHelper)
@@ -52,6 +52,11 @@ namespace evidenca_krav.NavigationBar
             {
                 flowLayoutPanel1.Controls.Add(new TelicaCard(db, t));
             }
+        }
+
+        public void Posodobi()
+        {
+            NaloziTelice();
         }
     }
 }

@@ -33,7 +33,8 @@ namespace evidenca_krav
                 new Krave(db),
                 new Biki(db),
                 new Telice(db),
-                new Odhodi(db)
+                new Odhodi(db),
+                new Teleta(db)
             };
 
             navNadzor = new NavigationNadzor(userControlList, panelPrikaz);
@@ -62,6 +63,11 @@ namespace evidenca_krav
         private void buttonOdhodi_Click(object sender, EventArgs e)
         {
             navNadzor.Prikaz(4);
+        }
+
+        private void buttonTeleta_Click(object sender, EventArgs e)
+        {
+            navNadzor.Prikaz(5);
         }
     }
 }

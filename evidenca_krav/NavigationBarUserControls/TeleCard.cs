@@ -1,4 +1,5 @@
-﻿using evidenca_krav.Obrazci;
+﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.Obrazci;
 using evidenca_krav.Razredi;
 using System;
 using System.Collections.Generic;
@@ -12,31 +13,31 @@ using System.Windows.Forms;
 
 namespace evidenca_krav.NavigationBarUserControls
 {
-    public partial class TelicaCard : UserControl
+    public partial class TeleCard : UserControl
     {
-        TeliceRazred Telica;
+        TeliceRazred Tele;
         private DatabaseHelper db;
-        public TelicaCard(DatabaseHelper dbHelper, TeliceRazred tel)
+        public TeleCard(DatabaseHelper dbHelper, TeliceRazred tele)
         {
             InitializeComponent();
-            Telica = tel;
             db = dbHelper;
+            Tele = tele;
 
-            labelIme.Text = Telica.ime;
-            labelDatumRoj.Text = Telica.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Telica.pasma;
-            labelImeMame.Text = Telica.imeMame;
-            labelImeOceta.Text = Telica.imeOceta;
-            labelUsSt.Text = Telica.usesnaSt;
+            labelIme.Text = Tele.ime;
+            labelDatumRoj.Text = Tele.datumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Tele.pasma;
+            labelImeMame.Text = Tele.imeMame;
+            labelImeOceta.Text = Tele.imeOceta;
+            labelUsSt.Text = Tele.usesnaSt;
         }
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
         {
             try
             {
-                UrediTelicaForm dodajTelicoForm = new UrediTelicaForm(db, Telica.id, this);
+                UrediTeleForm dodajTeleForm = new UrediTeleForm(db, Tele.id, this);
 
-                if (dodajTelicoForm.ShowDialog() == DialogResult.OK)
+                if (dodajTeleForm.ShowDialog() == DialogResult.OK)
                 {
                     db.PosodobiStanja();
                     PosodobiPodatke();
@@ -52,13 +53,13 @@ namespace evidenca_krav.NavigationBarUserControls
 
         public void PosodobiPodatke()
         {
-            Telica = db.PridobiTelico(Telica.id);
-            labelIme.Text = Telica.ime;
-            labelDatumRoj.Text = Telica.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Telica.pasma;
-            labelImeMame.Text = Telica.imeMame;
-            labelImeOceta.Text = Telica.imeOceta;
-            labelUsSt.Text =  Telica.usesnaSt;
+            Tele = db.PridobiTelico(Tele.id);
+            labelIme.Text = Tele.ime;
+            labelDatumRoj.Text = Tele.datumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Tele.pasma;
+            labelImeMame.Text = Tele.imeMame;
+            labelImeOceta.Text = Tele.imeOceta;
+            labelUsSt.Text = Tele.usesnaSt;
         }
     }
 }

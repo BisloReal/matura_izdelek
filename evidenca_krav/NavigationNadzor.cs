@@ -7,6 +7,11 @@ using System.Windows.Forms;
 
 namespace evidenca_krav
 {
+    public interface IRefreshable
+    {
+        void Posodobi();
+    }
+
     public class NavigationNadzor
     {
         List<UserControl> userControlList = new List<UserControl>();
@@ -30,10 +35,17 @@ namespace evidenca_krav
 
         public void Prikaz(int index)
         {
-            if (index < userControlList.Count())
+            if (index < userControlList.Count)
             {
-                userControlList[index].BringToFront();
-            }   
+                var control = userControlList[index];
+
+                control.BringToFront();
+
+                if (control is IRefreshable refreshable)
+                {
+                    refreshable.Posodobi();
+                }
+            }
         }
     }
 }

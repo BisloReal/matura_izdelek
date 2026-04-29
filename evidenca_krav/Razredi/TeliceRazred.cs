@@ -8,23 +8,23 @@ namespace evidenca_krav.Razredi
 {
     public class TeliceRazred
     {
-        public int idTel {  get; set; }
-        public string imeTel {  get; set; }
-        public string usesnaStTel { get; set; }
+        public int id {  get; set; }
+        public string ime {  get; set; }
+        public string usesnaSt { get; set; }
         public DateTime datumRoj { get; set; }
-        public string pasmaTel { get; set; }
-        public string imeMameTel { get; set; }
-        public string imeOcetaTel { get; set; }
+        public string pasma { get; set; }
+        public string imeMame { get; set; }
+        public string imeOceta { get; set; }
 
         public TeliceRazred(int idTel, string imeTel, DateTime datumRoj, string pasmaTel, string imeMameTel, string imeOcetaTel, string usesnaStTel)
         {
-            this.idTel = idTel;
-            this.imeTel = imeTel;
+            id = idTel;
+            ime = imeTel;
             this.datumRoj = datumRoj;
-            this.pasmaTel = pasmaTel;
-            this.imeMameTel = imeMameTel;
-            this.imeOcetaTel = imeOcetaTel;
-            this.usesnaStTel = usesnaStTel;
+            pasma = pasmaTel;
+            imeMame = imeMameTel;
+            imeOceta = imeOcetaTel;
+            usesnaSt = usesnaStTel;
         }
     }
 }

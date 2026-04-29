@@ -31,11 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.buttonBiki = new System.Windows.Forms.Button();
+            this.buttonTeleta = new System.Windows.Forms.Button();
+            this.buttonOdhodi = new System.Windows.Forms.Button();
             this.buttonTelice = new System.Windows.Forms.Button();
             this.buttonKrave = new System.Windows.Forms.Button();
             this.buttonGlavnoOkno = new System.Windows.Forms.Button();
             this.panelPrikaz = new System.Windows.Forms.Panel();
-            this.buttonOdhodi = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -57,14 +58,16 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonBiki, 0, 5);
+            this.tableLayoutPanel1.Controls.Add(this.buttonTeleta, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonOdhodi, 0, 4);
-            this.tableLayoutPanel1.Controls.Add(this.buttonBiki, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.buttonTelice, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.buttonKrave, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.buttonGlavnoOkno, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 6;
+            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
@@ -78,13 +81,37 @@
             // 
             this.buttonBiki.Dock = System.Windows.Forms.DockStyle.Top;
             this.buttonBiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonBiki.Location = new System.Drawing.Point(3, 213);
+            this.buttonBiki.Location = new System.Drawing.Point(3, 353);
             this.buttonBiki.Name = "buttonBiki";
             this.buttonBiki.Size = new System.Drawing.Size(140, 64);
-            this.buttonBiki.TabIndex = 3;
+            this.buttonBiki.TabIndex = 8;
             this.buttonBiki.Text = "Biki os centra";
             this.buttonBiki.UseVisualStyleBackColor = true;
             this.buttonBiki.Click += new System.EventHandler(this.buttonBiki_Click);
+            // 
+            // buttonTeleta
+            // 
+            this.buttonTeleta.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonTeleta.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonTeleta.Location = new System.Drawing.Point(3, 213);
+            this.buttonTeleta.Name = "buttonTeleta";
+            this.buttonTeleta.Size = new System.Drawing.Size(140, 64);
+            this.buttonTeleta.TabIndex = 6;
+            this.buttonTeleta.Text = "Teleta";
+            this.buttonTeleta.UseVisualStyleBackColor = true;
+            this.buttonTeleta.Click += new System.EventHandler(this.buttonTeleta_Click);
+            // 
+            // buttonOdhodi
+            // 
+            this.buttonOdhodi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonOdhodi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOdhodi.Location = new System.Drawing.Point(3, 283);
+            this.buttonOdhodi.Name = "buttonOdhodi";
+            this.buttonOdhodi.Size = new System.Drawing.Size(140, 64);
+            this.buttonOdhodi.TabIndex = 4;
+            this.buttonOdhodi.Text = "Odhodi";
+            this.buttonOdhodi.UseVisualStyleBackColor = true;
+            this.buttonOdhodi.Click += new System.EventHandler(this.buttonOdhodi_Click);
             // 
             // buttonTelice
             // 
@@ -131,18 +158,6 @@
             this.panelPrikaz.Size = new System.Drawing.Size(650, 452);
             this.panelPrikaz.TabIndex = 1;
             // 
-            // buttonOdhodi
-            // 
-            this.buttonOdhodi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonOdhodi.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOdhodi.Location = new System.Drawing.Point(3, 283);
-            this.buttonOdhodi.Name = "buttonOdhodi";
-            this.buttonOdhodi.Size = new System.Drawing.Size(140, 64);
-            this.buttonOdhodi.TabIndex = 4;
-            this.buttonOdhodi.Text = "Odhodi";
-            this.buttonOdhodi.UseVisualStyleBackColor = true;
-            this.buttonOdhodi.Click += new System.EventHandler(this.buttonOdhodi_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -167,8 +182,9 @@
         private System.Windows.Forms.Button buttonGlavnoOkno;
         private System.Windows.Forms.Button buttonTelice;
         private System.Windows.Forms.Button buttonKrave;
-        private System.Windows.Forms.Button buttonBiki;
         private System.Windows.Forms.Button buttonOdhodi;
+        private System.Windows.Forms.Button buttonBiki;
+        private System.Windows.Forms.Button buttonTeleta;
     }
 }
 
