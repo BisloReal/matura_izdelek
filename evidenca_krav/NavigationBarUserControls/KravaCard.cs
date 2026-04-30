@@ -1,4 +1,5 @@
-﻿using evidenca_krav.Obrazci;
+﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.Obrazci;
 using evidenca_krav.Razredi;
 using evidenca_krav.RazredSi;
 using System;
@@ -24,6 +25,43 @@ namespace evidenca_krav.NavigationBarUserControls
             Krava = krava;
 
             labelIme.Text = Krava.ime;
+            labelDatumRoj.Text = Krava.datumRoj.ToString("dd.MM.yyyy");
+            labelUsSt.Text = Krava.usesnaSt;
+            labelPasma.Text = Krava.pasma;
+            labelImeMame.Text = Krava.imeMame;
+            labelImeOceta.Text = Krava.imeOceta;
+        }
+
+        private void buttonUrediKrav_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                UrediKravaForm urediKravaForm = new UrediKravaForm(db, Krava.id, this);
+
+                if (urediKravaForm.ShowDialog() == DialogResult.OK)
+                {
+                    db.PosodobiStanja();
+                    PosodobiPodatke();
+
+                    MessageBox.Show("Telica uspešno Posodobljena!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        public void PosodobiPodatke()
+        {
+            Krava = db.PridobiKravo(Krava.id);
+            labelIme.Text = Krava.ime;
+            labelDatumRoj.Text = Krava.datumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Krava.pasma;
+            labelImeMame.Text = Krava.imeMame;
+            labelImeOceta.Text = Krava.imeOceta;
+            labelUsSt.Text = Krava.usesnaSt;
         }
     }
 }

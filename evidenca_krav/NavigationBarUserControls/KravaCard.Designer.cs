@@ -122,6 +122,7 @@
             this.buttonUrediTel.TabIndex = 18;
             this.buttonUrediTel.Text = "Uredi / Pogled";
             this.buttonUrediTel.UseVisualStyleBackColor = true;
+            this.buttonUrediTel.Click += new System.EventHandler(this.buttonUrediKrav_Click);
             // 
             // label5
             // 

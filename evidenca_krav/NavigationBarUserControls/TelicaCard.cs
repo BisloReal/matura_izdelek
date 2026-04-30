@@ -34,9 +34,9 @@ namespace evidenca_krav.NavigationBarUserControls
         {
             try
             {
-                UrediTelicaForm dodajTelicoForm = new UrediTelicaForm(db, Telica.id, this);
+                UrediTelicaForm urediTelicoForm = new UrediTelicaForm(db, Telica.id, this);
 
-                if (dodajTelicoForm.ShowDialog() == DialogResult.OK)
+                if (urediTelicoForm.ShowDialog() == DialogResult.OK)
                 {
                     db.PosodobiStanja();
                     PosodobiPodatke();

@@ -21,7 +21,7 @@ namespace evidenca_krav.RazredSi
         public int sirinaVspredaj { get; set; }
         public int hrbetOcena { get; set; }
         public float dolzinaKriza { get; set; }
-        public float sednaSIrina { get; set; }
+        public float sednaSirina { get; set; }
         public int nagibKrizaOcena { get; set; }
         public int polozajKolkaOcena { get; set; }
         public int skocniSklepOcena { get; set; }
