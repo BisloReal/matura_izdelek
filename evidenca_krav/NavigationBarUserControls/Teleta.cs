@@ -1,4 +1,5 @@
 ﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.Obrazci;
 using evidenca_krav.Razredi;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,24 @@ namespace evidenca_krav.NavigationBarUserControls
         public void Posodobi()
         {
             NaloziTeleta();
+        }
+
+        private void buttonDodajTele_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajTelicoForm dodajTelicoForm = new DodajTelicoForm(db);
+
+                if (dodajTelicoForm.ShowDialog() == DialogResult.OK)
+                {
+                    NaloziTeleta();
+                    MessageBox.Show("Tele uspešno dodana!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju teleta: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

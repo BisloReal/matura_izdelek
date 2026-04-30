@@ -31,6 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonDodajTele = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,10 +67,23 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
+            // buttonDodajTele
+            // 
+            this.buttonDodajTele.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajTele.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajTele.Location = new System.Drawing.Point(543, 73);
+            this.buttonDodajTele.Name = "buttonDodajTele";
+            this.buttonDodajTele.Size = new System.Drawing.Size(121, 44);
+            this.buttonDodajTele.TabIndex = 5;
+            this.buttonDodajTele.Text = "Dodaj tele";
+            this.buttonDodajTele.UseVisualStyleBackColor = true;
+            this.buttonDodajTele.Click += new System.EventHandler(this.buttonDodajTele_Click);
+            // 
             // Teleta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.buttonDodajTele);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "Teleta";
@@ -85,5 +99,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button buttonDodajTele;
     }
 }
