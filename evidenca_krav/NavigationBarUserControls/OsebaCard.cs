@@ -30,14 +30,13 @@ namespace evidenca_krav.NavigationBarUserControls
             labelTelefon.Text = oseba.Telefon;
             labelEmail.Text = oseba.Email;
             labelZadolzitev.Text = oseba.Zadolzitev;
-
         }
-        /*
-        private void buttonUrediTel_Click(object sender, EventArgs e)
+        
+        private void buttonUrediOsebo_Click(object sender, EventArgs e)
         {
             try
             {
-                UrediOseboForm urediOseboForm = new UrediOseboForm(db, oseba.Id, this);
+                UrediOseboForm urediOseboForm = new UrediOseboForm(db, oseba, this);
 
                 if (urediOseboForm.ShowDialog() == DialogResult.OK)
                 {
@@ -51,16 +50,17 @@ namespace evidenca_krav.NavigationBarUserControls
             {
                 MessageBox.Show("Napaka pri dodajanju osebe: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        } */
+        } 
 
 
         public void PosodobiPodatke()
         {
-            oseba.Ime = labelIme.Text;
-            oseba.Priimek = labelPriimek.Text;
-            oseba.Telefon = labelTelefon.Text;
-            oseba.Email = labelEmail.Text;
-            oseba.Zadolzitev = labelZadolzitev.Text;
+            oseba = db.PridobiOsebo(oseba.Id);
+            labelIme.Text = oseba.Ime;
+            labelPriimek.Text = oseba.Priimek;
+            labelTelefon.Text = oseba.Telefon;
+            labelEmail.Text = oseba.Email;
+            labelZadolzitev.Text = oseba.Zadolzitev;
         }
     }
 }

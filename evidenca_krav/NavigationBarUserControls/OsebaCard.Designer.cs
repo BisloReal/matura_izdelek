@@ -34,7 +34,7 @@
             this.labelEmail = new System.Windows.Forms.Label();
             this.labelTelefon = new System.Windows.Forms.Label();
             this.labelIme = new System.Windows.Forms.Label();
-            this.buttonUrediTel = new System.Windows.Forms.Button();
+            this.buttonUrediOsebo = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -101,15 +101,16 @@
             this.labelIme.TabIndex = 34;
             this.labelIme.Text = "label";
             // 
-            // buttonUrediTel
+            // buttonUrediOsebo
             // 
-            this.buttonUrediTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUrediTel.Location = new System.Drawing.Point(44, 205);
-            this.buttonUrediTel.Name = "buttonUrediTel";
-            this.buttonUrediTel.Size = new System.Drawing.Size(222, 43);
-            this.buttonUrediTel.TabIndex = 33;
-            this.buttonUrediTel.Text = "Uredi / Pogled";
-            this.buttonUrediTel.UseVisualStyleBackColor = true;
+            this.buttonUrediOsebo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUrediOsebo.Location = new System.Drawing.Point(44, 205);
+            this.buttonUrediOsebo.Name = "buttonUrediOsebo";
+            this.buttonUrediOsebo.Size = new System.Drawing.Size(222, 43);
+            this.buttonUrediOsebo.TabIndex = 33;
+            this.buttonUrediOsebo.Text = "Uredi / Pogled";
+            this.buttonUrediOsebo.UseVisualStyleBackColor = true;
+            this.buttonUrediOsebo.Click += new System.EventHandler(this.buttonUrediOsebo_Click);
             // 
             // label4
             // 
@@ -162,7 +163,7 @@
             this.Controls.Add(this.labelEmail);
             this.Controls.Add(this.labelTelefon);
             this.Controls.Add(this.labelIme);
-            this.Controls.Add(this.buttonUrediTel);
+            this.Controls.Add(this.buttonUrediOsebo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -182,7 +183,7 @@
         private System.Windows.Forms.Label labelEmail;
         private System.Windows.Forms.Label labelTelefon;
         private System.Windows.Forms.Label labelIme;
-        private System.Windows.Forms.Button buttonUrediTel;
+        private System.Windows.Forms.Button buttonUrediOsebo;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;

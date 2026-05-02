@@ -1158,5 +1158,129 @@ namespace evidenca_krav
 
             return null;
         }
+
+        public List<string> PridobiZadolzitve()
+        {
+            List<string> zadolzitve = new List<string>();
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT zadolzitev FROM zadolzitve_oseb", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            zadolzitve.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            return zadolzitve;
+        }
+
+        public int DodajOsebo(string ime, string priimek, string tel, string email, string zadolzitev)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "INSERT INTO osebe (ime, priimek, tel, email, zadolzitev_id) " +
+                    "VALUES (@Ime, @Priimek, @Tel, @Email, (SELECT id FROM zadolzitve_oseb WHERE zadolzitev = @Zadolzitev))", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Ime", ime);
+                    cmd.Parameters.AddWithValue("@Priimek", priimek);
+                    cmd.Parameters.AddWithValue("@Tel", tel);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Zadolzitev", zadolzitev);
+                    int rezultat = cmd.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public void DodajZadolzitev(string zadolzitev)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "INSERT INTO zadolzitve_oseb (zadolzitev) VALUES (@Zadolzitev)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Zadolzitev", zadolzitev);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int PridobiIdZadolzitvePrekoImena(string zadolzitev)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT id FROM zadolzitve_oseb WHERE zadolzitev = @Zadolzitev", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Zadolzitev", zadolzitev);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            return -1;
+        }
+
+        public void UrediZadolzitev(int id, string zadolzitev)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "UPDATE zadolzitve_oseb SET zadolzitev = @Zadolzitev WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Zadolzitev", zadolzitev);
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int UrediOsebo(int id, string ime, string priimek, string tel, string email, string zadolzitev)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "UPDATE osebe SET ime = @Ime, priimek = @Priimek, tel = @Tel, email = @Email, zadolzitev_id = (SELECT id FROM zadolzitve_oseb WHERE zadolzitev = @Zadolzitev) " +
+                    "WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Ime", ime);
+                    cmd.Parameters.AddWithValue("@Priimek", priimek);
+                    cmd.Parameters.AddWithValue("@Tel", tel);
+                    cmd.Parameters.AddWithValue("@Email", email);
+                    cmd.Parameters.AddWithValue("@Zadolzitev", zadolzitev);
+                    int rezultat = cmd.ExecuteNonQuery();
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
     }
 }

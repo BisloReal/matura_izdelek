@@ -151,6 +151,12 @@
     <Compile Include="Obrazci\DodajBikaForm.Designer.cs">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\DodajOseboForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajOseboForm.Designer.cs">
+      <DependentUpon>DodajOseboForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -175,6 +181,12 @@
     <Compile Include="Obrazci\UrediKravaForm.Designer.cs">
       <DependentUpon>UrediKravaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediOseboForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediOseboForm.Designer.cs">
+      <DependentUpon>UrediOseboForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\UrediTeleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +198,12 @@
     </Compile>
     <Compile Include="Obrazci\UrediTelicaForm.Designer.cs">
       <DependentUpon>UrediTelicaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\ZadolzitveOsebForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\ZadolzitveOsebForm.Designer.cs">
+      <DependentUpon>ZadolzitveOsebForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -235,6 +253,9 @@
     <EmbeddedResource Include="Obrazci\DodajBikaForm.resx">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajOseboForm.resx">
+      <DependentUpon>DodajOseboForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajTelicoForm.resx">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,11 +268,17 @@
     <EmbeddedResource Include="Obrazci\UrediKravaForm.resx">
       <DependentUpon>UrediKravaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediOseboForm.resx">
+      <DependentUpon>UrediOseboForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTeleForm.resx">
       <DependentUpon>UrediTeleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTelicaForm.resx">
       <DependentUpon>UrediTelicaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\ZadolzitveOsebForm.resx">
+      <DependentUpon>ZadolzitveOsebForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

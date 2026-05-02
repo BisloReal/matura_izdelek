@@ -42,7 +42,19 @@ namespace evidenca_krav.NavigationBarUserControls
 
         private void buttonDodajOsebo_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                DodajOseboForm dodajOseboForm = new DodajOseboForm(db);
+                if (dodajOseboForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Oseba uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                NaloziOsebe();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju osebe: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }
