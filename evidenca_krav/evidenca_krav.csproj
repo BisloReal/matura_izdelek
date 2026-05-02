@@ -163,6 +163,12 @@
     <Compile Include="Obrazci\PasmeBikovForm.Designer.cs">
       <DependentUpon>PasmeBikovForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediBikOsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediBikOsForm.Designer.cs">
+      <DependentUpon>UrediBikOsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\UrediKravaForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +240,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\PasmeBikovForm.resx">
       <DependentUpon>PasmeBikovForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediBikOsForm.resx">
+      <DependentUpon>UrediBikOsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediKravaForm.resx">
       <DependentUpon>UrediKravaForm.cs</DependentUpon>

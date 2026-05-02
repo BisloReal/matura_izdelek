@@ -1,4 +1,5 @@
 ﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.Obrazci;
 using evidenca_krav.Razredi;
 using System;
 using System.Collections.Generic;
@@ -32,7 +33,22 @@ namespace evidenca_krav.NavigationBarUserControls
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
         {
+            try
+            {
+                UrediBikOsForm urediBikOsForm = new UrediBikOsForm(db, BikOs, this);
 
+                if (urediBikOsForm.ShowDialog() == DialogResult.OK)
+                {
+                    db.PosodobiStanja();
+                    PosodobiPodatke();
+
+                    MessageBox.Show("Bik uspešno Posodobljen!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri urejanju bika: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public void PosodobiPodatke()

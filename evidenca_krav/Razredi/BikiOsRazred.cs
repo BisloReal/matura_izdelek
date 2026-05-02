@@ -15,24 +15,6 @@ namespace evidenca_krav.Razredi
         public int PasmaBikId { get; set; }
         public string Izboljsuje { get; set; }
 
-        public BikiOsRazred(int idBik, string rejec, DateTime datumRoj, string pasma, string izboljsuje)
-        {
-            IdBik = idBik;
-            Rejec = rejec;
-            DatumRoj = datumRoj;
-            Pasma = pasma;
-            Izboljsuje = izboljsuje;
-        }
-
-        public BikiOsRazred(int idBik, string rejec, DateTime datumRoj, int pasmaBikId, string izboljsuje)
-        {
-            IdBik = idBik;
-            Rejec = rejec;
-            DatumRoj = datumRoj;
-            PasmaBikId = pasmaBikId;
-            Izboljsuje = izboljsuje;
-        }
-
         public BikiOsRazred(int idBik, string rejec, DateTime datumRoj, int pasmaBikId, string pasma, string izboljsuje)
         {
             IdBik = idBik;

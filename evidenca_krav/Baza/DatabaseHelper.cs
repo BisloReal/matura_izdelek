@@ -248,7 +248,7 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var cmd = new SQLiteCommand(
-                    "SELECT b.id, b.rejec, b.datum_roj, b.izboljsuje, bp.pasma " +
+                    "SELECT  b.id, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
                     "FROM biki_os b " +
                     "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id", conn))
                 {
@@ -261,8 +261,9 @@ namespace evidenca_krav
                                 reader.GetInt32(0),
                                 reader.GetString(1),
                                 reader.GetDateTime(2),
+                                reader.GetInt32(3),
                                 reader.GetString(4),
-                                reader.GetString(3)
+                                reader.GetString(5)
                             ));
                         }
                     }
@@ -278,9 +279,9 @@ namespace evidenca_krav
             {
                 conn.Open();
                 using (var cmd = new SQLiteCommand(
-                    "SELECT b.id, b.rejec, b.datum_roj, b.izboljsuje, bp.pasma, bp.id" +
+                    "SELECT b.id, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
                     "FROM biki_os b " +
-                    "INNER JOIN biki_pasme tz bp b.biki_pasma_id = bp.id WHERE b.id = @Id", conn))
+                    "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id WHERE b.id = @Id", conn))
                 {
                     cmd.Parameters.AddWithValue("@Id", id);
                     using (var reader = cmd.ExecuteReader())
@@ -291,7 +292,7 @@ namespace evidenca_krav
                                 reader.GetInt32(0),
                                 reader.GetString(1),
                                 reader.GetDateTime(2),
-                                reader.GetInt16(3),
+                                reader.GetInt32(3),
                                 reader.GetString(4),
                                 reader.GetString(5)
                             );
@@ -405,6 +406,37 @@ namespace evidenca_krav
                     command.Parameters.AddWithValue("@PasmaBikId", pasmaBikId);
                     command.Parameters.AddWithValue("@Izboljsuje", izboljsuje);
                     command.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public int UrediBikaOs(string rejec, string datumRojstva, int pasmaBikId, string izboljsuje, int id)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE biki_os SET rejec = @Rejec, datum_roj = @DatumRojstva, biki_pasma_id = @PasmaBikId, izboljsuje = @Izboljsuje WHERE id = @Id",
+                    conn))
+                {
+                    command.Parameters.AddWithValue("@Rejec", rejec);
+                    command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
+                    command.Parameters.AddWithValue("@PasmaBikId", pasmaBikId);
+                    command.Parameters.AddWithValue("@Izboljsuje", izboljsuje);
+                    command.Parameters.AddWithValue("@Id", id);
+
+                    Console.WriteLine(command.CommandText);
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
                 }
             }
         }
