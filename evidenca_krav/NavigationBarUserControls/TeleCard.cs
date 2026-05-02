@@ -23,19 +23,19 @@ namespace evidenca_krav.NavigationBarUserControls
             db = dbHelper;
             Tele = tele;
 
-            labelIme.Text = Tele.ime;
-            labelDatumRoj.Text = Tele.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Tele.pasma;
-            labelImeMame.Text = Tele.imeMame;
-            labelImeOceta.Text = Tele.imeOceta;
-            labelUsSt.Text = Tele.usesnaSt;
+            labelIme.Text = Tele.Ime;
+            labelDatumRoj.Text = Tele.DatumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Tele.Pasma;
+            labelImeMame.Text = Tele.ImeMame;
+            labelImeOceta.Text = Tele.ImeOceta;
+            labelUsSt.Text = Tele.UsesnaSt;
         }
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
         {
             try
             {
-                UrediTeleForm dodajTeleForm = new UrediTeleForm(db, Tele.id, this);
+                UrediTeleForm dodajTeleForm = new UrediTeleForm(db, Tele.Id, this);
 
                 if (dodajTeleForm.ShowDialog() == DialogResult.OK)
                 {
@@ -53,13 +53,13 @@ namespace evidenca_krav.NavigationBarUserControls
 
         public void PosodobiPodatke()
         {
-            Tele = db.PridobiTelico(Tele.id);
-            labelIme.Text = Tele.ime;
-            labelDatumRoj.Text = Tele.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Tele.pasma;
-            labelImeMame.Text = Tele.imeMame;
-            labelImeOceta.Text = Tele.imeOceta;
-            labelUsSt.Text = Tele.usesnaSt;
+            Tele = db.PridobiTelico(Tele.Id);
+            labelIme.Text = Tele.Ime;
+            labelDatumRoj.Text = Tele.DatumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Tele.Pasma;
+            labelImeMame.Text = Tele.ImeMame;
+            labelImeOceta.Text = Tele.ImeOceta;
+            labelUsSt.Text = Tele.UsesnaSt;
         }
     }
 }

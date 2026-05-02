@@ -22,19 +22,19 @@ namespace evidenca_krav.NavigationBarUserControls
             Telica = tel;
             db = dbHelper;
 
-            labelIme.Text = Telica.ime;
-            labelDatumRoj.Text = Telica.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Telica.pasma;
-            labelImeMame.Text = Telica.imeMame;
-            labelImeOceta.Text = Telica.imeOceta;
-            labelUsSt.Text = Telica.usesnaSt;
+            labelIme.Text = Telica.Ime;
+            labelDatumRoj.Text = Telica.DatumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Telica.Pasma;
+            labelImeMame.Text = Telica.ImeMame;
+            labelImeOceta.Text = Telica.ImeOceta;
+            labelUsSt.Text = Telica.UsesnaSt;
         }
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
         {
             try
             {
-                UrediTelicaForm urediTelicoForm = new UrediTelicaForm(db, Telica.id, this);
+                UrediTelicaForm urediTelicoForm = new UrediTelicaForm(db, Telica.Id, this);
 
                 if (urediTelicoForm.ShowDialog() == DialogResult.OK)
                 {
@@ -52,13 +52,13 @@ namespace evidenca_krav.NavigationBarUserControls
 
         public void PosodobiPodatke()
         {
-            Telica = db.PridobiTelico(Telica.id);
-            labelIme.Text = Telica.ime;
-            labelDatumRoj.Text = Telica.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Telica.pasma;
-            labelImeMame.Text = Telica.imeMame;
-            labelImeOceta.Text = Telica.imeOceta;
-            labelUsSt.Text =  Telica.usesnaSt;
+            Telica = db.PridobiTelico(Telica.Id);
+            labelIme.Text = Telica.Ime;
+            labelDatumRoj.Text = Telica.DatumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Telica.Pasma;
+            labelImeMame.Text = Telica.ImeMame;
+            labelImeOceta.Text = Telica.ImeOceta;
+            labelUsSt.Text =  Telica.UsesnaSt;
         }
     }
 }

@@ -23,6 +23,7 @@ namespace evidenca_krav
             db = new DatabaseHelper();
 
             Initializacija();
+            db.PosodobiStanja();
         }
 
         private void Initializacija()
@@ -34,7 +35,8 @@ namespace evidenca_krav
                 new Biki(db),
                 new Telice(db),
                 new Odhodi(db),
-                new Teleta(db)
+                new Teleta(db),
+                new Osebe(db)
             };
 
             navNadzor = new NavigationNadzor(userControlList, panelPrikaz);
@@ -68,6 +70,11 @@ namespace evidenca_krav
         private void buttonTeleta_Click(object sender, EventArgs e)
         {
             navNadzor.Prikaz(5);
+        }
+
+        private void buttonOsebe_Click(object sender, EventArgs e)
+        {
+            navNadzor.Prikaz(6);
         }
     }
 }

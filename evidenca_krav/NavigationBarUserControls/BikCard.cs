@@ -23,10 +23,10 @@ namespace evidenca_krav.NavigationBarUserControls
             db = dbHelper;
             BikOs = bik;    
 
-            labelRejec.Text = BikOs.rejec;
-            labelDatumRoj.Text = BikOs.datumRoj.ToString("dd.MM.yyyy");
-            labelIzboljsuje.Text = BikOs.izboljsuje;
-            labelPasma.Text = BikOs.pasma;   
+            labelRejec.Text = BikOs.Rejec;
+            labelDatumRoj.Text = BikOs.DatumRoj.ToString("dd.MM.yyyy");
+            labelIzboljsuje.Text = BikOs.Izboljsuje;
+            labelPasma.Text = BikOs.Pasma;   
 
         }
 
@@ -37,11 +37,11 @@ namespace evidenca_krav.NavigationBarUserControls
 
         public void PosodobiPodatke()
         {
-            BikOs = db.PridobiBikaOs(BikOs.idBik);
-            labelRejec.Text = BikOs.rejec;
-            labelDatumRoj.Text = BikOs.datumRoj.ToString("dd.MM.yyyy");
-            labelIzboljsuje.Text = BikOs.izboljsuje;
-            labelPasma.Text = db.PridobiPasmoPrekoId(BikOs.pasmaBikId);
+            BikOs = db.PridobiBikaOs(BikOs.IdBik);
+            labelRejec.Text = BikOs.Rejec;
+            labelDatumRoj.Text = BikOs.DatumRoj.ToString("dd.MM.yyyy");
+            labelIzboljsuje.Text = BikOs.Izboljsuje;
+            labelPasma.Text = db.PridobiPasmoPrekoId(BikOs.PasmaBikId);
         }
     }
 }

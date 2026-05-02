@@ -108,6 +108,18 @@
     <Compile Include="NavigationBarUserControls\Odhodi.Designer.cs">
       <DependentUpon>Odhodi.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\OsebaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\OsebaCard.Designer.cs">
+      <DependentUpon>OsebaCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Osebe.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\Osebe.Designer.cs">
+      <DependentUpon>Osebe.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\TeleCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -173,6 +185,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razredi\BikiOsRazred.cs" />
     <Compile Include="Razredi\KraveRazred.cs" />
+    <Compile Include="Razredi\OsebeRazred.cs" />
     <Compile Include="Razredi\TeliceRazred.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -194,6 +207,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Odhodi.resx">
       <DependentUpon>Odhodi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\OsebaCard.resx">
+      <DependentUpon>OsebaCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\Osebe.resx">
+      <DependentUpon>Osebe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\TeleCard.resx">
       <DependentUpon>TeleCard.cs</DependentUpon>

@@ -134,7 +134,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelIzboljsuje);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.labelPasma);
@@ -145,7 +145,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "BikCard";
-            this.Size = new System.Drawing.Size(544, 226);
+            this.Size = new System.Drawing.Size(546, 228);
             this.ResumeLayout(false);
             this.PerformLayout();
 

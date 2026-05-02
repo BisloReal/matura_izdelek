@@ -465,157 +465,157 @@ namespace evidenca_krav
 
                             if (!reader.IsDBNull(reader.GetOrdinal("odsvetovani_biki")))
                             {
-                                k.odsvetovaniBiki = reader.GetString(reader.GetOrdinal("odsvetovani_biki"));
+                                k.OdsvetovaniBiki = reader.GetString(reader.GetOrdinal("odsvetovani_biki"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("primerni_biki")))
                             {
-                                k.primerniBiki = reader.GetString(reader.GetOrdinal("primerni_biki"));
+                                k.PrimerniBiki = reader.GetString(reader.GetOrdinal("primerni_biki"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("najbolj_primerni_biki")))
                             {
-                                k.najboljPrimerniBiki = reader.GetString(reader.GetOrdinal("najbolj_primerni_biki"));
+                                k.NajboljPrimerniBiki = reader.GetString(reader.GetOrdinal("najbolj_primerni_biki"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("teza")))
                             {
-                                k.teza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("teza")));
+                                k.Teza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("teza")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_ocena")))
                             {
-                                k.iztokMlekaOcena = reader.GetInt32(reader.GetOrdinal("iztok_mleka_ocena"));
+                                k.IztokMlekaOcena = reader.GetInt32(reader.GetOrdinal("iztok_mleka_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("obseg_prsi_cm")))
                             {
-                                k.obsegPrsi = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("obseg_prsi_cm")));
+                                k.ObsegPrsi = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("obseg_prsi_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("visina_kriza_cm")))
                             {
-                                k.visinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("visina_kriza_cm")));
+                                k.VisinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("visina_kriza_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_telesa_cm")))
                             {
-                                k.globinaTelesa = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("globina_telesa_cm")));
+                                k.GlobinaTelesa = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("globina_telesa_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sirina_spredaj_ocena")))
                             {
-                                k.sirinaVspredaj = reader.GetInt32(reader.GetOrdinal("sirina_spredaj_ocena"));
+                                k.SirinaVspredaj = reader.GetInt32(reader.GetOrdinal("sirina_spredaj_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("hrbet_ocena")))
                             {
-                                k.hrbetOcena = reader.GetInt32(reader.GetOrdinal("hrbet_ocena"));
+                                k.HrbetOcena = reader.GetInt32(reader.GetOrdinal("hrbet_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_kriza_cm")))
                             {
-                                k.dolzinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("dolzina_kriza_cm")));
+                                k.DolzinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("dolzina_kriza_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sedna_sirina_cm")))
                             {
-                                k.sednaSirina = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("sedna_sirina_cm")));
+                                k.SednaSirina = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("sedna_sirina_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("nagib_kriza_ocena")))
                             {
-                                k.nagibKrizaOcena = reader.GetInt32(reader.GetOrdinal("nagib_kriza_ocena"));
+                                k.NagibKrizaOcena = reader.GetInt32(reader.GetOrdinal("nagib_kriza_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("polozaj_kolka_ocena")))
                             {
-                                k.polozajKolkaOcena = reader.GetInt32(reader.GetOrdinal("polozaj_kolka_ocena"));
+                                k.PolozajKolkaOcena = reader.GetInt32(reader.GetOrdinal("polozaj_kolka_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("skocni_sklep_ocena")))
                             {
-                                k.skocniSklepOcena = reader.GetInt32(reader.GetOrdinal("skocni_sklep_ocena"));
+                                k.SkocniSklepOcena = reader.GetInt32(reader.GetOrdinal("skocni_sklep_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("izraz_skoc_sklepa_ocena")))
                             {
-                                k.izrazSkocSklepaOcena = reader.GetInt32(reader.GetOrdinal("izraz_skoc_sklepa_ocena"));
+                                k.IzrazSkocSklepaOcena = reader.GetInt32(reader.GetOrdinal("izraz_skoc_sklepa_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("bicelj_ocena")))
                             {
-                                k.biceljOcena = reader.GetInt32(reader.GetOrdinal("bicelj_ocena"));
+                                k.BiceljOcena = reader.GetInt32(reader.GetOrdinal("bicelj_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("parklji_ocena")))
                             {
-                                k.parkljiOcena = reader.GetInt32(reader.GetOrdinal("parklji_ocena"));
+                                k.ParkljiOcena = reader.GetInt32(reader.GetOrdinal("parklji_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_vimena_ocena")))
                             {
-                                k.dolzinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("dolzina_vimena_ocena"));
+                                k.DolzinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("dolzina_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("pripetost_vimena_ocena")))
                             {
-                                k.pripetostVimenaOcena = reader.GetInt32(reader.GetOrdinal("pripetost_vimena_ocena"));
+                                k.PripetostVimenaOcena = reader.GetInt32(reader.GetOrdinal("pripetost_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("visina_mlecnega_zrcala_ocena")))
                             {
-                                k.visinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("visina_mlecnega_zrcala_ocena"));
+                                k.VisinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("visina_mlecnega_zrcala_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sirina_mlenega_zrcala_ocena")))
                             {
-                                k.sirinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("sirina_mlenega_zrcala_ocena"));
+                                k.SirinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("sirina_mlenega_zrcala_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_vimena_ocena")))
                             {
-                                k.globinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("globina_vimena_ocena"));
+                                k.GlobinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("globina_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dno_vimena_ocena")))
                             {
-                                k.dnoVimenaOcena = reader.GetInt32(reader.GetOrdinal("dno_vimena_ocena"));
+                                k.DnoVimenaOcena = reader.GetInt32(reader.GetOrdinal("dno_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_cent_vezi_ocena")))
                             {
-                                k.globinaCentVeziOcena = reader.GetInt32(reader.GetOrdinal("globina_cent_vezi_ocena"));
+                                k.GlobinaCentVeziOcena = reader.GetInt32(reader.GetOrdinal("globina_cent_vezi_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_seskov_ocena")))
                             {
-                                k.dolzinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("dolzina_seskov_ocena"));
+                                k.DolzinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("dolzina_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("debelina_seskov_ocena")))
                             {
-                                k.debelinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("debelina_seskov_ocena"));
+                                k.DebelinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("debelina_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("namenost_prednjih_seskov_ocena")))
                             {
-                                k.namenostPrednjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenost_prednjih_seskov_ocena"));
+                                k.NamenostPrednjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenost_prednjih_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("namenbnost_zadnjih_seskov_ocena")))
                             {
-                                k.namenostZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenbnost_zadnjih_seskov_ocena"));
+                                k.NamenostZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenbnost_zadnjih_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("polozaj_zadnjih_seskov_ocena")))
                             {
-                                k.polozajZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("polozaj_zadnjih_seskov_ocena"));
+                                k.PolozajZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("polozaj_zadnjih_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("omisicanost_ocena")))
                             {
-                                k.omisicanostOcena = reader.GetInt32(reader.GetOrdinal("omisicanost_ocena"));
+                                k.OmisicanostOcena = reader.GetInt32(reader.GetOrdinal("omisicanost_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("kondicija_ocena")))
@@ -625,47 +625,47 @@ namespace evidenca_krav
 
                             if (!reader.IsDBNull(reader.GetOrdinal("visina_kriza_izracun_ocena")))
                             {
-                                k.visinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("visina_kriza_izracun_ocena"));
+                                k.VisinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("visina_kriza_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_telesa_izracun_ocena")))
                             {
-                                k.globinaTelesaIzracunOcena = reader.GetInt32(reader.GetOrdinal("globina_telesa_izracun_ocena"));
+                                k.GlobinaTelesaIzracunOcena = reader.GetInt32(reader.GetOrdinal("globina_telesa_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_kriza_izracun_ocena")))
                             {
-                                k.dolzinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("dolzina_kriza_izracun_ocena"));
+                                k.DolzinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("dolzina_kriza_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sedna_sirina_izracun_ocena")))
                             {
-                                k.sednaSirinaIzracunOcena = reader.GetInt32(reader.GetOrdinal("sedna_sirina_izracun_ocena"));
+                                k.SednaSirinaIzracunOcena = reader.GetInt32(reader.GetOrdinal("sedna_sirina_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("okvir_ocena")))
                             {
-                                k.okvirOcena = reader.GetInt32(reader.GetOrdinal("okvir_ocena"));
+                                k.OkvirOcena = reader.GetInt32(reader.GetOrdinal("okvir_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("kriz_ocena")))
                             {
-                                k.krizOcena = reader.GetInt32(reader.GetOrdinal("kriz_ocena"));
+                                k.KrizOcena = reader.GetInt32(reader.GetOrdinal("kriz_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("noge_ocena")))
                             {
-                                k.nogeOcena = reader.GetInt32(reader.GetOrdinal("noge_ocena"));
+                                k.NogeOcena = reader.GetInt32(reader.GetOrdinal("noge_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("vime_ocena")))
                             {
-                                k.vimeOcena = reader.GetInt32(reader.GetOrdinal("vime_ocena"));
+                                k.VimeOcena = reader.GetInt32(reader.GetOrdinal("vime_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("telesne_lastnosti_skupaj_ocena")))
                             {
-                                k.telesneSposobnostiSkupajOcena = reader.GetInt32(reader.GetOrdinal("telesne_lastnosti_skupaj_ocena"));
+                                k.TelesneSposobnostiSkupajOcena = reader.GetInt32(reader.GetOrdinal("telesne_lastnosti_skupaj_ocena"));
                             }
 
                             krave.Add(k);
@@ -724,157 +724,157 @@ namespace evidenca_krav
 
                             if (!reader.IsDBNull(reader.GetOrdinal("odsvetovani_biki")))
                             {
-                                k.odsvetovaniBiki = reader.GetString(reader.GetOrdinal("odsvetovani_biki"));
+                                k.OdsvetovaniBiki = reader.GetString(reader.GetOrdinal("odsvetovani_biki"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("primerni_biki")))
                             {
-                                k.primerniBiki = reader.GetString(reader.GetOrdinal("primerni_biki"));
+                                k.PrimerniBiki = reader.GetString(reader.GetOrdinal("primerni_biki"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("najbolj_primerni_biki")))
                             {
-                                k.najboljPrimerniBiki = reader.GetString(reader.GetOrdinal("najbolj_primerni_biki"));
+                                k.NajboljPrimerniBiki = reader.GetString(reader.GetOrdinal("najbolj_primerni_biki"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("teza")))
                             {
-                                k.teza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("teza")));
+                                k.Teza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("teza")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_ocena")))
                             {
-                                k.iztokMlekaOcena = reader.GetInt32(reader.GetOrdinal("iztok_mleka_ocena"));
+                                k.IztokMlekaOcena = reader.GetInt32(reader.GetOrdinal("iztok_mleka_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("obseg_prsi_cm")))
                             {
-                                k.obsegPrsi = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("obseg_prsi_cm")));
+                                k.ObsegPrsi = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("obseg_prsi_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("visina_kriza_cm")))
                             {
-                                k.visinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("visina_kriza_cm")));
+                                k.VisinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("visina_kriza_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_telesa_cm")))
                             {
-                                k.globinaTelesa = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("globina_telesa_cm")));
+                                k.GlobinaTelesa = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("globina_telesa_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sirina_spredaj_ocena")))
                             {
-                                k.sirinaVspredaj = reader.GetInt32(reader.GetOrdinal("sirina_spredaj_ocena"));
+                                k.SirinaVspredaj = reader.GetInt32(reader.GetOrdinal("sirina_spredaj_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("hrbet_ocena")))
                             {
-                                k.hrbetOcena = reader.GetInt32(reader.GetOrdinal("hrbet_ocena"));
+                                k.HrbetOcena = reader.GetInt32(reader.GetOrdinal("hrbet_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_kriza_cm")))
                             {
-                                k.dolzinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("dolzina_kriza_cm")));
+                                k.DolzinaKriza = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("dolzina_kriza_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sedna_sirina_cm")))
                             {
-                                k.sednaSirina = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("sedna_sirina_cm")));
+                                k.SednaSirina = Convert.ToSingle(reader.GetValue(reader.GetOrdinal("sedna_sirina_cm")));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("nagib_kriza_ocena")))
                             {
-                                k.nagibKrizaOcena = reader.GetInt32(reader.GetOrdinal("nagib_kriza_ocena"));
+                                k.NagibKrizaOcena = reader.GetInt32(reader.GetOrdinal("nagib_kriza_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("polozaj_kolka_ocena")))
                             {
-                                k.polozajKolkaOcena = reader.GetInt32(reader.GetOrdinal("polozaj_kolka_ocena"));
+                                k.PolozajKolkaOcena = reader.GetInt32(reader.GetOrdinal("polozaj_kolka_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("skocni_sklep_ocena")))
                             {
-                                k.skocniSklepOcena = reader.GetInt32(reader.GetOrdinal("skocni_sklep_ocena"));
+                                k.SkocniSklepOcena = reader.GetInt32(reader.GetOrdinal("skocni_sklep_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("izraz_skoc_sklepa_ocena")))
                             {
-                                k.izrazSkocSklepaOcena = reader.GetInt32(reader.GetOrdinal("izraz_skoc_sklepa_ocena"));
+                                k.IzrazSkocSklepaOcena = reader.GetInt32(reader.GetOrdinal("izraz_skoc_sklepa_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("bicelj_ocena")))
                             {
-                                k.biceljOcena = reader.GetInt32(reader.GetOrdinal("bicelj_ocena"));
+                                k.BiceljOcena = reader.GetInt32(reader.GetOrdinal("bicelj_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("parklji_ocena")))
                             {
-                                k.parkljiOcena = reader.GetInt32(reader.GetOrdinal("parklji_ocena"));
+                                k.ParkljiOcena = reader.GetInt32(reader.GetOrdinal("parklji_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_vimena_ocena")))
                             {
-                                k.dolzinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("dolzina_vimena_ocena"));
+                                k.DolzinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("dolzina_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("pripetost_vimena_ocena")))
                             {
-                                k.pripetostVimenaOcena = reader.GetInt32(reader.GetOrdinal("pripetost_vimena_ocena"));
+                                k.PripetostVimenaOcena = reader.GetInt32(reader.GetOrdinal("pripetost_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("visina_mlecnega_zrcala_ocena")))
                             {
-                                k.visinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("visina_mlecnega_zrcala_ocena"));
+                                k.VisinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("visina_mlecnega_zrcala_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sirina_mlenega_zrcala_ocena")))
                             {
-                                k.sirinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("sirina_mlenega_zrcala_ocena"));
+                                k.SirinaMlecnegaZrcalaOcena = reader.GetInt32(reader.GetOrdinal("sirina_mlenega_zrcala_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_vimena_ocena")))
                             {
-                                k.globinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("globina_vimena_ocena"));
+                                k.GlobinaVimenaOcena = reader.GetInt32(reader.GetOrdinal("globina_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dno_vimena_ocena")))
                             {
-                                k.dnoVimenaOcena = reader.GetInt32(reader.GetOrdinal("dno_vimena_ocena"));
+                                k.DnoVimenaOcena = reader.GetInt32(reader.GetOrdinal("dno_vimena_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_cent_vezi_ocena")))
                             {
-                                k.globinaCentVeziOcena = reader.GetInt32(reader.GetOrdinal("globina_cent_vezi_ocena"));
+                                k.GlobinaCentVeziOcena = reader.GetInt32(reader.GetOrdinal("globina_cent_vezi_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_seskov_ocena")))
                             {
-                                k.dolzinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("dolzina_seskov_ocena"));
+                                k.DolzinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("dolzina_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("debelina_seskov_ocena")))
                             {
-                                k.debelinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("debelina_seskov_ocena"));
+                                k.DebelinaSeskovOcena = reader.GetInt32(reader.GetOrdinal("debelina_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("namenost_prednjih_seskov_ocena")))
                             {
-                                k.namenostPrednjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenost_prednjih_seskov_ocena"));
+                                k.NamenostPrednjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenost_prednjih_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("namenbnost_zadnjih_seskov_ocena")))
                             {
-                                k.namenostZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenbnost_zadnjih_seskov_ocena"));
+                                k.NamenostZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("namenbnost_zadnjih_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("polozaj_zadnjih_seskov_ocena")))
                             {
-                                k.polozajZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("polozaj_zadnjih_seskov_ocena"));
+                                k.PolozajZadnjihSeskovOcena = reader.GetInt32(reader.GetOrdinal("polozaj_zadnjih_seskov_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("omisicanost_ocena")))
                             {
-                                k.omisicanostOcena = reader.GetInt32(reader.GetOrdinal("omisicanost_ocena"));
+                                k.OmisicanostOcena = reader.GetInt32(reader.GetOrdinal("omisicanost_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("kondicija_ocena")))
@@ -884,47 +884,47 @@ namespace evidenca_krav
 
                             if (!reader.IsDBNull(reader.GetOrdinal("visina_kriza_izracun_ocena")))
                             {
-                                k.visinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("visina_kriza_izracun_ocena"));
+                                k.VisinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("visina_kriza_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("globina_telesa_izracun_ocena")))
                             {
-                                k.globinaTelesaIzracunOcena = reader.GetInt32(reader.GetOrdinal("globina_telesa_izracun_ocena"));
+                                k.GlobinaTelesaIzracunOcena = reader.GetInt32(reader.GetOrdinal("globina_telesa_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("dolzina_kriza_izracun_ocena")))
                             {
-                                k.dolzinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("dolzina_kriza_izracun_ocena"));
+                                k.DolzinaKrizaIzracunOcena = reader.GetInt32(reader.GetOrdinal("dolzina_kriza_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("sedna_sirina_izracun_ocena")))
                             {
-                                k.sednaSirinaIzracunOcena = reader.GetInt32(reader.GetOrdinal("sedna_sirina_izracun_ocena"));
+                                k.SednaSirinaIzracunOcena = reader.GetInt32(reader.GetOrdinal("sedna_sirina_izracun_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("okvir_ocena")))
                             {
-                                k.okvirOcena = reader.GetInt32(reader.GetOrdinal("okvir_ocena"));
+                                k.OkvirOcena = reader.GetInt32(reader.GetOrdinal("okvir_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("kriz_ocena")))
                             {
-                                k.krizOcena = reader.GetInt32(reader.GetOrdinal("kriz_ocena"));
+                                k.KrizOcena = reader.GetInt32(reader.GetOrdinal("kriz_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("noge_ocena")))
                             {
-                                k.nogeOcena = reader.GetInt32(reader.GetOrdinal("noge_ocena"));
+                                k.NogeOcena = reader.GetInt32(reader.GetOrdinal("noge_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("vime_ocena")))
                             {
-                                k.vimeOcena = reader.GetInt32(reader.GetOrdinal("vime_ocena"));
+                                k.VimeOcena = reader.GetInt32(reader.GetOrdinal("vime_ocena"));
                             }
 
                             if (!reader.IsDBNull(reader.GetOrdinal("telesne_lastnosti_skupaj_ocena")))
                             {
-                                k.telesneSposobnostiSkupajOcena = reader.GetInt32(reader.GetOrdinal("telesne_lastnosti_skupaj_ocena"));
+                                k.TelesneSposobnostiSkupajOcena = reader.GetInt32(reader.GetOrdinal("telesne_lastnosti_skupaj_ocena"));
                             }
 
                             return k;
@@ -998,58 +998,58 @@ namespace evidenca_krav
                     WHERE id = @Id
                 ", conn))
                 {
-                    command.Parameters.AddWithValue("@Id", k.id);
-                    command.Parameters.AddWithValue("@Ime", k.ime);
-                    command.Parameters.AddWithValue("@DatumRojstva", k.datumRoj);
-                    command.Parameters.AddWithValue("@Pasma", k.pasma);
-                    command.Parameters.AddWithValue("@ImeMame", k.imeMame);
-                    command.Parameters.AddWithValue("@ImeOceta", k.imeOceta);
-                    command.Parameters.AddWithValue("@UsesnaStevilka", k.usesnaSt);
-                    command.Parameters.AddWithValue("@Laktacija", k.laktacija);
+                    command.Parameters.AddWithValue("@Id", k.Id);
+                    command.Parameters.AddWithValue("@Ime", k.Ime);
+                    command.Parameters.AddWithValue("@DatumRojstva", k.DatumRoj);
+                    command.Parameters.AddWithValue("@Pasma", k.Pasma);
+                    command.Parameters.AddWithValue("@ImeMame", k.ImeMame);
+                    command.Parameters.AddWithValue("@ImeOceta", k.ImeOceta);
+                    command.Parameters.AddWithValue("@UsesnaStevilka", k.UsesnaSt);
+                    command.Parameters.AddWithValue("@Laktacija", k.Laktacija);
 
-                    command.Parameters.AddWithValue("@OdsvetovaniBiki", k.odsvetovaniBiki);
-                    command.Parameters.AddWithValue("@PrimerniBiki", k.primerniBiki);
-                    command.Parameters.AddWithValue("@NajboljPrimerniBiki", k.najboljPrimerniBiki);
-                    command.Parameters.AddWithValue("@Teza", k.teza);
-                    command.Parameters.AddWithValue("@IztokMlekaOcena", k.iztokMlekaOcena);
-                    command.Parameters.AddWithValue("@ObsegPrsi", k.obsegPrsi);
-                    command.Parameters.AddWithValue("@VisinaKriza", k.visinaKriza);
-                    command.Parameters.AddWithValue("@GlobinaTelesa", k.globinaTelesa);
-                    command.Parameters.AddWithValue("@SirinaVspredaj", k.sirinaVspredaj);
-                    command.Parameters.AddWithValue("@HrbetOcena", k.hrbetOcena);
-                    command.Parameters.AddWithValue("@DolzinaKriza", k.dolzinaKriza);
-                    command.Parameters.AddWithValue("@SednaSirina", k.sednaSirina);
-                    command.Parameters.AddWithValue("@NagibKrizaOcena", k.nagibKrizaOcena);
-                    command.Parameters.AddWithValue("@PolozajKolkaOcena", k.polozajKolkaOcena);
-                    command.Parameters.AddWithValue("@SkocniSklepOcena", k.skocniSklepOcena);
-                    command.Parameters.AddWithValue("@IzrazSkocSklepaOcena", k.izrazSkocSklepaOcena);
+                    command.Parameters.AddWithValue("@OdsvetovaniBiki", k.OdsvetovaniBiki);
+                    command.Parameters.AddWithValue("@PrimerniBiki", k.PrimerniBiki);
+                    command.Parameters.AddWithValue("@NajboljPrimerniBiki", k.NajboljPrimerniBiki);
+                    command.Parameters.AddWithValue("@Teza", k.Teza);
+                    command.Parameters.AddWithValue("@IztokMlekaOcena", k.IztokMlekaOcena);
+                    command.Parameters.AddWithValue("@ObsegPrsi", k.ObsegPrsi);
+                    command.Parameters.AddWithValue("@VisinaKriza", k.VisinaKriza);
+                    command.Parameters.AddWithValue("@GlobinaTelesa", k.GlobinaTelesa);
+                    command.Parameters.AddWithValue("@SirinaVspredaj", k.SirinaVspredaj);
+                    command.Parameters.AddWithValue("@HrbetOcena", k.HrbetOcena);
+                    command.Parameters.AddWithValue("@DolzinaKriza", k.DolzinaKriza);
+                    command.Parameters.AddWithValue("@SednaSirina", k.SednaSirina);
+                    command.Parameters.AddWithValue("@NagibKrizaOcena", k.NagibKrizaOcena);
+                    command.Parameters.AddWithValue("@PolozajKolkaOcena", k.PolozajKolkaOcena);
+                    command.Parameters.AddWithValue("@SkocniSklepOcena", k.SkocniSklepOcena);
+                    command.Parameters.AddWithValue("@IzrazSkocSklepaOcena", k.IzrazSkocSklepaOcena);
 
-                    command.Parameters.AddWithValue("@BiceljOcena", k.biceljOcena);
-                    command.Parameters.AddWithValue("@ParkljiOcena", k.parkljiOcena);
-                    command.Parameters.AddWithValue("@DolzinaVimenaOcena", k.dolzinaVimenaOcena);
-                    command.Parameters.AddWithValue("@PripetostVimenaOcena", k.pripetostVimenaOcena);
-                    command.Parameters.AddWithValue("@VisinaMlecnegaZrcalaOcena", k.visinaMlecnegaZrcalaOcena);
-                    command.Parameters.AddWithValue("@SirinaMlecnegaZrcalaOcena", k.sirinaMlecnegaZrcalaOcena);
-                    command.Parameters.AddWithValue("@GlobinaVimenaOcena", k.globinaVimenaOcena);
-                    command.Parameters.AddWithValue("@DnoVimenaOcena", k.dnoVimenaOcena);
-                    command.Parameters.AddWithValue("@GlobinaCentVeziOcena", k.globinaCentVeziOcena);
-                    command.Parameters.AddWithValue("@DolzinaSeskovOcena", k.dolzinaSeskovOcena);
-                    command.Parameters.AddWithValue("@DebelinaSeskovOcena", k.debelinaSeskovOcena);
-                    command.Parameters.AddWithValue("@NamenostPrednjihSeskovOcena", k.namenostPrednjihSeskovOcena);
-                    command.Parameters.AddWithValue("@NamenostZadnjihSeskovOcena", k.namenostZadnjihSeskovOcena);
-                    command.Parameters.AddWithValue("@PolozajZadnjihSeskovOcena", k.polozajZadnjihSeskovOcena);
-                    command.Parameters.AddWithValue("@OmisicanostOcena", k.omisicanostOcena);
+                    command.Parameters.AddWithValue("@BiceljOcena", k.BiceljOcena);
+                    command.Parameters.AddWithValue("@ParkljiOcena", k.ParkljiOcena);
+                    command.Parameters.AddWithValue("@DolzinaVimenaOcena", k.DolzinaVimenaOcena);
+                    command.Parameters.AddWithValue("@PripetostVimenaOcena", k.PripetostVimenaOcena);
+                    command.Parameters.AddWithValue("@VisinaMlecnegaZrcalaOcena", k.VisinaMlecnegaZrcalaOcena);
+                    command.Parameters.AddWithValue("@SirinaMlecnegaZrcalaOcena", k.SirinaMlecnegaZrcalaOcena);
+                    command.Parameters.AddWithValue("@GlobinaVimenaOcena", k.GlobinaVimenaOcena);
+                    command.Parameters.AddWithValue("@DnoVimenaOcena", k.DnoVimenaOcena);
+                    command.Parameters.AddWithValue("@GlobinaCentVeziOcena", k.GlobinaCentVeziOcena);
+                    command.Parameters.AddWithValue("@DolzinaSeskovOcena", k.DolzinaSeskovOcena);
+                    command.Parameters.AddWithValue("@DebelinaSeskovOcena", k.DebelinaSeskovOcena);
+                    command.Parameters.AddWithValue("@NamenostPrednjihSeskovOcena", k.NamenostPrednjihSeskovOcena);
+                    command.Parameters.AddWithValue("@NamenostZadnjihSeskovOcena", k.NamenostZadnjihSeskovOcena);
+                    command.Parameters.AddWithValue("@PolozajZadnjihSeskovOcena", k.PolozajZadnjihSeskovOcena);
+                    command.Parameters.AddWithValue("@OmisicanostOcena", k.OmisicanostOcena);
                     command.Parameters.AddWithValue("@KondicijaOcena", k.kondicijaOcena);
 
-                    command.Parameters.AddWithValue("@VisinaKrizaIzracunOcena", k.visinaKrizaIzracunOcena);
-                    command.Parameters.AddWithValue("@GlobinaTelesaIzracunOcena", k.globinaTelesaIzracunOcena);
-                    command.Parameters.AddWithValue("@DolzinaKrizaIzracunOcena", k.dolzinaKrizaIzracunOcena);
-                    command.Parameters.AddWithValue("@SednaSirinaIzracunOcena", k.sednaSirinaIzracunOcena);
-                    command.Parameters.AddWithValue("@OkvirOcena", k.okvirOcena);
-                    command.Parameters.AddWithValue("@KrizOcena", k.krizOcena);
-                    command.Parameters.AddWithValue("@NogeOcena", k.nogeOcena);
-                    command.Parameters.AddWithValue("@VimeOcena", k.vimeOcena);
-                    command.Parameters.AddWithValue("@TelesneSposobnostiSkupajOcena", k.telesneSposobnostiSkupajOcena);
+                    command.Parameters.AddWithValue("@VisinaKrizaIzracunOcena", k.VisinaKrizaIzracunOcena);
+                    command.Parameters.AddWithValue("@GlobinaTelesaIzracunOcena", k.GlobinaTelesaIzracunOcena);
+                    command.Parameters.AddWithValue("@DolzinaKrizaIzracunOcena", k.DolzinaKrizaIzracunOcena);
+                    command.Parameters.AddWithValue("@SednaSirinaIzracunOcena", k.SednaSirinaIzracunOcena);
+                    command.Parameters.AddWithValue("@OkvirOcena", k.OkvirOcena);
+                    command.Parameters.AddWithValue("@KrizOcena", k.KrizOcena);
+                    command.Parameters.AddWithValue("@NogeOcena", k.NogeOcena);
+                    command.Parameters.AddWithValue("@VimeOcena", k.VimeOcena);
+                    command.Parameters.AddWithValue("@TelesneSposobnostiSkupajOcena", k.TelesneSposobnostiSkupajOcena);
 
                     int rezultat = command.ExecuteNonQuery();
 
@@ -1063,6 +1063,68 @@ namespace evidenca_krav
                     }
                 }
             }
-        }   
+        }
+
+
+        // Osebe
+        public List<OsebeRazred> PridobiOsebe()
+        {
+            List<OsebeRazred> osebe = new List<OsebeRazred>();
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.id, o.ime, o.priimek, o.tel, o.email, z.zadolzitev " +
+                    "FROM osebe o INNER JOIN zadolzitve_oseb z ON o.zadolzitev_id = z.id", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            osebe.Add(new OsebeRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5)
+                            ));
+                        }
+                    }
+                }
+            }
+            return osebe;
+        }
+
+        public OsebeRazred PridobiOsebo(int idOsebe)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.id, o.ime, o.priimek, o.tel, o.email, z.zadolzitev " +
+                    "FROM osebe o INNER JOIN zadolzitve_oseb z ON o.zadolzitev_id = z.id" +
+                    " WHERE o.id = @idOsebe", conn))
+                {
+                    cmd.Parameters.AddWithValue("@idOsebe", idOsebe);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new OsebeRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5)
+                            );
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
     }
 }

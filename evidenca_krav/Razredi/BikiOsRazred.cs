@@ -8,39 +8,39 @@ namespace evidenca_krav.Razredi
 {
     public class BikiOsRazred
     {
-        public int idBik { get; set; }
-        public string rejec { get; set; }
-        public DateTime datumRoj { get; set; }
-        public string pasma { get; set; }
-        public int pasmaBikId { get; set; }
-        public string izboljsuje { get; set; }
+        public int IdBik { get; set; }
+        public string Rejec { get; set; }
+        public DateTime DatumRoj { get; set; }
+        public string Pasma { get; set; }
+        public int PasmaBikId { get; set; }
+        public string Izboljsuje { get; set; }
 
         public BikiOsRazred(int idBik, string rejec, DateTime datumRoj, string pasma, string izboljsuje)
         {
-            this.idBik = idBik;
-            this.rejec = rejec;
-            this.datumRoj = datumRoj;
-            this.pasma = pasma;
-            this.izboljsuje = izboljsuje;
+            IdBik = idBik;
+            Rejec = rejec;
+            DatumRoj = datumRoj;
+            Pasma = pasma;
+            Izboljsuje = izboljsuje;
         }
 
         public BikiOsRazred(int idBik, string rejec, DateTime datumRoj, int pasmaBikId, string izboljsuje)
         {
-            this.idBik = idBik;
-            this.rejec = rejec;
-            this.datumRoj = datumRoj;
-            this.pasmaBikId = pasmaBikId;
-            this.izboljsuje = izboljsuje;
+            IdBik = idBik;
+            Rejec = rejec;
+            DatumRoj = datumRoj;
+            PasmaBikId = pasmaBikId;
+            Izboljsuje = izboljsuje;
         }
 
         public BikiOsRazred(int idBik, string rejec, DateTime datumRoj, int pasmaBikId, string pasma, string izboljsuje)
         {
-            this.idBik = idBik;
-            this.rejec = rejec;
-            this.datumRoj = datumRoj;
-            this.pasmaBikId = pasmaBikId;
-            this.pasma = pasma;
-            this.izboljsuje = izboljsuje;
+            IdBik = idBik;
+            Rejec = rejec;
+            DatumRoj = datumRoj;
+            PasmaBikId = pasmaBikId;
+            Pasma = pasma;
+            Izboljsuje = izboljsuje;
         }
     }
 }

@@ -178,7 +178,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelUsSt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelImeOceta);
@@ -193,7 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "TelicaCard";
-            this.Size = new System.Drawing.Size(548, 302);
+            this.Size = new System.Drawing.Size(550, 304);
             this.ResumeLayout(false);
             this.PerformLayout();
 

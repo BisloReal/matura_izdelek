@@ -26,11 +26,11 @@ namespace evidenca_krav.Obrazci
             teleCard = tc;
 
             Tele = db.PridobiTelico(idTel);
-            textBoxImeTel.Text = Tele.ime;
-            dateTimePicker.Value = Tele.datumRoj;
-            textBoxPasmaTel.Text = Tele.pasma;
-            textBoxImeMameTel.Text = Tele.imeMame;
-            textBoxImeOcetaTel.Text = Tele.imeOceta;
+            textBoxImeTel.Text = Tele.Ime;
+            dateTimePicker.Value = Tele.DatumRoj;
+            textBoxPasmaTel.Text = Tele.Pasma;
+            textBoxImeMameTel.Text = Tele.ImeMame;
+            textBoxImeOcetaTel.Text = Tele.ImeOceta;
         }
 
         private void buttonPotrdi_Click(object sender, EventArgs e)
@@ -58,7 +58,7 @@ namespace evidenca_krav.Obrazci
                     usesna_stevilka = "/";
                 }
 
-                int izvedba = db.UrediTelico(Tele.id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
+                int izvedba = db.UrediTelico(Tele.Id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
 
                 if (izvedba == 0)
                 {

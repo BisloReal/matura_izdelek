@@ -24,19 +24,19 @@ namespace evidenca_krav.NavigationBarUserControls
             db = dbHelper;
             Krava = krava;
 
-            labelIme.Text = Krava.ime;
-            labelDatumRoj.Text = Krava.datumRoj.ToString("dd.MM.yyyy");
-            labelUsSt.Text = Krava.usesnaSt;
-            labelPasma.Text = Krava.pasma;
-            labelImeMame.Text = Krava.imeMame;
-            labelImeOceta.Text = Krava.imeOceta;
-            if (krava.laktacija == null)
+            labelIme.Text = Krava.Ime;
+            labelDatumRoj.Text = Krava.DatumRoj.ToString("dd.MM.yyyy");
+            labelUsSt.Text = Krava.UsesnaSt;
+            labelPasma.Text = Krava.Pasma;
+            labelImeMame.Text = Krava.ImeMame;
+            labelImeOceta.Text = Krava.ImeOceta;
+            if (krava.Laktacija == null)
             {
                 labelLaktacija.Text = "/";
             }
             else
             {
-                labelLaktacija.Text = Krava.laktacija;
+                labelLaktacija.Text = Krava.Laktacija;
             }
         }
 
@@ -44,7 +44,7 @@ namespace evidenca_krav.NavigationBarUserControls
         {
             try
             {
-                UrediKravaForm urediKravaForm = new UrediKravaForm(db, Krava.id, this);
+                UrediKravaForm urediKravaForm = new UrediKravaForm(db, Krava.Id, this);
 
                 if (urediKravaForm.ShowDialog() == DialogResult.OK)
                 {
@@ -63,13 +63,13 @@ namespace evidenca_krav.NavigationBarUserControls
 
         public void PosodobiPodatke()
         {
-            Krava = db.PridobiKravo(Krava.id);
-            labelIme.Text = Krava.ime;
-            labelDatumRoj.Text = Krava.datumRoj.ToString("dd.MM.yyyy");
-            labelPasma.Text = Krava.pasma;
-            labelImeMame.Text = Krava.imeMame;
-            labelImeOceta.Text = Krava.imeOceta;
-            labelUsSt.Text = Krava.usesnaSt;
+            Krava = db.PridobiKravo(Krava.Id);
+            labelIme.Text = Krava.Ime;
+            labelDatumRoj.Text = Krava.DatumRoj.ToString("dd.MM.yyyy");
+            labelPasma.Text = Krava.Pasma;
+            labelImeMame.Text = Krava.ImeMame;
+            labelImeOceta.Text = Krava.ImeOceta;
+            labelUsSt.Text = Krava.UsesnaSt;
         }
     }
 }

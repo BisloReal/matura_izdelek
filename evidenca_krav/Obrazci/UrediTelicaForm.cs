@@ -24,11 +24,11 @@ namespace evidenca_krav.Obrazci
             telicaCard = tc;
 
             Telica = db.PridobiTelico(idTel);
-            textBoxImeTel.Text = Telica.ime;
-            dateTimePicker.Value = Telica.datumRoj;
-            textBoxPasmaTel.Text = Telica.pasma;
-            textBoxImeMameTel.Text = Telica.imeMame;
-            textBoxImeOcetaTel.Text = Telica.imeOceta;
+            textBoxImeTel.Text = Telica.Ime;
+            dateTimePicker.Value = Telica.DatumRoj;
+            textBoxPasmaTel.Text = Telica.Pasma;
+            textBoxImeMameTel.Text = Telica.ImeMame;
+            textBoxImeOcetaTel.Text = Telica.ImeOceta;
         }
 
         private void buttonPotrdi_Click(object sender, EventArgs e)
@@ -56,7 +56,7 @@ namespace evidenca_krav.Obrazci
                     usesna_stevilka = "/";
                 }
 
-                int izvedba = db.UrediTelico(Telica.id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
+                int izvedba = db.UrediTelico(Telica.Id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
 
                 if (izvedba == 0)
                 {
