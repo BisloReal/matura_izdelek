@@ -52,7 +52,6 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanelBiki.AutoScroll = true;
-            this.flowLayoutPanelBiki.AutoSize = true;
             this.flowLayoutPanelBiki.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.flowLayoutPanelBiki.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanelBiki.Location = new System.Drawing.Point(34, 106);
