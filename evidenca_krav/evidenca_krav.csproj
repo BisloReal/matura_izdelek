@@ -102,6 +102,12 @@
     <Compile Include="NavigationBarUserControls\Krave.Designer.cs">
       <DependentUpon>Krave.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\OdhodCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\OdhodCard.Designer.cs">
+      <DependentUpon>OdhodCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\Odhodi.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -151,6 +157,12 @@
     <Compile Include="Obrazci\DodajBikaForm.Designer.cs">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\DodajOdhodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajOdhodForm.Designer.cs">
+      <DependentUpon>DodajOdhodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\DodajOseboForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -181,6 +193,12 @@
     <Compile Include="Obrazci\UrediKravaForm.Designer.cs">
       <DependentUpon>UrediKravaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediOdhodForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediOdhodForm.Designer.cs">
+      <DependentUpon>UrediOdhodForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\UrediOseboForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -209,6 +227,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razredi\BikiOsRazred.cs" />
     <Compile Include="Razredi\KraveRazred.cs" />
+    <Compile Include="Razredi\OdhodiRazred.cs" />
     <Compile Include="Razredi\OsebeRazred.cs" />
     <Compile Include="Razredi\TeliceRazred.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -228,6 +247,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Krave.resx">
       <DependentUpon>Krave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\OdhodCard.resx">
+      <DependentUpon>OdhodCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Odhodi.resx">
       <DependentUpon>Odhodi.cs</DependentUpon>
@@ -253,6 +275,9 @@
     <EmbeddedResource Include="Obrazci\DodajBikaForm.resx">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajOdhodForm.resx">
+      <DependentUpon>DodajOdhodForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajOseboForm.resx">
       <DependentUpon>DodajOseboForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediKravaForm.resx">
       <DependentUpon>UrediKravaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediOdhodForm.resx">
+      <DependentUpon>UrediOdhodForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediOseboForm.resx">
       <DependentUpon>UrediOseboForm.cs</DependentUpon>

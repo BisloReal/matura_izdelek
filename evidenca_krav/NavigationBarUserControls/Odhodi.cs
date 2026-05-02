@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace evidenca_krav.NavigationBarUserControls
 {
-    public partial class Odhodi : UserControl
+    public partial class Odhodi : UserControl, IRefreshable
     {
         private DatabaseHelper db;
         public Odhodi(DatabaseHelper dbHelper)
@@ -21,6 +21,39 @@ namespace evidenca_krav.NavigationBarUserControls
             InitializeComponent();
 
             db = dbHelper;
+            naloziOdhode();
+        }
+
+        public void naloziOdhode()
+        {
+            flowLayoutPanel1.Controls.Clear();
+            List<OdhodiRazred> odhodi = db.PridobiOdhode();
+            foreach (OdhodiRazred o in odhodi)
+            {
+                flowLayoutPanel1.Controls.Add(new OdhodCard(db, o, this));
+            }
+        }
+
+        private void buttonDodajTelico_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db);
+                if (dodajOdhodForm.ShowDialog() == DialogResult.OK)
+                {
+                    naloziOdhode();
+                    MessageBox.Show("Odhod uspešno dodan.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju odhoda: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        public void Posodobi()
+        {
+            naloziOdhode();
         }
     }
 }

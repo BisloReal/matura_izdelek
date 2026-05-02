@@ -50,6 +50,26 @@ namespace evidenca_krav
             }
         }
 
+        public List<string> PridobiUsStVsehZivali()
+        {
+            List<string> usStZivali = new List<string>();
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT usesna_stevilka FROM zivali WHERE usesna_stevilka IS NOT NULL", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            usStZivali.Add(reader.GetString(0));
+                        }
+                    }
+                }
+            }
+            return usStZivali;
+        }
+
         // TELICE
         public int DodajTelico(string ime, string datumRojstva, string pasma, string imeMame, string imeOceta)
         {
@@ -1097,6 +1117,46 @@ namespace evidenca_krav
             }
         }
 
+        public string PridobiUsStKrave(int id)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT usesna_stevilka FROM zivali WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int PridobiIdKravePrekoUsSt(string usSt)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT id FROM zivali WHERE usesna_stevilka = @UsSt", conn))
+                {
+                    cmd.Parameters.AddWithValue("@UsSt", usSt);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return reader.GetInt32(0);
+                        }
+                    }
+                }
+            }
+            return -1;
+        }
+
 
         // Osebe
         public List<OsebeRazred> PridobiOsebe()
@@ -1270,6 +1330,146 @@ namespace evidenca_krav
                     cmd.Parameters.AddWithValue("@Tel", tel);
                     cmd.Parameters.AddWithValue("@Email", email);
                     cmd.Parameters.AddWithValue("@Zadolzitev", zadolzitev);
+                    int rezultat = cmd.ExecuteNonQuery();
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        // Odhodi
+
+        public List<OdhodiRazred> PridobiOdhode()
+        {
+            List<OdhodiRazred> odhodi = new List<OdhodiRazred>();
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.id, o.datum, o.[g-mid], o.lokacija, o.vzrok, o.opombe, o.krava_id " +
+                    "FROM odhodi_krav o", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            odhodi.Add(new OdhodiRazred(
+                                reader.GetInt32(0),
+                                reader.GetDateTime(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5),
+                                reader.GetInt32(6)
+                            ));
+                        }
+                    }
+                }
+            }
+            return odhodi;
+        }
+
+        public int DodajOdhod(DateTime datum, string g_mid, string lokacija, string vzrok, string opombe, int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "INSERT INTO odhodi_krav (datum, [g-mid], lokacija, vzrok, opombe, krava_id) " +
+                    "VALUES (@Datum, @GMid, @Lokacija, @Vzrok, @Opombe, @KravaId)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Datum", datum);
+                    cmd.Parameters.AddWithValue("@GMid", g_mid);
+                    cmd.Parameters.AddWithValue("@Lokacija", lokacija);
+                    cmd.Parameters.AddWithValue("@Vzrok", vzrok);
+                    cmd.Parameters.AddWithValue("@Opombe", opombe);
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    int rezultat = cmd.ExecuteNonQuery();
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int UrediOdhod(int id, DateTime datum, string g_mid, string lokacija, string vzrok, string opombe, int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "UPDATE odhodi_krav SET datum = @Datum, [g-mid] = @GMid, lokacija = @Lokacija, vzrok = @Vzrok, opombe = @Opombe, krava_id = @KravaId " +
+                    "WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Datum", datum);
+                    cmd.Parameters.AddWithValue("@GMid", g_mid);
+                    cmd.Parameters.AddWithValue("@Lokacija", lokacija);
+                    cmd.Parameters.AddWithValue("@Vzrok", vzrok);
+                    cmd.Parameters.AddWithValue("@Opombe", opombe);
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    int rezultat = cmd.ExecuteNonQuery();
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public OdhodiRazred PridobiOdhod(int idOdhoda)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT id, datum, [g-mid], lokacija, vzrok, opombe, krava_id " +
+                    "FROM odhodi_krav WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", idOdhoda);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new OdhodiRazred(
+                                reader.GetInt32(0),
+                                reader.GetDateTime(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5),
+                                reader.GetInt32(6)
+                            );
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int IzbrisiOdhod(int idOdhoda)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("DELETE FROM odhodi_krav WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", idOdhoda);
                     int rezultat = cmd.ExecuteNonQuery();
                     if (rezultat > 0)
                     {
