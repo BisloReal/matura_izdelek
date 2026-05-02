@@ -30,6 +30,14 @@ namespace evidenca_krav.NavigationBarUserControls
             labelPasma.Text = Krava.pasma;
             labelImeMame.Text = Krava.imeMame;
             labelImeOceta.Text = Krava.imeOceta;
+            if (krava.laktacija == null)
+            {
+                labelLaktacija.Text = "/";
+            }
+            else
+            {
+                labelLaktacija.Text = Krava.laktacija;
+            }
         }
 
         private void buttonUrediKrav_Click(object sender, EventArgs e)
@@ -43,12 +51,12 @@ namespace evidenca_krav.NavigationBarUserControls
                     db.PosodobiStanja();
                     PosodobiPodatke();
 
-                    MessageBox.Show("Telica uspešno Posodobljena!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Krava uspešno posodobljena!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Napaka pri dodajanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Napaka pri urejanju krave: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

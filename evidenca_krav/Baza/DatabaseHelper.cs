@@ -934,5 +934,135 @@ namespace evidenca_krav
             }
             return null;
         }
+
+        public int UrediKravo(KraveRazred k)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(@"
+                    UPDATE zivali SET
+                        ime = @Ime,
+                        datum_roj = @DatumRojstva,
+                        pasma = @Pasma,
+                        ime_mame = @ImeMame,
+                        ime_oceta = @ImeOceta,
+                        usesna_stevilka = @UsesnaStevilka,
+                        laktacija = @Laktacija,
+
+                        odsvetovani_biki = @OdsvetovaniBiki,
+                        primerni_biki = @PrimerniBiki,
+                        najbolj_primerni_biki = @NajboljPrimerniBiki,
+                        teza = @Teza,
+                        iztok_mleka_ocena = @IztokMlekaOcena,
+                        obseg_prsi_cm = @ObsegPrsi,
+                        visina_kriza_cm = @VisinaKriza,
+                        globina_telesa_cm = @GlobinaTelesa,
+                        sirina_spredaj_ocena = @SirinaVspredaj,
+                        hrbet_ocena = @HrbetOcena,
+                        dolzina_kriza_cm = @DolzinaKriza,
+                        sedna_sirina_cm = @SednaSirina,
+                        nagib_kriza_ocena = @NagibKrizaOcena,
+                        polozaj_kolka_ocena = @PolozajKolkaOcena,
+                        skocni_sklep_ocena = @SkocniSklepOcena,
+                        izraz_skoc_sklepa_ocena = @IzrazSkocSklepaOcena,
+
+                        bicelj_ocena = @BiceljOcena,
+                        parklji_ocena = @ParkljiOcena,
+                        dolzina_vimena_ocena = @DolzinaVimenaOcena,
+                        pripetost_vimena_ocena = @PripetostVimenaOcena,
+                        visina_mlecnega_zrcala_ocena = @VisinaMlecnegaZrcalaOcena,
+                        sirina_mlenega_zrcala_ocena = @SirinaMlecnegaZrcalaOcena,
+                        globina_vimena_ocena = @GlobinaVimenaOcena,
+                        dno_vimena_ocena = @DnoVimenaOcena,
+                        globina_cent_vezi_ocena = @GlobinaCentVeziOcena,
+                        dolzina_seskov_ocena = @DolzinaSeskovOcena,
+                        debelina_seskov_ocena = @DebelinaSeskovOcena,
+                        namenost_prednjih_seskov_ocena = @NamenostPrednjihSeskovOcena,
+                        namenbnost_zadnjih_seskov_ocena = @NamenostZadnjihSeskovOcena,
+                        polozaj_zadnjih_seskov_ocena = @PolozajZadnjihSeskovOcena,
+                        omisicanost_ocena = @OmisicanostOcena,
+                        kondicija_ocena = @KondicijaOcena,
+
+                        visina_kriza_izracun_ocena = @VisinaKrizaIzracunOcena,
+                        globina_telesa_izracun_ocena = @GlobinaTelesaIzracunOcena,
+                        dolzina_kriza_izracun_ocena = @DolzinaKrizaIzracunOcena,
+                        sedna_sirina_izracun_ocena = @SednaSirinaIzracunOcena,
+                        okvir_ocena = @OkvirOcena,
+                        kriz_ocena = @KrizOcena,
+                        noge_ocena = @NogeOcena,
+                        vime_ocena = @VimeOcena,
+                        telesne_lastnosti_skupaj_ocena = @TelesneSposobnostiSkupajOcena
+
+                    WHERE id = @Id
+                ", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", k.id);
+                    command.Parameters.AddWithValue("@Ime", k.ime);
+                    command.Parameters.AddWithValue("@DatumRojstva", k.datumRoj);
+                    command.Parameters.AddWithValue("@Pasma", k.pasma);
+                    command.Parameters.AddWithValue("@ImeMame", k.imeMame);
+                    command.Parameters.AddWithValue("@ImeOceta", k.imeOceta);
+                    command.Parameters.AddWithValue("@UsesnaStevilka", k.usesnaSt);
+                    command.Parameters.AddWithValue("@Laktacija", k.laktacija);
+
+                    command.Parameters.AddWithValue("@OdsvetovaniBiki", k.odsvetovaniBiki);
+                    command.Parameters.AddWithValue("@PrimerniBiki", k.primerniBiki);
+                    command.Parameters.AddWithValue("@NajboljPrimerniBiki", k.najboljPrimerniBiki);
+                    command.Parameters.AddWithValue("@Teza", k.teza);
+                    command.Parameters.AddWithValue("@IztokMlekaOcena", k.iztokMlekaOcena);
+                    command.Parameters.AddWithValue("@ObsegPrsi", k.obsegPrsi);
+                    command.Parameters.AddWithValue("@VisinaKriza", k.visinaKriza);
+                    command.Parameters.AddWithValue("@GlobinaTelesa", k.globinaTelesa);
+                    command.Parameters.AddWithValue("@SirinaVspredaj", k.sirinaVspredaj);
+                    command.Parameters.AddWithValue("@HrbetOcena", k.hrbetOcena);
+                    command.Parameters.AddWithValue("@DolzinaKriza", k.dolzinaKriza);
+                    command.Parameters.AddWithValue("@SednaSirina", k.sednaSirina);
+                    command.Parameters.AddWithValue("@NagibKrizaOcena", k.nagibKrizaOcena);
+                    command.Parameters.AddWithValue("@PolozajKolkaOcena", k.polozajKolkaOcena);
+                    command.Parameters.AddWithValue("@SkocniSklepOcena", k.skocniSklepOcena);
+                    command.Parameters.AddWithValue("@IzrazSkocSklepaOcena", k.izrazSkocSklepaOcena);
+
+                    command.Parameters.AddWithValue("@BiceljOcena", k.biceljOcena);
+                    command.Parameters.AddWithValue("@ParkljiOcena", k.parkljiOcena);
+                    command.Parameters.AddWithValue("@DolzinaVimenaOcena", k.dolzinaVimenaOcena);
+                    command.Parameters.AddWithValue("@PripetostVimenaOcena", k.pripetostVimenaOcena);
+                    command.Parameters.AddWithValue("@VisinaMlecnegaZrcalaOcena", k.visinaMlecnegaZrcalaOcena);
+                    command.Parameters.AddWithValue("@SirinaMlecnegaZrcalaOcena", k.sirinaMlecnegaZrcalaOcena);
+                    command.Parameters.AddWithValue("@GlobinaVimenaOcena", k.globinaVimenaOcena);
+                    command.Parameters.AddWithValue("@DnoVimenaOcena", k.dnoVimenaOcena);
+                    command.Parameters.AddWithValue("@GlobinaCentVeziOcena", k.globinaCentVeziOcena);
+                    command.Parameters.AddWithValue("@DolzinaSeskovOcena", k.dolzinaSeskovOcena);
+                    command.Parameters.AddWithValue("@DebelinaSeskovOcena", k.debelinaSeskovOcena);
+                    command.Parameters.AddWithValue("@NamenostPrednjihSeskovOcena", k.namenostPrednjihSeskovOcena);
+                    command.Parameters.AddWithValue("@NamenostZadnjihSeskovOcena", k.namenostZadnjihSeskovOcena);
+                    command.Parameters.AddWithValue("@PolozajZadnjihSeskovOcena", k.polozajZadnjihSeskovOcena);
+                    command.Parameters.AddWithValue("@OmisicanostOcena", k.omisicanostOcena);
+                    command.Parameters.AddWithValue("@KondicijaOcena", k.kondicijaOcena);
+
+                    command.Parameters.AddWithValue("@VisinaKrizaIzracunOcena", k.visinaKrizaIzracunOcena);
+                    command.Parameters.AddWithValue("@GlobinaTelesaIzracunOcena", k.globinaTelesaIzracunOcena);
+                    command.Parameters.AddWithValue("@DolzinaKrizaIzracunOcena", k.dolzinaKrizaIzracunOcena);
+                    command.Parameters.AddWithValue("@SednaSirinaIzracunOcena", k.sednaSirinaIzracunOcena);
+                    command.Parameters.AddWithValue("@OkvirOcena", k.okvirOcena);
+                    command.Parameters.AddWithValue("@KrizOcena", k.krizOcena);
+                    command.Parameters.AddWithValue("@NogeOcena", k.nogeOcena);
+                    command.Parameters.AddWithValue("@VimeOcena", k.vimeOcena);
+                    command.Parameters.AddWithValue("@TelesneSposobnostiSkupajOcena", k.telesneSposobnostiSkupajOcena);
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }   
     }
 }

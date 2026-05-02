@@ -1,4 +1,5 @@
-﻿using evidenca_krav.NavigationBarUserControls;
+﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.NavigationBarUserControls;
 using evidenca_krav.Razredi;
 using evidenca_krav.RazredSi;
 using System;
@@ -82,5 +83,95 @@ namespace evidenca_krav.Obrazci
             DialogResult = DialogResult.Abort;
             Close();
         }
+
+        private void buttonPotrdi_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(textBoxIme.Text) ||
+                string.IsNullOrWhiteSpace(textBoxPasma.Text) ||
+                string.IsNullOrWhiteSpace(textBoxImeMame.Text) ||
+                string.IsNullOrWhiteSpace(textBoxImeOceta.Text) ||
+                string.IsNullOrWhiteSpace(textBoxLaktacija.Text))
+            {
+                MessageBox.Show("Izpolnite vsa polja osnovnih podatkov.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
+            try
+            {
+                Krava.ime = textBoxIme.Text.Trim();
+                Krava.datumRoj = dateTimePicker.Value;
+                Krava.pasma = textBoxPasma.Text.Trim();
+                Krava.imeMame = textBoxImeMame.Text.Trim();
+                Krava.imeOceta = textBoxImeOceta.Text.Trim();
+                Krava.laktacija = textBoxLaktacija.Text.Trim();
+                Krava.odsvetovaniBiki = textBoxodsvetovaniBiki.Text.Trim();
+                Krava.primerniBiki = textBoxprimerniBiki.Text.Trim();
+                Krava.najboljPrimerniBiki = textBoxnajboljPrimerniBiki.Text.Trim();
+
+                if (string.IsNullOrWhiteSpace(textBoxUsSt.Text))
+                    Krava.usesnaSt = "/";
+                else
+                    Krava.usesnaSt = textBoxUsSt.Text.Trim();
+
+                Krava.teza = Convert.ToSingle(textBoxteza.Text);
+                Krava.obsegPrsi = Convert.ToSingle(textBoxobsegPrsi.Text);
+                Krava.visinaKriza = Convert.ToSingle(textBoxvisinaKriza.Text);
+                Krava.globinaTelesa = Convert.ToSingle(textBoxglobinaTelesa.Text);
+                Krava.dolzinaKriza = Convert.ToSingle(textBoxdolzinaKriza.Text);
+                Krava.sednaSirina = Convert.ToSingle(textBoxsednaSirina.Text);
+
+                Krava.iztokMlekaOcena = Convert.ToInt32(textBoxiztokMlekaOcena.Text);
+                Krava.sirinaVspredaj = Convert.ToInt32(textBoxsirinaVspredaj.Text);
+                Krava.hrbetOcena = Convert.ToInt32(textBoxhrbetOcena.Text);
+                Krava.nagibKrizaOcena = Convert.ToInt32(textBoxnagibKrizaOcena.Text);
+                Krava.polozajKolkaOcena = Convert.ToInt32(textBoxpolozajKolkaOcena.Text);
+                Krava.skocniSklepOcena = Convert.ToInt32(textBoxskocniSklepOcena.Text);
+                Krava.izrazSkocSklepaOcena = Convert.ToInt32(textBoxizrazSkocSklepaOcena.Text);
+                Krava.biceljOcena = Convert.ToInt32(textBoxbiceljOcena.Text);
+                Krava.parkljiOcena = Convert.ToInt32(textBoxparkljiOcena.Text);
+                Krava.dolzinaVimenaOcena = Convert.ToInt32(textBoxdolzinaVimenaOcena.Text);
+                Krava.pripetostVimenaOcena = Convert.ToInt32(textBoxpripetostVimenaOcena.Text);
+                Krava.visinaMlecnegaZrcalaOcena = Convert.ToInt32(textBoxvisinaMlecnegaZrcalaOcena.Text);
+                Krava.sirinaMlecnegaZrcalaOcena = Convert.ToInt32(textBoxsirinaMlecnegaZrcalaOcena.Text);
+                Krava.globinaVimenaOcena = Convert.ToInt32(textBoxglobinaVimenaOcena.Text);
+                Krava.dnoVimenaOcena = Convert.ToInt32(textBoxdnoVimenaOcena.Text);
+                Krava.globinaCentVeziOcena = Convert.ToInt32(textBoxglobinaCentVeziOcena.Text);
+                Krava.dolzinaSeskovOcena = Convert.ToInt32(textBoxdolzinaSeskovOcena.Text);
+                Krava.debelinaSeskovOcena = Convert.ToInt32(textBoxdebelinaSeskovOcena.Text);
+                Krava.namenostPrednjihSeskovOcena = Convert.ToInt32(textBoxnamenostPrednjihSeskovOcena.Text);
+                Krava.namenostZadnjihSeskovOcena = Convert.ToInt32(textBoxnamenostZadnjihSeskovOcena.Text);
+                Krava.polozajZadnjihSeskovOcena = Convert.ToInt32(textBoxpolozajZadnjihSeskovOcena.Text);
+                Krava.omisicanostOcena = Convert.ToInt32(textBoxomisicanostOcena.Text);
+                Krava.kondicijaOcena = Convert.ToInt32(textBoxkondicijaOcena.Text);
+                Krava.visinaKrizaIzracunOcena = Convert.ToInt32(textBoxvisinaKrizaIzracunOcena.Text);
+                Krava.globinaTelesaIzracunOcena = Convert.ToInt32(textBoxglobinaTelesaIzracunOcena.Text);
+                Krava.dolzinaKrizaIzracunOcena = Convert.ToInt32(textBoxdolzinaKrizaIzracunOcena.Text);
+                Krava.sednaSirinaIzracunOcena = Convert.ToInt32(textBoxsednaSirinaIzracunOcena.Text);
+                Krava.okvirOcena = Convert.ToInt32(textBoxokvirOcena.Text);
+                Krava.krizOcena = Convert.ToInt32(textBoxkrizOcena.Text);
+                Krava.nogeOcena = Convert.ToInt32(textBoxnogeOcena.Text);
+                Krava.vimeOcena = Convert.ToInt32(textBoxvimeOcena.Text);
+                Krava.telesneSposobnostiSkupajOcena = Convert.ToInt32(textBoxtelesneSposobnostiSkupajOcena.Text);
+
+                int izvedba = db.UrediKravo(Krava);
+
+                if (izvedba == 0)
+                {
+                    kravaCard.PosodobiPodatke();
+                    DialogResult = DialogResult.OK;
+                    Close();
+                }
+                else if (izvedba == -1)
+                {
+                    MessageBox.Show("Krava ni bila najdena.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri urejanju osnovnih podatkov krave: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
     }
 }

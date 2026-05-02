@@ -41,6 +41,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelLaktacija = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelUsSt
@@ -116,7 +118,7 @@
             // buttonUrediTel
             // 
             this.buttonUrediTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUrediTel.Location = new System.Drawing.Point(45, 241);
+            this.buttonUrediTel.Location = new System.Drawing.Point(45, 273);
             this.buttonUrediTel.Name = "buttonUrediTel";
             this.buttonUrediTel.Size = new System.Drawing.Size(222, 43);
             this.buttonUrediTel.TabIndex = 18;
@@ -174,10 +176,32 @@
             this.label1.TabIndex = 13;
             this.label1.Text = "Ime:";
             // 
+            // labelLaktacija
+            // 
+            this.labelLaktacija.AutoSize = true;
+            this.labelLaktacija.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelLaktacija.Location = new System.Drawing.Point(214, 231);
+            this.labelLaktacija.Name = "labelLaktacija";
+            this.labelLaktacija.Size = new System.Drawing.Size(53, 25);
+            this.labelLaktacija.TabIndex = 27;
+            this.labelLaktacija.Text = "label";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(86, 231);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(105, 25);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Laktacija:";
+            // 
             // KravaCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelLaktacija);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.labelUsSt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelImeOceta);
@@ -192,7 +216,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "KravaCard";
-            this.Size = new System.Drawing.Size(548, 302);
+            this.Size = new System.Drawing.Size(548, 328);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -213,5 +237,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelLaktacija;
+        private System.Windows.Forms.Label label8;
     }
 }
