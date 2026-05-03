@@ -71,7 +71,7 @@ namespace evidenca_krav
         }
 
         // TELICE
-        public int DodajTelico(string ime, string datumRojstva, string pasma, string imeMame, string imeOceta)
+        public int DodajTelico(string ime, string datumRojstva, string pasma, string imeMame, string imeOceta, string UsesnaStevilka)
         {
             using (var conn = new SQLiteConnection(connectionString))
             {
@@ -98,11 +98,12 @@ namespace evidenca_krav
                 }
 
                 using (var command = new SQLiteCommand(
-                    "INSERT INTO zivali (ime, datum_roj, pasma, ime_mame, ime_oceta, tip_zivali_id) " +
-                    "VALUES (@Ime, @DatumRojstva, @Pasma, @ImeMame, @ImeOceta, @TipZivali)", conn))
+                    "INSERT INTO zivali (ime, datum_roj, usesna_stevilka, pasma, ime_mame, ime_oceta, tip_zivali_id) " +
+                    "VALUES (@Ime, @DatumRojstva, @UsesnaStevilka, @Pasma, @ImeMame, @ImeOceta, @TipZivali)", conn))
                 {
                     command.Parameters.AddWithValue("@Ime", ime);
                     command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
+                    command.Parameters.AddWithValue("@UsesnaStevilka", UsesnaStevilka);
                     command.Parameters.AddWithValue("@Pasma", pasma);
                     command.Parameters.AddWithValue("@ImeMame", imeMame);
                     command.Parameters.AddWithValue("@ImeOceta", imeOceta);

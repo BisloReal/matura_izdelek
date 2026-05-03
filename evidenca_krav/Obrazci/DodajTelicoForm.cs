@@ -26,7 +26,8 @@ namespace evidenca_krav.Obrazci
                 if (string.IsNullOrWhiteSpace(textBoxImeTel.Text) ||
                     string.IsNullOrWhiteSpace(textBoxPasmaTel.Text) ||
                     string.IsNullOrWhiteSpace(textBoxImeMameTel.Text) ||
-                    string.IsNullOrWhiteSpace(textBoxImeOcetaTel.Text))
+                    string.IsNullOrWhiteSpace(textBoxImeOcetaTel.Text) ||
+                    string.IsNullOrWhiteSpace(textBoxUsStTel.Text))
                 {
                     MessageBox.Show("Izpolnite vsa polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -36,8 +37,9 @@ namespace evidenca_krav.Obrazci
                 string pasma = textBoxPasmaTel.Text.Trim();
                 string imeMame = textBoxImeMameTel.Text.Trim();
                 string imeOceta = textBoxImeOcetaTel.Text.Trim();
+                string UsSt = textBoxUsStTel.Text.Trim();
 
-                int uspeh = db.DodajTelico(imeTel, datumRojstva, pasma, imeMame, imeOceta);
+                int uspeh = db.DodajTelico(imeTel, datumRojstva, pasma, imeMame, imeOceta, UsSt);
                 if (uspeh == 0) 
                 {
                     DialogResult = DialogResult.OK;

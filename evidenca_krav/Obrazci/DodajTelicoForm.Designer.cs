@@ -41,6 +41,8 @@
             this.textBoxImeOcetaTel = new System.Windows.Forms.TextBox();
             this.buttonPotrdi = new System.Windows.Forms.Button();
             this.buttonPreklici = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.textBoxUsStTel = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -56,7 +58,7 @@
             // textBoxImeTel
             // 
             this.textBoxImeTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeTel.Location = new System.Drawing.Point(247, 120);
+            this.textBoxImeTel.Location = new System.Drawing.Point(234, 120);
             this.textBoxImeTel.Name = "textBoxImeTel";
             this.textBoxImeTel.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeTel.TabIndex = 1;
@@ -65,7 +67,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(334, 92);
+            this.label2.Location = new System.Drawing.Point(317, 92);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 25);
             this.label2.TabIndex = 2;
@@ -74,7 +76,7 @@
             // dateTimePicker
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(247, 214);
+            this.dateTimePicker.Location = new System.Drawing.Point(234, 214);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(219, 30);
             this.dateTimePicker.TabIndex = 3;
@@ -83,7 +85,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(290, 186);
+            this.label3.Location = new System.Drawing.Point(279, 186);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 25);
             this.label3.TabIndex = 4;
@@ -93,7 +95,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(317, 272);
+            this.label4.Location = new System.Drawing.Point(304, 354);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 6;
@@ -102,7 +104,7 @@
             // textBoxPasmaTel
             // 
             this.textBoxPasmaTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasmaTel.Location = new System.Drawing.Point(247, 300);
+            this.textBoxPasmaTel.Location = new System.Drawing.Point(234, 382);
             this.textBoxPasmaTel.Name = "textBoxPasmaTel";
             this.textBoxPasmaTel.Size = new System.Drawing.Size(219, 38);
             this.textBoxPasmaTel.TabIndex = 5;
@@ -111,7 +113,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(303, 359);
+            this.label5.Location = new System.Drawing.Point(289, 429);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 8;
@@ -120,7 +122,7 @@
             // textBoxImeMameTel
             // 
             this.textBoxImeMameTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeMameTel.Location = new System.Drawing.Point(247, 387);
+            this.textBoxImeMameTel.Location = new System.Drawing.Point(233, 457);
             this.textBoxImeMameTel.Name = "textBoxImeMameTel";
             this.textBoxImeMameTel.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeMameTel.TabIndex = 7;
@@ -129,7 +131,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(303, 442);
+            this.label6.Location = new System.Drawing.Point(289, 512);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 25);
             this.label6.TabIndex = 10;
@@ -138,7 +140,7 @@
             // textBoxImeOcetaTel
             // 
             this.textBoxImeOcetaTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeOcetaTel.Location = new System.Drawing.Point(247, 470);
+            this.textBoxImeOcetaTel.Location = new System.Drawing.Point(233, 540);
             this.textBoxImeOcetaTel.Name = "textBoxImeOcetaTel";
             this.textBoxImeOcetaTel.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeOcetaTel.TabIndex = 9;
@@ -146,7 +148,7 @@
             // buttonPotrdi
             // 
             this.buttonPotrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPotrdi.Location = new System.Drawing.Point(366, 527);
+            this.buttonPotrdi.Location = new System.Drawing.Point(352, 597);
             this.buttonPotrdi.Name = "buttonPotrdi";
             this.buttonPotrdi.Size = new System.Drawing.Size(100, 43);
             this.buttonPotrdi.TabIndex = 11;
@@ -157,7 +159,7 @@
             // buttonPreklici
             // 
             this.buttonPreklici.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPreklici.Location = new System.Drawing.Point(247, 527);
+            this.buttonPreklici.Location = new System.Drawing.Point(233, 597);
             this.buttonPreklici.Name = "buttonPreklici";
             this.buttonPreklici.Size = new System.Drawing.Size(100, 43);
             this.buttonPreklici.TabIndex = 12;
@@ -165,11 +167,31 @@
             this.buttonPreklici.UseVisualStyleBackColor = true;
             this.buttonPreklici.Click += new System.EventHandler(this.buttonPreklici_Click);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(272, 267);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(149, 25);
+            this.label7.TabIndex = 29;
+            this.label7.Text = "Ušesna številka";
+            // 
+            // textBoxUsStTel
+            // 
+            this.textBoxUsStTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUsStTel.Location = new System.Drawing.Point(234, 295);
+            this.textBoxUsStTel.Name = "textBoxUsStTel";
+            this.textBoxUsStTel.Size = new System.Drawing.Size(219, 38);
+            this.textBoxUsStTel.TabIndex = 28;
+            // 
             // DodajTelicoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(693, 606);
+            this.ClientSize = new System.Drawing.Size(693, 658);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.textBoxUsStTel);
             this.Controls.Add(this.buttonPreklici);
             this.Controls.Add(this.buttonPotrdi);
             this.Controls.Add(this.label6);
@@ -206,5 +228,7 @@
         private System.Windows.Forms.TextBox textBoxImeOcetaTel;
         private System.Windows.Forms.Button buttonPotrdi;
         private System.Windows.Forms.Button buttonPreklici;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox textBoxUsStTel;
     }
 }

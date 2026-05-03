@@ -32,6 +32,7 @@ namespace evidenca_krav.NavigationBar
 
                 if (dodajTelicoForm.ShowDialog() == DialogResult.OK)
                 {
+                    db.PosodobiStanja();
                     NaloziTelice();
                     MessageBox.Show("Telica uspešno dodana!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
