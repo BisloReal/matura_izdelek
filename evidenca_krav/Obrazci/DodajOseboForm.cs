@@ -67,5 +67,11 @@ namespace evidenca_krav.Obrazci
 
             comboBoxZadolzitev.DataSource = db.PridobiZadolzitve();
         }
+
+        private void buttonPreklici_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.Abort;
+            Close();
+        }
     }
 }

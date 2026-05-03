@@ -73,10 +73,22 @@ namespace evidenca_krav.Obrazci
             textBoxnogeOcena.Text = Krava.NogeOcena.ToString();
             textBoxvimeOcena.Text = Krava.VimeOcena.ToString();
             textBoxtelesneSposobnostiSkupajOcena.Text = Krava.TelesneSposobnostiSkupajOcena.ToString();
+
+
+            NaloziMlecneKontrole();
         }
 
+        private void NaloziMlecneKontrole()
+        {
+            flowLayoutPanelMlecneKontrole.Controls.Clear();
 
+            List<MlecneKontroleRazred> mlecneKontrole = db.PridobiMlecneKontrole(Krava.Id);
 
+            foreach (MlecneKontroleRazred mk in mlecneKontrole)
+            {
+                flowLayoutPanelMlecneKontrole.Controls.Add(new MlecKontrolaCard(db, mk, Krava.Id));
+            }
+        }
 
         private void buttonZapri_Click(object sender, EventArgs e)
         {
@@ -172,6 +184,21 @@ namespace evidenca_krav.Obrazci
             }
         }
 
-
+        private void buttonDodajKontrolo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajMlecKontrolo dodajMlecnoKontrolo = new DodajMlecKontrolo(db, Krava.Id);
+                if (dodajMlecnoKontrolo.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Mlečna kontrola uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                NaloziMlecneKontrole();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju mlečne kontrole: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

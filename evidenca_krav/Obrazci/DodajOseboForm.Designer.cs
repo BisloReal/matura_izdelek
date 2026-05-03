@@ -53,6 +53,7 @@
             this.buttonPreklici.TabIndex = 25;
             this.buttonPreklici.Text = "Prekliči";
             this.buttonPreklici.UseVisualStyleBackColor = true;
+            this.buttonPreklici.Click += new System.EventHandler(this.buttonPreklici_Click);
             // 
             // buttonPotrdi
             // 

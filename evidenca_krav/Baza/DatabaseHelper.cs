@@ -1344,6 +1344,46 @@ namespace evidenca_krav
             }
         }
 
+        public List<string> PridobiKontrolerje()
+        {
+            List<string> kontrolerji = new List<string>();
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand("SELECT o.ime, o.priimek FROM osebe o INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id WHERE zo.zadolzitev = 'Kontrolor'", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            kontrolerji.Add(reader.GetString(0) + " " + reader.GetString(1));
+                        }
+                    }
+                }
+            }
+            return kontrolerji;
+        }
+
+        public int PridobiIdKontrolerjaPrekoImena(string ime, string priimek)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.id FROM osebe o INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id WHERE zo.zadolzitev = 'Kontrolor' AND o.ime = @Ime AND o.priimek = @Priimek", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Ime", ime);
+                    cmd.Parameters.AddWithValue("@Priimek", priimek);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            return -1;
+        }
+
         // Odhodi
 
         public List<OdhodiRazred> PridobiOdhode()
@@ -1479,6 +1519,211 @@ namespace evidenca_krav
                     else
                     {
                         return -1;
+                    }
+                }
+            }
+        }
+
+
+        // Mlečne kontrole
+        public List<MlecneKontroleRazred> PridobiMlecneKontrole(int idKrave)
+        {
+            List<MlecneKontroleRazred> kontrole = new List<MlecneKontroleRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                    SELECT mk.*, o.ime, o.priimek, z.usesna_stevilka
+                    FROM mlecne_kontrole mk
+                    JOIN osebe o ON mk.kontrolor_id = o.id
+                    JOIN zivali z ON mk.krava_id = z.id
+                    WHERE mk.krava_id = @IdKrave
+                    ORDER BY mk.datum DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKrave", idKrave);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            MlecneKontroleRazred kontrola = new MlecneKontroleRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader.GetInt32(reader.GetOrdinal("zap_st")),
+                                reader["ime"].ToString() + " " + reader["priimek"].ToString(),
+                                reader["del_dneva"].ToString(),
+                                reader["mlecnost"].ToString(),
+                                reader["vsebnost_mascobe"].ToString(),
+                                reader["vsebnost_beljakovin"].ToString(),
+                                reader["vsebnost_laktoze"].ToString(),
+                                reader["vsebnost_secnine"].ToString(),
+                                reader["somatske_celice"]?.ToString(),
+                                reader["opombe"].ToString(),
+                                reader["usesna_stevilka"].ToString()
+                            );
+
+                            kontrole.Add(kontrola);
+                        }
+                    }
+                }
+            }
+
+            return kontrole;
+        }
+
+        public MlecneKontroleRazred PridobiMlecnoKontrolo(int idKontrole)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"
+                    SELECT mk.*, o.ime, o.priimek, z.usesna_stevilka
+                    FROM mlecne_kontrole mk
+                    JOIN osebe o ON mk.kontrolor_id = o.id
+                    JOIN zivali z ON mk.krava_id = z.id
+                    WHERE mk.id = @IdKontrole";
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKontrole", idKontrole);
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            MlecneKontroleRazred k = new MlecneKontroleRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader.GetInt32(reader.GetOrdinal("zap_st")),
+                                reader["ime"].ToString() + " " + reader["priimek"].ToString(),
+                                reader["del_dneva"].ToString(),
+                                reader["mlecnost"].ToString(),
+                                reader["vsebnost_mascobe"].ToString(),
+                                reader["vsebnost_beljakovin"].ToString(),
+                                reader["vsebnost_laktoze"].ToString(),
+                                reader["vsebnost_secnine"].ToString(),
+                                reader["somatske_celice"]?.ToString(),
+                                reader["opombe"].ToString(),
+                                reader["usesna_stevilka"].ToString()
+                            );
+
+                            return k;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public int DodajMlecnoKontrolo(int kravaId, DateTime datum, int zapSt, int kontrolorId, string delDneva, string mlecnost, string vsebnostMascobe, string vsebnostBeljakovin, string vsebnostLaktoze, string vsebnostSecnine, string somatskeCelice, string opombe)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "INSERT INTO mlecne_kontrole (krava_id, datum, zap_st, kontrolor_id, del_dneva, mlecnost, vsebnost_mascobe, vsebnost_beljakovin, vsebnost_laktoze, vsebnost_secnine, somatske_celice, opombe) " +
+                    "VALUES (@KravaId, @Datum, @ZapSt, @KontrolorId, @DelDneva, @Mlecnost, @VsebnostMascobe, @VsebnostBeljakovin, @VsebnostLaktoze, @VsebnostSecnine, @SomatskeCelice, @Opombe)", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    cmd.Parameters.AddWithValue("@Datum", datum);
+                    cmd.Parameters.AddWithValue("@ZapSt", zapSt);
+                    cmd.Parameters.AddWithValue("@KontrolorId", kontrolorId);
+                    cmd.Parameters.AddWithValue("@DelDneva", delDneva);
+                    cmd.Parameters.AddWithValue("@Mlecnost", mlecnost);
+                    cmd.Parameters.AddWithValue("@VsebnostMascobe", vsebnostMascobe);
+                    cmd.Parameters.AddWithValue("@VsebnostBeljakovin", vsebnostBeljakovin);
+                    cmd.Parameters.AddWithValue("@VsebnostLaktoze", vsebnostLaktoze);
+                    cmd.Parameters.AddWithValue("@VsebnostSecnine", vsebnostSecnine);
+                    cmd.Parameters.AddWithValue("@SomatskeCelice", somatskeCelice);
+                    cmd.Parameters.AddWithValue("@Opombe", opombe);
+                    int rezultat = cmd.ExecuteNonQuery();
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int UrediMlecnoKontrolo(int id, DateTime datum, int zapSt, int kontrolorId, string delDneva, string mlecnost, string vsebnostMascobe, string vsebnostBeljakovin, string vsebnostLaktoze, string vsebnostSecnine, string somatskeCelice, string opombe)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "UPDATE mlecne_kontrole SET datum = @Datum, zap_st = @ZapSt, kontrolor_id = @KontrolorId, del_dneva = @DelDneva, mlecnost = @Mlecnost, vsebnost_mascobe = @VsebnostMascobe, vsebnost_beljakovin = @VsebnostBeljakovin, vsebnost_laktoze = @VsebnostLaktoze, vsebnost_secnine = @VsebnostSecnine, somatske_celice = @SomatskeCelice, opombe = @Opombe " +
+                    "WHERE id = @Id", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+                    cmd.Parameters.AddWithValue("@Datum", datum);
+                    cmd.Parameters.AddWithValue("@ZapSt", zapSt);
+                    cmd.Parameters.AddWithValue("@KontrolorId", kontrolorId);
+                    cmd.Parameters.AddWithValue("@DelDneva", delDneva);
+                    cmd.Parameters.AddWithValue("@Mlecnost", mlecnost);
+                    cmd.Parameters.AddWithValue("@VsebnostMascobe", vsebnostMascobe);
+                    cmd.Parameters.AddWithValue("@VsebnostBeljakovin", vsebnostBeljakovin);
+                    cmd.Parameters.AddWithValue("@VsebnostLaktoze", vsebnostLaktoze);
+                    cmd.Parameters.AddWithValue("@VsebnostSecnine", vsebnostSecnine);
+                    cmd.Parameters.AddWithValue("@SomatskeCelice", somatskeCelice);
+                    cmd.Parameters.AddWithValue("@Opombe", opombe);
+                    int rezultat = cmd.ExecuteNonQuery();
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int PridobiSteviloMlecnihKontrol(int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM mlecne_kontrole WHERE krava_id = @KravaId", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    object result = cmd.ExecuteScalar();
+                    if (result != null)
+                    {
+                        return Convert.ToInt32(result);
+                    }
+                }
+            }
+            return 0;
+        }
+
+        public bool PogledObstajaSt(int kravaId, int st)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM mlecne_kontrole WHERE krava_id = @KravaId AND zap_st = @ZapSt", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    cmd.Parameters.AddWithValue("@ZapSt", st);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
             }

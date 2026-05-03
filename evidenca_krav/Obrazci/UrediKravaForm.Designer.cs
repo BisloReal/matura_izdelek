@@ -131,9 +131,13 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.textBoxteza = new System.Windows.Forms.TextBox();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.buttonDodajKontrolo = new System.Windows.Forms.Button();
             this.buttonZapri = new System.Windows.Forms.Button();
             this.buttonPotrdi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelMlecneKontrole = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -141,6 +145,8 @@
             this.tableLayoutPanel4.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.flowLayoutPanelMlecneKontrole.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -150,6 +156,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1457,6 +1464,29 @@
             this.textBoxteza.Size = new System.Drawing.Size(190, 23);
             this.textBoxteza.TabIndex = 9;
             // 
+            // tabPage3
+            // 
+            this.tabPage3.Controls.Add(this.flowLayoutPanelMlecneKontrole);
+            this.tabPage3.Controls.Add(this.buttonDodajKontrolo);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Size = new System.Drawing.Size(1118, 556);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Mlečne kontrole";
+            this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // buttonDodajKontrolo
+            // 
+            this.buttonDodajKontrolo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajKontrolo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajKontrolo.Location = new System.Drawing.Point(912, 52);
+            this.buttonDodajKontrolo.Name = "buttonDodajKontrolo";
+            this.buttonDodajKontrolo.Size = new System.Drawing.Size(190, 51);
+            this.buttonDodajKontrolo.TabIndex = 6;
+            this.buttonDodajKontrolo.Text = "Dodaj kontrolo";
+            this.buttonDodajKontrolo.UseVisualStyleBackColor = true;
+            this.buttonDodajKontrolo.Click += new System.EventHandler(this.buttonDodajKontrolo_Click);
+            // 
             // buttonZapri
             // 
             this.buttonZapri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
@@ -1492,6 +1522,26 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Podatki krave";
             // 
+            // flowLayoutPanelMlecneKontrole
+            // 
+            this.flowLayoutPanelMlecneKontrole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelMlecneKontrole.AutoScroll = true;
+            this.flowLayoutPanelMlecneKontrole.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelMlecneKontrole.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanelMlecneKontrole.Location = new System.Drawing.Point(16, 120);
+            this.flowLayoutPanelMlecneKontrole.Name = "flowLayoutPanelMlecneKontrole";
+            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 423);
+            this.flowLayoutPanelMlecneKontrole.TabIndex = 44;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1517,6 +1567,8 @@
             this.tableLayoutPanel3.PerformLayout();
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.flowLayoutPanelMlecneKontrole.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1629,5 +1681,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox textBoxLaktacija;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMlecneKontrole;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
+        private System.Windows.Forms.Button buttonDodajKontrolo;
     }
 }
