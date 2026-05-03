@@ -13,12 +13,16 @@ namespace evidenca_krav.Obrazci
     public partial class DodajOdhodForm : Form
     {
         DatabaseHelper db;
-        public DodajOdhodForm(DatabaseHelper dbHelper)
+        public DodajOdhodForm(DatabaseHelper dbHelper, string izbranaKrava)
         {
             InitializeComponent();
             db = dbHelper;
 
             comboBoxZival.DataSource = db.PridobiUsStVsehZivali();
+            if (!string.IsNullOrWhiteSpace(izbranaKrava))
+            {
+                comboBoxZival.SelectedItem = izbranaKrava;
+            }
         }
 
         private void buttonPotrdi_Click(object sender, EventArgs e)

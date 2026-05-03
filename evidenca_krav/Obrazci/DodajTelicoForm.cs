@@ -23,6 +23,11 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
+                if (db.PogledObstajaUsSt(textBoxUsStTel.Text.Trim()))
+                {
+                    MessageBox.Show("Žival z to uporabniško številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 if (string.IsNullOrWhiteSpace(textBoxImeTel.Text) ||
                     string.IsNullOrWhiteSpace(textBoxPasmaTel.Text) ||
                     string.IsNullOrWhiteSpace(textBoxImeMameTel.Text) ||

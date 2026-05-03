@@ -129,7 +129,8 @@ namespace evidenca_krav
                     "FROM zivali z " +
                     "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
                     "LEFT JOIN odhodi_krav ok ON z.id = ok.krava_id " +
-                    "WHERE tz.tip = @tipZiv AND ok.krava_id IS NULL", conn))
+                    "WHERE tz.tip = @tipZiv AND ok.krava_id IS NULL " +
+                    "ORDER BY z.id DESC", conn))
                 {
                     cmd.Parameters.AddWithValue("@tipZiv", "Telica");
 
@@ -219,6 +220,28 @@ namespace evidenca_krav
             }
         }
 
+        public bool PogledObstajaUsSt(string usSt)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM zivali  WHERE usesna_stevilka = @UsSt", conn))
+                {
+                    cmd.Parameters.AddWithValue("@UsSt", usSt);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
+
         // TELE
         public List<TeliceRazred> PridobiTeleta()
         {
@@ -233,7 +256,8 @@ namespace evidenca_krav
                     "FROM zivali z " +
                     "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
                     "LEFT JOIN odhodi_krav ok ON z.id = ok.krava_id " +
-                    "WHERE tz.tip = @tipZiv AND ok.krava_id IS NULL", conn))
+                    "WHERE tz.tip = @tipZiv AND ok.krava_id IS NULL " +
+                    "ORDER BY z.id DESC", conn))
                 {
                     cmd.Parameters.AddWithValue("@tipZiv", "Tele");
 
@@ -271,7 +295,8 @@ namespace evidenca_krav
                 using (var cmd = new SQLiteCommand(
                     "SELECT  b.id, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
                     "FROM biki_os b " +
-                    "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id", conn))
+                    "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id " +
+                    "ORDER BY b.id DESC", conn))
                 {
 
                     using (var reader = cmd.ExecuteReader())
@@ -399,7 +424,7 @@ namespace evidenca_krav
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new SQLiteCommand("SELECT pasma FROM biki_pasme", conn))
+                using (var cmd = new SQLiteCommand("SELECT pasma FROM biki_pasme ORDER BY pasma", conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -477,7 +502,8 @@ namespace evidenca_krav
                     "FROM zivali z " +
                     "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
                     "LEFT JOIN odhodi_krav ok ON z.id = ok.krava_id " +
-                    "WHERE tz.tip = @tipZiv AND ok.krava_id IS NULL", conn))
+                    "WHERE tz.tip = @tipZiv AND ok.krava_id IS NULL " +
+                    "ORDER BY z.id DESC", conn))
                 {
                     cmd.Parameters.AddWithValue("@tipZiv", "Krava");
 
@@ -1168,7 +1194,8 @@ namespace evidenca_krav
                 conn.Open();
                 using (var cmd = new SQLiteCommand(
                     "SELECT o.id, o.ime, o.priimek, o.tel, o.email, z.zadolzitev " +
-                    "FROM osebe o INNER JOIN zadolzitve_oseb z ON o.zadolzitev_id = z.id", conn))
+                    "FROM osebe o INNER JOIN zadolzitve_oseb z ON o.zadolzitev_id = z.id " +
+                    "ORDER BY o.id DESC", conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -1196,8 +1223,8 @@ namespace evidenca_krav
                 conn.Open();
                 using (var cmd = new SQLiteCommand(
                     "SELECT o.id, o.ime, o.priimek, o.tel, o.email, z.zadolzitev " +
-                    "FROM osebe o INNER JOIN zadolzitve_oseb z ON o.zadolzitev_id = z.id" +
-                    " WHERE o.id = @idOsebe", conn))
+                    "FROM osebe o INNER JOIN zadolzitve_oseb z ON o.zadolzitev_id = z.id " +
+                    "WHERE o.id = @idOsebe", conn))
                 {
                     cmd.Parameters.AddWithValue("@idOsebe", idOsebe);
                     using (var reader = cmd.ExecuteReader())
@@ -1226,7 +1253,7 @@ namespace evidenca_krav
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new SQLiteCommand("SELECT zadolzitev FROM zadolzitve_oseb", conn))
+                using (var cmd = new SQLiteCommand("SELECT zadolzitev FROM zadolzitve_oseb ORDER BY zadolzitev", conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -1350,7 +1377,7 @@ namespace evidenca_krav
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new SQLiteCommand("SELECT o.ime, o.priimek FROM osebe o INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id WHERE zo.zadolzitev = 'Kontrolor'", conn))
+                using (var cmd = new SQLiteCommand("SELECT o.ime, o.priimek FROM osebe o INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id WHERE zo.zadolzitev = 'Kontrolor' ORDER BY o.ime, o.priimek", conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -1394,7 +1421,8 @@ namespace evidenca_krav
                 conn.Open();
                 using (var cmd = new SQLiteCommand(
                     "SELECT o.id, o.datum, o.[g-mid], o.lokacija, o.vzrok, o.opombe, o.krava_id " +
-                    "FROM odhodi_krav o", conn))
+                    "FROM odhodi_krav o " +
+                    "ORDER BY o.id DESC", conn))
                 {
                     using (var reader = cmd.ExecuteReader())
                     {
@@ -1540,7 +1568,7 @@ namespace evidenca_krav
                     JOIN osebe o ON mk.kontrolor_id = o.id
                     JOIN zivali z ON mk.krava_id = z.id
                     WHERE mk.krava_id = @IdKrave
-                    ORDER BY mk.datum DESC";
+                    ORDER BY mk.id DESC";
 
                 using (var cmd = new SQLiteCommand(query, conn))
                 {

@@ -34,11 +34,17 @@ namespace evidenca_krav.NavigationBarUserControls
             }
         }
 
-        private void buttonDodajTelico_Click(object sender, EventArgs e)
+
+        public void Posodobi()
+        {
+            naloziOdhode();
+        }
+
+        private void buttonDodajOdhod_Click(object sender, EventArgs e)
         {
             try
             {
-                DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db);
+                DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db, null);
                 if (dodajOdhodForm.ShowDialog() == DialogResult.OK)
                 {
                     naloziOdhode();
@@ -49,11 +55,6 @@ namespace evidenca_krav.NavigationBarUserControls
             {
                 MessageBox.Show("Napaka pri dodajanju odhoda: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-
-        public void Posodobi()
-        {
-            naloziOdhode();
         }
     }
 }

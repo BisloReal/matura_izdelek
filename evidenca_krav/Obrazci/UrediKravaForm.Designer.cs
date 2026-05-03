@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonOdhod = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.textBoxLaktacija = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -132,12 +133,12 @@
             this.label39 = new System.Windows.Forms.Label();
             this.textBoxteza = new System.Windows.Forms.TextBox();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelMlecneKontrole = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonDodajKontrolo = new System.Windows.Forms.Button();
             this.buttonZapri = new System.Windows.Forms.Button();
             this.buttonPotrdi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelMlecneKontrole = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -166,6 +167,7 @@
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.buttonOdhod);
             this.tabPage1.Controls.Add(this.label8);
             this.tabPage1.Controls.Add(this.textBoxLaktacija);
             this.tabPage1.Controls.Add(this.label7);
@@ -188,13 +190,26 @@
             this.tabPage1.Text = "Osnovni";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // buttonOdhod
+            // 
+            this.buttonOdhod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonOdhod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOdhod.ForeColor = System.Drawing.Color.Red;
+            this.buttonOdhod.Location = new System.Drawing.Point(6, 504);
+            this.buttonOdhod.Name = "buttonOdhod";
+            this.buttonOdhod.Size = new System.Drawing.Size(146, 44);
+            this.buttonOdhod.TabIndex = 43;
+            this.buttonOdhod.Text = "Odhod krave";
+            this.buttonOdhod.UseVisualStyleBackColor = true;
+            this.buttonOdhod.Click += new System.EventHandler(this.buttonOdhod_Click);
+            // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(97, 439);
+            this.label8.Location = new System.Drawing.Point(100, 402);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(89, 25);
             this.label8.TabIndex = 42;
@@ -203,7 +218,7 @@
             // textBoxLaktacija
             // 
             this.textBoxLaktacija.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxLaktacija.Location = new System.Drawing.Point(192, 430);
+            this.textBoxLaktacija.Location = new System.Drawing.Point(195, 393);
             this.textBoxLaktacija.Name = "textBoxLaktacija";
             this.textBoxLaktacija.Size = new System.Drawing.Size(219, 38);
             this.textBoxLaktacija.TabIndex = 41;
@@ -214,7 +229,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(37, 151);
+            this.label7.Location = new System.Drawing.Point(40, 114);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(149, 25);
             this.label7.TabIndex = 39;
@@ -225,7 +240,7 @@
             this.textBoxUsSt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxUsSt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsSt.Location = new System.Drawing.Point(192, 142);
+            this.textBoxUsSt.Location = new System.Drawing.Point(195, 105);
             this.textBoxUsSt.Name = "textBoxUsSt";
             this.textBoxUsSt.Size = new System.Drawing.Size(219, 38);
             this.textBoxUsSt.TabIndex = 38;
@@ -236,7 +251,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(89, 378);
+            this.label6.Location = new System.Drawing.Point(92, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 25);
             this.label6.TabIndex = 37;
@@ -247,7 +262,7 @@
             this.textBoxImeOceta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxImeOceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeOceta.Location = new System.Drawing.Point(192, 369);
+            this.textBoxImeOceta.Location = new System.Drawing.Point(195, 332);
             this.textBoxImeOceta.Name = "textBoxImeOceta";
             this.textBoxImeOceta.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeOceta.TabIndex = 36;
@@ -258,7 +273,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(83, 314);
+            this.label5.Location = new System.Drawing.Point(86, 277);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 35;
@@ -269,7 +284,7 @@
             this.textBoxImeMame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxImeMame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeMame.Location = new System.Drawing.Point(192, 305);
+            this.textBoxImeMame.Location = new System.Drawing.Point(195, 268);
             this.textBoxImeMame.Name = "textBoxImeMame";
             this.textBoxImeMame.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeMame.TabIndex = 34;
@@ -280,7 +295,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(113, 257);
+            this.label4.Location = new System.Drawing.Point(116, 220);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 33;
@@ -291,7 +306,7 @@
             this.textBoxPasma.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxPasma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasma.Location = new System.Drawing.Point(192, 248);
+            this.textBoxPasma.Location = new System.Drawing.Point(195, 211);
             this.textBoxPasma.Name = "textBoxPasma";
             this.textBoxPasma.Size = new System.Drawing.Size(219, 38);
             this.textBoxPasma.TabIndex = 32;
@@ -302,7 +317,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(55, 201);
+            this.label3.Location = new System.Drawing.Point(58, 164);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 25);
             this.label3.TabIndex = 31;
@@ -313,7 +328,7 @@
             this.dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(192, 201);
+            this.dateTimePicker.Location = new System.Drawing.Point(195, 164);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(219, 30);
             this.dateTimePicker.TabIndex = 30;
@@ -324,7 +339,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(142, 90);
+            this.label2.Location = new System.Drawing.Point(145, 53);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 25);
             this.label2.TabIndex = 29;
@@ -335,7 +350,7 @@
             this.textBoxIme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIme.Location = new System.Drawing.Point(192, 81);
+            this.textBoxIme.Location = new System.Drawing.Point(195, 44);
             this.textBoxIme.Name = "textBoxIme";
             this.textBoxIme.Size = new System.Drawing.Size(219, 38);
             this.textBoxIme.TabIndex = 28;
@@ -1475,6 +1490,26 @@
             this.tabPage3.Text = "Mlečne kontrole";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // flowLayoutPanelMlecneKontrole
+            // 
+            this.flowLayoutPanelMlecneKontrole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelMlecneKontrole.AutoScroll = true;
+            this.flowLayoutPanelMlecneKontrole.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelMlecneKontrole.Controls.Add(this.flowLayoutPanel2);
+            this.flowLayoutPanelMlecneKontrole.Location = new System.Drawing.Point(16, 120);
+            this.flowLayoutPanelMlecneKontrole.Name = "flowLayoutPanelMlecneKontrole";
+            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 423);
+            this.flowLayoutPanelMlecneKontrole.TabIndex = 44;
+            // 
+            // flowLayoutPanel2
+            // 
+            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel2.TabIndex = 0;
+            // 
             // buttonDodajKontrolo
             // 
             this.buttonDodajKontrolo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -1521,26 +1556,6 @@
             this.label1.Size = new System.Drawing.Size(367, 63);
             this.label1.TabIndex = 43;
             this.label1.Text = "Podatki krave";
-            // 
-            // flowLayoutPanelMlecneKontrole
-            // 
-            this.flowLayoutPanelMlecneKontrole.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelMlecneKontrole.AutoScroll = true;
-            this.flowLayoutPanelMlecneKontrole.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanelMlecneKontrole.Controls.Add(this.flowLayoutPanel2);
-            this.flowLayoutPanelMlecneKontrole.Location = new System.Drawing.Point(16, 120);
-            this.flowLayoutPanelMlecneKontrole.Name = "flowLayoutPanelMlecneKontrole";
-            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 423);
-            this.flowLayoutPanelMlecneKontrole.TabIndex = 44;
-            // 
-            // flowLayoutPanel2
-            // 
-            this.flowLayoutPanel2.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel2.TabIndex = 0;
             // 
             // UrediKravaForm
             // 
@@ -1685,5 +1700,6 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelMlecneKontrole;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button buttonDodajKontrolo;
+        private System.Windows.Forms.Button buttonOdhod;
     }
 }

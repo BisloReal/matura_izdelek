@@ -43,6 +43,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxUsStTel = new System.Windows.Forms.TextBox();
+            this.buttonOdhod = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // buttonPreklici
@@ -185,11 +186,25 @@
             this.textBoxUsStTel.Size = new System.Drawing.Size(219, 38);
             this.textBoxUsStTel.TabIndex = 26;
             // 
+            // buttonOdhod
+            // 
+            this.buttonOdhod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonOdhod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOdhod.ForeColor = System.Drawing.Color.Red;
+            this.buttonOdhod.Location = new System.Drawing.Point(12, 609);
+            this.buttonOdhod.Name = "buttonOdhod";
+            this.buttonOdhod.Size = new System.Drawing.Size(146, 44);
+            this.buttonOdhod.TabIndex = 44;
+            this.buttonOdhod.Text = "Odhod telice";
+            this.buttonOdhod.UseVisualStyleBackColor = true;
+            this.buttonOdhod.Click += new System.EventHandler(this.buttonOdhod_Click);
+            // 
             // UrediTelicaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(604, 665);
+            this.Controls.Add(this.buttonOdhod);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxUsStTel);
             this.Controls.Add(this.buttonPreklici);
@@ -229,5 +244,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxUsStTel;
+        private System.Windows.Forms.Button buttonOdhod;
     }
 }

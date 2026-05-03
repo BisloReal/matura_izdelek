@@ -200,5 +200,23 @@ namespace evidenca_krav.Obrazci
                 MessageBox.Show("Napaka pri dodajanju mlečne kontrole: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void buttonOdhod_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db, Krava.UsesnaSt);
+                if (dodajOdhodForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Odhod uspešno dodan.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult = DialogResult.Abort;
+                    Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju odhoda: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

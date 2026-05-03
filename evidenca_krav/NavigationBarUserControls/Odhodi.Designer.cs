@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonDodajTelico = new System.Windows.Forms.Button();
+            this.buttonDodajOdhod = new System.Windows.Forms.Button();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,23 +66,23 @@
             this.flowLayoutPanel2.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel2.TabIndex = 0;
             // 
-            // buttonDodajTelico
+            // buttonDodajOdhod
             // 
-            this.buttonDodajTelico.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDodajTelico.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDodajTelico.Location = new System.Drawing.Point(511, 87);
-            this.buttonDodajTelico.Name = "buttonDodajTelico";
-            this.buttonDodajTelico.Size = new System.Drawing.Size(155, 44);
-            this.buttonDodajTelico.TabIndex = 5;
-            this.buttonDodajTelico.Text = "Dodaj odhod";
-            this.buttonDodajTelico.UseVisualStyleBackColor = true;
-            this.buttonDodajTelico.Click += new System.EventHandler(this.buttonDodajTelico_Click);
+            this.buttonDodajOdhod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajOdhod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajOdhod.Location = new System.Drawing.Point(511, 87);
+            this.buttonDodajOdhod.Name = "buttonDodajOdhod";
+            this.buttonDodajOdhod.Size = new System.Drawing.Size(155, 44);
+            this.buttonDodajOdhod.TabIndex = 5;
+            this.buttonDodajOdhod.Text = "Dodaj odhod";
+            this.buttonDodajOdhod.UseVisualStyleBackColor = true;
+            this.buttonDodajOdhod.Click += new System.EventHandler(this.buttonDodajOdhod_Click);
             // 
             // Odhodi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.buttonDodajTelico);
+            this.Controls.Add(this.buttonDodajOdhod);
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "Odhodi";
@@ -98,6 +98,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
-        private System.Windows.Forms.Button buttonDodajTelico;
+        private System.Windows.Forms.Button buttonDodajOdhod;
     }
 }
