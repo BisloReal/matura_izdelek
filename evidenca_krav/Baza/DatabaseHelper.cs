@@ -1756,5 +1756,8 @@ namespace evidenca_krav
                 }
             }
         }
+
+        // Osemenitve
+
     }
 }

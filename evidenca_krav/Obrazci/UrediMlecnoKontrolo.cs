@@ -34,6 +34,7 @@ namespace evidenca_krav.Obrazci
             textBoxVsebnostLak.Text = mlecneKontroleRazred.Vsebnost_Laktaze;
             textBoxVsebnostMas.Text = mlecneKontroleRazred.Vsebnost_Mascobe;
             textBoxVsebnostSec.Text = mlecneKontroleRazred.Vsebnost_Secnice;
+            textBoxSomatskeCelice.Text = mlecneKontroleRazred.Somatske_Celice;
 
             comboBox1.DataSource = db.PridobiKontrolerje();
             comboBox1.SelectedItem = mlecneKontroleRazred.Ime_Priimek_Osebe;

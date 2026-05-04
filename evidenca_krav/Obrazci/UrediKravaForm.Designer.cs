@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.TabPage tabPage4;
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonOdhod = new System.Windows.Forms.Button();
@@ -139,6 +140,10 @@
             this.buttonZapri = new System.Windows.Forms.Button();
             this.buttonPotrdi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.flowLayoutPanelOs = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonDodajOs = new System.Windows.Forms.Button();
+            tabPage4 = new System.Windows.Forms.TabPage();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -148,6 +153,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanelMlecneKontrole.SuspendLayout();
+            tabPage4.SuspendLayout();
+            this.flowLayoutPanelOs.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -158,6 +165,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1557,6 +1565,48 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Podatki krave";
             // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(this.buttonDodajOs);
+            tabPage4.Controls.Add(this.flowLayoutPanelOs);
+            tabPage4.Location = new System.Drawing.Point(4, 22);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new System.Drawing.Size(1118, 556);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Osemenitve";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelOs
+            // 
+            this.flowLayoutPanelOs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelOs.AutoScroll = true;
+            this.flowLayoutPanelOs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelOs.Controls.Add(this.flowLayoutPanel3);
+            this.flowLayoutPanelOs.Location = new System.Drawing.Point(17, 106);
+            this.flowLayoutPanelOs.Name = "flowLayoutPanelOs";
+            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 423);
+            this.flowLayoutPanelOs.TabIndex = 45;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel3.TabIndex = 0;
+            // 
+            // buttonDodajOs
+            // 
+            this.buttonDodajOs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajOs.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajOs.Location = new System.Drawing.Point(872, 49);
+            this.buttonDodajOs.Name = "buttonDodajOs";
+            this.buttonDodajOs.Size = new System.Drawing.Size(231, 51);
+            this.buttonDodajOs.TabIndex = 44;
+            this.buttonDodajOs.Text = "Dodaj osemenitev";
+            this.buttonDodajOs.UseVisualStyleBackColor = true;
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1584,6 +1634,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.flowLayoutPanelMlecneKontrole.ResumeLayout(false);
+            tabPage4.ResumeLayout(false);
+            this.flowLayoutPanelOs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1701,5 +1753,8 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;
         private System.Windows.Forms.Button buttonDodajKontrolo;
         private System.Windows.Forms.Button buttonOdhod;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOs;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
+        private System.Windows.Forms.Button buttonDodajOs;
     }
 }
