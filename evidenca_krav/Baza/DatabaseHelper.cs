@@ -3088,5 +3088,113 @@ namespace evidenca_krav
                 }
             }
         }
+
+        // zdravila
+        public List<ZdravilaRazred> PridobiZdravila()
+        {
+            List<ZdravilaRazred> zdravila = new List<ZdravilaRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT id, zdravilo " +
+                    "FROM zdravila " +
+                    "ORDER BY zdravilo", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            zdravila.Add(new ZdravilaRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetString(reader.GetOrdinal("zdravilo"))
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return zdravila;
+        }
+
+        public ZdravilaRazred PridobiZdravilo(int idZdravila)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT id, zdravilo " +
+                    "FROM zdravila " +
+                    "WHERE id = @IdZdravila", conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdZdravila", idZdravila);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            ZdravilaRazred zdravilo = new ZdravilaRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetString(reader.GetOrdinal("zdravilo"))
+                            );
+
+                            return zdravilo;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public int DodajZdravilo(string zdravilo)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO zdravila (zdravilo) " +
+                    "VALUES (@Zdravilo)", conn))
+                {
+                    command.Parameters.AddWithValue("@Zdravilo", zdravilo);
+
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
+
+        public int UrediZdravilo(ZdravilaRazred z)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE zdravila SET " +
+                    "zdravilo = @Zdravilo " +
+                    "WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", z.Id);
+                    command.Parameters.AddWithValue("@Zdravilo", z.Zdravilo);
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
     }
 }

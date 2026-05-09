@@ -30,6 +30,7 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.buttonOsebe = new System.Windows.Forms.Button();
             this.buttonBiki = new System.Windows.Forms.Button();
             this.buttonTeleta = new System.Windows.Forms.Button();
             this.buttonOdhodi = new System.Windows.Forms.Button();
@@ -37,7 +38,7 @@
             this.buttonKrave = new System.Windows.Forms.Button();
             this.buttonGlavnoOkno = new System.Windows.Forms.Button();
             this.panelPrikaz = new System.Windows.Forms.Panel();
-            this.buttonOsebe = new System.Windows.Forms.Button();
+            this.buttonZdravila = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -50,7 +51,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(150, 572);
+            this.panel1.Size = new System.Drawing.Size(150, 721);
             this.panel1.TabIndex = 0;
             // 
             // tableLayoutPanel1
@@ -59,6 +60,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.buttonZdravila, 0, 7);
             this.tableLayoutPanel1.Controls.Add(this.buttonOsebe, 0, 6);
             this.tableLayoutPanel1.Controls.Add(this.buttonBiki, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.buttonTeleta, 0, 3);
@@ -68,7 +70,8 @@
             this.tableLayoutPanel1.Controls.Add(this.buttonGlavnoOkno, 0, 0);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 8;
+            this.tableLayoutPanel1.RowCount = 9;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
@@ -77,8 +80,20 @@
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 70F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(146, 570);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(146, 719);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // buttonOsebe
+            // 
+            this.buttonOsebe.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonOsebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonOsebe.Location = new System.Drawing.Point(3, 423);
+            this.buttonOsebe.Name = "buttonOsebe";
+            this.buttonOsebe.Size = new System.Drawing.Size(140, 64);
+            this.buttonOsebe.TabIndex = 9;
+            this.buttonOsebe.Text = "Osebe";
+            this.buttonOsebe.UseVisualStyleBackColor = true;
+            this.buttonOsebe.Click += new System.EventHandler(this.buttonOsebe_Click);
             // 
             // buttonBiki
             // 
@@ -158,26 +173,26 @@
             this.panelPrikaz.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPrikaz.Location = new System.Drawing.Point(150, 0);
             this.panelPrikaz.Name = "panelPrikaz";
-            this.panelPrikaz.Size = new System.Drawing.Size(650, 572);
+            this.panelPrikaz.Size = new System.Drawing.Size(853, 721);
             this.panelPrikaz.TabIndex = 1;
             // 
-            // buttonOsebe
+            // buttonZdravila
             // 
-            this.buttonOsebe.Dock = System.Windows.Forms.DockStyle.Top;
-            this.buttonOsebe.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonOsebe.Location = new System.Drawing.Point(3, 423);
-            this.buttonOsebe.Name = "buttonOsebe";
-            this.buttonOsebe.Size = new System.Drawing.Size(140, 64);
-            this.buttonOsebe.TabIndex = 9;
-            this.buttonOsebe.Text = "Osebe";
-            this.buttonOsebe.UseVisualStyleBackColor = true;
-            this.buttonOsebe.Click += new System.EventHandler(this.buttonOsebe_Click);
+            this.buttonZdravila.Dock = System.Windows.Forms.DockStyle.Top;
+            this.buttonZdravila.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZdravila.Location = new System.Drawing.Point(3, 493);
+            this.buttonZdravila.Name = "buttonZdravila";
+            this.buttonZdravila.Size = new System.Drawing.Size(140, 64);
+            this.buttonZdravila.TabIndex = 10;
+            this.buttonZdravila.Text = "Zdravila";
+            this.buttonZdravila.UseVisualStyleBackColor = true;
+            this.buttonZdravila.Click += new System.EventHandler(this.buttonZdravila_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 572);
+            this.ClientSize = new System.Drawing.Size(1003, 721);
             this.Controls.Add(this.panelPrikaz);
             this.Controls.Add(this.panel1);
             this.Name = "Form1";
@@ -201,6 +216,7 @@
         private System.Windows.Forms.Button buttonBiki;
         private System.Windows.Forms.Button buttonTeleta;
         private System.Windows.Forms.Button buttonOsebe;
+        private System.Windows.Forms.Button buttonZdravila;
     }
 }
 
