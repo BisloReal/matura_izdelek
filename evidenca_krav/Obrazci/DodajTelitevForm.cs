@@ -1,4 +1,5 @@
-﻿using evidenca_krav.RazredSi;
+﻿using evidenca_krav.Razredi;
+using evidenca_krav.RazredSi;
 using System;
 using System.Windows.Forms;
 
@@ -7,15 +8,15 @@ namespace evidenca_krav.Obrazci
     public partial class DodajTelitevForm : Form
     {
         DatabaseHelper db;
-        KraveRazred krava;
+        TeliceRazred krava;
 
-        public DodajTelitevForm(DatabaseHelper dbHelper, KraveRazred k)
+        public DodajTelitevForm(DatabaseHelper dbHelper, TeliceRazred z)
         {
             InitializeComponent();
             db = dbHelper;
-            krava = k;
+            krava = z;
 
-            comboBoxMama.DataSource = db.PridobiKrave();
+            comboBoxMama.DataSource = db.PridobiZivaliBrezTelet();
             comboBoxMama.DisplayMember = "UsesnaSt";
             comboBoxMama.ValueMember = "Id";
             comboBoxMama.SelectedValue = krava.Id;

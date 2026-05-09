@@ -1,4 +1,5 @@
-﻿using evidenca_krav.RazredSi;
+﻿using evidenca_krav.Razredi;
+using evidenca_krav.RazredSi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,19 +16,19 @@ namespace evidenca_krav.Obrazci
     public partial class DodajOsemenitevKrave : Form
     {
         private DatabaseHelper db;
-        KraveRazred Krava;
+        TeliceRazred Krava;
 
-        public DodajOsemenitevKrave(DatabaseHelper dbHelper, KraveRazred k)
+        public DodajOsemenitevKrave(DatabaseHelper dbHelper, TeliceRazred z)
         {
             InitializeComponent();
             db = dbHelper;
-            Krava = k;
+            Krava = z;
 
             comboBoxBiki.DataSource = db.PridobiBikeOs();
             comboBoxBiki.DisplayMember = "Ime_Bika";
             comboBoxBiki.ValueMember = "IdBik";
 
-            comboBoxKrave.DataSource = db.PridobiKrave();
+            comboBoxKrave.DataSource = db.PridobiZivaliBrezTelet();
             comboBoxKrave.DisplayMember = "UsesnaSt";
             comboBoxKrave.ValueMember = "Id";
             comboBoxKrave.SelectedValue = Krava.Id;

@@ -70,6 +70,45 @@ namespace evidenca_krav
             return usStZivali;
         }
 
+        public List<TeliceRazred> PridobiZivaliBrezTelet()
+        {
+            List<TeliceRazred> telice = new List<TeliceRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta, z.usesna_stevilka " +
+                    "FROM zivali z " +
+                    "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
+                    "LEFT JOIN odhodi_krav ok ON z.id = ok.krava_id " +
+                    "WHERE tz.tip != @tipZiv AND ok.krava_id IS NULL " +
+                    "ORDER BY z.id DESC", conn))
+                {
+                    cmd.Parameters.AddWithValue("@tipZiv", "Tele");
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            telice.Add(new TeliceRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetDateTime(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5),
+                                reader.GetString(6)
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return telice;
+        }
+
         // TELICE
         public int DodajTelico(string ime, string datumRojstva, string pasma, string imeMame, string imeOceta, string UsesnaStevilka)
         {
@@ -188,23 +227,30 @@ namespace evidenca_krav
             return null;
         }
 
-        public int UrediTelico(int id, string ime, string datumRojstva, string pasma, string imeMame, string imeOceta, string usesna_stevilka)
+        public int UrediTelico(TeliceRazred telica)
         {
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
 
                 using (var command = new SQLiteCommand(
-                    "UPDATE zivali SET ime = @Ime, datum_roj = @DatumRojstva, pasma = @Pasma, ime_mame = @ImeMame, ime_oceta = @ImeOceta, usesna_stevilka = @UsesnaStevilka WHERE id = @Id",
+                    @"UPDATE zivali 
+                          SET ime = @Ime, 
+                              datum_roj = @DatumRojstva, 
+                              pasma = @Pasma, 
+                              ime_mame = @ImeMame, 
+                              ime_oceta = @ImeOceta, 
+                              usesna_stevilka = @UsesnaStevilka 
+                          WHERE id = @Id",
                     conn))
                 {
-                    command.Parameters.AddWithValue("@Ime", ime);
-                    command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
-                    command.Parameters.AddWithValue("@Pasma", pasma);
-                    command.Parameters.AddWithValue("@ImeMame", imeMame);
-                    command.Parameters.AddWithValue("@ImeOceta", imeOceta);
-                    command.Parameters.AddWithValue("@UsesnaStevilka", usesna_stevilka);
-                    command.Parameters.AddWithValue("@Id", id);
+                    command.Parameters.AddWithValue("@Ime", telica.Ime);
+                    command.Parameters.AddWithValue("@DatumRojstva", telica.DatumRoj.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@Pasma", telica.Pasma);
+                    command.Parameters.AddWithValue("@ImeMame", telica.ImeMame);
+                    command.Parameters.AddWithValue("@ImeOceta", telica.ImeOceta);
+                    command.Parameters.AddWithValue("@UsesnaStevilka", telica.UsesnaSt);
+                    command.Parameters.AddWithValue("@Id", telica.Id);
 
                     int rezultat = command.ExecuteNonQuery();
 
@@ -3488,9 +3534,9 @@ namespace evidenca_krav
                 conn.Open();
 
                 string query = @"
-            SELECT id, vrsta_karence, zdravljenje_id, veterinar_id, datum_konca, opombe, zivali_id
-            FROM karence
-            WHERE zivali_id = @ZivaliId";
+                        SELECT id, vrsta_karence, zdravljenje_id, veterinar_id, datum_konca, opombe, zivali_id
+                        FROM karence
+                        WHERE zivali_id = @ZivaliId";
 
                 using (var cmd = new SQLiteCommand(query, conn))
                 {

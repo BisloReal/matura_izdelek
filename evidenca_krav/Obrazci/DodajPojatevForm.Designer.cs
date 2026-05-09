@@ -148,7 +148,7 @@
             this.comboBoxKrave.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxKrave.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxKrave.FormattingEnabled = true;
-            this.comboBoxKrave.Location = new System.Drawing.Point(252, 219);
+            this.comboBoxKrave.Location = new System.Drawing.Point(252, 211);
             this.comboBoxKrave.Name = "comboBoxKrave";
             this.comboBoxKrave.Size = new System.Drawing.Size(364, 33);
             this.comboBoxKrave.TabIndex = 106;
@@ -157,11 +157,11 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(169, 222);
+            this.label4.Location = new System.Drawing.Point(180, 214);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 25);
+            this.label4.Size = new System.Drawing.Size(53, 25);
             this.label4.TabIndex = 105;
-            this.label4.Text = "Krava";
+            this.label4.Text = "Žival";
             // 
             // DodajPojatevForm
             // 

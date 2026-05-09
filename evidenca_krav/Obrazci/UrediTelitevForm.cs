@@ -20,7 +20,7 @@ namespace evidenca_krav.Obrazci
             telitev = tr;
             telitevCard = tc;
 
-            comboBoxMama.DataSource = db.PridobiKrave();
+            comboBoxMama.DataSource = db.PridobiZivaliBrezTelet();
             comboBoxMama.DisplayMember = "UsesnaSt";
             comboBoxMama.ValueMember = "Id";
             comboBoxMama.SelectedValue = telitev.KravaMamaId;

@@ -2,13 +2,6 @@
 using evidenca_krav.NavigationBarUserControls;
 using evidenca_krav.Razredi;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace evidenca_krav.Obrazci
@@ -18,6 +11,7 @@ namespace evidenca_krav.Obrazci
         TeliceRazred Tele;
         TeleCard teleCard;
         private DatabaseHelper db;
+
         public UrediTeleForm(DatabaseHelper dbHelper, int idTel, TeleCard tc)
         {
             InitializeComponent();
@@ -26,6 +20,15 @@ namespace evidenca_krav.Obrazci
             teleCard = tc;
 
             Tele = db.PridobiTelico(idTel);
+
+            if (Tele == null)
+            {
+                MessageBox.Show("Tele ni bilo najdeno.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                DialogResult = DialogResult.Abort;
+                Close();
+                return;
+            }
+
             textBoxImeTel.Text = Tele.Ime;
             dateTimePicker.Value = Tele.DatumRoj;
             textBoxPasmaTel.Text = Tele.Pasma;
@@ -40,7 +43,7 @@ namespace evidenca_krav.Obrazci
             {
                 if (db.PogledObstajaUsSt(textBoxUsStTel.Text.Trim()) && Tele.UsesnaSt != textBoxUsStTel.Text.Trim())
                 {
-                    MessageBox.Show("Žival z to uporabniško številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Žival s to ušesno številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
@@ -54,14 +57,14 @@ namespace evidenca_krav.Obrazci
                     return;
                 }
 
-                string imeTel = textBoxImeTel.Text.Trim();
-                string datumRojstva = dateTimePicker.Value.ToString("yyyy-MM-dd");
-                string pasma = textBoxPasmaTel.Text.Trim();
-                string imeMame = textBoxImeMameTel.Text.Trim();
-                string imeOceta = textBoxImeOcetaTel.Text.Trim();
-                string usesna_stevilka = textBoxUsStTel.Text.Trim();
+                Tele.Ime = textBoxImeTel.Text.Trim();
+                Tele.DatumRoj = dateTimePicker.Value;
+                Tele.Pasma = textBoxPasmaTel.Text.Trim();
+                Tele.ImeMame = textBoxImeMameTel.Text.Trim();
+                Tele.ImeOceta = textBoxImeOcetaTel.Text.Trim();
+                Tele.UsesnaSt = textBoxUsStTel.Text.Trim();
 
-                int izvedba = db.UrediTelico(Tele.Id, imeTel, datumRojstva, pasma, imeMame, imeOceta, usesna_stevilka);
+                int izvedba = db.UrediTelico(Tele);
 
                 if (izvedba == 0)
                 {
@@ -71,12 +74,12 @@ namespace evidenca_krav.Obrazci
                 }
                 else if (izvedba == -1)
                 {
-                    MessageBox.Show("Telica ni bila najdena.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Tele ni bilo najdeno.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Napaka pri urejanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Napaka pri urejanju teleta: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -91,6 +94,7 @@ namespace evidenca_krav.Obrazci
             try
             {
                 DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db, Tele.UsesnaSt);
+
                 if (dodajOdhodForm.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("Odhod uspešno dodan.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);

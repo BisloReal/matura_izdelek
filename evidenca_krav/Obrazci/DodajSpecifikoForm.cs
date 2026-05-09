@@ -1,4 +1,5 @@
-﻿using evidenca_krav.RazredSi;
+﻿using evidenca_krav.Razredi;
+using evidenca_krav.RazredSi;
 using System;
 using System.Windows.Forms;
 
@@ -6,17 +7,17 @@ namespace evidenca_krav.Obrazci
 {
     public partial class DodajSpecifikoForm : Form
     {
-        private DatabaseHelper db;
-        private KraveRazred Krava;
+        DatabaseHelper db;
+        TeliceRazred Krava;
 
-        public DodajSpecifikoForm(DatabaseHelper dbHelper, KraveRazred k)
+        public DodajSpecifikoForm(DatabaseHelper dbHelper, TeliceRazred z)
         {
             InitializeComponent();
 
             db = dbHelper;
-            Krava = k;
+            Krava = z;
 
-            comboBoxKrave.DataSource = db.PridobiKrave();
+            comboBoxKrave.DataSource = db.PridobiZivaliBrezTelet();
             comboBoxKrave.DisplayMember = "UsesnaSt";
             comboBoxKrave.ValueMember = "Id";
             comboBoxKrave.SelectedValue = Krava.Id;

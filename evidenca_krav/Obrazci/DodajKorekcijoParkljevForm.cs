@@ -1,4 +1,5 @@
-﻿using evidenca_krav.RazredSi;
+﻿using evidenca_krav.Razredi;
+using evidenca_krav.RazredSi;
 using System;
 using System.Windows.Forms;
 
@@ -7,16 +8,16 @@ namespace evidenca_krav.Obrazci
     public partial class DodajKorekcijoParkljevForm : Form
     {
         DatabaseHelper db;
-        KraveRazred krava;
+        TeliceRazred krava;
 
-        public DodajKorekcijoParkljevForm(DatabaseHelper dbHelper, KraveRazred k)
+        public DodajKorekcijoParkljevForm(DatabaseHelper dbHelper, TeliceRazred zival)
         {
             InitializeComponent();
 
             db = dbHelper;
-            krava = k;
+            krava = zival;
 
-            comboBoxKrave.DataSource = db.PridobiKrave();
+            comboBoxKrave.DataSource = db.PridobiZivaliBrezTelet();
             comboBoxKrave.DisplayMember = "UsesnaSt";
             comboBoxKrave.ValueMember = "Id";
             comboBoxKrave.SelectedValue = krava.Id;

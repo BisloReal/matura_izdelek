@@ -57,7 +57,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(174, 206);
+            this.label9.Location = new System.Drawing.Point(173, 206);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(81, 25);
             this.label9.TabIndex = 145;
@@ -67,7 +67,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(188, 248);
+            this.label7.Location = new System.Drawing.Point(186, 251);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(68, 25);
             this.label7.TabIndex = 144;
@@ -95,11 +95,11 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(190, 166);
+            this.label5.Location = new System.Drawing.Point(201, 161);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(64, 25);
+            this.label5.Size = new System.Drawing.Size(53, 25);
             this.label5.TabIndex = 137;
-            this.label5.Text = "Krava";
+            this.label5.Text = "Žival";
             // 
             // buttonPreklici
             // 

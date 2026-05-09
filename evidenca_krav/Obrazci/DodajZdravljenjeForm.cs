@@ -8,16 +8,16 @@ namespace evidenca_krav.Obrazci
     public partial class DodajZdravljenjeForm : Form
     {
         DatabaseHelper db;
-        KraveRazred krava;
+        TeliceRazred krava;
 
-        public DodajZdravljenjeForm(DatabaseHelper dbHelper, KraveRazred k)
+        public DodajZdravljenjeForm(DatabaseHelper dbHelper, TeliceRazred z)
         {
             InitializeComponent();
 
             db = dbHelper;
-            krava = k;
+            krava = z;
 
-            comboBoxKrave.DataSource = db.PridobiKrave();
+            comboBoxKrave.DataSource = db.PridobiZivaliBrezTelet();
             comboBoxKrave.DisplayMember = "UsesnaSt";
             comboBoxKrave.ValueMember = "Id";
             comboBoxKrave.SelectedValue = krava.Id;
