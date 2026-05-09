@@ -25,8 +25,11 @@ namespace evidenca_krav.Obrazci
             Bik = bik;
             bikCard = bc;
 
+            textBoxIme.Text = Bik.Ime;
+            textBoxStevilka.Text = Bik.Stevilka;
             textBoxRejecBik.Text = Bik.Rejec;
             dateTimePicker.Value = Bik.DatumRoj;
+            textBoxIzboljsujeBik.Text = Bik.Izboljsuje;
             comboBoxPasma.DataSource = db.PridobiPasmeBikov();
             comboBoxPasma.SelectedItem = Bik.Pasma;
         }
@@ -34,19 +37,25 @@ namespace evidenca_krav.Obrazci
         private void buttonPotrdi_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(textBoxRejecBik.Text) ||
-                    comboBoxPasma.SelectedItem == null)
+                    string.IsNullOrEmpty(textBoxIzboljsujeBik.Text) ||
+                    string.IsNullOrEmpty(textBoxStevilka.Text) ||
+                    string.IsNullOrEmpty(textBoxIme.Text) ||
+                    string.IsNullOrEmpty(comboBoxPasma.SelectedItem.ToString()))
             {
                 MessageBox.Show("Izpolnite vsa polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            if (string.IsNullOrEmpty(textBoxIzboljsujeBik.Text))
+            if (db.PogledObstajaStBika(textBoxStevilka.Text.Trim()) && Bik.Stevilka != textBoxStevilka.Text.Trim())
             {
-                textBoxIzboljsujeBik.Text = "/";
+                MessageBox.Show("Bik z tem številko že obstaja. Izberite drugo številko.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
            try
            {
+                string ime = textBoxIme.Text.Trim();
+                string stevilka = textBoxStevilka.Text.Trim();
                 string rejec = textBoxRejecBik.Text.Trim();
                 string datumRojstva = dateTimePicker.Value.ToString("yyyy-MM-dd");
                 string izboljsuje = textBoxIzboljsujeBik.Text.Trim();
@@ -54,7 +63,7 @@ namespace evidenca_krav.Obrazci
                 int pasmaId = db.PridobiIdPasmePrekoImena(pasma);
 
 
-                int izvedba = db.UrediBikaOs(rejec, datumRojstva, pasmaId, izboljsuje, Bik.IdBik);
+                int izvedba = db.UrediBikaOs(ime, stevilka, rejec, datumRojstva, pasmaId, izboljsuje, Bik.IdBik);
 
                 if (izvedba == 0)
                 {

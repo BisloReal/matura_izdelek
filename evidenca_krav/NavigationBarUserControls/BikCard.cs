@@ -24,11 +24,12 @@ namespace evidenca_krav.NavigationBarUserControls
             db = dbHelper;
             BikOs = bik;    
 
+            labelIme.Text = BikOs.Ime;
+            labelStevilka.Text = BikOs.Stevilka;
             labelRejec.Text = BikOs.Rejec;
             labelDatumRoj.Text = BikOs.DatumRoj.ToString("dd.MM.yyyy");
             labelIzboljsuje.Text = BikOs.Izboljsuje;
             labelPasma.Text = BikOs.Pasma;   
-
         }
 
         private void buttonUrediTel_Click(object sender, EventArgs e)
@@ -54,6 +55,8 @@ namespace evidenca_krav.NavigationBarUserControls
         public void PosodobiPodatke()
         {
             BikOs = db.PridobiBikaOs(BikOs.IdBik);
+            labelIme.Text = BikOs.Ime;
+            labelStevilka.Text = BikOs.Stevilka;
             labelRejec.Text = BikOs.Rejec;
             labelDatumRoj.Text = BikOs.DatumRoj.ToString("dd.MM.yyyy");
             labelIzboljsuje.Text = BikOs.Izboljsuje;

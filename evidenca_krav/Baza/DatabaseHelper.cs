@@ -293,7 +293,7 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var cmd = new SQLiteCommand(
-                    "SELECT  b.id, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
+                    "SELECT  b.id, b.ime, b.stevilka, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
                     "FROM biki_os b " +
                     "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id " +
                     "ORDER BY b.id DESC", conn))
@@ -306,10 +306,12 @@ namespace evidenca_krav
                             biki.Add(new BikiOsRazred(
                                 reader.GetInt32(0),
                                 reader.GetString(1),
-                                reader.GetDateTime(2),
-                                reader.GetInt32(3),
-                                reader.GetString(4),
-                                reader.GetString(5)
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetDateTime(4),
+                                reader.GetInt32(5),
+                                reader.GetString(6),
+                                reader.GetString(7)
                             ));
                         }
                     }
@@ -325,7 +327,7 @@ namespace evidenca_krav
             {
                 conn.Open();
                 using (var cmd = new SQLiteCommand(
-                    "SELECT b.id, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
+                    "SELECT b.id, b.ime, b.stevilka, b.rejec, b.datum_roj, bp.id, bp.pasma, b.izboljsuje " +
                     "FROM biki_os b " +
                     "INNER JOIN biki_pasme bp ON b.biki_pasma_id = bp.id WHERE b.id = @Id", conn))
                 {
@@ -337,10 +339,12 @@ namespace evidenca_krav
                             return new BikiOsRazred(
                                 reader.GetInt32(0),
                                 reader.GetString(1),
-                                reader.GetDateTime(2),
-                                reader.GetInt32(3),
-                                reader.GetString(4),
-                                reader.GetString(5)
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetDateTime(4),
+                                reader.GetInt32(5),
+                                reader.GetString(6),
+                                reader.GetString(7)
                             );
                         }
                     }
@@ -438,15 +442,17 @@ namespace evidenca_krav
             return pasme;
         }
 
-        public void DodajBikaOs(string rejec, string datumRojstva, int pasmaBikId, string izboljsuje)
+        public void DodajBikaOs(string ime, string stevilka, string rejec, string datumRojstva, int pasmaBikId, string izboljsuje)
         {
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
                 using (var command = new SQLiteCommand(
-                    "INSERT INTO biki_os (rejec, datum_roj, biki_pasma_id, izboljsuje) " +
-                    "VALUES (@Rejec, @DatumRojstva, @PasmaBikId, @Izboljsuje)", conn))
+                    "INSERT INTO biki_os (ime, stevilka, rejec, datum_roj, biki_pasma_id, izboljsuje) " +
+                    "VALUES (@Ime, @Stevilka, @Rejec, @DatumRojstva, @PasmaBikId, @Izboljsuje)", conn))
                 {
+                    command.Parameters.AddWithValue("@Ime", ime);
+                    command.Parameters.AddWithValue("@Stevilka", stevilka);
                     command.Parameters.AddWithValue("@Rejec", rejec);
                     command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
                     command.Parameters.AddWithValue("@PasmaBikId", pasmaBikId);
@@ -456,16 +462,18 @@ namespace evidenca_krav
             }
         }
 
-        public int UrediBikaOs(string rejec, string datumRojstva, int pasmaBikId, string izboljsuje, int id)
+        public int UrediBikaOs(string ime, string stevilka, string rejec, string datumRojstva, int pasmaBikId, string izboljsuje, int id)
         {
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
 
                 using (var command = new SQLiteCommand(
-                    "UPDATE biki_os SET rejec = @Rejec, datum_roj = @DatumRojstva, biki_pasma_id = @PasmaBikId, izboljsuje = @Izboljsuje WHERE id = @Id",
+                    "UPDATE biki_os SET ime = @Ime, stevilka = @Stevilka, rejec = @Rejec, datum_roj = @DatumRojstva, biki_pasma_id = @PasmaBikId, izboljsuje = @Izboljsuje WHERE id = @Id",
                     conn))
                 {
+                    command.Parameters.AddWithValue("@Ime", ime);
+                    command.Parameters.AddWithValue("@Stevilka", stevilka);
                     command.Parameters.AddWithValue("@Rejec", rejec);
                     command.Parameters.AddWithValue("@DatumRojstva", datumRojstva);
                     command.Parameters.AddWithValue("@PasmaBikId", pasmaBikId);
@@ -482,6 +490,30 @@ namespace evidenca_krav
                     else
                     {
                         return -1;
+                    }
+                }
+            }
+        }
+
+        public bool PogledObstajaStBika(string st)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM biki_os WHERE stevilka = @St", conn))
+                {
+                    cmd.Parameters.AddWithValue("@St", st);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
                     }
                 }
             }

@@ -29,18 +29,28 @@ namespace evidenca_krav.Obrazci
             {
                 if (string.IsNullOrEmpty(textBoxRejecBik.Text) ||
                     string.IsNullOrEmpty(textBoxIzboljsujeBik.Text) ||
+                    string.IsNullOrEmpty(textBoxStevilka.Text) ||
+                    string.IsNullOrEmpty(textBoxIme.Text) ||
                     string.IsNullOrEmpty(comboBoxPasma.SelectedItem.ToString()))
                 {
                     MessageBox.Show("Izpolnite vsa polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
+                if (db.PogledObstajaStBika(textBoxStevilka.Text.Trim()))
+                {
+                    MessageBox.Show("Bik z tem številko že obstaja. Izberite drugo številko.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                string ime = textBoxIme.Text.Trim();
+                string stevilka = textBoxStevilka.Text.Trim();
                 string rejec = textBoxRejecBik.Text.Trim();
                 string datumRojstva = dateTimePicker.Value.ToString("yyyy-MM-dd");
                 string izboljsuje = textBoxIzboljsujeBik.Text.Trim();
                 int pasmaId = db.PridobiIdPasmePrekoImena(comboBoxPasma.SelectedItem.ToString());
 
-                db.DodajBikaOs(rejec, datumRojstva, pasmaId, izboljsuje);
+                db.DodajBikaOs(ime, stevilka, rejec, datumRojstva, pasmaId, izboljsuje);
 
                 DialogResult = DialogResult.OK;
                 Close();

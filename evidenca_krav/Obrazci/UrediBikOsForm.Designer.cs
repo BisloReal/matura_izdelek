@@ -40,12 +40,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxRejecBik = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBoxIme = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.textBoxStevilka = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // buttonPasmePregled
             // 
             this.buttonPasmePregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPasmePregled.Location = new System.Drawing.Point(455, 394);
+            this.buttonPasmePregled.Location = new System.Drawing.Point(451, 570);
             this.buttonPasmePregled.Name = "buttonPasmePregled";
             this.buttonPasmePregled.Size = new System.Drawing.Size(149, 43);
             this.buttonPasmePregled.TabIndex = 36;
@@ -55,9 +59,10 @@
             // 
             // comboBoxPasma
             // 
+            this.comboBoxPasma.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxPasma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxPasma.FormattingEnabled = true;
-            this.comboBoxPasma.Location = new System.Drawing.Point(214, 398);
+            this.comboBoxPasma.Location = new System.Drawing.Point(210, 574);
             this.comboBoxPasma.Name = "comboBoxPasma";
             this.comboBoxPasma.Size = new System.Drawing.Size(219, 39);
             this.comboBoxPasma.TabIndex = 35;
@@ -65,7 +70,7 @@
             // buttonPreklici
             // 
             this.buttonPreklici.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPreklici.Location = new System.Drawing.Point(214, 480);
+            this.buttonPreklici.Location = new System.Drawing.Point(210, 656);
             this.buttonPreklici.Name = "buttonPreklici";
             this.buttonPreklici.Size = new System.Drawing.Size(100, 43);
             this.buttonPreklici.TabIndex = 34;
@@ -76,7 +81,7 @@
             // buttonPotrdi
             // 
             this.buttonPotrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPotrdi.Location = new System.Drawing.Point(333, 480);
+            this.buttonPotrdi.Location = new System.Drawing.Point(329, 656);
             this.buttonPotrdi.Name = "buttonPotrdi";
             this.buttonPotrdi.Size = new System.Drawing.Size(100, 43);
             this.buttonPotrdi.TabIndex = 33;
@@ -88,7 +93,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(275, 276);
+            this.label5.Location = new System.Drawing.Point(271, 452);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(93, 25);
             this.label5.TabIndex = 32;
@@ -97,7 +102,7 @@
             // textBoxIzboljsujeBik
             // 
             this.textBoxIzboljsujeBik.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIzboljsujeBik.Location = new System.Drawing.Point(214, 304);
+            this.textBoxIzboljsujeBik.Location = new System.Drawing.Point(210, 480);
             this.textBoxIzboljsujeBik.Name = "textBoxIzboljsujeBik";
             this.textBoxIzboljsujeBik.Size = new System.Drawing.Size(219, 38);
             this.textBoxIzboljsujeBik.TabIndex = 31;
@@ -106,7 +111,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(284, 370);
+            this.label4.Location = new System.Drawing.Point(280, 546);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 30;
@@ -116,7 +121,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(257, 199);
+            this.label3.Location = new System.Drawing.Point(253, 375);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 25);
             this.label3.TabIndex = 29;
@@ -125,7 +130,7 @@
             // dateTimePicker
             // 
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(214, 227);
+            this.dateTimePicker.Location = new System.Drawing.Point(210, 403);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(219, 30);
             this.dateTimePicker.TabIndex = 28;
@@ -134,7 +139,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(296, 111);
+            this.label2.Location = new System.Drawing.Point(292, 287);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 25);
             this.label2.TabIndex = 27;
@@ -143,7 +148,7 @@
             // textBoxRejecBik
             // 
             this.textBoxRejecBik.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxRejecBik.Location = new System.Drawing.Point(214, 139);
+            this.textBoxRejecBik.Location = new System.Drawing.Point(210, 315);
             this.textBoxRejecBik.Name = "textBoxRejecBik";
             this.textBoxRejecBik.Size = new System.Drawing.Size(219, 38);
             this.textBoxRejecBik.TabIndex = 26;
@@ -158,11 +163,51 @@
             this.label1.TabIndex = 25;
             this.label1.Text = "Uredi bika centra";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(292, 108);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(44, 25);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Ime";
+            // 
+            // textBoxIme
+            // 
+            this.textBoxIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIme.Location = new System.Drawing.Point(210, 136);
+            this.textBoxIme.Name = "textBoxIme";
+            this.textBoxIme.Size = new System.Drawing.Size(219, 38);
+            this.textBoxIme.TabIndex = 39;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(280, 190);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(81, 25);
+            this.label6.TabIndex = 38;
+            this.label6.Text = "Številka";
+            // 
+            // textBoxStevilka
+            // 
+            this.textBoxStevilka.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxStevilka.Location = new System.Drawing.Point(210, 218);
+            this.textBoxStevilka.Name = "textBoxStevilka";
+            this.textBoxStevilka.Size = new System.Drawing.Size(219, 38);
+            this.textBoxStevilka.TabIndex = 37;
+            // 
             // UrediBikOsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(659, 555);
+            this.ClientSize = new System.Drawing.Size(659, 720);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.textBoxIme);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.textBoxStevilka);
             this.Controls.Add(this.buttonPasmePregled);
             this.Controls.Add(this.comboBoxPasma);
             this.Controls.Add(this.buttonPreklici);
@@ -196,5 +241,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxRejecBik;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox textBoxIme;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox textBoxStevilka;
     }
 }
