@@ -242,24 +242,6 @@
 					"estimatedSize": ""
 				},
 				{
-					"id": "ce413b9d-cc5d-4b76-9e46-c2c2cc33ecba",
-					"name": "iztok_mleka_ocena",
-					"datatype": "INT",
-					"param": "",
-					"pk": false,
-					"nn": false,
-					"fk": false,
-					"comment": "",
-					"defaultvalue": "",
-					"data": "",
-					"after": "",
-					"collation": "",
-					"sqlite": {
-						"autoincrement": false
-					},
-					"estimatedSize": ""
-				},
-				{
 					"id": "659110ec-7949-41c8-8588-ba98a58bdddb",
 					"name": "obseg_prsi_cm",
 					"datatype": "REAL",
@@ -893,6 +875,96 @@
 					"id": "6bcc08db-ec0c-4a7f-b26b-8d786ee50c0f",
 					"name": "telesne_lastnosti_skupaj_ocena",
 					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "2bba9125-a4ec-4929-ab0d-dd935898f4d0",
+					"name": "datum_pregleda",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "ce413b9d-cc5d-4b76-9e46-c2c2cc33ecba",
+					"name": "iztok_mleka_ocena",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "fbf5d1c6-13f9-4dc0-9135-92c945eb19c0",
+					"name": "iztok_mleka_datum_prvi",
+					"datatype": "DATE",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "697741f6-8f00-4b25-9af3-29fc1ffcee7a",
+					"name": "iztok_mleka_ocena_druga",
+					"datatype": "INT",
+					"param": "",
+					"pk": false,
+					"nn": false,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "0141c1f1-a2a0-4020-955c-2799bd7b4f84",
+					"name": "iztok_mleka_datum_drugi",
+					"datatype": "DATE",
 					"param": "",
 					"pk": false,
 					"nn": false,
@@ -3044,6 +3116,42 @@
 					"estimatedSize": ""
 				},
 				{
+					"id": "9a7f9ac3-0d06-47e3-af2e-45ef8d68b234",
+					"name": "ime",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
+					"id": "96ac5c22-61f9-4f40-8d28-f6fea33b62e9",
+					"name": "stevilka",
+					"datatype": "VARCHAR",
+					"param": "",
+					"pk": false,
+					"nn": true,
+					"fk": false,
+					"comment": "",
+					"defaultvalue": "",
+					"data": "",
+					"after": "",
+					"collation": "",
+					"sqlite": {
+						"autoincrement": false
+					},
+					"estimatedSize": ""
+				},
+				{
 					"id": "1e64bb91-75cc-4a2a-8ba3-0f38bc05073a",
 					"name": "datum_roj",
 					"datatype": "DATE",
@@ -3848,7 +3956,7 @@
 			"includeCreationSql": "no"
 		},
 		"connectionVersion": "",
-		"lastSaved": 1776551844942
+		"lastSaved": 1778332337895
 	},
 	"otherObjects": {},
 	"diagrams": {
@@ -3866,9 +3974,9 @@
 			"diagramItems": {
 				"d5c700ea-726f-486b-a05b-9da78b972faf": {
 					"referencedItemId": "d5c700ea-726f-486b-a05b-9da78b972faf",
-					"x": 385,
-					"y": 274,
-					"gHeight": 927,
+					"x": 387,
+					"y": 294,
+					"gHeight": 999,
 					"gWidth": 312,
 					"color": "#ffffff",
 					"background": "#ff0000",
@@ -4211,9 +4319,9 @@
 				},
 				"75c06795-188d-4d58-a623-69e22b2fd82f": {
 					"referencedItemId": "75c06795-188d-4d58-a623-69e22b2fd82f",
-					"x": 420,
-					"y": 132,
-					"gHeight": 117,
+					"x": 427,
+					"y": 122,
+					"gHeight": 153,
 					"gWidth": 218,
 					"color": "#ffffff",
 					"background": "#03a9f4",
