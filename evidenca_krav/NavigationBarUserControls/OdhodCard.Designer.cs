@@ -169,6 +169,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.buttonIzbrisi);
             this.Controls.Add(this.labelGMid);
             this.Controls.Add(this.label7);
@@ -182,7 +183,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "OdhodCard";
-            this.Size = new System.Drawing.Size(546, 300);
+            this.Size = new System.Drawing.Size(544, 298);
             this.ResumeLayout(false);
             this.PerformLayout();
 
