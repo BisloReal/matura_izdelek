@@ -235,6 +235,12 @@
     <Compile Include="Obrazci\UrediOseboForm.Designer.cs">
       <DependentUpon>UrediOseboForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediOsemenitev.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediOsemenitev.Designer.cs">
+      <DependentUpon>UrediOsemenitev.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\UrediTeleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -345,6 +351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediOseboForm.resx">
       <DependentUpon>UrediOseboForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediOsemenitev.resx">
+      <DependentUpon>UrediOsemenitev.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTeleForm.resx">
       <DependentUpon>UrediTeleForm.cs</DependentUpon>

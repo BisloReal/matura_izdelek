@@ -244,7 +244,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1118, 579);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 644);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Osnovni";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -254,7 +254,7 @@
             this.buttonOdhod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOdhod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOdhod.ForeColor = System.Drawing.Color.Red;
-            this.buttonOdhod.Location = new System.Drawing.Point(6, 499);
+            this.buttonOdhod.Location = new System.Drawing.Point(6, 564);
             this.buttonOdhod.Name = "buttonOdhod";
             this.buttonOdhod.Size = new System.Drawing.Size(146, 44);
             this.buttonOdhod.TabIndex = 43;

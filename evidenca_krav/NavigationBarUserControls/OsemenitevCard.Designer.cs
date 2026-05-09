@@ -37,6 +37,10 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.labelPregled = new System.Windows.Forms.Label();
+            this.labelPresusitev = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // labelZapSt
@@ -63,7 +67,7 @@
             // 
             this.labelBik.AutoSize = true;
             this.labelBik.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBik.Location = new System.Drawing.Point(246, 120);
+            this.labelBik.Location = new System.Drawing.Point(246, 116);
             this.labelBik.Name = "labelBik";
             this.labelBik.Size = new System.Drawing.Size(53, 25);
             this.labelBik.TabIndex = 60;
@@ -92,7 +96,7 @@
             // buttonUrediOs
             // 
             this.buttonUrediOs.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUrediOs.Location = new System.Drawing.Point(77, 163);
+            this.buttonUrediOs.Location = new System.Drawing.Point(77, 229);
             this.buttonUrediOs.Name = "buttonUrediOs";
             this.buttonUrediOs.Size = new System.Drawing.Size(222, 43);
             this.buttonUrediOs.TabIndex = 56;
@@ -104,7 +108,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(174, 120);
+            this.label4.Location = new System.Drawing.Point(174, 116);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 25);
             this.label4.TabIndex = 55;
@@ -130,11 +134,55 @@
             this.label1.TabIndex = 52;
             this.label1.Text = "Datum:";
             // 
+            // labelPregled
+            // 
+            this.labelPregled.AutoSize = true;
+            this.labelPregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPregled.Location = new System.Drawing.Point(246, 151);
+            this.labelPregled.Name = "labelPregled";
+            this.labelPregled.Size = new System.Drawing.Size(79, 25);
+            this.labelPregled.TabIndex = 63;
+            this.labelPregled.Text = "Pregled";
+            // 
+            // labelPresusitev
+            // 
+            this.labelPresusitev.AutoSize = true;
+            this.labelPresusitev.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPresusitev.Location = new System.Drawing.Point(246, 186);
+            this.labelPresusitev.Name = "labelPresusitev";
+            this.labelPresusitev.Size = new System.Drawing.Size(103, 25);
+            this.labelPresusitev.TabIndex = 64;
+            this.labelPresusitev.Text = "Presusitev";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(130, 151);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 25);
+            this.label3.TabIndex = 65;
+            this.label3.Text = "Pregled:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(103, 186);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(120, 25);
+            this.label5.TabIndex = 66;
+            this.label5.Text = "Presušitev:";
+            // 
             // OsemenitevCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.labelPresusitev);
+            this.Controls.Add(this.labelPregled);
             this.Controls.Add(this.labelZapSt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelBik);
@@ -145,7 +193,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "OsemenitevCard";
-            this.Size = new System.Drawing.Size(544, 225);
+            this.Size = new System.Drawing.Size(544, 285);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +210,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPregled;
+        private System.Windows.Forms.Label labelPresusitev;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
     }
 }

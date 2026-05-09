@@ -1905,24 +1905,21 @@ namespace evidenca_krav
             {
                 conn.Open();
 
-                string query = @"
-            SELECT 
-                o.id, o.zap_os, o.datum, o.veterinar_id, o.opombe, o.krava_id, o.bik_id,
-                v.ime AS veterinar_ime, v.priimek AS veterinar_priimek,
-                k.usesna_stevilka AS krava_usesna, k.ime AS krava_ime, 
-                b.ime AS bik_ime, b.stevilka AS bik_stevilka,
-                o.datum_pregleda, o.izzid_pregleda, o.nacin_pregleda, o.opombe_pregleda, o.veterinar_pregleda_id,
-                vp.ime AS veterinar_pregleda_ime, vp.priimek AS veterinar_pregleda_priimek,
-                o.datum_presusitve, o.opombe_presusitve, o.kondicija_ob_presusitvi
-
-                FROM osemenitve o
-                INNER JOIN osebe v ON o.veterinar_id = v.id
-                INNER JOIN zivali k ON o.krava_id = k.id
-                INNER JOIN biki_os b ON o.bik_id = b.id
-                LEFT JOIN osebe vp ON o.veterinar_pregleda_id = vp.id
-
-                WHERE o.krava_id = @IdKrave
-                ORDER BY o.id DESC";
+                string query =
+                    "SELECT o.id, o.zap_os, o.datum, o.veterinar_id, o.opombe, o.krava_id, o.bik_id, " +
+                    "o.datum_pregleda, o.izzid_pregleda, o.nacin_pregleda, o.opombe_pregleda, o.veterinar_pregleda_id, " +
+                    "o.datum_presusitve, o.opombe_presusitve, o.kondicija_ob_presusitvi, " +
+                    "v.ime AS veterinar_ime, v.priimek AS veterinar_priimek, " +
+                    "k.usesna_stevilka AS krava_usesna, k.ime AS krava_ime, " +
+                    "b.ime AS bik_ime, b.stevilka AS bik_stevilka, " +
+                    "vp.ime AS veterinar_pregleda_ime, vp.priimek AS veterinar_pregleda_priimek " +
+                    "FROM osemenitve o " +
+                    "INNER JOIN osebe v ON o.veterinar_id = v.id " +
+                    "INNER JOIN zivali k ON o.krava_id = k.id " +
+                    "INNER JOIN biki_os b ON o.bik_id = b.id " +
+                    "LEFT JOIN osebe vp ON o.veterinar_pregleda_id = vp.id " +
+                    "WHERE o.krava_id = @IdKrave " +
+                    "ORDER BY o.id DESC";
 
                 using (var cmd = new SQLiteCommand(query, conn))
                 {
@@ -1955,7 +1952,8 @@ namespace evidenca_krav
 
                             string bik = reader["bik_ime"].ToString();
 
-                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")))
+                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["bik_stevilka"].ToString()))
                             {
                                 bik += " (" + reader["bik_stevilka"].ToString() + ")";
                             }
@@ -1988,6 +1986,17 @@ namespace evidenca_krav
                                 reader["opombe_presusitve"].ToString(),
                                 reader["kondicija_ob_presusitvi"].ToString()
                             );
+
+                            osemenitev.VeterinarId = reader.GetInt32(reader.GetOrdinal("veterinar_id"));
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("veterinar_pregleda_id")))
+                            {
+                                osemenitev.VeterinarPregledaId = reader.GetInt32(reader.GetOrdinal("veterinar_pregleda_id"));
+                            }
+                            else
+                            {
+                                osemenitev.VeterinarPregledaId = 0;
+                            }
 
                             osemenitve.Add(osemenitev);
                         }
@@ -2048,7 +2057,8 @@ namespace evidenca_krav
 
                             string bik = reader["bik_ime"].ToString();
 
-                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")))
+                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["bik_stevilka"].ToString()))
                             {
                                 bik += " (" + reader["bik_stevilka"].ToString() + ")";
                             }
@@ -2081,6 +2091,17 @@ namespace evidenca_krav
                                 reader["opombe_presusitve"].ToString(),
                                 reader["kondicija_ob_presusitvi"].ToString()
                             );
+
+                            osemenitev.VeterinarId = reader.GetInt32(reader.GetOrdinal("veterinar_id"));
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("veterinar_pregleda_id")))
+                            {
+                                osemenitev.VeterinarPregledaId = reader.GetInt32(reader.GetOrdinal("veterinar_pregleda_id"));
+                            }
+                            else
+                            {
+                                osemenitev.VeterinarPregledaId = 0;
+                            }
 
                             return osemenitev;
                         }
@@ -2142,6 +2163,80 @@ namespace evidenca_krav
                     else
                     {
                         return false;
+                    }
+                }
+            }
+        }
+
+        public int UrediOsemenitev(OsemenitveRazred o)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE osemenitve SET " +
+                    "bik_id = @BikId, " +
+                    "veterinar_id = @VeterinarId, " +
+                    "opombe = @Opombe, " +
+                    "datum_pregleda = @DatumPregleda, " +
+                    "izzid_pregleda = @IzzidPregleda, " +
+                    "nacin_pregleda = @NacinPregleda, " +
+                    "opombe_pregleda = @OpombePregleda, " +
+                    "veterinar_pregleda_id = @VeterinarPregledaId, " +
+                    "datum_presusitve = @DatumPresusitve, " +
+                    "opombe_presusitve = @OpombePresusitve, " +
+                    "kondicija_ob_presusitvi = @KondicijaObPresusitvi " +
+                    "WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", o.Id);
+                    command.Parameters.AddWithValue("@BikId", o.BikId);
+                    command.Parameters.AddWithValue("@VeterinarId", o.VeterinarId);
+                    command.Parameters.AddWithValue("@Opombe", o.Opombe);
+
+                    if (o.Datum_Pregleda.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@DatumPregleda", o.Datum_Pregleda.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@DatumPregleda", DBNull.Value);
+                    }
+
+                    command.Parameters.AddWithValue("@IzzidPregleda", o.Izzid_Pregleda);
+                    command.Parameters.AddWithValue("@NacinPregleda", o.Nacin_Pregleda);
+                    command.Parameters.AddWithValue("@OpombePregleda", o.Opombe_Pregleda);
+
+                    if (o.VeterinarPregledaId != 0)
+                    {
+                        command.Parameters.AddWithValue("@VeterinarPregledaId", o.VeterinarPregledaId);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@VeterinarPregledaId", DBNull.Value);
+                    }
+
+                    if (o.Datum_Presusitve.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@DatumPresusitve", o.Datum_Presusitve.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@DatumPresusitve", DBNull.Value);
+                    }
+
+                    command.Parameters.AddWithValue("@OpombePresusitve", o.Opombe_Presusitve);
+                    command.Parameters.AddWithValue("@KondicijaObPresusitvi", o.Kondicija_ob_Presusitvi);
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
                     }
                 }
             }

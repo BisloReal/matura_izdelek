@@ -12,6 +12,8 @@ namespace evidenca_krav.Razredi
         public int Zaporedna_Stevilka { get; set; }
         public int KravaId { get; set; }
         public int BikId { get; set; }
+        public int VeterinarId { get; set; }
+        public int VeterinarPregledaId { get; set; }
 
         public DateTime Datum_Osemenitve { get; set; }
 
