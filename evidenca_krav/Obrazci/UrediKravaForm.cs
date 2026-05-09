@@ -102,6 +102,8 @@ namespace evidenca_krav.Obrazci
             NaloziTelitve();
             NaloziKorekcije();
             NaloziZdravljenja();
+            NaloziComboBoxeKarence();
+            NaloziKarence();
         }
 
         private void NaloziMlecneKontrole()
@@ -174,6 +176,138 @@ namespace evidenca_krav.Obrazci
             {
                 flowLayoutPanelZdravljenja.Controls.Add(new ZdravljenjeCard(db, z));
             }
+        }
+
+        private void NaloziKarence()
+        {
+            List<KarencaRazred> karence = db.PridobiKarence(Krava.Id);
+
+            KarencaRazred mesna = karence.FirstOrDefault(k => k.VrstaKarence == "Mesna");
+            KarencaRazred mlecna = karence.FirstOrDefault(k => k.VrstaKarence == "Mlečna");
+
+            if (mesna != null)
+            {
+                dateTimePickerDatumKoncaMes.Checked = true;
+                dateTimePickerDatumKoncaMes.Value = mesna.DatumKonca;
+
+                comboBoxZdravljenjeMesna.SelectedValue = mesna.ZdravljenjeId;
+                comboBoxVeterinarMesna.SelectedValue = mesna.VeterinarId;
+                richTextBoxOpombeMes.Text = mesna.Opombe;
+            }
+            else
+            {
+                dateTimePickerDatumKoncaMes.Checked = false;
+
+                comboBoxZdravljenjeMesna.SelectedIndex = -1;
+                comboBoxVeterinarMesna.SelectedIndex = -1;
+                richTextBoxOpombeMes.Text = "";
+            }
+
+            if (mlecna != null)
+            {
+                dateTimePickerDatumKoncaMlec.Checked = true;
+                dateTimePickerDatumKoncaMlec.Value = mlecna.DatumKonca;
+
+                comboBoxZdravljenjeMlecna.SelectedValue = mlecna.ZdravljenjeId;
+                comboBoxVeterinarMlecna.SelectedValue = mlecna.VeterinarId;
+                richTextBoxOpombeMlec.Text = mlecna.Opombe;
+            }
+            else
+            {
+                dateTimePickerDatumKoncaMlec.Checked = false;
+
+                comboBoxZdravljenjeMlecna.SelectedIndex = -1;
+                comboBoxVeterinarMlecna.SelectedIndex = -1;
+                richTextBoxOpombeMlec.Text = "";
+            }
+        }
+
+        private void NaloziComboBoxeKarence()
+        {
+            List<ZdravljenjaRazred> zdravljenja = db.PridobiZdravljenja(Krava.Id);
+
+            comboBoxZdravljenjeMesna.DataSource = new List<ZdravljenjaRazred>(zdravljenja);
+            comboBoxZdravljenjeMesna.DisplayMember = "Vzrok";
+            comboBoxZdravljenjeMesna.ValueMember = "Id";
+            comboBoxZdravljenjeMesna.SelectedIndex = -1;
+
+            comboBoxZdravljenjeMlecna.DataSource = new List<ZdravljenjaRazred>(zdravljenja);
+            comboBoxZdravljenjeMlecna.DisplayMember = "Vzrok";
+            comboBoxZdravljenjeMlecna.ValueMember = "Id";
+            comboBoxZdravljenjeMlecna.SelectedIndex = -1;
+
+            List<OsebeRazred> veterinarji = db.PridobiVeterinarje();
+
+            comboBoxVeterinarMesna.DataSource = new List<OsebeRazred>(veterinarji);
+            comboBoxVeterinarMesna.DisplayMember = "ImePriimek";
+            comboBoxVeterinarMesna.ValueMember = "Id";
+            comboBoxVeterinarMesna.SelectedIndex = -1;
+
+            comboBoxVeterinarMlecna.DataSource = new List<OsebeRazred>(veterinarji);
+            comboBoxVeterinarMlecna.DisplayMember = "ImePriimek";
+            comboBoxVeterinarMlecna.ValueMember = "Id";
+            comboBoxVeterinarMlecna.SelectedIndex = -1;
+        }
+
+        private bool ShraniKarence()
+        {
+            if (dateTimePickerDatumKoncaMes.Checked)
+            {
+                bool mesnaZdravljenjeIzbrano = comboBoxZdravljenjeMesna.SelectedIndex != -1;
+                bool mesnaVeterinarIzbran = comboBoxVeterinarMesna.SelectedIndex != -1;
+
+                if (!mesnaZdravljenjeIzbrano || !mesnaVeterinarIzbran)
+                {
+                    MessageBox.Show("Pri mesni karenci izberite zdravljenje in veterinarja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                int zdravljenjeId = Convert.ToInt32(comboBoxZdravljenjeMesna.SelectedValue);
+                int veterinarId = Convert.ToInt32(comboBoxVeterinarMesna.SelectedValue);
+
+                db.ShraniKarenco(
+                    "Mesna",
+                    zdravljenjeId,
+                    veterinarId,
+                    dateTimePickerDatumKoncaMes.Value,
+                    richTextBoxOpombeMes.Text,
+                    Krava.Id
+                );
+            }
+            else
+            {
+                db.IzbrisiKarenco(Krava.Id, "Mesna");
+            }
+
+            if (dateTimePickerDatumKoncaMlec.Checked)
+            {
+                bool mlecnaZdravljenjeIzbrano = comboBoxZdravljenjeMlecna.SelectedIndex != -1;
+                bool mlecnaVeterinarIzbran = comboBoxVeterinarMlecna.SelectedIndex != -1;
+
+                if (!mlecnaZdravljenjeIzbrano || !mlecnaVeterinarIzbran)
+                {
+                    MessageBox.Show("Pri mlečni karenci izberite zdravljenje in veterinarja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return false;
+                }
+
+                int zdravljenjeId = Convert.ToInt32(comboBoxZdravljenjeMlecna.SelectedValue);
+                int veterinarId = Convert.ToInt32(comboBoxVeterinarMlecna.SelectedValue);
+
+                db.ShraniKarenco(
+                    "Mlečna",
+                    zdravljenjeId,
+                    veterinarId,
+                    dateTimePickerDatumKoncaMlec.Value,
+                    richTextBoxOpombeMlec.Text,
+                    Krava.Id
+                );
+            }
+            else
+            {
+                db.IzbrisiKarenco(Krava.Id, "Mlečna");
+            }
+
+            return true;
         }
 
         private void buttonZapri_Click(object sender, EventArgs e)
@@ -283,6 +417,11 @@ namespace evidenca_krav.Obrazci
 
                 if (izvedba == 0)
                 {
+                    if (!ShraniKarence())
+                    {
+                        return;
+                    }
+
                     kravaCard.PosodobiPodatke();
                     DialogResult = DialogResult.OK;
                     Close();

@@ -3477,5 +3477,136 @@ namespace evidenca_krav
                 return 0;
             }
         }
+
+        // karence
+        public List<KarencaRazred> PridobiKarence(int zivaliId)
+        {
+            List<KarencaRazred> karence = new List<KarencaRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT id, vrsta_karence, zdravljenje_id, veterinar_id, datum_konca, opombe, zivali_id
+            FROM karence
+            WHERE zivali_id = @ZivaliId";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ZivaliId", zivaliId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            karence.Add(new KarencaRazred(
+                                Convert.ToInt32(reader["id"]),
+                                reader["vrsta_karence"].ToString(),
+                                Convert.ToInt32(reader["zdravljenje_id"]),
+                                Convert.ToInt32(reader["veterinar_id"]),
+                                Convert.ToDateTime(reader["datum_konca"]),
+                                reader["opombe"] == DBNull.Value ? "" : reader["opombe"].ToString(),
+                                Convert.ToInt32(reader["zivali_id"])
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return karence;
+        }
+
+        public int ShraniKarenco(string vrstaKarence, int zdravljenjeId, int veterinarId, DateTime datumKonca, string opombe, int zivaliId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                int obstojecId = -1;
+
+                string preveriQuery = @"
+                            SELECT id
+                            FROM karence
+                            WHERE zivali_id = @ZivaliId
+                            AND vrsta_karence = @VrstaKarence";
+
+                using (var preveriCmd = new SQLiteCommand(preveriQuery, conn))
+                {
+                    preveriCmd.Parameters.AddWithValue("@ZivaliId", zivaliId);
+                    preveriCmd.Parameters.AddWithValue("@VrstaKarence", vrstaKarence);
+
+                    object result = preveriCmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        obstojecId = Convert.ToInt32(result);
+                    }
+                }
+
+                if (obstojecId != -1)
+                {
+                    string updateQuery = @"
+                            UPDATE karence
+                            SET zdravljenje_id = @ZdravljenjeId,
+                                veterinar_id = @VeterinarId,
+                                datum_konca = @DatumKonca,
+                                opombe = @Opombe
+                            WHERE id = @Id";
+
+                    using (var cmd = new SQLiteCommand(updateQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@ZdravljenjeId", zdravljenjeId);
+                        cmd.Parameters.AddWithValue("@VeterinarId", veterinarId);
+                        cmd.Parameters.AddWithValue("@DatumKonca", datumKonca.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@Opombe", string.IsNullOrWhiteSpace(opombe) ? "/" : opombe.Trim());
+                        cmd.Parameters.AddWithValue("@Id", obstojecId);
+
+                        return cmd.ExecuteNonQuery();
+                    }
+                }
+                else
+                {
+                    string insertQuery = @"
+                            INSERT INTO karence
+                            (vrsta_karence, zdravljenje_id, veterinar_id, datum_konca, opombe, zivali_id)
+                            VALUES
+                            (@VrstaKarence, @ZdravljenjeId, @VeterinarId, @DatumKonca, @Opombe, @ZivaliId)";
+
+                    using (var cmd = new SQLiteCommand(insertQuery, conn))
+                    {
+                        cmd.Parameters.AddWithValue("@VrstaKarence", vrstaKarence);
+                        cmd.Parameters.AddWithValue("@ZdravljenjeId", zdravljenjeId);
+                        cmd.Parameters.AddWithValue("@VeterinarId", veterinarId);
+                        cmd.Parameters.AddWithValue("@DatumKonca", datumKonca.ToString("yyyy-MM-dd"));
+                        cmd.Parameters.AddWithValue("@Opombe", string.IsNullOrWhiteSpace(opombe) ? "/" : opombe.Trim());
+                        cmd.Parameters.AddWithValue("@ZivaliId", zivaliId);
+
+                        return cmd.ExecuteNonQuery();
+                    }
+                }
+            }
+        }
+
+        public int IzbrisiKarenco(int zivaliId, string vrstaKarence)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                        DELETE FROM karence
+                        WHERE zivali_id = @ZivaliId
+                        AND vrsta_karence = @VrstaKarence";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ZivaliId", zivaliId);
+                    cmd.Parameters.AddWithValue("@VrstaKarence", vrstaKarence);
+
+                    return cmd.ExecuteNonQuery();
+                }
+            }
+        }
     }
 }

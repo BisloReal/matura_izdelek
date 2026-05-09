@@ -358,6 +358,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razredi\BikiOsRazred.cs" />
+    <Compile Include="Razredi\KarencaRazred.cs" />
     <Compile Include="Razredi\KorekcijeParkljevRazred.cs" />
     <Compile Include="Razredi\KraveRazred.cs" />
     <Compile Include="Razredi\MlecneKontroleRazred.cs" />
