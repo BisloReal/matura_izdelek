@@ -191,6 +191,9 @@
             this.buttonDodajSpecifiko = new System.Windows.Forms.Button();
             this.flowLayoutPanelOstaleSpecifike = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanelPotomci = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
+            this.label65 = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
             tabPage4.SuspendLayout();
             this.flowLayoutPanelOs.SuspendLayout();
@@ -214,6 +217,7 @@
             this.tabPage9.SuspendLayout();
             this.tabPage10.SuspendLayout();
             this.flowLayoutPanelOstaleSpecifike.SuspendLayout();
+            this.flowLayoutPanelPotomci.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -283,6 +287,8 @@
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.label65);
+            this.tabPage1.Controls.Add(this.flowLayoutPanelPotomci);
             this.tabPage1.Controls.Add(this.label54);
             this.tabPage1.Controls.Add(this.buttonOdhod);
             this.tabPage1.Controls.Add(this.label8);
@@ -2231,6 +2237,36 @@
             this.flowLayoutPanel8.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel8.TabIndex = 0;
             // 
+            // flowLayoutPanelPotomci
+            // 
+            this.flowLayoutPanelPotomci.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelPotomci.AutoScroll = true;
+            this.flowLayoutPanelPotomci.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelPotomci.Controls.Add(this.flowLayoutPanel9);
+            this.flowLayoutPanelPotomci.Location = new System.Drawing.Point(580, 101);
+            this.flowLayoutPanelPotomci.Name = "flowLayoutPanelPotomci";
+            this.flowLayoutPanelPotomci.Size = new System.Drawing.Size(495, 507);
+            this.flowLayoutPanelPotomci.TabIndex = 109;
+            // 
+            // flowLayoutPanel9
+            // 
+            this.flowLayoutPanel9.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel9.Name = "flowLayoutPanel9";
+            this.flowLayoutPanel9.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel9.TabIndex = 0;
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(709, 16);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(230, 63);
+            this.label65.TabIndex = 110;
+            this.label65.Text = "Potomci";
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2272,6 +2308,7 @@
             this.tabPage9.PerformLayout();
             this.tabPage10.ResumeLayout(false);
             this.flowLayoutPanelOstaleSpecifike.ResumeLayout(false);
+            this.flowLayoutPanelPotomci.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2440,5 +2477,8 @@
         private System.Windows.Forms.Button buttonDodajSpecifiko;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOstaleSpecifike;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
+        private System.Windows.Forms.Label label65;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPotomci;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
     }
 }

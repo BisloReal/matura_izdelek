@@ -104,6 +104,19 @@ namespace evidenca_krav.Obrazci
             NaloziZdravljenja();
             NaloziComboBoxeKarence();
             NaloziKarence();
+            NaloziPotomce();
+        }
+
+        private void NaloziPotomce()
+        {
+            flowLayoutPanelPotomci.Controls.Clear();
+
+            List<TeliceRazred> potomci = db.PridobiPotomceKrave(Krava.Id);
+
+            foreach (TeliceRazred tr in potomci)
+            {
+                flowLayoutPanelPotomci.Controls.Add(new PotomecCard(db, tr));
+            }
         }
 
         private void NaloziMlecneKontrole()

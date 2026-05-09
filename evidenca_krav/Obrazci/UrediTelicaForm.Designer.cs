@@ -239,9 +239,11 @@
             // 
             // label54
             // 
+            this.label54.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label54.AutoSize = true;
             this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label54.Location = new System.Drawing.Point(54, 16);
+            this.label54.Location = new System.Drawing.Point(349, 14);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(430, 63);
             this.label54.TabIndex = 108;
@@ -252,12 +254,13 @@
             this.buttonOdhod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOdhod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOdhod.ForeColor = System.Drawing.Color.Red;
-            this.buttonOdhod.Location = new System.Drawing.Point(6, 564);
+            this.buttonOdhod.Location = new System.Drawing.Point(17, 580);
             this.buttonOdhod.Name = "buttonOdhod";
             this.buttonOdhod.Size = new System.Drawing.Size(146, 44);
             this.buttonOdhod.TabIndex = 43;
             this.buttonOdhod.Text = "Odhod telice";
             this.buttonOdhod.UseVisualStyleBackColor = true;
+            this.buttonOdhod.Click += new System.EventHandler(this.buttonOdhod_Click);
             // 
             // label7
             // 
@@ -265,7 +268,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(69, 171);
+            this.label7.Location = new System.Drawing.Point(63, 287);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(149, 25);
             this.label7.TabIndex = 39;
@@ -276,7 +279,7 @@
             this.textBoxUsSt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxUsSt.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUsSt.Location = new System.Drawing.Point(224, 162);
+            this.textBoxUsSt.Location = new System.Drawing.Point(218, 278);
             this.textBoxUsSt.Name = "textBoxUsSt";
             this.textBoxUsSt.Size = new System.Drawing.Size(219, 38);
             this.textBoxUsSt.TabIndex = 38;
@@ -284,10 +287,10 @@
             // label6
             // 
             this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(121, 398);
+            this.label6.Location = new System.Drawing.Point(654, 341);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(97, 25);
             this.label6.TabIndex = 37;
@@ -296,9 +299,9 @@
             // textBoxImeOceta
             // 
             this.textBoxImeOceta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxImeOceta.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeOceta.Location = new System.Drawing.Point(224, 389);
+            this.textBoxImeOceta.Location = new System.Drawing.Point(757, 332);
             this.textBoxImeOceta.Name = "textBoxImeOceta";
             this.textBoxImeOceta.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeOceta.TabIndex = 36;
@@ -309,7 +312,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(115, 334);
+            this.label5.Location = new System.Drawing.Point(109, 345);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 25);
             this.label5.TabIndex = 35;
@@ -320,7 +323,7 @@
             this.textBoxImeMame.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxImeMame.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxImeMame.Location = new System.Drawing.Point(224, 325);
+            this.textBoxImeMame.Location = new System.Drawing.Point(218, 336);
             this.textBoxImeMame.Name = "textBoxImeMame";
             this.textBoxImeMame.Size = new System.Drawing.Size(219, 38);
             this.textBoxImeMame.TabIndex = 34;
@@ -328,10 +331,10 @@
             // label4
             // 
             this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(145, 277);
+            this.label4.Location = new System.Drawing.Point(678, 282);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 25);
             this.label4.TabIndex = 33;
@@ -340,9 +343,9 @@
             // textBoxPasma
             // 
             this.textBoxPasma.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPasma.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPasma.Location = new System.Drawing.Point(224, 268);
+            this.textBoxPasma.Location = new System.Drawing.Point(757, 273);
             this.textBoxPasma.Name = "textBoxPasma";
             this.textBoxPasma.Size = new System.Drawing.Size(219, 38);
             this.textBoxPasma.TabIndex = 32;
@@ -350,10 +353,10 @@
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(87, 221);
+            this.label3.Location = new System.Drawing.Point(620, 226);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(131, 25);
             this.label3.TabIndex = 31;
@@ -362,9 +365,9 @@
             // dateTimePicker
             // 
             this.dateTimePicker.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker.Location = new System.Drawing.Point(224, 221);
+            this.dateTimePicker.Location = new System.Drawing.Point(757, 226);
             this.dateTimePicker.Name = "dateTimePicker";
             this.dateTimePicker.Size = new System.Drawing.Size(219, 30);
             this.dateTimePicker.TabIndex = 30;
@@ -375,7 +378,7 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(174, 110);
+            this.label2.Location = new System.Drawing.Point(168, 226);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 25);
             this.label2.TabIndex = 29;
@@ -386,7 +389,7 @@
             this.textBoxIme.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIme.Location = new System.Drawing.Point(224, 101);
+            this.textBoxIme.Location = new System.Drawing.Point(218, 217);
             this.textBoxIme.Name = "textBoxIme";
             this.textBoxIme.Size = new System.Drawing.Size(219, 38);
             this.textBoxIme.TabIndex = 28;

@@ -109,6 +109,100 @@ namespace evidenca_krav
             return telice;
         }
 
+        public List<TeliceRazred> PridobiPotomceKrave(int kravaMamaId)
+        {
+            List<TeliceRazred> potomci = new List<TeliceRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                            SELECT z.id, z.ime, z.datum_roj, z.pasma, z.ime_mame, z.ime_oceta, z.usesna_stevilka
+                            FROM zivali z
+                            INNER JOIN telitve t ON z.id = t.tele_id
+                            WHERE t.krava_mama_id = @KravaMamaId
+                            ORDER BY z.datum_roj DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaMamaId", kravaMamaId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(reader.GetOrdinal("id"));
+                            string ime = reader.GetString(reader.GetOrdinal("ime"));
+                            DateTime datumRoj = reader.GetDateTime(reader.GetOrdinal("datum_roj"));
+                            string pasma = reader.GetString(reader.GetOrdinal("pasma"));
+
+                            string imeMame = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("ime_mame")))
+                            {
+                                imeMame = reader.GetString(reader.GetOrdinal("ime_mame"));
+                            }
+
+                            string imeOceta = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("ime_oceta")))
+                            {
+                                imeOceta = reader.GetString(reader.GetOrdinal("ime_oceta"));
+                            }
+
+                            string usesnaStevilka = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")))
+                            {
+                                usesnaStevilka = reader.GetString(reader.GetOrdinal("usesna_stevilka"));
+                            }
+
+                            TeliceRazred potomec = new TeliceRazred(
+                                id,
+                                ime,
+                                datumRoj,
+                                pasma,
+                                imeMame,
+                                imeOceta,
+                                usesnaStevilka
+                            );
+
+                            potomci.Add(potomec);
+                        }
+                    }
+                }
+            }
+
+            return potomci;
+        }
+
+        public string PridobiVrstoZivali(int idZivali)
+        {
+            string tip = "";
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                    SELECT tz.tip
+                    FROM zivali z INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id
+                    WHERE z.id = @IdZivali";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdZivali", idZivali);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            tip = reader.GetString(0);
+                        }
+                    }
+                }
+            }
+
+            return tip;
+        }
+
         // TELICE
         public int DodajTelico(string ime, string datumRojstva, string pasma, string imeMame, string imeOceta, string UsesnaStevilka)
         {

@@ -150,6 +150,12 @@
     <Compile Include="NavigationBarUserControls\PojatevCard.Designer.cs">
       <DependentUpon>PojatevCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\PotomecCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\PotomecCard.Designer.cs">
+      <DependentUpon>PotomecCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\SpecifikaCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -424,6 +430,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\PojatevCard.resx">
       <DependentUpon>PojatevCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\PotomecCard.resx">
+      <DependentUpon>PotomecCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\SpecifikaCard.resx">
       <DependentUpon>SpecifikaCard.cs</DependentUpon>
