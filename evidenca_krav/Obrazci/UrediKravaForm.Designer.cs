@@ -151,6 +151,10 @@
             this.textBoxIztokDva = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
+            this.tabPage5 = new System.Windows.Forms.TabPage();
+            this.flowLayoutPanelPojatve = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonDodajPojatev = new System.Windows.Forms.Button();
             tabPage4 = new System.Windows.Forms.TabPage();
             tabPage4.SuspendLayout();
             this.flowLayoutPanelOs.SuspendLayout();
@@ -163,6 +167,8 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanelMlecneKontrole.SuspendLayout();
+            this.tabPage5.SuspendLayout();
+            this.flowLayoutPanelPojatve.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -216,6 +222,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(tabPage4);
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
@@ -1535,7 +1542,7 @@
             this.tabPage3.Controls.Add(this.buttonDodajKontrolo);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1118, 584);
+            this.tabPage3.Size = new System.Drawing.Size(1118, 644);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mlečne kontrole";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1550,7 +1557,7 @@
             this.flowLayoutPanelMlecneKontrole.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanelMlecneKontrole.Location = new System.Drawing.Point(16, 120);
             this.flowLayoutPanelMlecneKontrole.Name = "flowLayoutPanelMlecneKontrole";
-            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 423);
+            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 483);
             this.flowLayoutPanelMlecneKontrole.TabIndex = 44;
             // 
             // flowLayoutPanel2
@@ -1718,6 +1725,50 @@
             this.label53.TabIndex = 85;
             this.label53.Text = "Mlečni iztok 2";
             // 
+            // tabPage5
+            // 
+            this.tabPage5.Controls.Add(this.flowLayoutPanelPojatve);
+            this.tabPage5.Controls.Add(this.buttonDodajPojatev);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Name = "tabPage5";
+            this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage5.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage5.TabIndex = 4;
+            this.tabPage5.Text = "Pojatve";
+            this.tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelPojatve
+            // 
+            this.flowLayoutPanelPojatve.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelPojatve.AutoScroll = true;
+            this.flowLayoutPanelPojatve.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelPojatve.Controls.Add(this.flowLayoutPanel4);
+            this.flowLayoutPanelPojatve.Location = new System.Drawing.Point(17, 118);
+            this.flowLayoutPanelPojatve.Name = "flowLayoutPanelPojatve";
+            this.flowLayoutPanelPojatve.Size = new System.Drawing.Size(1086, 483);
+            this.flowLayoutPanelPojatve.TabIndex = 46;
+            // 
+            // flowLayoutPanel4
+            // 
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel4.Name = "flowLayoutPanel4";
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel4.TabIndex = 0;
+            // 
+            // buttonDodajPojatev
+            // 
+            this.buttonDodajPojatev.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajPojatev.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajPojatev.Location = new System.Drawing.Point(913, 50);
+            this.buttonDodajPojatev.Name = "buttonDodajPojatev";
+            this.buttonDodajPojatev.Size = new System.Drawing.Size(190, 51);
+            this.buttonDodajPojatev.TabIndex = 45;
+            this.buttonDodajPojatev.Text = "Dodaj pojatev";
+            this.buttonDodajPojatev.UseVisualStyleBackColor = true;
+            this.buttonDodajPojatev.Click += new System.EventHandler(this.buttonDodajPojatev_Click);
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1747,6 +1798,8 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.flowLayoutPanelMlecneKontrole.ResumeLayout(false);
+            this.tabPage5.ResumeLayout(false);
+            this.flowLayoutPanelPojatve.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1875,5 +1928,9 @@
         private System.Windows.Forms.TextBox textBoxIztokDva;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.TabPage tabPage5;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPojatve;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel4;
+        private System.Windows.Forms.Button buttonDodajPojatev;
     }
 }

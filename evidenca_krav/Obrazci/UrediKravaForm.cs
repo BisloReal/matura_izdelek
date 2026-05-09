@@ -98,6 +98,7 @@ namespace evidenca_krav.Obrazci
 
             NaloziMlecneKontrole();
             NaloziOsemenitve();
+            NaloziPojatve();
         }
 
         private void NaloziMlecneKontrole()
@@ -121,6 +122,18 @@ namespace evidenca_krav.Obrazci
             foreach (OsemenitveRazred o in osemenitve)
             {
                 flowLayoutPanelOs.Controls.Add(new OsemenitevCard(db, o));
+            }
+        }
+
+        private void NaloziPojatve()
+        {
+            flowLayoutPanelPojatve.Controls.Clear();
+
+            List<PojatveRazred> pojatve = db.PridobiPojatve(Krava.Id);
+
+            foreach (PojatveRazred p in pojatve)
+            {
+                flowLayoutPanelPojatve.Controls.Add(new PojatevCard(db, p));
             }
         }
 
@@ -295,6 +308,25 @@ namespace evidenca_krav.Obrazci
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri dodajanju semenitve: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonDodajPojatev_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajPojatevForm dodajPojatevForm = new DodajPojatevForm(db, Krava);
+
+                if (dodajPojatevForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Pojatev uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                NaloziPojatve();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju pojatve: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

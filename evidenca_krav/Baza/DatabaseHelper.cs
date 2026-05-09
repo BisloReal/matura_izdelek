@@ -2241,5 +2241,258 @@ namespace evidenca_krav
                 }
             }
         }
+
+        // Pojatve
+        public List<PojatveRazred> PridobiPojatve(int idKrave)
+        {
+            List<PojatveRazred> pojatve = new List<PojatveRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT p.id, p.zap_st, p.krava_id, z.ime, z.usesna_stevilka, p.datum, p.konec_datum, p.opombe " +
+                    "FROM pojatve p " +
+                    "INNER JOIN zivali z ON p.krava_id = z.id " +
+                    "WHERE p.krava_id = @IdKrave " +
+                    "ORDER BY p.zap_st DESC", conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKrave", idKrave);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string kravaIme = reader["ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["usesna_stevilka"].ToString()))
+                            {
+                                kravaIme += " (" + reader["usesna_stevilka"].ToString() + ")";
+                            }
+
+                            DateTime? konecDatum = null;
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("konec_datum")))
+                            {
+                                konecDatum = reader.GetDateTime(reader.GetOrdinal("konec_datum"));
+                            }
+
+                            if (konecDatum.HasValue)
+                            {
+                                pojatve.Add(new PojatveRazred(
+                                    reader.GetInt32(reader.GetOrdinal("id")),
+                                    reader.GetInt32(reader.GetOrdinal("zap_st")),
+                                    reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                    kravaIme,
+                                    reader.GetDateTime(reader.GetOrdinal("datum")),
+                                    konecDatum.Value,
+                                    reader["opombe"].ToString()
+                                ));
+                            }
+                            else
+                            {
+                                pojatve.Add(new PojatveRazred(
+                                    reader.GetInt32(reader.GetOrdinal("id")),
+                                    reader.GetInt32(reader.GetOrdinal("zap_st")),
+                                    reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                    kravaIme,
+                                    reader.GetDateTime(reader.GetOrdinal("datum")),
+                                    reader["opombe"].ToString()
+                                ));
+                            }
+                        }
+                    }
+                }
+            }
+
+            return pojatve;
+        }
+
+        public PojatveRazred PridobiPojatev(int idPojatve)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT p.*, z.ime AS krava_ime, z.usesna_stevilka AS krava_usesna " +
+                    "FROM pojatve p " +
+                    "INNER JOIN zivali z ON p.krava_id = z.id " +
+                    "WHERE p.id = @IdPojatve";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdPojatve", idPojatve);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string kravaIme = reader["krava_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("krava_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["krava_usesna"].ToString()))
+                            {
+                                kravaIme += " (" + reader["krava_usesna"].ToString() + ")";
+                            }
+
+                            DateTime? konecDatum = null;
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("konec_datum")))
+                            {
+                                konecDatum = reader.GetDateTime(reader.GetOrdinal("konec_datum"));
+                            }
+
+                            if (konecDatum.HasValue)
+                            {
+                                PojatveRazred pojatev = new PojatveRazred(
+                                    reader.GetInt32(reader.GetOrdinal("id")),
+                                    reader.GetInt32(reader.GetOrdinal("zap_st")),
+                                    reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                    kravaIme,
+                                    reader.GetDateTime(reader.GetOrdinal("datum")),
+                                    konecDatum.Value,
+                                    reader["opombe"].ToString()
+                                );
+
+                                return pojatev;
+                            }
+                            else
+                            {
+                                PojatveRazred pojatev = new PojatveRazred(
+                                    reader.GetInt32(reader.GetOrdinal("id")),
+                                    reader.GetInt32(reader.GetOrdinal("zap_st")),
+                                    reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                    kravaIme,
+                                    reader.GetDateTime(reader.GetOrdinal("datum")),
+                                    reader["opombe"].ToString()
+                                );
+
+                                return pojatev;
+                            }
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public int PridobiSteviloPojatve(int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM pojatve WHERE krava_id = @KravaId", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public bool PogledObstajaStPojatev(int kravaId, int zapSt)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM pojatve WHERE krava_id = @KravaId AND zap_st = @ZapSt", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    cmd.Parameters.AddWithValue("@ZapSt", zapSt);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+
+        public int DodajPojatev(int zapSt, DateTime datum, string opombe, int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO pojatve (zap_st, datum, opombe, krava_id) " +
+                    "VALUES (@ZapSt, @Datum, @Opombe, @KravaId)", conn))
+                {
+                    command.Parameters.AddWithValue("@ZapSt", zapSt);
+                    command.Parameters.AddWithValue("@Datum", datum.ToString("yyyy-MM-dd"));
+
+                    if (string.IsNullOrWhiteSpace(opombe))
+                    {
+                        command.Parameters.AddWithValue("@Opombe", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@Opombe", opombe);
+                    }
+
+                    command.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
+
+        public int UrediPojatev(PojatveRazred p)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE pojatve SET " +
+                    "zap_st = @ZapSt, " +
+                    "datum = @Datum, " +
+                    "konec_datum = @KonecDatum, " +
+                    "opombe = @Opombe " +
+                    "WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", p.Id);
+                    command.Parameters.AddWithValue("@ZapSt", p.ZaporednoStevilo);
+                    command.Parameters.AddWithValue("@Datum", p.DatumPojatve.ToString("yyyy-MM-dd"));
+
+                    if (p.KonecDatumPojatve.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@KonecDatum", p.KonecDatumPojatve.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@KonecDatum", DBNull.Value);
+                    }
+
+                    if (string.IsNullOrWhiteSpace(p.Opombe))
+                    {
+                        command.Parameters.AddWithValue("@Opombe", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@Opombe", p.Opombe);
+                    }
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
     }
 }
