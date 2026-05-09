@@ -14,7 +14,11 @@ namespace evidenca_krav.RazredSi
         public string PrimerniBiki { get; set; }
         public string NajboljPrimerniBiki { get; set; }
         public float Teza { get; set; }
+        public DateTime? DatumPregleda { get; set; }
         public int IztokMlekaOcena { get; set; }
+        public DateTime? DatumPrvegaIztoka { get; set; }
+        public int IztokMlekaOcenaDruga { get; set; }
+        public DateTime? DatumDrugegaIztoka { get; set; }
         public float ObsegPrsi { get; set; }
         public float VisinaKriza { get; set; }
         public float GlobinaTelesa { get; set; }

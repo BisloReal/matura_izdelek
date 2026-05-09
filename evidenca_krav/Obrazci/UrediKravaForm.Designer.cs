@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.TabPage tabPage4;
+            this.buttonDodajOs = new System.Windows.Forms.Button();
+            this.flowLayoutPanelOs = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonOdhod = new System.Windows.Forms.Button();
@@ -113,9 +116,7 @@
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBoxiztokMlekaOcena = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.textBoxobsegPrsi = new System.Windows.Forms.TextBox();
             this.textBoxvisinaKriza = new System.Windows.Forms.TextBox();
@@ -140,10 +141,19 @@
             this.buttonZapri = new System.Windows.Forms.Button();
             this.buttonPotrdi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.flowLayoutPanelOs = new System.Windows.Forms.FlowLayoutPanel();
-            this.flowLayoutPanel3 = new System.Windows.Forms.FlowLayoutPanel();
-            this.buttonDodajOs = new System.Windows.Forms.Button();
+            this.dateTimePickerDatumPregleda = new System.Windows.Forms.DateTimePicker();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.dateTimePickerPrviIztok = new System.Windows.Forms.DateTimePicker();
+            this.label52 = new System.Windows.Forms.Label();
+            this.dateTimePickerDrugiIztok = new System.Windows.Forms.DateTimePicker();
+            this.textBoxIztokEna = new System.Windows.Forms.TextBox();
+            this.textBoxIztokDva = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
+            tabPage4.SuspendLayout();
+            this.flowLayoutPanelOs.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -153,9 +163,49 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.flowLayoutPanelMlecneKontrole.SuspendLayout();
-            tabPage4.SuspendLayout();
-            this.flowLayoutPanelOs.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // tabPage4
+            // 
+            tabPage4.Controls.Add(this.buttonDodajOs);
+            tabPage4.Controls.Add(this.flowLayoutPanelOs);
+            tabPage4.Location = new System.Drawing.Point(4, 22);
+            tabPage4.Name = "tabPage4";
+            tabPage4.Size = new System.Drawing.Size(1118, 584);
+            tabPage4.TabIndex = 3;
+            tabPage4.Text = "Osemenitve";
+            tabPage4.UseVisualStyleBackColor = true;
+            // 
+            // buttonDodajOs
+            // 
+            this.buttonDodajOs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajOs.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajOs.Location = new System.Drawing.Point(872, 49);
+            this.buttonDodajOs.Name = "buttonDodajOs";
+            this.buttonDodajOs.Size = new System.Drawing.Size(231, 51);
+            this.buttonDodajOs.TabIndex = 44;
+            this.buttonDodajOs.Text = "Dodaj osemenitev";
+            this.buttonDodajOs.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanelOs
+            // 
+            this.flowLayoutPanelOs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelOs.AutoScroll = true;
+            this.flowLayoutPanelOs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelOs.Controls.Add(this.flowLayoutPanel3);
+            this.flowLayoutPanelOs.Location = new System.Drawing.Point(17, 106);
+            this.flowLayoutPanelOs.Name = "flowLayoutPanelOs";
+            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 423);
+            this.flowLayoutPanelOs.TabIndex = 45;
+            // 
+            // flowLayoutPanel3
+            // 
+            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel3.TabIndex = 0;
             // 
             // tabControl1
             // 
@@ -169,7 +219,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1126, 582);
+            this.tabControl1.Size = new System.Drawing.Size(1126, 670);
             this.tabControl1.TabIndex = 15;
             // 
             // tabPage1
@@ -193,7 +243,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1118, 556);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 579);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Osnovni";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -203,7 +253,7 @@
             this.buttonOdhod.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.buttonOdhod.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonOdhod.ForeColor = System.Drawing.Color.Red;
-            this.buttonOdhod.Location = new System.Drawing.Point(6, 504);
+            this.buttonOdhod.Location = new System.Drawing.Point(6, 499);
             this.buttonOdhod.Name = "buttonOdhod";
             this.buttonOdhod.Size = new System.Drawing.Size(146, 44);
             this.buttonOdhod.TabIndex = 43;
@@ -370,7 +420,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1118, 556);
+            this.tabPage2.Size = new System.Drawing.Size(1118, 644);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Telesne značilnosti";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -390,8 +440,8 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 547F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 548);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 575F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 636);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // tableLayoutPanel4
@@ -399,12 +449,17 @@
             this.tableLayoutPanel4.ColumnCount = 2;
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel4.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
+            this.tableLayoutPanel4.Controls.Add(this.textBoxIztokDva, 1, 10);
             this.tableLayoutPanel4.Controls.Add(this.label45, 0, 3);
+            this.tableLayoutPanel4.Controls.Add(this.textBoxIztokEna, 1, 8);
             this.tableLayoutPanel4.Controls.Add(this.textBoxnogeOcena, 1, 5);
+            this.tableLayoutPanel4.Controls.Add(this.dateTimePickerDrugiIztok, 1, 11);
             this.tableLayoutPanel4.Controls.Add(this.textBoxokvirOcena, 1, 3);
+            this.tableLayoutPanel4.Controls.Add(this.dateTimePickerPrviIztok, 1, 9);
             this.tableLayoutPanel4.Controls.Add(this.label47, 0, 5);
             this.tableLayoutPanel4.Controls.Add(this.textBoxkrizOcena, 1, 4);
             this.tableLayoutPanel4.Controls.Add(this.label43, 0, 0);
+            this.tableLayoutPanel4.Controls.Add(this.dateTimePickerDatumPregleda, 1, 7);
             this.tableLayoutPanel4.Controls.Add(this.label44, 0, 1);
             this.tableLayoutPanel4.Controls.Add(this.label46, 0, 4);
             this.tableLayoutPanel4.Controls.Add(this.textBoxdolzinaKrizaIzracunOcena, 1, 0);
@@ -413,20 +468,30 @@
             this.tableLayoutPanel4.Controls.Add(this.textBoxvimeOcena, 1, 2);
             this.tableLayoutPanel4.Controls.Add(this.label49, 0, 6);
             this.tableLayoutPanel4.Controls.Add(this.textBoxtelesneSposobnostiSkupajOcena, 1, 6);
+            this.tableLayoutPanel4.Controls.Add(this.label50, 0, 7);
+            this.tableLayoutPanel4.Controls.Add(this.label51, 0, 9);
+            this.tableLayoutPanel4.Controls.Add(this.label52, 0, 11);
+            this.tableLayoutPanel4.Controls.Add(this.label11, 0, 8);
+            this.tableLayoutPanel4.Controls.Add(this.label53, 0, 10);
             this.tableLayoutPanel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel4.Location = new System.Drawing.Point(739, 1);
             this.tableLayoutPanel4.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
-            this.tableLayoutPanel4.RowCount = 8;
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901234F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901233F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901233F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901233F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901233F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901233F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.901233F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 58.69136F));
-            this.tableLayoutPanel4.Size = new System.Drawing.Size(370, 546);
+            this.tableLayoutPanel4.RowCount = 13;
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.640255F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 32.31693F));
+            this.tableLayoutPanel4.Size = new System.Drawing.Size(370, 634);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
             // label45
@@ -435,10 +500,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label45.AutoSize = true;
             this.label45.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(146, 99);
+            this.label45.Location = new System.Drawing.Point(146, 108);
             this.label45.Margin = new System.Windows.Forms.Padding(3);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(87, 26);
+            this.label45.Size = new System.Drawing.Size(87, 29);
             this.label45.TabIndex = 74;
             this.label45.Text = "Okvir Ocena";
             this.label45.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -447,18 +512,18 @@
             // 
             this.textBoxnogeOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxnogeOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxnogeOcena.Location = new System.Drawing.Point(239, 163);
+            this.textBoxnogeOcena.Location = new System.Drawing.Point(239, 178);
             this.textBoxnogeOcena.Name = "textBoxnogeOcena";
-            this.textBoxnogeOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxnogeOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxnogeOcena.TabIndex = 79;
             // 
             // textBoxokvirOcena
             // 
             this.textBoxokvirOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxokvirOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxokvirOcena.Location = new System.Drawing.Point(239, 99);
+            this.textBoxokvirOcena.Location = new System.Drawing.Point(239, 108);
             this.textBoxokvirOcena.Name = "textBoxokvirOcena";
-            this.textBoxokvirOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxokvirOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxokvirOcena.TabIndex = 75;
             // 
             // label47
@@ -467,10 +532,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.AutoSize = true;
             this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label47.Location = new System.Drawing.Point(145, 163);
+            this.label47.Location = new System.Drawing.Point(145, 178);
             this.label47.Margin = new System.Windows.Forms.Padding(3);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(88, 26);
+            this.label47.Size = new System.Drawing.Size(88, 29);
             this.label47.TabIndex = 78;
             this.label47.Text = "Noge Ocena";
             this.label47.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -479,9 +544,9 @@
             // 
             this.textBoxkrizOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxkrizOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxkrizOcena.Location = new System.Drawing.Point(239, 131);
+            this.textBoxkrizOcena.Location = new System.Drawing.Point(239, 143);
             this.textBoxkrizOcena.Name = "textBoxkrizOcena";
-            this.textBoxkrizOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxkrizOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxkrizOcena.TabIndex = 77;
             // 
             // label43
@@ -493,7 +558,7 @@
             this.label43.Location = new System.Drawing.Point(48, 3);
             this.label43.Margin = new System.Windows.Forms.Padding(3);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(185, 26);
+            this.label43.Size = new System.Drawing.Size(185, 29);
             this.label43.TabIndex = 70;
             this.label43.Text = "Dolzina kriza izracun Ocena";
             this.label43.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -504,10 +569,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label44.AutoSize = true;
             this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(50, 35);
+            this.label44.Location = new System.Drawing.Point(50, 38);
             this.label44.Margin = new System.Windows.Forms.Padding(3);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(183, 26);
+            this.label44.Size = new System.Drawing.Size(183, 29);
             this.label44.TabIndex = 72;
             this.label44.Text = "Sedna širina izracun Ocena";
             this.label44.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -518,10 +583,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label46.AutoSize = true;
             this.label46.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(155, 131);
+            this.label46.Location = new System.Drawing.Point(155, 143);
             this.label46.Margin = new System.Windows.Forms.Padding(3);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(78, 26);
+            this.label46.Size = new System.Drawing.Size(78, 29);
             this.label46.TabIndex = 76;
             this.label46.Text = "Kriz Ocena";
             this.label46.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -532,16 +597,16 @@
             this.textBoxdolzinaKrizaIzracunOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxdolzinaKrizaIzracunOcena.Location = new System.Drawing.Point(239, 3);
             this.textBoxdolzinaKrizaIzracunOcena.Name = "textBoxdolzinaKrizaIzracunOcena";
-            this.textBoxdolzinaKrizaIzracunOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxdolzinaKrizaIzracunOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxdolzinaKrizaIzracunOcena.TabIndex = 71;
             // 
             // textBoxsednaSirinaIzracunOcena
             // 
             this.textBoxsednaSirinaIzracunOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxsednaSirinaIzracunOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsednaSirinaIzracunOcena.Location = new System.Drawing.Point(239, 35);
+            this.textBoxsednaSirinaIzracunOcena.Location = new System.Drawing.Point(239, 38);
             this.textBoxsednaSirinaIzracunOcena.Name = "textBoxsednaSirinaIzracunOcena";
-            this.textBoxsednaSirinaIzracunOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxsednaSirinaIzracunOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxsednaSirinaIzracunOcena.TabIndex = 73;
             // 
             // label48
@@ -550,10 +615,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label48.AutoSize = true;
             this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label48.Location = new System.Drawing.Point(148, 67);
+            this.label48.Location = new System.Drawing.Point(148, 73);
             this.label48.Margin = new System.Windows.Forms.Padding(3);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(85, 26);
+            this.label48.Size = new System.Drawing.Size(85, 29);
             this.label48.TabIndex = 80;
             this.label48.Text = "Vime Ocena";
             this.label48.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -562,9 +627,9 @@
             // 
             this.textBoxvimeOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxvimeOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxvimeOcena.Location = new System.Drawing.Point(239, 67);
+            this.textBoxvimeOcena.Location = new System.Drawing.Point(239, 73);
             this.textBoxvimeOcena.Name = "textBoxvimeOcena";
-            this.textBoxvimeOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxvimeOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxvimeOcena.TabIndex = 81;
             // 
             // label49
@@ -573,10 +638,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label49.AutoSize = true;
             this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(3, 195);
+            this.label49.Location = new System.Drawing.Point(3, 213);
             this.label49.Margin = new System.Windows.Forms.Padding(3);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(230, 26);
+            this.label49.Size = new System.Drawing.Size(230, 29);
             this.label49.TabIndex = 82;
             this.label49.Text = "Telesne sposobnosti skupaj Ocena";
             this.label49.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -585,9 +650,9 @@
             // 
             this.textBoxtelesneSposobnostiSkupajOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxtelesneSposobnostiSkupajOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxtelesneSposobnostiSkupajOcena.Location = new System.Drawing.Point(239, 195);
+            this.textBoxtelesneSposobnostiSkupajOcena.Location = new System.Drawing.Point(239, 213);
             this.textBoxtelesneSposobnostiSkupajOcena.Name = "textBoxtelesneSposobnostiSkupajOcena";
-            this.textBoxtelesneSposobnostiSkupajOcena.Size = new System.Drawing.Size(133, 23);
+            this.textBoxtelesneSposobnostiSkupajOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxtelesneSposobnostiSkupajOcena.TabIndex = 83;
             // 
             // tableLayoutPanel3
@@ -651,7 +716,7 @@
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(368, 546);
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(368, 634);
             this.tableLayoutPanel3.TabIndex = 1;
             // 
             // label25
@@ -663,7 +728,7 @@
             this.label25.Location = new System.Drawing.Point(137, 3);
             this.label25.Margin = new System.Windows.Forms.Padding(3);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(87, 26);
+            this.label25.Size = new System.Drawing.Size(87, 31);
             this.label25.TabIndex = 34;
             this.label25.Text = "Bicelj Ocena";
             this.label25.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -672,7 +737,7 @@
             // 
             this.textBoxglobinaTelesaIzracunOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxglobinaTelesaIzracunOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxglobinaTelesaIzracunOcena.Location = new System.Drawing.Point(230, 515);
+            this.textBoxglobinaTelesaIzracunOcena.Location = new System.Drawing.Point(230, 595);
             this.textBoxglobinaTelesaIzracunOcena.Name = "textBoxglobinaTelesaIzracunOcena";
             this.textBoxglobinaTelesaIzracunOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxglobinaTelesaIzracunOcena.TabIndex = 69;
@@ -683,10 +748,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label42.AutoSize = true;
             this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(29, 515);
+            this.label42.Location = new System.Drawing.Point(29, 595);
             this.label42.Margin = new System.Windows.Forms.Padding(3);
             this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(195, 28);
+            this.label42.Size = new System.Drawing.Size(195, 36);
             this.label42.TabIndex = 68;
             this.label42.Text = "Globina telesa izracun Ocena";
             this.label42.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -697,10 +762,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(25, 131);
+            this.label29.Location = new System.Drawing.Point(25, 151);
             this.label29.Margin = new System.Windows.Forms.Padding(3);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(199, 26);
+            this.label29.Size = new System.Drawing.Size(199, 31);
             this.label29.TabIndex = 42;
             this.label29.Text = "Višina mlecnega zrcala Ocena";
             this.label29.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -711,10 +776,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(65, 99);
+            this.label28.Location = new System.Drawing.Point(65, 114);
             this.label28.Margin = new System.Windows.Forms.Padding(3);
             this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(159, 26);
+            this.label28.Size = new System.Drawing.Size(159, 31);
             this.label28.TabIndex = 40;
             this.label28.Text = "Pripetost vimena Ocena";
             this.label28.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -725,10 +790,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(27, 163);
+            this.label30.Location = new System.Drawing.Point(27, 188);
             this.label30.Margin = new System.Windows.Forms.Padding(3);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(197, 26);
+            this.label30.Size = new System.Drawing.Size(197, 31);
             this.label30.TabIndex = 44;
             this.label30.Text = "Širina mlecnega zrcala Ocena";
             this.label30.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -737,7 +802,7 @@
             // 
             this.textBoxsirinaMlecnegaZrcalaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxsirinaMlecnegaZrcalaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsirinaMlecnegaZrcalaOcena.Location = new System.Drawing.Point(230, 163);
+            this.textBoxsirinaMlecnegaZrcalaOcena.Location = new System.Drawing.Point(230, 188);
             this.textBoxsirinaMlecnegaZrcalaOcena.Name = "textBoxsirinaMlecnegaZrcalaOcena";
             this.textBoxsirinaMlecnegaZrcalaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxsirinaMlecnegaZrcalaOcena.TabIndex = 45;
@@ -746,7 +811,7 @@
             // 
             this.textBoxpripetostVimenaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxpripetostVimenaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxpripetostVimenaOcena.Location = new System.Drawing.Point(230, 99);
+            this.textBoxpripetostVimenaOcena.Location = new System.Drawing.Point(230, 114);
             this.textBoxpripetostVimenaOcena.Name = "textBoxpripetostVimenaOcena";
             this.textBoxpripetostVimenaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxpripetostVimenaOcena.TabIndex = 41;
@@ -755,7 +820,7 @@
             // 
             this.textBoxglobinaVimenaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxglobinaVimenaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxglobinaVimenaOcena.Location = new System.Drawing.Point(230, 195);
+            this.textBoxglobinaVimenaOcena.Location = new System.Drawing.Point(230, 225);
             this.textBoxglobinaVimenaOcena.Name = "textBoxglobinaVimenaOcena";
             this.textBoxglobinaVimenaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxglobinaVimenaOcena.TabIndex = 47;
@@ -764,7 +829,7 @@
             // 
             this.textBoxdolzinaVimenaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxdolzinaVimenaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxdolzinaVimenaOcena.Location = new System.Drawing.Point(230, 67);
+            this.textBoxdolzinaVimenaOcena.Location = new System.Drawing.Point(230, 77);
             this.textBoxdolzinaVimenaOcena.Name = "textBoxdolzinaVimenaOcena";
             this.textBoxdolzinaVimenaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxdolzinaVimenaOcena.TabIndex = 39;
@@ -773,7 +838,7 @@
             // 
             this.textBoxdnoVimenaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxdnoVimenaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxdnoVimenaOcena.Location = new System.Drawing.Point(230, 227);
+            this.textBoxdnoVimenaOcena.Location = new System.Drawing.Point(230, 262);
             this.textBoxdnoVimenaOcena.Name = "textBoxdnoVimenaOcena";
             this.textBoxdnoVimenaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxdnoVimenaOcena.TabIndex = 49;
@@ -782,7 +847,7 @@
             // 
             this.textBoxvisinaMlecnegaZrcalaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxvisinaMlecnegaZrcalaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxvisinaMlecnegaZrcalaOcena.Location = new System.Drawing.Point(230, 131);
+            this.textBoxvisinaMlecnegaZrcalaOcena.Location = new System.Drawing.Point(230, 151);
             this.textBoxvisinaMlecnegaZrcalaOcena.Name = "textBoxvisinaMlecnegaZrcalaOcena";
             this.textBoxvisinaMlecnegaZrcalaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxvisinaMlecnegaZrcalaOcena.TabIndex = 43;
@@ -791,7 +856,7 @@
             // 
             this.textBoxglobinaCentVeziOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxglobinaCentVeziOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxglobinaCentVeziOcena.Location = new System.Drawing.Point(230, 259);
+            this.textBoxglobinaCentVeziOcena.Location = new System.Drawing.Point(230, 299);
             this.textBoxglobinaCentVeziOcena.Name = "textBoxglobinaCentVeziOcena";
             this.textBoxglobinaCentVeziOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxglobinaCentVeziOcena.TabIndex = 51;
@@ -809,7 +874,7 @@
             // 
             this.textBoxdolzinaSeskovOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxdolzinaSeskovOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxdolzinaSeskovOcena.Location = new System.Drawing.Point(230, 291);
+            this.textBoxdolzinaSeskovOcena.Location = new System.Drawing.Point(230, 336);
             this.textBoxdolzinaSeskovOcena.Name = "textBoxdolzinaSeskovOcena";
             this.textBoxdolzinaSeskovOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxdolzinaSeskovOcena.TabIndex = 53;
@@ -818,7 +883,7 @@
             // 
             this.textBoxparkljiOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxparkljiOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxparkljiOcena.Location = new System.Drawing.Point(230, 35);
+            this.textBoxparkljiOcena.Location = new System.Drawing.Point(230, 40);
             this.textBoxparkljiOcena.Name = "textBoxparkljiOcena";
             this.textBoxparkljiOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxparkljiOcena.TabIndex = 37;
@@ -829,10 +894,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(132, 35);
+            this.label26.Location = new System.Drawing.Point(132, 40);
             this.label26.Margin = new System.Windows.Forms.Padding(3);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(92, 26);
+            this.label26.Size = new System.Drawing.Size(92, 31);
             this.label26.TabIndex = 36;
             this.label26.Text = "Parklji Ocena";
             this.label26.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -843,10 +908,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(74, 67);
+            this.label27.Location = new System.Drawing.Point(74, 77);
             this.label27.Margin = new System.Windows.Forms.Padding(3);
             this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(150, 26);
+            this.label27.Size = new System.Drawing.Size(150, 31);
             this.label27.TabIndex = 38;
             this.label27.Text = "Dolzina vimena Ocena";
             this.label27.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -855,7 +920,7 @@
             // 
             this.textBoxdebelinaSeskovOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxdebelinaSeskovOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxdebelinaSeskovOcena.Location = new System.Drawing.Point(230, 323);
+            this.textBoxdebelinaSeskovOcena.Location = new System.Drawing.Point(230, 373);
             this.textBoxdebelinaSeskovOcena.Name = "textBoxdebelinaSeskovOcena";
             this.textBoxdebelinaSeskovOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxdebelinaSeskovOcena.TabIndex = 55;
@@ -866,10 +931,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(72, 195);
+            this.label31.Location = new System.Drawing.Point(72, 225);
             this.label31.Margin = new System.Windows.Forms.Padding(3);
             this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(152, 26);
+            this.label31.Size = new System.Drawing.Size(152, 31);
             this.label31.TabIndex = 46;
             this.label31.Text = "Globina vimena Ocena";
             this.label31.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -880,10 +945,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label32.AutoSize = true;
             this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(95, 227);
+            this.label32.Location = new System.Drawing.Point(95, 262);
             this.label32.Margin = new System.Windows.Forms.Padding(3);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(129, 26);
+            this.label32.Size = new System.Drawing.Size(129, 31);
             this.label32.TabIndex = 48;
             this.label32.Text = "Dno vimena Ocena";
             this.label32.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -894,10 +959,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label33.AutoSize = true;
             this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(61, 259);
+            this.label33.Location = new System.Drawing.Point(61, 299);
             this.label33.Margin = new System.Windows.Forms.Padding(3);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(163, 26);
+            this.label33.Size = new System.Drawing.Size(163, 31);
             this.label33.TabIndex = 50;
             this.label33.Text = "Globina cent vezi Ocena";
             this.label33.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -908,10 +973,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label34.AutoSize = true;
             this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(75, 291);
+            this.label34.Location = new System.Drawing.Point(75, 336);
             this.label34.Margin = new System.Windows.Forms.Padding(3);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(149, 26);
+            this.label34.Size = new System.Drawing.Size(149, 31);
             this.label34.TabIndex = 52;
             this.label34.Text = "Dolzina seškov Ocena";
             this.label34.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -920,7 +985,7 @@
             // 
             this.textBoxpolozajZadnjihSeskovOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxpolozajZadnjihSeskovOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxpolozajZadnjihSeskovOcena.Location = new System.Drawing.Point(230, 419);
+            this.textBoxpolozajZadnjihSeskovOcena.Location = new System.Drawing.Point(230, 484);
             this.textBoxpolozajZadnjihSeskovOcena.Name = "textBoxpolozajZadnjihSeskovOcena";
             this.textBoxpolozajZadnjihSeskovOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxpolozajZadnjihSeskovOcena.TabIndex = 61;
@@ -929,7 +994,7 @@
             // 
             this.textBoxnamenostPrednjihSeskovOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxnamenostPrednjihSeskovOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxnamenostPrednjihSeskovOcena.Location = new System.Drawing.Point(230, 355);
+            this.textBoxnamenostPrednjihSeskovOcena.Location = new System.Drawing.Point(230, 410);
             this.textBoxnamenostPrednjihSeskovOcena.Name = "textBoxnamenostPrednjihSeskovOcena";
             this.textBoxnamenostPrednjihSeskovOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxnamenostPrednjihSeskovOcena.TabIndex = 57;
@@ -938,7 +1003,7 @@
             // 
             this.textBoxnamenostZadnjihSeskovOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxnamenostZadnjihSeskovOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxnamenostZadnjihSeskovOcena.Location = new System.Drawing.Point(230, 387);
+            this.textBoxnamenostZadnjihSeskovOcena.Location = new System.Drawing.Point(230, 447);
             this.textBoxnamenostZadnjihSeskovOcena.Name = "textBoxnamenostZadnjihSeskovOcena";
             this.textBoxnamenostZadnjihSeskovOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxnamenostZadnjihSeskovOcena.TabIndex = 59;
@@ -949,10 +1014,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(66, 323);
+            this.label35.Location = new System.Drawing.Point(66, 373);
             this.label35.Margin = new System.Windows.Forms.Padding(3);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(158, 26);
+            this.label35.Size = new System.Drawing.Size(158, 31);
             this.label35.TabIndex = 54;
             this.label35.Text = "Debelina seškov Ocena";
             this.label35.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -963,10 +1028,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(3, 355);
+            this.label36.Location = new System.Drawing.Point(3, 410);
             this.label36.Margin = new System.Windows.Forms.Padding(3);
             this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(221, 26);
+            this.label36.Size = new System.Drawing.Size(221, 31);
             this.label36.TabIndex = 56;
             this.label36.Text = "Namenost prednjih seškov Ocena";
             this.label36.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -977,10 +1042,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(9, 387);
+            this.label37.Location = new System.Drawing.Point(9, 447);
             this.label37.Margin = new System.Windows.Forms.Padding(3);
             this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(215, 26);
+            this.label37.Size = new System.Drawing.Size(215, 31);
             this.label37.TabIndex = 58;
             this.label37.Text = "Namenost zadnjih seškov Ocena";
             this.label37.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -991,10 +1056,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label38.Location = new System.Drawing.Point(27, 419);
+            this.label38.Location = new System.Drawing.Point(27, 484);
             this.label38.Margin = new System.Windows.Forms.Padding(3);
             this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(197, 26);
+            this.label38.Size = new System.Drawing.Size(197, 31);
             this.label38.TabIndex = 60;
             this.label38.Text = "Polozaj zadnjih seškov Ocena";
             this.label38.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1005,10 +1070,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label40.AutoSize = true;
             this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(113, 451);
+            this.label40.Location = new System.Drawing.Point(113, 521);
             this.label40.Margin = new System.Windows.Forms.Padding(3);
             this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(111, 26);
+            this.label40.Size = new System.Drawing.Size(111, 31);
             this.label40.TabIndex = 64;
             this.label40.Text = "Kondicija Ocena";
             this.label40.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1017,7 +1082,7 @@
             // 
             this.textBoxkondicijaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxkondicijaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxkondicijaOcena.Location = new System.Drawing.Point(230, 451);
+            this.textBoxkondicijaOcena.Location = new System.Drawing.Point(230, 521);
             this.textBoxkondicijaOcena.Name = "textBoxkondicijaOcena";
             this.textBoxkondicijaOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxkondicijaOcena.TabIndex = 65;
@@ -1028,10 +1093,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label41.AutoSize = true;
             this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(48, 483);
+            this.label41.Location = new System.Drawing.Point(48, 558);
             this.label41.Margin = new System.Windows.Forms.Padding(3);
             this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(176, 26);
+            this.label41.Size = new System.Drawing.Size(176, 31);
             this.label41.TabIndex = 66;
             this.label41.Text = "Višina križa izracun Ocena";
             this.label41.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1040,7 +1105,7 @@
             // 
             this.textBoxvisinaKrizaIzracunOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxvisinaKrizaIzracunOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxvisinaKrizaIzracunOcena.Location = new System.Drawing.Point(230, 483);
+            this.textBoxvisinaKrizaIzracunOcena.Location = new System.Drawing.Point(230, 558);
             this.textBoxvisinaKrizaIzracunOcena.Name = "textBoxvisinaKrizaIzracunOcena";
             this.textBoxvisinaKrizaIzracunOcena.Size = new System.Drawing.Size(135, 23);
             this.textBoxvisinaKrizaIzracunOcena.TabIndex = 67;
@@ -1052,8 +1117,8 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel2.Controls.Add(this.label9, 0, 1);
             this.tableLayoutPanel2.Controls.Add(this.label23, 0, 4);
-            this.tableLayoutPanel2.Controls.Add(this.textBoxizrazSkocSklepaOcena, 1, 16);
-            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 16);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxizrazSkocSklepaOcena, 1, 15);
+            this.tableLayoutPanel2.Controls.Add(this.label24, 0, 15);
             this.tableLayoutPanel2.Controls.Add(this.textBoxskocniSklepOcena, 1, 4);
             this.tableLayoutPanel2.Controls.Add(this.label22, 0, 5);
             this.tableLayoutPanel2.Controls.Add(this.label21, 0, 6);
@@ -1064,16 +1129,14 @@
             this.tableLayoutPanel2.Controls.Add(this.label17, 0, 10);
             this.tableLayoutPanel2.Controls.Add(this.label16, 0, 11);
             this.tableLayoutPanel2.Controls.Add(this.label15, 0, 12);
-            this.tableLayoutPanel2.Controls.Add(this.label11, 0, 14);
             this.tableLayoutPanel2.Controls.Add(this.label14, 0, 13);
-            this.tableLayoutPanel2.Controls.Add(this.textBoxiztokMlekaOcena, 1, 14);
             this.tableLayoutPanel2.Controls.Add(this.label13, 0, 3);
             this.tableLayoutPanel2.Controls.Add(this.textBoxobsegPrsi, 1, 13);
             this.tableLayoutPanel2.Controls.Add(this.textBoxvisinaKriza, 1, 12);
             this.tableLayoutPanel2.Controls.Add(this.textBoxglobinaTelesa, 1, 11);
             this.tableLayoutPanel2.Controls.Add(this.textBoxsirinaVspredaj, 1, 10);
             this.tableLayoutPanel2.Controls.Add(this.textBoxhrbetOcena, 1, 9);
-            this.tableLayoutPanel2.Controls.Add(this.textBoxomisicanostOcena, 1, 15);
+            this.tableLayoutPanel2.Controls.Add(this.textBoxomisicanostOcena, 1, 14);
             this.tableLayoutPanel2.Controls.Add(this.textBoxdolzinaKriza, 1, 8);
             this.tableLayoutPanel2.Controls.Add(this.textBoxsednaSirina, 1, 7);
             this.tableLayoutPanel2.Controls.Add(this.textBoxnagibKrizaOcena, 1, 6);
@@ -1082,31 +1145,31 @@
             this.tableLayoutPanel2.Controls.Add(this.textBoxprimerniBiki, 1, 2);
             this.tableLayoutPanel2.Controls.Add(this.textBoxnajboljPrimerniBiki, 1, 3);
             this.tableLayoutPanel2.Controls.Add(this.label12, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label39, 0, 15);
+            this.tableLayoutPanel2.Controls.Add(this.label39, 0, 14);
             this.tableLayoutPanel2.Controls.Add(this.textBoxteza, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(1, 1);
             this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 17;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 5.882352F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(368, 546);
+            this.tableLayoutPanel2.RowCount = 16;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 6.25F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(368, 634);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // label9
@@ -1115,10 +1178,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(56, 35);
+            this.label9.Location = new System.Drawing.Point(56, 42);
             this.label9.Margin = new System.Windows.Forms.Padding(3);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(113, 26);
+            this.label9.Size = new System.Drawing.Size(113, 33);
             this.label9.TabIndex = 2;
             this.label9.Text = "Odsvetovani Biki";
             // 
@@ -1128,10 +1191,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(36, 131);
+            this.label23.Location = new System.Drawing.Point(36, 159);
             this.label23.Margin = new System.Windows.Forms.Padding(3);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(133, 26);
+            this.label23.Size = new System.Drawing.Size(133, 33);
             this.label23.TabIndex = 30;
             this.label23.Text = "Skočni sklep Ocena";
             this.label23.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1140,7 +1203,7 @@
             // 
             this.textBoxizrazSkocSklepaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxizrazSkocSklepaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxizrazSkocSklepaOcena.Location = new System.Drawing.Point(175, 515);
+            this.textBoxizrazSkocSklepaOcena.Location = new System.Drawing.Point(175, 588);
             this.textBoxizrazSkocSklepaOcena.Name = "textBoxizrazSkocSklepaOcena";
             this.textBoxizrazSkocSklepaOcena.Size = new System.Drawing.Size(190, 23);
             this.textBoxizrazSkocSklepaOcena.TabIndex = 33;
@@ -1151,10 +1214,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(3, 515);
+            this.label24.Location = new System.Drawing.Point(3, 588);
             this.label24.Margin = new System.Windows.Forms.Padding(3);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(166, 28);
+            this.label24.Size = new System.Drawing.Size(166, 43);
             this.label24.TabIndex = 32;
             this.label24.Text = "Izraz skoc. sklepa Ocena";
             this.label24.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1163,7 +1226,7 @@
             // 
             this.textBoxskocniSklepOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxskocniSklepOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxskocniSklepOcena.Location = new System.Drawing.Point(175, 131);
+            this.textBoxskocniSklepOcena.Location = new System.Drawing.Point(175, 159);
             this.textBoxskocniSklepOcena.Name = "textBoxskocniSklepOcena";
             this.textBoxskocniSklepOcena.Size = new System.Drawing.Size(190, 23);
             this.textBoxskocniSklepOcena.TabIndex = 31;
@@ -1174,10 +1237,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(32, 163);
+            this.label22.Location = new System.Drawing.Point(32, 198);
             this.label22.Margin = new System.Windows.Forms.Padding(3);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(137, 26);
+            this.label22.Size = new System.Drawing.Size(137, 33);
             this.label22.TabIndex = 28;
             this.label22.Text = "Polozaj kolka Ocena";
             this.label22.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1188,10 +1251,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(44, 195);
+            this.label21.Location = new System.Drawing.Point(44, 237);
             this.label21.Margin = new System.Windows.Forms.Padding(3);
             this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(125, 26);
+            this.label21.Size = new System.Drawing.Size(125, 33);
             this.label21.TabIndex = 26;
             this.label21.Text = "Nagib križa Ocena";
             // 
@@ -1201,10 +1264,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(80, 227);
+            this.label20.Location = new System.Drawing.Point(80, 276);
             this.label20.Margin = new System.Windows.Forms.Padding(3);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(89, 26);
+            this.label20.Size = new System.Drawing.Size(89, 33);
             this.label20.TabIndex = 24;
             this.label20.Text = "Sedna Širina";
             // 
@@ -1214,10 +1277,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(83, 67);
+            this.label10.Location = new System.Drawing.Point(83, 81);
             this.label10.Margin = new System.Windows.Forms.Padding(3);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(86, 26);
+            this.label10.Size = new System.Drawing.Size(86, 33);
             this.label10.TabIndex = 4;
             this.label10.Text = "Primerni Biki";
             // 
@@ -1227,10 +1290,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(78, 259);
+            this.label19.Location = new System.Drawing.Point(78, 315);
             this.label19.Margin = new System.Windows.Forms.Padding(3);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(91, 26);
+            this.label19.Size = new System.Drawing.Size(91, 33);
             this.label19.TabIndex = 22;
             this.label19.Text = "Dolžina Križa";
             // 
@@ -1240,10 +1303,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(80, 291);
+            this.label18.Location = new System.Drawing.Point(80, 354);
             this.label18.Margin = new System.Windows.Forms.Padding(3);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(89, 26);
+            this.label18.Size = new System.Drawing.Size(89, 33);
             this.label18.TabIndex = 20;
             this.label18.Text = "Hrbet Ocena";
             // 
@@ -1253,10 +1316,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(65, 323);
+            this.label17.Location = new System.Drawing.Point(65, 393);
             this.label17.Margin = new System.Windows.Forms.Padding(3);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 26);
+            this.label17.Size = new System.Drawing.Size(104, 33);
             this.label17.TabIndex = 18;
             this.label17.Text = "Širina Vspredaj";
             // 
@@ -1266,10 +1329,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(65, 355);
+            this.label16.Location = new System.Drawing.Point(65, 432);
             this.label16.Margin = new System.Windows.Forms.Padding(3);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(104, 26);
+            this.label16.Size = new System.Drawing.Size(104, 33);
             this.label16.TabIndex = 16;
             this.label16.Text = "Globina Telesa";
             // 
@@ -1279,25 +1342,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(87, 387);
+            this.label15.Location = new System.Drawing.Point(87, 471);
             this.label15.Margin = new System.Windows.Forms.Padding(3);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(82, 26);
+            this.label15.Size = new System.Drawing.Size(82, 33);
             this.label15.TabIndex = 14;
             this.label15.Text = "Višina Križa";
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(45, 451);
-            this.label11.Margin = new System.Windows.Forms.Padding(3);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(124, 26);
-            this.label11.TabIndex = 10;
-            this.label11.Text = "Iztok Mleka Ocena";
             // 
             // label14
             // 
@@ -1305,21 +1355,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(91, 419);
+            this.label14.Location = new System.Drawing.Point(91, 510);
             this.label14.Margin = new System.Windows.Forms.Padding(3);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(78, 26);
+            this.label14.Size = new System.Drawing.Size(78, 33);
             this.label14.TabIndex = 12;
             this.label14.Text = "Obseg Prsi";
-            // 
-            // textBoxiztokMlekaOcena
-            // 
-            this.textBoxiztokMlekaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxiztokMlekaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxiztokMlekaOcena.Location = new System.Drawing.Point(175, 451);
-            this.textBoxiztokMlekaOcena.Name = "textBoxiztokMlekaOcena";
-            this.textBoxiztokMlekaOcena.Size = new System.Drawing.Size(190, 23);
-            this.textBoxiztokMlekaOcena.TabIndex = 11;
             // 
             // label13
             // 
@@ -1327,10 +1368,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(37, 99);
+            this.label13.Location = new System.Drawing.Point(37, 120);
             this.label13.Margin = new System.Windows.Forms.Padding(3);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(132, 26);
+            this.label13.Size = new System.Drawing.Size(132, 33);
             this.label13.TabIndex = 6;
             this.label13.Text = "Najbolj primerni Biki";
             // 
@@ -1338,7 +1379,7 @@
             // 
             this.textBoxobsegPrsi.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxobsegPrsi.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxobsegPrsi.Location = new System.Drawing.Point(175, 419);
+            this.textBoxobsegPrsi.Location = new System.Drawing.Point(175, 510);
             this.textBoxobsegPrsi.Name = "textBoxobsegPrsi";
             this.textBoxobsegPrsi.Size = new System.Drawing.Size(190, 23);
             this.textBoxobsegPrsi.TabIndex = 13;
@@ -1347,7 +1388,7 @@
             // 
             this.textBoxvisinaKriza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxvisinaKriza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxvisinaKriza.Location = new System.Drawing.Point(175, 387);
+            this.textBoxvisinaKriza.Location = new System.Drawing.Point(175, 471);
             this.textBoxvisinaKriza.Name = "textBoxvisinaKriza";
             this.textBoxvisinaKriza.Size = new System.Drawing.Size(190, 23);
             this.textBoxvisinaKriza.TabIndex = 15;
@@ -1356,7 +1397,7 @@
             // 
             this.textBoxglobinaTelesa.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxglobinaTelesa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxglobinaTelesa.Location = new System.Drawing.Point(175, 355);
+            this.textBoxglobinaTelesa.Location = new System.Drawing.Point(175, 432);
             this.textBoxglobinaTelesa.Name = "textBoxglobinaTelesa";
             this.textBoxglobinaTelesa.Size = new System.Drawing.Size(190, 23);
             this.textBoxglobinaTelesa.TabIndex = 17;
@@ -1365,7 +1406,7 @@
             // 
             this.textBoxsirinaVspredaj.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxsirinaVspredaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsirinaVspredaj.Location = new System.Drawing.Point(175, 323);
+            this.textBoxsirinaVspredaj.Location = new System.Drawing.Point(175, 393);
             this.textBoxsirinaVspredaj.Name = "textBoxsirinaVspredaj";
             this.textBoxsirinaVspredaj.Size = new System.Drawing.Size(190, 23);
             this.textBoxsirinaVspredaj.TabIndex = 19;
@@ -1374,7 +1415,7 @@
             // 
             this.textBoxhrbetOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxhrbetOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxhrbetOcena.Location = new System.Drawing.Point(175, 291);
+            this.textBoxhrbetOcena.Location = new System.Drawing.Point(175, 354);
             this.textBoxhrbetOcena.Name = "textBoxhrbetOcena";
             this.textBoxhrbetOcena.Size = new System.Drawing.Size(190, 23);
             this.textBoxhrbetOcena.TabIndex = 21;
@@ -1383,7 +1424,7 @@
             // 
             this.textBoxomisicanostOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxomisicanostOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxomisicanostOcena.Location = new System.Drawing.Point(175, 483);
+            this.textBoxomisicanostOcena.Location = new System.Drawing.Point(175, 549);
             this.textBoxomisicanostOcena.Name = "textBoxomisicanostOcena";
             this.textBoxomisicanostOcena.Size = new System.Drawing.Size(190, 23);
             this.textBoxomisicanostOcena.TabIndex = 63;
@@ -1392,7 +1433,7 @@
             // 
             this.textBoxdolzinaKriza.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxdolzinaKriza.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxdolzinaKriza.Location = new System.Drawing.Point(175, 259);
+            this.textBoxdolzinaKriza.Location = new System.Drawing.Point(175, 315);
             this.textBoxdolzinaKriza.Name = "textBoxdolzinaKriza";
             this.textBoxdolzinaKriza.Size = new System.Drawing.Size(190, 23);
             this.textBoxdolzinaKriza.TabIndex = 23;
@@ -1401,7 +1442,7 @@
             // 
             this.textBoxsednaSirina.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxsednaSirina.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxsednaSirina.Location = new System.Drawing.Point(175, 227);
+            this.textBoxsednaSirina.Location = new System.Drawing.Point(175, 276);
             this.textBoxsednaSirina.Name = "textBoxsednaSirina";
             this.textBoxsednaSirina.Size = new System.Drawing.Size(190, 23);
             this.textBoxsednaSirina.TabIndex = 25;
@@ -1410,7 +1451,7 @@
             // 
             this.textBoxnagibKrizaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxnagibKrizaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxnagibKrizaOcena.Location = new System.Drawing.Point(175, 195);
+            this.textBoxnagibKrizaOcena.Location = new System.Drawing.Point(175, 237);
             this.textBoxnagibKrizaOcena.Name = "textBoxnagibKrizaOcena";
             this.textBoxnagibKrizaOcena.Size = new System.Drawing.Size(190, 23);
             this.textBoxnagibKrizaOcena.TabIndex = 27;
@@ -1419,7 +1460,7 @@
             // 
             this.textBoxpolozajKolkaOcena.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxpolozajKolkaOcena.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxpolozajKolkaOcena.Location = new System.Drawing.Point(175, 163);
+            this.textBoxpolozajKolkaOcena.Location = new System.Drawing.Point(175, 198);
             this.textBoxpolozajKolkaOcena.Name = "textBoxpolozajKolkaOcena";
             this.textBoxpolozajKolkaOcena.Size = new System.Drawing.Size(190, 23);
             this.textBoxpolozajKolkaOcena.TabIndex = 29;
@@ -1428,7 +1469,7 @@
             // 
             this.textBoxodsvetovaniBiki.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxodsvetovaniBiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxodsvetovaniBiki.Location = new System.Drawing.Point(175, 35);
+            this.textBoxodsvetovaniBiki.Location = new System.Drawing.Point(175, 42);
             this.textBoxodsvetovaniBiki.Name = "textBoxodsvetovaniBiki";
             this.textBoxodsvetovaniBiki.Size = new System.Drawing.Size(190, 23);
             this.textBoxodsvetovaniBiki.TabIndex = 3;
@@ -1437,7 +1478,7 @@
             // 
             this.textBoxprimerniBiki.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxprimerniBiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxprimerniBiki.Location = new System.Drawing.Point(175, 67);
+            this.textBoxprimerniBiki.Location = new System.Drawing.Point(175, 81);
             this.textBoxprimerniBiki.Name = "textBoxprimerniBiki";
             this.textBoxprimerniBiki.Size = new System.Drawing.Size(190, 23);
             this.textBoxprimerniBiki.TabIndex = 5;
@@ -1446,7 +1487,7 @@
             // 
             this.textBoxnajboljPrimerniBiki.Dock = System.Windows.Forms.DockStyle.Fill;
             this.textBoxnajboljPrimerniBiki.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxnajboljPrimerniBiki.Location = new System.Drawing.Point(175, 99);
+            this.textBoxnajboljPrimerniBiki.Location = new System.Drawing.Point(175, 120);
             this.textBoxnajboljPrimerniBiki.Name = "textBoxnajboljPrimerniBiki";
             this.textBoxnajboljPrimerniBiki.Size = new System.Drawing.Size(190, 23);
             this.textBoxnajboljPrimerniBiki.TabIndex = 7;
@@ -1460,7 +1501,7 @@
             this.label12.Location = new System.Drawing.Point(129, 3);
             this.label12.Margin = new System.Windows.Forms.Padding(3);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(40, 26);
+            this.label12.Size = new System.Drawing.Size(40, 33);
             this.label12.TabIndex = 8;
             this.label12.Text = "Teža";
             // 
@@ -1470,10 +1511,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(38, 483);
+            this.label39.Location = new System.Drawing.Point(38, 549);
             this.label39.Margin = new System.Windows.Forms.Padding(3);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(131, 26);
+            this.label39.Size = new System.Drawing.Size(131, 33);
             this.label39.TabIndex = 62;
             this.label39.Text = "Omisičanost Ocena";
             this.label39.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -1493,7 +1534,7 @@
             this.tabPage3.Controls.Add(this.buttonDodajKontrolo);
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1118, 556);
+            this.tabPage3.Size = new System.Drawing.Size(1118, 584);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mlečne kontrole";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1534,7 +1575,7 @@
             // 
             this.buttonZapri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonZapri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonZapri.Location = new System.Drawing.Point(928, 663);
+            this.buttonZapri.Location = new System.Drawing.Point(928, 763);
             this.buttonZapri.Name = "buttonZapri";
             this.buttonZapri.Size = new System.Drawing.Size(100, 43);
             this.buttonZapri.TabIndex = 42;
@@ -1546,7 +1587,7 @@
             // 
             this.buttonPotrdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.buttonPotrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPotrdi.Location = new System.Drawing.Point(1034, 663);
+            this.buttonPotrdi.Location = new System.Drawing.Point(1034, 763);
             this.buttonPotrdi.Name = "buttonPotrdi";
             this.buttonPotrdi.Size = new System.Drawing.Size(100, 43);
             this.buttonPotrdi.TabIndex = 41;
@@ -1565,53 +1606,122 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Podatki krave";
             // 
-            // tabPage4
+            // dateTimePickerDatumPregleda
             // 
-            tabPage4.Controls.Add(this.buttonDodajOs);
-            tabPage4.Controls.Add(this.flowLayoutPanelOs);
-            tabPage4.Location = new System.Drawing.Point(4, 22);
-            tabPage4.Name = "tabPage4";
-            tabPage4.Size = new System.Drawing.Size(1118, 556);
-            tabPage4.TabIndex = 3;
-            tabPage4.Text = "Osemenitve";
-            tabPage4.UseVisualStyleBackColor = true;
+            this.dateTimePickerDatumPregleda.Checked = false;
+            this.dateTimePickerDatumPregleda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerDatumPregleda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDatumPregleda.Location = new System.Drawing.Point(239, 248);
+            this.dateTimePickerDatumPregleda.Name = "dateTimePickerDatumPregleda";
+            this.dateTimePickerDatumPregleda.ShowCheckBox = true;
+            this.dateTimePickerDatumPregleda.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePickerDatumPregleda.TabIndex = 44;
             // 
-            // flowLayoutPanelOs
+            // label50
             // 
-            this.flowLayoutPanelOs.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.flowLayoutPanelOs.AutoScroll = true;
-            this.flowLayoutPanelOs.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.flowLayoutPanelOs.Controls.Add(this.flowLayoutPanel3);
-            this.flowLayoutPanelOs.Location = new System.Drawing.Point(17, 106);
-            this.flowLayoutPanelOs.Name = "flowLayoutPanelOs";
-            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 423);
-            this.flowLayoutPanelOs.TabIndex = 45;
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(120, 245);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(113, 35);
+            this.label50.TabIndex = 45;
+            this.label50.Text = "Datum pregleda:";
             // 
-            // flowLayoutPanel3
+            // label51
             // 
-            this.flowLayoutPanel3.Location = new System.Drawing.Point(3, 3);
-            this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(200, 100);
-            this.flowLayoutPanel3.TabIndex = 0;
+            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(30, 315);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(203, 35);
+            this.label51.TabIndex = 47;
+            this.label51.Text = "Datum pregleda 1. mleč. iztoka";
             // 
-            // buttonDodajOs
+            // dateTimePickerPrviIztok
             // 
-            this.buttonDodajOs.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonDodajOs.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonDodajOs.Location = new System.Drawing.Point(872, 49);
-            this.buttonDodajOs.Name = "buttonDodajOs";
-            this.buttonDodajOs.Size = new System.Drawing.Size(231, 51);
-            this.buttonDodajOs.TabIndex = 44;
-            this.buttonDodajOs.Text = "Dodaj osemenitev";
-            this.buttonDodajOs.UseVisualStyleBackColor = true;
+            this.dateTimePickerPrviIztok.Checked = false;
+            this.dateTimePickerPrviIztok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerPrviIztok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPrviIztok.Location = new System.Drawing.Point(239, 318);
+            this.dateTimePickerPrviIztok.Name = "dateTimePickerPrviIztok";
+            this.dateTimePickerPrviIztok.ShowCheckBox = true;
+            this.dateTimePickerPrviIztok.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePickerPrviIztok.TabIndex = 46;
+            // 
+            // label52
+            // 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(30, 385);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(203, 35);
+            this.label52.TabIndex = 49;
+            this.label52.Text = "Datum pregleda 2. mleč. iztoka";
+            // 
+            // dateTimePickerDrugiIztok
+            // 
+            this.dateTimePickerDrugiIztok.Checked = false;
+            this.dateTimePickerDrugiIztok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerDrugiIztok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDrugiIztok.Location = new System.Drawing.Point(239, 388);
+            this.dateTimePickerDrugiIztok.Name = "dateTimePickerDrugiIztok";
+            this.dateTimePickerDrugiIztok.ShowCheckBox = true;
+            this.dateTimePickerDrugiIztok.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePickerDrugiIztok.TabIndex = 48;
+            // 
+            // textBoxIztokEna
+            // 
+            this.textBoxIztokEna.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxIztokEna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIztokEna.Location = new System.Drawing.Point(239, 283);
+            this.textBoxIztokEna.Name = "textBoxIztokEna";
+            this.textBoxIztokEna.Size = new System.Drawing.Size(225, 23);
+            this.textBoxIztokEna.TabIndex = 50;
+            // 
+            // textBoxIztokDva
+            // 
+            this.textBoxIztokDva.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxIztokDva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIztokDva.Location = new System.Drawing.Point(239, 353);
+            this.textBoxIztokDva.Name = "textBoxIztokDva";
+            this.textBoxIztokDva.Size = new System.Drawing.Size(225, 23);
+            this.textBoxIztokDva.TabIndex = 51;
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(140, 280);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 35);
+            this.label11.TabIndex = 84;
+            this.label11.Text = "Mlečni iztok 1";
+            // 
+            // label53
+            // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(140, 350);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(93, 35);
+            this.label53.TabIndex = 85;
+            this.label53.Text = "Mlečni iztok 2";
             // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(1150, 718);
+            this.ClientSize = new System.Drawing.Size(1150, 818);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonZapri);
             this.Controls.Add(this.buttonPotrdi);
@@ -1621,6 +1731,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "UrediKravaForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            tabPage4.ResumeLayout(false);
+            this.flowLayoutPanelOs.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
@@ -1634,8 +1746,6 @@
             this.tableLayoutPanel2.PerformLayout();
             this.tabPage3.ResumeLayout(false);
             this.flowLayoutPanelMlecneKontrole.ResumeLayout(false);
-            tabPage4.ResumeLayout(false);
-            this.flowLayoutPanelOs.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1700,8 +1810,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox textBoxobsegPrsi;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBoxiztokMlekaOcena;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBoxteza;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox textBoxnajboljPrimerniBiki;
@@ -1756,5 +1864,15 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOs;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel3;
         private System.Windows.Forms.Button buttonDodajOs;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDatumPregleda;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.DateTimePicker dateTimePickerPrviIztok;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.DateTimePicker dateTimePickerDrugiIztok;
+        private System.Windows.Forms.TextBox textBoxIztokEna;
+        private System.Windows.Forms.TextBox textBoxIztokDva;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label53;
     }
 }

@@ -574,6 +574,26 @@ namespace evidenca_krav
 
                             KraveRazred k = new KraveRazred(id, ime, datum, pasma, imeMame, imeOceta, usesna, laktacija);
 
+                            if (!reader.IsDBNull(reader.GetOrdinal("datum_pregleda")))
+                            {
+                                k.DatumPregleda = reader.GetDateTime(reader.GetOrdinal("datum_pregleda"));
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_datum_prvi")))
+                            {
+                                k.DatumPrvegaIztoka = reader.GetDateTime(reader.GetOrdinal("iztok_mleka_datum_prvi"));
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_ocena_druga")))
+                            {
+                                k.IztokMlekaOcenaDruga = reader.GetInt32(reader.GetOrdinal("iztok_mleka_ocena_druga"));
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_datum_drugi")))
+                            {
+                                k.DatumDrugegaIztoka = reader.GetDateTime(reader.GetOrdinal("iztok_mleka_datum_drugi"));
+                            }
+
                             if (!reader.IsDBNull(reader.GetOrdinal("odsvetovani_biki")))
                             {
                                 k.OdsvetovaniBiki = reader.GetString(reader.GetOrdinal("odsvetovani_biki"));
@@ -833,6 +853,26 @@ namespace evidenca_krav
 
                             KraveRazred k = new KraveRazred(id, ime, datum, pasma, imeMame, imeOceta, usesna, laktacija);
 
+                            if (!reader.IsDBNull(reader.GetOrdinal("datum_pregleda")))
+                            {
+                                k.DatumPregleda = reader.GetDateTime(reader.GetOrdinal("datum_pregleda"));
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_datum_prvi")))
+                            {
+                                k.DatumPrvegaIztoka = reader.GetDateTime(reader.GetOrdinal("iztok_mleka_datum_prvi"));
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_ocena_druga")))
+                            {
+                                k.IztokMlekaOcenaDruga = reader.GetInt32(reader.GetOrdinal("iztok_mleka_ocena_druga"));
+                            }
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("iztok_mleka_datum_drugi")))
+                            {
+                                k.DatumDrugegaIztoka = reader.GetDateTime(reader.GetOrdinal("iztok_mleka_datum_drugi"));
+                            }
+
                             if (!reader.IsDBNull(reader.GetOrdinal("odsvetovani_biki")))
                             {
                                 k.OdsvetovaniBiki = reader.GetString(reader.GetOrdinal("odsvetovani_biki"));
@@ -1053,61 +1093,66 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var command = new SQLiteCommand(@"
-                    UPDATE zivali SET
-                        ime = @Ime,
-                        datum_roj = @DatumRojstva,
-                        pasma = @Pasma,
-                        ime_mame = @ImeMame,
-                        ime_oceta = @ImeOceta,
-                        usesna_stevilka = @UsesnaStevilka,
-                        laktacija = @Laktacija,
+            UPDATE zivali SET
+                ime = @Ime,
+                datum_roj = @DatumRojstva,
+                pasma = @Pasma,
+                ime_mame = @ImeMame,
+                ime_oceta = @ImeOceta,
+                usesna_stevilka = @UsesnaStevilka,
+                laktacija = @Laktacija,
 
-                        odsvetovani_biki = @OdsvetovaniBiki,
-                        primerni_biki = @PrimerniBiki,
-                        najbolj_primerni_biki = @NajboljPrimerniBiki,
-                        teza = @Teza,
-                        iztok_mleka_ocena = @IztokMlekaOcena,
-                        obseg_prsi_cm = @ObsegPrsi,
-                        visina_kriza_cm = @VisinaKriza,
-                        globina_telesa_cm = @GlobinaTelesa,
-                        sirina_spredaj_ocena = @SirinaVspredaj,
-                        hrbet_ocena = @HrbetOcena,
-                        dolzina_kriza_cm = @DolzinaKriza,
-                        sedna_sirina_cm = @SednaSirina,
-                        nagib_kriza_ocena = @NagibKrizaOcena,
-                        polozaj_kolka_ocena = @PolozajKolkaOcena,
-                        skocni_sklep_ocena = @SkocniSklepOcena,
-                        izraz_skoc_sklepa_ocena = @IzrazSkocSklepaOcena,
+                odsvetovani_biki = @OdsvetovaniBiki,
+                primerni_biki = @PrimerniBiki,
+                najbolj_primerni_biki = @NajboljPrimerniBiki,
+                teza = @Teza,
+                obseg_prsi_cm = @ObsegPrsi,
+                visina_kriza_cm = @VisinaKriza,
+                globina_telesa_cm = @GlobinaTelesa,
+                sirina_spredaj_ocena = @SirinaVspredaj,
+                hrbet_ocena = @HrbetOcena,
+                dolzina_kriza_cm = @DolzinaKriza,
+                sedna_sirina_cm = @SednaSirina,
+                nagib_kriza_ocena = @NagibKrizaOcena,
+                polozaj_kolka_ocena = @PolozajKolkaOcena,
+                skocni_sklep_ocena = @SkocniSklepOcena,
+                izraz_skoc_sklepa_ocena = @IzrazSkocSklepaOcena,
 
-                        bicelj_ocena = @BiceljOcena,
-                        parklji_ocena = @ParkljiOcena,
-                        dolzina_vimena_ocena = @DolzinaVimenaOcena,
-                        pripetost_vimena_ocena = @PripetostVimenaOcena,
-                        visina_mlecnega_zrcala_ocena = @VisinaMlecnegaZrcalaOcena,
-                        sirina_mlenega_zrcala_ocena = @SirinaMlecnegaZrcalaOcena,
-                        globina_vimena_ocena = @GlobinaVimenaOcena,
-                        dno_vimena_ocena = @DnoVimenaOcena,
-                        globina_cent_vezi_ocena = @GlobinaCentVeziOcena,
-                        dolzina_seskov_ocena = @DolzinaSeskovOcena,
-                        debelina_seskov_ocena = @DebelinaSeskovOcena,
-                        namenost_prednjih_seskov_ocena = @NamenostPrednjihSeskovOcena,
-                        namenbnost_zadnjih_seskov_ocena = @NamenostZadnjihSeskovOcena,
-                        polozaj_zadnjih_seskov_ocena = @PolozajZadnjihSeskovOcena,
-                        omisicanost_ocena = @OmisicanostOcena,
-                        kondicija_ocena = @KondicijaOcena,
+                bicelj_ocena = @BiceljOcena,
+                parklji_ocena = @ParkljiOcena,
+                dolzina_vimena_ocena = @DolzinaVimenaOcena,
+                pripetost_vimena_ocena = @PripetostVimenaOcena,
+                visina_mlecnega_zrcala_ocena = @VisinaMlecnegaZrcalaOcena,
+                sirina_mlenega_zrcala_ocena = @SirinaMlecnegaZrcalaOcena,
+                globina_vimena_ocena = @GlobinaVimenaOcena,
+                dno_vimena_ocena = @DnoVimenaOcena,
+                globina_cent_vezi_ocena = @GlobinaCentVeziOcena,
+                dolzina_seskov_ocena = @DolzinaSeskovOcena,
+                debelina_seskov_ocena = @DebelinaSeskovOcena,
+                namenost_prednjih_seskov_ocena = @NamenostPrednjihSeskovOcena,
+                namenbnost_zadnjih_seskov_ocena = @NamenostZadnjihSeskovOcena,
+                polozaj_zadnjih_seskov_ocena = @PolozajZadnjihSeskovOcena,
+                omisicanost_ocena = @OmisicanostOcena,
+                kondicija_ocena = @KondicijaOcena,
 
-                        visina_kriza_izracun_ocena = @VisinaKrizaIzracunOcena,
-                        globina_telesa_izracun_ocena = @GlobinaTelesaIzracunOcena,
-                        dolzina_kriza_izracun_ocena = @DolzinaKrizaIzracunOcena,
-                        sedna_sirina_izracun_ocena = @SednaSirinaIzracunOcena,
-                        okvir_ocena = @OkvirOcena,
-                        kriz_ocena = @KrizOcena,
-                        noge_ocena = @NogeOcena,
-                        vime_ocena = @VimeOcena,
-                        telesne_lastnosti_skupaj_ocena = @TelesneSposobnostiSkupajOcena
+                visina_kriza_izracun_ocena = @VisinaKrizaIzracunOcena,
+                globina_telesa_izracun_ocena = @GlobinaTelesaIzracunOcena,
+                dolzina_kriza_izracun_ocena = @DolzinaKrizaIzracunOcena,
+                sedna_sirina_izracun_ocena = @SednaSirinaIzracunOcena,
+                okvir_ocena = @OkvirOcena,
+                kriz_ocena = @KrizOcena,
+                noge_ocena = @NogeOcena,
+                vime_ocena = @VimeOcena,
+                telesne_lastnosti_skupaj_ocena = @TelesneSposobnostiSkupajOcena,
 
-                    WHERE id = @Id
-                ", conn))
+                datum_pregleda = @DatumPregleda,
+                iztok_mleka_ocena = @IztokMlekaOcena,
+                iztok_mleka_datum_prvi = @DatumPrvegaIztoka,
+                iztok_mleka_ocena_druga = @IztokMlekaOcenaDruga,
+                iztok_mleka_datum_drugi = @DatumDrugegaIztoka
+
+            WHERE id = @Id
+        ", conn))
                 {
                     command.Parameters.AddWithValue("@Id", k.Id);
                     command.Parameters.AddWithValue("@Ime", k.Ime);
@@ -1122,7 +1167,6 @@ namespace evidenca_krav
                     command.Parameters.AddWithValue("@PrimerniBiki", k.PrimerniBiki);
                     command.Parameters.AddWithValue("@NajboljPrimerniBiki", k.NajboljPrimerniBiki);
                     command.Parameters.AddWithValue("@Teza", k.Teza);
-                    command.Parameters.AddWithValue("@IztokMlekaOcena", k.IztokMlekaOcena);
                     command.Parameters.AddWithValue("@ObsegPrsi", k.ObsegPrsi);
                     command.Parameters.AddWithValue("@VisinaKriza", k.VisinaKriza);
                     command.Parameters.AddWithValue("@GlobinaTelesa", k.GlobinaTelesa);
@@ -1161,6 +1205,35 @@ namespace evidenca_krav
                     command.Parameters.AddWithValue("@NogeOcena", k.NogeOcena);
                     command.Parameters.AddWithValue("@VimeOcena", k.VimeOcena);
                     command.Parameters.AddWithValue("@TelesneSposobnostiSkupajOcena", k.TelesneSposobnostiSkupajOcena);
+
+                    if (k.DatumPregleda.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@DatumPregleda", k.DatumPregleda.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@DatumPregleda", DBNull.Value);
+                    }
+
+                    command.Parameters.AddWithValue("@IztokMlekaOcena", k.IztokMlekaOcena);
+                    if (k.DatumPrvegaIztoka.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@DatumPrvegaIztoka", k.DatumPrvegaIztoka.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@DatumPrvegaIztoka", DBNull.Value);
+                    }
+
+                    command.Parameters.AddWithValue("@IztokMlekaOcenaDruga", k.IztokMlekaOcenaDruga);
+                    if (k.DatumDrugegaIztoka.HasValue)
+                    {
+                        command.Parameters.AddWithValue("@DatumDrugegaIztoka", k.DatumDrugegaIztoka.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@DatumDrugegaIztoka", DBNull.Value);
+                    }
 
                     int rezultat = command.ExecuteNonQuery();
 

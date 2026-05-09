@@ -26,9 +26,29 @@ namespace evidenca_krav.Obrazci
             kravaCard = kv;
 
             Krava = db.PridobiKravo(idKrav);
+
+            if (Krava.DatumPregleda != null)
+            {
+                dateTimePickerDatumPregleda.Checked = true;
+                dateTimePickerDatumPregleda.Value = Krava.DatumPregleda.Value;
+            }
+
+            if (Krava.DatumPrvegaIztoka != null)
+            {
+                dateTimePickerPrviIztok.Checked = true;
+                dateTimePickerPrviIztok.Value = Krava.DatumPrvegaIztoka.Value;
+            }
+
+            if (Krava.DatumDrugegaIztoka != null)
+            {
+                dateTimePickerDrugiIztok.Checked = true;
+                dateTimePickerDrugiIztok.Value = Krava.DatumDrugegaIztoka.Value;
+            }
+
             textBoxIme.Text = Krava.Ime;
             textBoxUsSt.Text = Krava.UsesnaSt;
             textBoxPasma.Text = Krava.Pasma;
+            dateTimePicker.Value = Krava.DatumRoj;
             textBoxImeMame.Text = Krava.ImeMame;
             textBoxImeOceta.Text = Krava.ImeOceta;
             textBoxLaktacija.Text = Krava.Laktacija;
@@ -36,7 +56,8 @@ namespace evidenca_krav.Obrazci
             textBoxodsvetovaniBiki.Text = Krava.OdsvetovaniBiki;
             textBoxprimerniBiki.Text = Krava.PrimerniBiki;
             textBoxnajboljPrimerniBiki.Text = Krava.NajboljPrimerniBiki;
-            textBoxiztokMlekaOcena.Text = Krava.IztokMlekaOcena.ToString();
+            textBoxIztokEna.Text = Krava.IztokMlekaOcena.ToString();
+            textBoxIztokDva.Text = Krava.IztokMlekaOcenaDruga.ToString();
             textBoxobsegPrsi.Text = Krava.ObsegPrsi.ToString();
             textBoxvisinaKriza.Text = Krava.VisinaKriza.ToString();
             textBoxglobinaTelesa.Text = Krava.GlobinaTelesa.ToString();
@@ -131,8 +152,7 @@ namespace evidenca_krav.Obrazci
                 Krava.GlobinaTelesa = Convert.ToSingle(textBoxglobinaTelesa.Text);
                 Krava.DolzinaKriza = Convert.ToSingle(textBoxdolzinaKriza.Text);
                 Krava.SednaSirina = Convert.ToSingle(textBoxsednaSirina.Text);
-
-                Krava.IztokMlekaOcena = Convert.ToInt32(textBoxiztokMlekaOcena.Text);
+                
                 Krava.SirinaVspredaj = Convert.ToInt32(textBoxsirinaVspredaj.Text);
                 Krava.HrbetOcena = Convert.ToInt32(textBoxhrbetOcena.Text);
                 Krava.NagibKrizaOcena = Convert.ToInt32(textBoxnagibKrizaOcena.Text);
@@ -164,6 +184,35 @@ namespace evidenca_krav.Obrazci
                 Krava.NogeOcena = Convert.ToInt32(textBoxnogeOcena.Text);
                 Krava.VimeOcena = Convert.ToInt32(textBoxvimeOcena.Text);
                 Krava.TelesneSposobnostiSkupajOcena = Convert.ToInt32(textBoxtelesneSposobnostiSkupajOcena.Text);
+
+                if (dateTimePickerDatumPregleda.Checked)
+                {
+                    Krava.DatumPregleda = dateTimePickerDatumPregleda.Value;
+                }
+                else
+                {
+                    Krava.DatumPregleda = null;
+                }
+
+                Krava.IztokMlekaOcena = Convert.ToInt32(textBoxIztokEna.Text);
+                if (dateTimePickerPrviIztok.Checked)
+                {
+                    Krava.DatumPrvegaIztoka = dateTimePickerPrviIztok.Value;
+                }
+                else
+                {
+                    Krava.DatumPrvegaIztoka = null;
+                }
+
+                Krava.IztokMlekaOcenaDruga = Convert.ToInt32(textBoxIztokDva.Text);
+                if (dateTimePickerDrugiIztok.Checked)
+                {
+                    Krava.DatumDrugegaIztoka = dateTimePickerDrugiIztok.Value;
+                }
+                else
+                {
+                    Krava.DatumDrugegaIztoka = null;
+                }
 
                 int izvedba = db.UrediKravo(Krava);
 
