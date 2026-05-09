@@ -163,6 +163,10 @@
             this.buttonZapri = new System.Windows.Forms.Button();
             this.buttonPotrdi = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.tabPage8 = new System.Windows.Forms.TabPage();
+            this.buttonDodajZdravljenje = new System.Windows.Forms.Button();
+            this.flowLayoutPanelZdravljenja = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel7 = new System.Windows.Forms.FlowLayoutPanel();
             tabPage4 = new System.Windows.Forms.TabPage();
             tabPage4.SuspendLayout();
             this.flowLayoutPanelOs.SuspendLayout();
@@ -181,6 +185,8 @@
             this.flowLayoutPanelTelitve.SuspendLayout();
             this.tabPage7.SuspendLayout();
             this.flowLayoutPanelKorekcije.SuspendLayout();
+            this.tabPage8.SuspendLayout();
+            this.flowLayoutPanelZdravljenja.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -238,6 +244,7 @@
             this.tabControl1.Controls.Add(tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
             this.tabControl1.Controls.Add(this.tabPage7);
+            this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1869,6 +1876,49 @@
             this.label1.TabIndex = 43;
             this.label1.Text = "Podatki krave";
             // 
+            // tabPage8
+            // 
+            this.tabPage8.Controls.Add(this.buttonDodajZdravljenje);
+            this.tabPage8.Controls.Add(this.flowLayoutPanelZdravljenja);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Name = "tabPage8";
+            this.tabPage8.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage8.TabIndex = 7;
+            this.tabPage8.Text = "Zdravljenja";
+            this.tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // buttonDodajZdravljenje
+            // 
+            this.buttonDodajZdravljenje.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajZdravljenje.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajZdravljenje.Location = new System.Drawing.Point(871, 20);
+            this.buttonDodajZdravljenje.Name = "buttonDodajZdravljenje";
+            this.buttonDodajZdravljenje.Size = new System.Drawing.Size(231, 51);
+            this.buttonDodajZdravljenje.TabIndex = 50;
+            this.buttonDodajZdravljenje.Text = "Dodaj zdravljenje";
+            this.buttonDodajZdravljenje.UseVisualStyleBackColor = true;
+            this.buttonDodajZdravljenje.Click += new System.EventHandler(this.buttonDodajZdravljenje_Click);
+            // 
+            // flowLayoutPanelZdravljenja
+            // 
+            this.flowLayoutPanelZdravljenja.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelZdravljenja.AutoScroll = true;
+            this.flowLayoutPanelZdravljenja.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelZdravljenja.Controls.Add(this.flowLayoutPanel7);
+            this.flowLayoutPanelZdravljenja.Location = new System.Drawing.Point(16, 77);
+            this.flowLayoutPanelZdravljenja.Name = "flowLayoutPanelZdravljenja";
+            this.flowLayoutPanelZdravljenja.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelZdravljenja.TabIndex = 51;
+            // 
+            // flowLayoutPanel7
+            // 
+            this.flowLayoutPanel7.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel7.Name = "flowLayoutPanel7";
+            this.flowLayoutPanel7.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel7.TabIndex = 0;
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1904,6 +1954,8 @@
             this.flowLayoutPanelTelitve.ResumeLayout(false);
             this.tabPage7.ResumeLayout(false);
             this.flowLayoutPanelKorekcije.ResumeLayout(false);
+            this.tabPage8.ResumeLayout(false);
+            this.flowLayoutPanelZdravljenja.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2044,5 +2096,9 @@
         private System.Windows.Forms.Button buttonDodajKorekcijo;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelKorekcije;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
+        private System.Windows.Forms.TabPage tabPage8;
+        private System.Windows.Forms.Button buttonDodajZdravljenje;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelZdravljenja;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel7;
     }
 }

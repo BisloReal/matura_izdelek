@@ -96,7 +96,6 @@
             this.buttonUrediOs.TabIndex = 80;
             this.buttonUrediOs.Text = "Uredi / Pogled";
             this.buttonUrediOs.UseVisualStyleBackColor = true;
-            this.buttonUrediOs.Click += new System.EventHandler(this.buttonUrediTelitev_Click);
             // 
             // label4
             // 

@@ -101,6 +101,7 @@ namespace evidenca_krav.Obrazci
             NaloziPojatve();
             NaloziTelitve();
             NaloziKorekcije();
+            NaloziZdravljenja();
         }
 
         private void NaloziMlecneKontrole()
@@ -160,6 +161,18 @@ namespace evidenca_krav.Obrazci
             foreach (KorekcijeParkljevRazred k in korekcije)
             {
                 flowLayoutPanelKorekcije.Controls.Add(new KorekcijaParkljevCard(db, k));
+            }
+        }
+
+        private void NaloziZdravljenja()
+        {
+            flowLayoutPanelZdravljenja.Controls.Clear();
+
+            List<ZdravljenjaRazred> zdravljenja = db.PridobiZdravljenja(Krava.Id);
+
+            foreach (ZdravljenjaRazred z in zdravljenja)
+            {
+                flowLayoutPanelZdravljenja.Controls.Add(new ZdravljenjeCard(db, z));
             }
         }
 
@@ -391,6 +404,25 @@ namespace evidenca_krav.Obrazci
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri dodajanju korekcije parkljev: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonDodajZdravljenje_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajZdravljenjeForm dodajZdravljenjeForm = new DodajZdravljenjeForm(db, Krava);
+
+                if (dodajZdravljenjeForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Zdravljenje uspešno dodano.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                NaloziZdravljenja();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju zdravljenja: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

@@ -64,3 +64,6 @@ C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Deb
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.NavigationBarUserControls.ZdravilaCard.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.DodajZdraviloForm.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediZdraviloForm.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.NavigationBarUserControls.ZdravljenjeCard.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.DodajZdravljenjeForm.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediZdravljenjeForm.resources

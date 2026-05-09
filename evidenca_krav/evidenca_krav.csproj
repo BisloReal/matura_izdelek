@@ -192,6 +192,12 @@
     <Compile Include="NavigationBarUserControls\ZdravilaCard.Designer.cs">
       <DependentUpon>ZdravilaCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\ZdravljenjeCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\ZdravljenjeCard.Designer.cs">
+      <DependentUpon>ZdravljenjeCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationNadzor.cs" />
     <Compile Include="Obrazci\DodajBikaForm.cs">
       <SubType>Form</SubType>
@@ -252,6 +258,12 @@
     </Compile>
     <Compile Include="Obrazci\DodajZdraviloForm.Designer.cs">
       <DependentUpon>DodajZdraviloForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\DodajZdravljenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajZdravljenjeForm.Designer.cs">
+      <DependentUpon>DodajZdravljenjeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Obrazci\PasmeBikovForm.cs">
       <SubType>Form</SubType>
@@ -331,6 +343,12 @@
     <Compile Include="Obrazci\UrediZdraviloForm.Designer.cs">
       <DependentUpon>UrediZdraviloForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediZdravljenjeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediZdravljenjeForm.Designer.cs">
+      <DependentUpon>UrediZdravljenjeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\ZadolzitveOsebForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -350,6 +368,7 @@
     <Compile Include="Razredi\TeliceRazred.cs" />
     <Compile Include="Razredi\TelitevRazred.cs" />
     <Compile Include="Razredi\ZdravilaRazred.cs" />
+    <Compile Include="Razredi\ZdravljenjaRazred.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -413,6 +432,9 @@
     <EmbeddedResource Include="NavigationBarUserControls\ZdravilaCard.resx">
       <DependentUpon>ZdravilaCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\ZdravljenjeCard.resx">
+      <DependentUpon>ZdravljenjeCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajBikaForm.resx">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -442,6 +464,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajZdraviloForm.resx">
       <DependentUpon>DodajZdraviloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajZdravljenjeForm.resx">
+      <DependentUpon>DodajZdravljenjeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\PasmeBikovForm.resx">
       <DependentUpon>PasmeBikovForm.cs</DependentUpon>
@@ -481,6 +506,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediZdraviloForm.resx">
       <DependentUpon>UrediZdraviloForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediZdravljenjeForm.resx">
+      <DependentUpon>UrediZdravljenjeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\ZadolzitveOsebForm.resx">
       <DependentUpon>ZadolzitveOsebForm.cs</DependentUpon>

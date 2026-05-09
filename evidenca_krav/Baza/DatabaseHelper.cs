@@ -3196,5 +3196,286 @@ namespace evidenca_krav
                 }
             }
         }
+
+        // zdravljenja
+
+        public List<ZdravilaRazred> PridobiZdravilaZaZdravljenje(int zdravljenjeId)
+        {
+            List<ZdravilaRazred> zdravila = new List<ZdravilaRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT z.id, z.zdravilo " +
+                    "FROM zdravila_zdravljenja zz " +
+                    "INNER JOIN zdravila z ON zz.zdravilo_id = z.id " +
+                    "WHERE zz.zdravljenje_id = @ZdravljenjeId " +
+                    "ORDER BY z.zdravilo";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ZdravljenjeId", zdravljenjeId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            zdravila.Add(new ZdravilaRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetString(reader.GetOrdinal("zdravilo"))
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return zdravila;
+        }
+
+        public List<ZdravljenjaRazred> PridobiZdravljenja(int idKrave)
+        {
+            List<ZdravljenjaRazred> zdravljenja = new List<ZdravljenjaRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT z.*, " +
+                    "o.ime AS veterinar_ime, o.priimek AS veterinar_priimek, " +
+                    "kr.ime AS krava_ime, kr.usesna_stevilka AS krava_usesna " +
+                    "FROM zdravljenja z " +
+                    "INNER JOIN osebe o ON z.veterinar_id = o.id " +
+                    "INNER JOIN zivali kr ON z.krava_id = kr.id " +
+                    "WHERE z.krava_id = @IdKrave " +
+                    "ORDER BY z.id DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKrave", idKrave);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string veterinar = reader["veterinar_ime"].ToString() + " " + reader["veterinar_priimek"].ToString();
+
+                            string krava = reader["krava_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("krava_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["krava_usesna"].ToString()))
+                            {
+                                krava += " (" + reader["krava_usesna"].ToString() + ")";
+                            }
+
+                            int zdravljenjeId = reader.GetInt32(reader.GetOrdinal("id"));
+
+                            ZdravljenjaRazred zdravljenje = new ZdravljenjaRazred(
+                                zdravljenjeId,
+                                reader.GetInt32(reader.GetOrdinal("zaporedno_st")),
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader["vzrok"].ToString(),
+                                reader.GetInt32(reader.GetOrdinal("veterinar_id")),
+                                veterinar,
+                                reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                krava,
+                                PridobiZdravilaZaZdravljenje(zdravljenjeId)
+                            );
+
+                            zdravljenja.Add(zdravljenje);
+                        }
+                    }
+                }
+            }
+
+            return zdravljenja;
+        }
+
+        public ZdravljenjaRazred PridobiZdravljenje(int idZdravljenja)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT z.*, " +
+                    "o.ime AS veterinar_ime, o.priimek AS veterinar_priimek, " +
+                    "kr.ime AS krava_ime, kr.usesna_stevilka AS krava_usesna " +
+                    "FROM zdravljenja z " +
+                    "INNER JOIN osebe o ON z.veterinar_id = o.id " +
+                    "INNER JOIN zivali kr ON z.krava_id = kr.id " +
+                    "WHERE z.id = @IdZdravljenja";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdZdravljenja", idZdravljenja);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string veterinar = reader["veterinar_ime"].ToString() + " " + reader["veterinar_priimek"].ToString();
+
+                            string krava = reader["krava_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("krava_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["krava_usesna"].ToString()))
+                            {
+                                krava += " (" + reader["krava_usesna"].ToString() + ")";
+                            }
+
+                            ZdravljenjaRazred zdravljenje = new ZdravljenjaRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("zaporedno_st")),
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader["vzrok"].ToString(),
+                                reader.GetInt32(reader.GetOrdinal("veterinar_id")),
+                                veterinar,
+                                reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                krava,
+                                PridobiZdravilaZaZdravljenje(idZdravljenja)
+                            );
+
+                            return zdravljenje;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public int DodajZdravljenje(int zapSt, DateTime datum, string vzrok, int veterinarId, int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO zdravljenja (zaporedno_st, datum, vzrok, veterinar_id, krava_id) " +
+                    "VALUES (@ZapSt, @Datum, @Vzrok, @VeterinarId, @KravaId); " +
+                    "SELECT last_insert_rowid();", conn))
+                {
+                    command.Parameters.AddWithValue("@ZapSt", zapSt);
+                    command.Parameters.AddWithValue("@Datum", datum.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@Vzrok", vzrok);
+                    command.Parameters.AddWithValue("@VeterinarId", veterinarId);
+                    command.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    int id = Convert.ToInt32(command.ExecuteScalar());
+                    return id;
+                }
+            }
+        }
+
+        public int DodajZdraviloZdravljenju(int zdravljenjeId, int zdraviloId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO zdravila_zdravljenja (zdravljenje_id, zdravilo_id) " +
+                    "VALUES (@ZdravljenjeId, @ZdraviloId)", conn))
+                {
+                    command.Parameters.AddWithValue("@ZdravljenjeId", zdravljenjeId);
+                    command.Parameters.AddWithValue("@ZdraviloId", zdraviloId);
+
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
+
+        public bool PogledObstajaStZdravljenje(int kravaId, int zapSt)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM zdravljenja WHERE krava_id = @KravaId AND zaporedno_st = @ZapSt", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    cmd.Parameters.AddWithValue("@ZapSt", zapSt);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+
+        public int PridobiSteviloZdravljenj(int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM zdravljenja WHERE krava_id = @KravaId", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public int UrediZdravljenje(ZdravljenjaRazred z)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE zdravljenja SET " +
+                    "zaporedno_st = @ZaporednaSt, " +
+                    "datum = @Datum, " +
+                    "vzrok = @Vzrok, " +
+                    "veterinar_id = @VeterinarId, " +
+                    "krava_id = @KravaId " +
+                    "WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", z.Id);
+                    command.Parameters.AddWithValue("@ZaporednaSt", z.ZaporednaStevilka);
+                    command.Parameters.AddWithValue("@Datum", z.Datum.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@Vzrok", z.Vzrok);
+                    command.Parameters.AddWithValue("@VeterinarId", z.VeterinarId);
+                    command.Parameters.AddWithValue("@KravaId", z.KravaId);
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        public int IzbrisiZdravilaZdravljenja(int zdravljenjeId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "DELETE FROM zdravila_zdravljenja " +
+                    "WHERE zdravljenje_id = @ZdravljenjeId", conn))
+                {
+                    command.Parameters.AddWithValue("@ZdravljenjeId", zdravljenjeId);
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
     }
 }
