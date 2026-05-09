@@ -1476,44 +1476,78 @@ namespace evidenca_krav
             }
         }
 
-        public List<string> PridobiKontrolerje()
+        public List<OsebeRazred> PridobiKontrolerje()
         {
-            List<string> kontrolerji = new List<string>();
+            List<OsebeRazred> kontrolerji = new List<OsebeRazred>();
+
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
-                using (var cmd = new SQLiteCommand("SELECT o.ime, o.priimek FROM osebe o INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id WHERE zo.zadolzitev = 'Kontrolor' ORDER BY o.ime, o.priimek", conn))
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.id, o.ime, o.priimek, o.tel, o.email, zo.zadolzitev " +
+                    "FROM osebe o " +
+                    "INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id " +
+                    "WHERE zo.zadolzitev = @Zadolzitev " +
+                    "ORDER BY o.ime, o.priimek", conn))
                 {
+                    cmd.Parameters.AddWithValue("@Zadolzitev", "Kontrolor");
+
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            kontrolerji.Add(reader.GetString(0) + " " + reader.GetString(1));
+                            kontrolerji.Add(new OsebeRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5)
+                            ));
                         }
                     }
                 }
             }
+
             return kontrolerji;
         }
 
-        public int PridobiIdKontrolerjaPrekoImena(string ime, string priimek)
+        public List<OsebeRazred> PridobiVeterinarje()
         {
+            List<OsebeRazred> veterinarji = new List<OsebeRazred>();
+
             using (var conn = new SQLiteConnection(connectionString))
             {
                 conn.Open();
+
                 using (var cmd = new SQLiteCommand(
-                    "SELECT o.id FROM osebe o INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id WHERE zo.zadolzitev = 'Kontrolor' AND o.ime = @Ime AND o.priimek = @Priimek", conn))
+                    "SELECT o.id, o.ime, o.priimek, o.tel, o.email, zo.zadolzitev " +
+                    "FROM osebe o " +
+                    "INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id " +
+                    "WHERE zo.zadolzitev = @Zadolzitev " +
+                    "ORDER BY o.ime, o.priimek", conn))
                 {
-                    cmd.Parameters.AddWithValue("@Ime", ime);
-                    cmd.Parameters.AddWithValue("@Priimek", priimek);
-                    object result = cmd.ExecuteScalar();
-                    if (result != null)
+                    cmd.Parameters.AddWithValue("@Zadolzitev", "Veterinar");
+
+                    using (var reader = cmd.ExecuteReader())
                     {
-                        return Convert.ToInt32(result);
+                        while (reader.Read())
+                        {
+                            veterinarji.Add(new OsebeRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5)
+                            ));
+                        }
                     }
                 }
             }
-            return -1;
+
+            return veterinarji;
         }
 
         // Odhodi
@@ -1863,6 +1897,254 @@ namespace evidenca_krav
         }
 
         // Osemenitve
+        public List<OsemenitveRazred> PridobiOsemenitve(int idKrave)
+        {
+            List<OsemenitveRazred> osemenitve = new List<OsemenitveRazred>();
 
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+            SELECT 
+                o.id, o.zap_os, o.datum, o.veterinar_id, o.opombe, o.krava_id, o.bik_id,
+                v.ime AS veterinar_ime, v.priimek AS veterinar_priimek,
+                k.usesna_stevilka AS krava_usesna, k.ime AS krava_ime, 
+                b.ime AS bik_ime, b.stevilka AS bik_stevilka,
+                o.datum_pregleda, o.izzid_pregleda, o.nacin_pregleda, o.opombe_pregleda, o.veterinar_pregleda_id,
+                vp.ime AS veterinar_pregleda_ime, vp.priimek AS veterinar_pregleda_priimek,
+                o.datum_presusitve, o.opombe_presusitve, o.kondicija_ob_presusitvi
+
+                FROM osemenitve o
+                INNER JOIN osebe v ON o.veterinar_id = v.id
+                INNER JOIN zivali k ON o.krava_id = k.id
+                INNER JOIN biki_os b ON o.bik_id = b.id
+                LEFT JOIN osebe vp ON o.veterinar_pregleda_id = vp.id
+
+                WHERE o.krava_id = @IdKrave
+                ORDER BY o.id DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKrave", idKrave);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DateTime? datumPregleda = null;
+                            if (!reader.IsDBNull(reader.GetOrdinal("datum_pregleda")))
+                            {
+                                datumPregleda = reader.GetDateTime(reader.GetOrdinal("datum_pregleda"));
+                            }
+
+                            DateTime? datumPresusitve = null;
+                            if (!reader.IsDBNull(reader.GetOrdinal("datum_presusitve")))
+                            {
+                                datumPresusitve = reader.GetDateTime(reader.GetOrdinal("datum_presusitve"));
+                            }
+
+                            string veterinarPregleda = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("veterinar_pregleda_ime")) &&
+                                !reader.IsDBNull(reader.GetOrdinal("veterinar_pregleda_priimek")))
+                            {
+                                veterinarPregleda =
+                                    reader["veterinar_pregleda_ime"].ToString() + " " +
+                                    reader["veterinar_pregleda_priimek"].ToString();
+                            }
+
+                            string bik = reader["bik_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")))
+                            {
+                                bik += " (" + reader["bik_stevilka"].ToString() + ")";
+                            }
+
+                            string krava = reader["krava_usesna"].ToString();
+
+                            if (string.IsNullOrWhiteSpace(krava))
+                            {
+                                krava = reader["krava_ime"].ToString();
+                            }
+
+                            OsemenitveRazred osemenitev = new OsemenitveRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("zap_os")),
+                                reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                reader.GetInt32(reader.GetOrdinal("bik_id")),
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader["veterinar_ime"].ToString() + " " + reader["veterinar_priimek"].ToString(),
+                                reader["opombe"].ToString(),
+                                bik,
+                                krava,
+
+                                datumPregleda,
+                                reader["izzid_pregleda"].ToString(),
+                                reader["nacin_pregleda"].ToString(),
+                                reader["opombe_pregleda"].ToString(),
+                                veterinarPregleda,
+
+                                datumPresusitve,
+                                reader["opombe_presusitve"].ToString(),
+                                reader["kondicija_ob_presusitvi"].ToString()
+                            );
+
+                            osemenitve.Add(osemenitev);
+                        }
+                    }
+                }
+            }
+
+            return osemenitve;
+        }
+
+        public OsemenitveRazred PridobiOsemenitev(int IdOsemenitve)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT o.*, " +
+                    "v.ime AS veterinar_ime, v.priimek AS veterinar_priimek, " +
+                    "k.usesna_stevilka AS krava_usesna, k.ime AS krava_ime, " +
+                    "b.ime AS bik_ime, b.stevilka AS bik_stevilka, " +
+                    "vp.ime AS veterinar_pregleda_ime, vp.priimek AS veterinar_pregleda_priimek " +
+                    "FROM osemenitve o " +
+                    "JOIN osebe v ON o.veterinar_id = v.id " +
+                    "JOIN zivali k ON o.krava_id = k.id " +
+                    "JOIN biki_os b ON o.bik_id = b.id " +
+                    "LEFT JOIN osebe vp ON o.veterinar_pregleda_id = vp.id " +
+                    "WHERE o.id = @IdOsemenitve";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdOsemenitve", IdOsemenitve);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            DateTime? datumPregleda = null;
+                            if (!reader.IsDBNull(reader.GetOrdinal("datum_pregleda")))
+                            {
+                                datumPregleda = reader.GetDateTime(reader.GetOrdinal("datum_pregleda"));
+                            }
+
+                            DateTime? datumPresusitve = null;
+                            if (!reader.IsDBNull(reader.GetOrdinal("datum_presusitve")))
+                            {
+                                datumPresusitve = reader.GetDateTime(reader.GetOrdinal("datum_presusitve"));
+                            }
+
+                            string veterinarPregleda = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("veterinar_pregleda_ime")) &&
+                                !reader.IsDBNull(reader.GetOrdinal("veterinar_pregleda_priimek")))
+                            {
+                                veterinarPregleda =
+                                    reader["veterinar_pregleda_ime"].ToString() + " " +
+                                    reader["veterinar_pregleda_priimek"].ToString();
+                            }
+
+                            string bik = reader["bik_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")))
+                            {
+                                bik += " (" + reader["bik_stevilka"].ToString() + ")";
+                            }
+
+                            string krava = reader["krava_usesna"].ToString();
+
+                            if (string.IsNullOrWhiteSpace(krava))
+                            {
+                                krava = reader["krava_ime"].ToString();
+                            }
+
+                            OsemenitveRazred osemenitev = new OsemenitveRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("zap_os")),
+                                reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                reader.GetInt32(reader.GetOrdinal("bik_id")),
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader["veterinar_ime"].ToString() + " " + reader["veterinar_priimek"].ToString(),
+                                reader["opombe"].ToString(),
+                                bik,
+                                krava,
+
+                                datumPregleda,
+                                reader["izzid_pregleda"].ToString(),
+                                reader["nacin_pregleda"].ToString(),
+                                reader["opombe_pregleda"].ToString(),
+                                veterinarPregleda,
+
+                                datumPresusitve,
+                                reader["opombe_presusitve"].ToString(),
+                                reader["kondicija_ob_presusitvi"].ToString()
+                            );
+
+                            return osemenitev;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public int DodajOsemenitev(int zapOs, DateTime datum, int veterinarId, string opombe, int kravaId, int bikId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO osemenitve (zap_os, datum, veterinar_id, opombe, krava_id, bik_id) " +
+                    "VALUES (@ZapOs, @Datum, @VeterinarId, @Opombe, @KravaId, @BikId)", conn))
+                {
+                    command.Parameters.AddWithValue("@ZapOs", zapOs);
+                    command.Parameters.AddWithValue("@Datum", datum);
+                    command.Parameters.AddWithValue("@VeterinarId", veterinarId);
+
+                    if (string.IsNullOrWhiteSpace(opombe))
+                    {
+                        command.Parameters.AddWithValue("@Opombe", DBNull.Value);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@Opombe", opombe);
+                    }
+
+                    command.Parameters.AddWithValue("@KravaId", kravaId);
+                    command.Parameters.AddWithValue("@BikId", bikId);
+
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
+
+        public bool PogledObstajaStOsemenitev(int kravaId, int zapOs)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM osemenitve WHERE krava_id = @KravaId AND zap_os = @ZapOs", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+                    cmd.Parameters.AddWithValue("@ZapOs", zapOs);
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    if (count > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+            }
+        }
     }
 }

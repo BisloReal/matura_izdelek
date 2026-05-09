@@ -187,6 +187,12 @@
     <Compile Include="Obrazci\DodajOseboForm.Designer.cs">
       <DependentUpon>DodajOseboForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\DodajOsemenitevKrave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajOsemenitevKrave.Designer.cs">
+      <DependentUpon>DodajOsemenitevKrave.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +321,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajOseboForm.resx">
       <DependentUpon>DodajOseboForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajOsemenitevKrave.resx">
+      <DependentUpon>DodajOsemenitevKrave.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajTelicoForm.resx">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>

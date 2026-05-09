@@ -15,6 +15,11 @@ namespace evidenca_krav.Razredi
         public string Email { get; set; }
         public string Zadolzitev { get; set; }
 
+        public string ImePriimek
+        {
+            get { return Ime + " " + Priimek; }
+        }
+
         public OsebeRazred(int id, string ime, string priimek, string telefon, string email, string zadolzitev)
         {
             Id = id;

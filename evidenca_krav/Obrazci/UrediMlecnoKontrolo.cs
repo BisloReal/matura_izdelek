@@ -18,6 +18,7 @@ namespace evidenca_krav.Obrazci
         MlecneKontroleRazred mlecneKontroleRazred;
         MlecKontrolaCard kontrolaCard;
         int kravaId;
+
         public UrediMlecnoKontrolo(DatabaseHelper dbHelper, MlecneKontroleRazred mk, MlecKontrolaCard mkc, int kId)
         {
             InitializeComponent();
@@ -28,6 +29,7 @@ namespace evidenca_krav.Obrazci
             kontrolaCard = mkc;
 
             numericUpDown1.Value = mlecneKontroleRazred.Zaporedna_Stevilka;
+            dateTimePicker.Value = mlecneKontroleRazred.Datum;
             textBoxDelDneva.Text = mlecneKontroleRazred.Del_dneva;
             textBoxMlecnost.Text = mlecneKontroleRazred.Mlecnost;
             textBoxVsebnostBel.Text = mlecneKontroleRazred.Vsebnost_Beljakovin;
@@ -35,9 +37,20 @@ namespace evidenca_krav.Obrazci
             textBoxVsebnostMas.Text = mlecneKontroleRazred.Vsebnost_Mascobe;
             textBoxVsebnostSec.Text = mlecneKontroleRazred.Vsebnost_Secnice;
             textBoxSomatskeCelice.Text = mlecneKontroleRazred.Somatske_Celice;
+            richTextBox1.Text = mlecneKontroleRazred.Opombe;
 
             comboBox1.DataSource = db.PridobiKontrolerje();
-            comboBox1.SelectedItem = mlecneKontroleRazred.Ime_Priimek_Osebe;
+            comboBox1.DisplayMember = "ImePriimek";
+            comboBox1.ValueMember = "Id";
+
+            foreach (OsebeRazred oseba in comboBox1.Items)
+            {
+                if (oseba.ImePriimek == mlecneKontroleRazred.Ime_Priimek_Osebe)
+                {
+                    comboBox1.SelectedItem = oseba;
+                    break;
+                }
+            }
         }
 
         private void buttonPreklici_Click(object sender, EventArgs e)
@@ -50,16 +63,23 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                if (db.PogledObstajaSt(kravaId, Convert.ToInt32(numericUpDown1.Value)) && numericUpDown1.Value != mlecneKontroleRazred.Zaporedna_Stevilka)
+                if (db.PogledObstajaSt(kravaId, Convert.ToInt32(numericUpDown1.Value)) &&
+                    numericUpDown1.Value != mlecneKontroleRazred.Zaporedna_Stevilka)
                 {
-                    MessageBox.Show("Mlečna kontrola s tozaporedno številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mlečna kontrola s to zaporedno številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Izberite kontrolorja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 if (string.IsNullOrWhiteSpace(textBoxDelDneva.Text) ||
                     string.IsNullOrWhiteSpace(textBoxMlecnost.Text))
                 {
-                    MessageBox.Show("Izpolnite vsa polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Izpolnite vsa obvezna polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
@@ -67,41 +87,39 @@ namespace evidenca_krav.Obrazci
                 {
                     richTextBox1.Text = "Ni opomb.";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostBel.Text))
                 {
-                    richTextBox1.Text = "/";
+                    textBoxVsebnostBel.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostLak.Text))
                 {
-                    richTextBox1.Text = "/";
+                    textBoxVsebnostLak.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostMas.Text))
                 {
-                    richTextBox1.Text = "/";
+                    textBoxVsebnostMas.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostSec.Text))
                 {
-                    richTextBox1.Text = "/";
+                    textBoxVsebnostSec.Text = "/";
                 }
 
-                string celoIme = comboBox1.SelectedItem.ToString();
-                string[] deli = celoIme.Split(' ');
-
-                string ime = deli[0];
-
-                string priimek = "";
-                if (deli.Length > 1)
+                if (string.IsNullOrWhiteSpace(textBoxSomatskeCelice.Text))
                 {
-                    priimek = deli[1];
+                    textBoxSomatskeCelice.Text = "/";
                 }
 
-                int kontrolor = db.PridobiIdKontrolerjaPrekoImena(ime, priimek);
+                int kontrolorId = Convert.ToInt32(comboBox1.SelectedValue);
 
                 int uspeh = db.UrediMlecnoKontrolo(
                     mlecneKontroleRazred.Id,
                     dateTimePicker.Value,
                     Convert.ToInt32(numericUpDown1.Value),
-                    kontrolor,
+                    kontrolorId,
                     textBoxDelDneva.Text.Trim(),
                     textBoxMlecnost.Text.Trim(),
                     textBoxVsebnostBel.Text.Trim(),
@@ -117,7 +135,7 @@ namespace evidenca_krav.Obrazci
                     DialogResult = DialogResult.OK;
                     Close();
                 }
-                if (uspeh == -1)
+                else if (uspeh == -1)
                 {
                     MessageBox.Show("Oseba ne obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

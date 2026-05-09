@@ -14,13 +14,17 @@ namespace evidenca_krav.Obrazci
     {
         DatabaseHelper db;
         int kravaId;
+
         public DodajMlecKontrolo(DatabaseHelper dbHelper, int kId)
         {
             InitializeComponent();
-            db = dbHelper;  
+            db = dbHelper;
             kravaId = kId;
 
             comboBox1.DataSource = db.PridobiKontrolerje();
+            comboBox1.DisplayMember = "ImePriimek";
+            comboBox1.ValueMember = "Id";
+
             numericUpDown1.Value = db.PridobiSteviloMlecnihKontrol(kravaId) + 1;
         }
 
@@ -30,60 +34,60 @@ namespace evidenca_krav.Obrazci
             {
                 if (db.PogledObstajaSt(kravaId, Convert.ToInt32(numericUpDown1.Value)))
                 {
-                    MessageBox.Show("Mlečna kontrola s tozaporedno številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Mlečna kontrola s to zaporedno številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                if (comboBox1.SelectedItem == null)
+                {
+                    MessageBox.Show("Izberite kontrolorja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
 
                 if (string.IsNullOrWhiteSpace(textBoxDelDneva.Text) ||
                     string.IsNullOrWhiteSpace(textBoxMlecnost.Text))
                 {
-                    MessageBox.Show("Izpolnite vsa polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Izpolnite vsa obvezna polja.", "Opozorilo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
                 }
-                
+
                 if (string.IsNullOrWhiteSpace(richTextBox1.Text))
                 {
                     richTextBox1.Text = "Ni opomb.";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostBel.Text))
                 {
                     textBoxVsebnostBel.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostLak.Text))
                 {
                     textBoxVsebnostLak.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostMas.Text))
                 {
                     textBoxVsebnostMas.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxVsebnostSec.Text))
                 {
                     textBoxVsebnostSec.Text = "/";
                 }
+
                 if (string.IsNullOrWhiteSpace(textBoxSomatskeCelice.Text))
                 {
                     textBoxSomatskeCelice.Text = "/";
                 }
 
-                string celoIme = comboBox1.SelectedItem.ToString();
-                string[] deli = celoIme.Split(' ');
-
-                string ime = deli[0];
-
-                string priimek = "";
-                if (deli.Length > 1)
-                {
-                    priimek = deli[1];
-                }
-
-                int kontrolor = db.PridobiIdKontrolerjaPrekoImena(ime, priimek);
+                int kontrolorId = Convert.ToInt32(comboBox1.SelectedValue);
 
                 int uspeh = db.DodajMlecnoKontrolo(
                     kravaId,
                     dateTimePicker.Value,
                     Convert.ToInt32(numericUpDown1.Value),
-                    kontrolor,
+                    kontrolorId,
                     textBoxDelDneva.Text.Trim(),
                     textBoxMlecnost.Text.Trim(),
                     textBoxVsebnostMas.Text.Trim(),
@@ -93,12 +97,13 @@ namespace evidenca_krav.Obrazci
                     textBoxSomatskeCelice.Text.Trim(),
                     richTextBox1.Text.Trim()
                 );
+
                 if (uspeh == 0)
                 {
                     DialogResult = DialogResult.OK;
                     Close();
                 }
-                if (uspeh == -1)
+                else if (uspeh == -1)
                 {
                     MessageBox.Show("Oseba ne obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }

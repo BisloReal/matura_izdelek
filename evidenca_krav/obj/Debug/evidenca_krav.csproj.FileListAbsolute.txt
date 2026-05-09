@@ -49,3 +49,4 @@ C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Deb
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediOseboForm.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediTeleForm.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.ZadolzitveOsebForm.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.DodajOsemenitevKrave.resources

@@ -97,6 +97,7 @@ namespace evidenca_krav.Obrazci
 
 
             NaloziMlecneKontrole();
+            NaloziOsemenitve();
         }
 
         private void NaloziMlecneKontrole()
@@ -108,6 +109,18 @@ namespace evidenca_krav.Obrazci
             foreach (MlecneKontroleRazred mk in mlecneKontrole)
             {
                 flowLayoutPanelMlecneKontrole.Controls.Add(new MlecKontrolaCard(db, mk, Krava.Id));
+            }
+        }
+
+        private void NaloziOsemenitve()
+        {
+            flowLayoutPanelOs.Controls.Clear();
+
+            List<OsemenitveRazred> osemenitve = db.PridobiOsemenitve(Krava.Id);
+
+            foreach (OsemenitveRazred o in osemenitve)
+            {
+                flowLayoutPanelOs.Controls.Add(new OsemenitevCard(db, o));
             }
         }
 
@@ -265,6 +278,23 @@ namespace evidenca_krav.Obrazci
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri dodajanju odhoda: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonDodajOs_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajOsemenitevKrave dodajOsemenitevForm = new DodajOsemenitevKrave(db, Krava);
+                if (dodajOsemenitevForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Osemenitev uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                NaloziOsemenitve();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju semenitve: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

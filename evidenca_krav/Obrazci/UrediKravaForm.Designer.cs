@@ -171,7 +171,7 @@
             tabPage4.Controls.Add(this.flowLayoutPanelOs);
             tabPage4.Location = new System.Drawing.Point(4, 22);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new System.Drawing.Size(1118, 584);
+            tabPage4.Size = new System.Drawing.Size(1118, 644);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Osemenitve";
             tabPage4.UseVisualStyleBackColor = true;
@@ -186,6 +186,7 @@
             this.buttonDodajOs.TabIndex = 44;
             this.buttonDodajOs.Text = "Dodaj osemenitev";
             this.buttonDodajOs.UseVisualStyleBackColor = true;
+            this.buttonDodajOs.Click += new System.EventHandler(this.buttonDodajOs_Click);
             // 
             // flowLayoutPanelOs
             // 
@@ -197,7 +198,7 @@
             this.flowLayoutPanelOs.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanelOs.Location = new System.Drawing.Point(17, 106);
             this.flowLayoutPanelOs.Name = "flowLayoutPanelOs";
-            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 423);
+            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 483);
             this.flowLayoutPanelOs.TabIndex = 45;
             // 
             // flowLayoutPanel3

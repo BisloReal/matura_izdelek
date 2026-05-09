@@ -31,12 +31,10 @@
             this.labelZapSt = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.labelBik = new System.Windows.Forms.Label();
-            this.labelKrava = new System.Windows.Forms.Label();
             this.labelVeterinar = new System.Windows.Forms.Label();
             this.labelDatum = new System.Windows.Forms.Label();
-            this.buttonUrediTel = new System.Windows.Forms.Button();
+            this.buttonUrediOs = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -65,21 +63,11 @@
             // 
             this.labelBik.AutoSize = true;
             this.labelBik.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBik.Location = new System.Drawing.Point(246, 152);
+            this.labelBik.Location = new System.Drawing.Point(246, 120);
             this.labelBik.Name = "labelBik";
             this.labelBik.Size = new System.Drawing.Size(53, 25);
             this.labelBik.TabIndex = 60;
             this.labelBik.Text = "label";
-            // 
-            // labelKrava
-            // 
-            this.labelKrava.AutoSize = true;
-            this.labelKrava.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelKrava.Location = new System.Drawing.Point(246, 116);
-            this.labelKrava.Name = "labelKrava";
-            this.labelKrava.Size = new System.Drawing.Size(53, 25);
-            this.labelKrava.TabIndex = 59;
-            this.labelKrava.Text = "label";
             // 
             // labelVeterinar
             // 
@@ -101,35 +89,26 @@
             this.labelDatum.TabIndex = 57;
             this.labelDatum.Text = "label";
             // 
-            // buttonUrediTel
+            // buttonUrediOs
             // 
-            this.buttonUrediTel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUrediTel.Location = new System.Drawing.Point(77, 195);
-            this.buttonUrediTel.Name = "buttonUrediTel";
-            this.buttonUrediTel.Size = new System.Drawing.Size(222, 43);
-            this.buttonUrediTel.TabIndex = 56;
-            this.buttonUrediTel.Text = "Uredi / Pogled";
-            this.buttonUrediTel.UseVisualStyleBackColor = true;
+            this.buttonUrediOs.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonUrediOs.Location = new System.Drawing.Point(77, 163);
+            this.buttonUrediOs.Name = "buttonUrediOs";
+            this.buttonUrediOs.Size = new System.Drawing.Size(222, 43);
+            this.buttonUrediOs.TabIndex = 56;
+            this.buttonUrediOs.Text = "Uredi / Pogled";
+            this.buttonUrediOs.UseVisualStyleBackColor = true;
+            this.buttonUrediOs.Click += new System.EventHandler(this.buttonUrediOs_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(174, 152);
+            this.label4.Location = new System.Drawing.Point(174, 120);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(49, 25);
             this.label4.TabIndex = 55;
             this.label4.Text = "Bik:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(147, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 25);
-            this.label3.TabIndex = 54;
-            this.label3.Text = "Krava:";
             // 
             // label2
             // 
@@ -155,19 +134,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.Controls.Add(this.labelZapSt);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.labelBik);
-            this.Controls.Add(this.labelKrava);
             this.Controls.Add(this.labelVeterinar);
             this.Controls.Add(this.labelDatum);
-            this.Controls.Add(this.buttonUrediTel);
+            this.Controls.Add(this.buttonUrediOs);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "OsemenitevCard";
-            this.Size = new System.Drawing.Size(546, 267);
+            this.Size = new System.Drawing.Size(544, 225);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -178,12 +156,10 @@
         private System.Windows.Forms.Label labelZapSt;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label labelBik;
-        private System.Windows.Forms.Label labelKrava;
         private System.Windows.Forms.Label labelVeterinar;
         private System.Windows.Forms.Label labelDatum;
-        private System.Windows.Forms.Button buttonUrediTel;
+        private System.Windows.Forms.Button buttonUrediOs;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }
