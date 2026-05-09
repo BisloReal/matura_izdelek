@@ -168,6 +168,12 @@
     <Compile Include="NavigationBarUserControls\Telice.Designer.cs">
       <DependentUpon>Telice.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\TelitevCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\TelitevCard.Designer.cs">
+      <DependentUpon>TelitevCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationNadzor.cs" />
     <Compile Include="Obrazci\DodajBikaForm.cs">
       <SubType>Form</SubType>
@@ -210,6 +216,12 @@
     </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.Designer.cs">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\DodajTelitevForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajTelitevForm.Designer.cs">
+      <DependentUpon>DodajTelitevForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Obrazci\PasmeBikovForm.cs">
       <SubType>Form</SubType>
@@ -271,6 +283,12 @@
     <Compile Include="Obrazci\UrediTelicaForm.Designer.cs">
       <DependentUpon>UrediTelicaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediTelitevForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediTelitevForm.Designer.cs">
+      <DependentUpon>UrediTelitevForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\ZadolzitveOsebForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -287,6 +305,7 @@
     <Compile Include="Razredi\OsemenitveRazred.cs" />
     <Compile Include="Razredi\PojatveRazred.cs" />
     <Compile Include="Razredi\TeliceRazred.cs" />
+    <Compile Include="Razredi\TelitevRazred.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -338,6 +357,9 @@
     <EmbeddedResource Include="NavigationBarUserControls\Telice.resx">
       <DependentUpon>Telice.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\TelitevCard.resx">
+      <DependentUpon>TelitevCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajBikaForm.resx">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -358,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajTelicoForm.resx">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajTelitevForm.resx">
+      <DependentUpon>DodajTelitevForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\PasmeBikovForm.resx">
       <DependentUpon>PasmeBikovForm.cs</DependentUpon>
@@ -388,6 +413,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTelicaForm.resx">
       <DependentUpon>UrediTelicaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediTelitevForm.resx">
+      <DependentUpon>UrediTelitevForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\ZadolzitveOsebForm.resx">
       <DependentUpon>ZadolzitveOsebForm.cs</DependentUpon>

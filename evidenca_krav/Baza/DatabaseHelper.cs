@@ -2494,5 +2494,384 @@ namespace evidenca_krav
                 }
             }
         }
+
+        // telitve
+
+        public List<TelitevRazred> PridobiTelitve(int idKrave)
+        {
+            List<TelitevRazred> telitve = new List<TelitevRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT t.*, " +
+                    "m.ime AS mama_ime, m.usesna_stevilka AS mama_usesna, " +
+                    "te.ime AS tele_ime, te.usesna_stevilka AS tele_usesna, " +
+                    "b.ime AS bik_ime, b.stevilka AS bik_stevilka " +
+                    "FROM telitve t " +
+                    "INNER JOIN zivali m ON t.krava_mama_id = m.id " +
+                    "INNER JOIN zivali te ON t.tele_id = te.id " +
+                    "INNER JOIN biki_os b ON t.biki_id = b.id " +
+                    "WHERE t.krava_mama_id = @IdKrave " +
+                    "ORDER BY t.zap_telitev DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKrave", idKrave);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string mama = reader["mama_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("mama_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["mama_usesna"].ToString()))
+                            {
+                                mama += " (" + reader["mama_usesna"].ToString() + ")";
+                            }
+
+                            string tele = reader["tele_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("tele_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["tele_usesna"].ToString()))
+                            {
+                                tele += " (" + reader["tele_usesna"].ToString() + ")";
+                            }
+
+                            string bik = reader["bik_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["bik_stevilka"].ToString()))
+                            {
+                                bik += " (" + reader["bik_stevilka"].ToString() + ")";
+                            }
+
+                            TelitevRazred telitev = new TelitevRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("zap_telitev")),
+                                reader["potek"].ToString(),
+                                reader["rojstvo"].ToString(),
+                                reader["kakovost_mleziva"].ToString(),
+
+                                reader.GetInt32(reader.GetOrdinal("tele_id")),
+                                tele,
+
+                                reader.GetInt32(reader.GetOrdinal("biki_id")),
+                                bik,
+
+                                reader.GetInt32(reader.GetOrdinal("krava_mama_id")),
+                                mama,
+
+                                reader.GetDateTime(reader.GetOrdinal("datum"))
+                            );
+
+                            telitve.Add(telitev);
+                        }
+                    }
+                }
+            }
+
+            return telitve;
+        }
+
+        public TelitevRazred PridobiTelitev(int idTelitve)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT t.*, " +
+                    "m.ime AS mama_ime, m.usesna_stevilka AS mama_usesna, " +
+                    "te.ime AS tele_ime, te.usesna_stevilka AS tele_usesna, " +
+                    "b.ime AS bik_ime, b.stevilka AS bik_stevilka " +
+                    "FROM telitve t " +
+                    "INNER JOIN zivali m ON t.krava_mama_id = m.id " +
+                    "INNER JOIN zivali te ON t.tele_id = te.id " +
+                    "INNER JOIN biki_os b ON t.biki_id = b.id " +
+                    "WHERE t.id = @IdTelitve";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdTelitve", idTelitve);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string mama = reader["mama_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("mama_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["mama_usesna"].ToString()))
+                            {
+                                mama += " (" + reader["mama_usesna"].ToString() + ")";
+                            }
+
+                            string tele = reader["tele_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("tele_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["tele_usesna"].ToString()))
+                            {
+                                tele += " (" + reader["tele_usesna"].ToString() + ")";
+                            }
+
+                            string bik = reader["bik_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("bik_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["bik_stevilka"].ToString()))
+                            {
+                                bik += " (" + reader["bik_stevilka"].ToString() + ")";
+                            }
+
+                            TelitevRazred telitev = new TelitevRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("zap_telitev")),
+                                reader["potek"].ToString(),
+                                reader["rojstvo"].ToString(),
+                                reader["kakovost_mleziva"].ToString(),
+
+                                reader.GetInt32(reader.GetOrdinal("tele_id")),
+                                tele,
+
+                                reader.GetInt32(reader.GetOrdinal("biki_id")),
+                                bik,
+
+                                reader.GetInt32(reader.GetOrdinal("krava_mama_id")),
+                                mama,
+
+                                reader.GetDateTime(reader.GetOrdinal("datum"))
+                            );
+
+                            return telitev;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public List<KraveRazred> PridobiZivaliBrezTelitve()
+        {
+            List<KraveRazred> zivali = new List<KraveRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT z.* " +
+                    "FROM zivali z " +
+                    "WHERE z.id NOT IN (SELECT tele_id FROM telitve) " +
+                    "ORDER BY z.id DESC", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(reader.GetOrdinal("id"));
+                            string ime = reader.GetString(reader.GetOrdinal("ime"));
+                            DateTime datum = reader.GetDateTime(reader.GetOrdinal("datum_roj"));
+                            string pasma = reader.GetString(reader.GetOrdinal("pasma"));
+
+                            string imeMame = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("ime_mame")))
+                            {
+                                imeMame = reader.GetString(reader.GetOrdinal("ime_mame"));
+                            }
+
+                            string imeOceta = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("ime_oceta")))
+                            {
+                                imeOceta = reader.GetString(reader.GetOrdinal("ime_oceta"));
+                            }
+
+                            string usesna = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")))
+                            {
+                                usesna = reader.GetString(reader.GetOrdinal("usesna_stevilka"));
+                            }
+
+                            string laktacija = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("laktacija")))
+                            {
+                                laktacija = reader.GetString(reader.GetOrdinal("laktacija"));
+                            }
+
+                            KraveRazred z = new KraveRazred(id, ime, datum, pasma, imeMame, imeOceta, usesna, laktacija);
+
+                            zivali.Add(z);
+                        }
+                    }
+                }
+            }
+
+            return zivali;
+        }
+
+        public List<KraveRazred> PridobiZivaliBrezTelitveAliTrenutno(int trenutniTeleId)
+        {
+            List<KraveRazred> zivali = new List<KraveRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT z.* " +
+                    "FROM zivali z " +
+                    "WHERE z.id NOT IN (SELECT tele_id FROM telitve WHERE tele_id != @TrenutniTeleId) " +
+                    "ORDER BY z.id DESC", conn))
+                {
+                    cmd.Parameters.AddWithValue("@TrenutniTeleId", trenutniTeleId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int id = reader.GetInt32(reader.GetOrdinal("id"));
+                            string ime = reader.GetString(reader.GetOrdinal("ime"));
+                            DateTime datum = reader.GetDateTime(reader.GetOrdinal("datum_roj"));
+                            string pasma = reader.GetString(reader.GetOrdinal("pasma"));
+
+                            string imeMame = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("ime_mame")))
+                            {
+                                imeMame = reader.GetString(reader.GetOrdinal("ime_mame"));
+                            }
+
+                            string imeOceta = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("ime_oceta")))
+                            {
+                                imeOceta = reader.GetString(reader.GetOrdinal("ime_oceta"));
+                            }
+
+                            string usesna = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")))
+                            {
+                                usesna = reader.GetString(reader.GetOrdinal("usesna_stevilka"));
+                            }
+
+                            string laktacija = "";
+                            if (!reader.IsDBNull(reader.GetOrdinal("laktacija")))
+                            {
+                                laktacija = reader.GetString(reader.GetOrdinal("laktacija"));
+                            }
+
+                            KraveRazred z = new KraveRazred(id, ime, datum, pasma, imeMame, imeOceta, usesna, laktacija);
+
+                            zivali.Add(z);
+                        }
+                    }
+                }
+            }
+
+            return zivali;
+        }
+
+        public int DodajTelitev(int zapTelitev, string potek, string rojstvo, string kakovostMleziva, DateTime datum, int kravaMamaId, int teleId, int bikId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO telitve (zap_telitev, potek, rojstvo, kakovost_mleziva, datum, krava_mama_id, tele_id, biki_id) " +
+                    "VALUES (@ZapTelitev, @Potek, @Rojstvo, @KakovostMleziva, @Datum, @KravaMamaId, @TeleId, @BikId)", conn))
+                {
+                    command.Parameters.AddWithValue("@ZapTelitev", zapTelitev);
+                    command.Parameters.AddWithValue("@Potek", potek);
+                    command.Parameters.AddWithValue("@Rojstvo", rojstvo);
+                    command.Parameters.AddWithValue("@KakovostMleziva", kakovostMleziva);
+                    command.Parameters.AddWithValue("@Datum", datum.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@KravaMamaId", kravaMamaId);
+                    command.Parameters.AddWithValue("@TeleId", teleId);
+                    command.Parameters.AddWithValue("@BikId", bikId);
+
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
+
+        public bool PogledObstajaStTelitev(int kravaMamaId, int zapTelitev)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM telitve WHERE krava_mama_id = @KravaMamaId AND zap_telitev = @ZapTelitev", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaMamaId", kravaMamaId);
+                    cmd.Parameters.AddWithValue("@ZapTelitev", zapTelitev);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+                    return count > 0;
+                }
+            }
+        }
+
+        public int PridobiSteviloTelitev(int kravaMamaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM telitve WHERE krava_mama_id = @KravaMamaId", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaMamaId", kravaMamaId);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
+        public int UrediTelitev(TelitevRazred t)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE telitve SET " +
+                    "zap_telitev = @ZapTelitev, " +
+                    "potek = @Potek, " +
+                    "rojstvo = @Rojstvo, " +
+                    "kakovost_mleziva = @KakovostMleziva, " +
+                    "datum = @Datum, " +
+                    "krava_mama_id = @KravaMamaId, " +
+                    "tele_id = @TeleId, " +
+                    "biki_id = @BikId " +
+                    "WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", t.Id);
+                    command.Parameters.AddWithValue("@ZapTelitev", t.ZaporednoStevilo);
+                    command.Parameters.AddWithValue("@Potek", t.Potek);
+                    command.Parameters.AddWithValue("@Rojstvo", t.Rojstvo);
+                    command.Parameters.AddWithValue("@KakovostMleziva", t.KakovostMleziva);
+                    command.Parameters.AddWithValue("@Datum", t.Datum.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@KravaMamaId", t.KravaMamaId);
+                    command.Parameters.AddWithValue("@TeleId", t.TeleId);
+                    command.Parameters.AddWithValue("@BikId", t.BikId);
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
     }
 }
