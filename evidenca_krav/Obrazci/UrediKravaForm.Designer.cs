@@ -52,12 +52,17 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel4 = new System.Windows.Forms.TableLayoutPanel();
+            this.textBoxIztokDva = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
+            this.textBoxIztokEna = new System.Windows.Forms.TextBox();
             this.textBoxnogeOcena = new System.Windows.Forms.TextBox();
+            this.dateTimePickerDrugiIztok = new System.Windows.Forms.DateTimePicker();
             this.textBoxokvirOcena = new System.Windows.Forms.TextBox();
+            this.dateTimePickerPrviIztok = new System.Windows.Forms.DateTimePicker();
             this.label47 = new System.Windows.Forms.Label();
             this.textBoxkrizOcena = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
+            this.dateTimePickerDatumPregleda = new System.Windows.Forms.DateTimePicker();
             this.label44 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
             this.textBoxdolzinaKrizaIzracunOcena = new System.Windows.Forms.TextBox();
@@ -66,6 +71,11 @@
             this.textBoxvimeOcena = new System.Windows.Forms.TextBox();
             this.label49 = new System.Windows.Forms.Label();
             this.textBoxtelesneSposobnostiSkupajOcena = new System.Windows.Forms.TextBox();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.label25 = new System.Windows.Forms.Label();
             this.textBoxglobinaTelesaIzracunOcena = new System.Windows.Forms.TextBox();
@@ -138,19 +148,6 @@
             this.flowLayoutPanelMlecneKontrole = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
             this.buttonDodajKontrolo = new System.Windows.Forms.Button();
-            this.buttonZapri = new System.Windows.Forms.Button();
-            this.buttonPotrdi = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePickerDatumPregleda = new System.Windows.Forms.DateTimePicker();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.dateTimePickerPrviIztok = new System.Windows.Forms.DateTimePicker();
-            this.label52 = new System.Windows.Forms.Label();
-            this.dateTimePickerDrugiIztok = new System.Windows.Forms.DateTimePicker();
-            this.textBoxIztokEna = new System.Windows.Forms.TextBox();
-            this.textBoxIztokDva = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.flowLayoutPanelPojatve = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel4 = new System.Windows.Forms.FlowLayoutPanel();
@@ -159,6 +156,13 @@
             this.buttonDodajTelitev = new System.Windows.Forms.Button();
             this.flowLayoutPanelTelitve = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel5 = new System.Windows.Forms.FlowLayoutPanel();
+            this.tabPage7 = new System.Windows.Forms.TabPage();
+            this.buttonDodajKorekcijo = new System.Windows.Forms.Button();
+            this.flowLayoutPanelKorekcije = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel6 = new System.Windows.Forms.FlowLayoutPanel();
+            this.buttonZapri = new System.Windows.Forms.Button();
+            this.buttonPotrdi = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             tabPage4 = new System.Windows.Forms.TabPage();
             tabPage4.SuspendLayout();
             this.flowLayoutPanelOs.SuspendLayout();
@@ -175,6 +179,8 @@
             this.flowLayoutPanelPojatve.SuspendLayout();
             this.tabPage6.SuspendLayout();
             this.flowLayoutPanelTelitve.SuspendLayout();
+            this.tabPage7.SuspendLayout();
+            this.flowLayoutPanelKorekcije.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -231,6 +237,7 @@
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(tabPage4);
             this.tabControl1.Controls.Add(this.tabPage6);
+            this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -455,7 +462,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 575F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 635F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(1110, 636);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
@@ -509,6 +516,15 @@
             this.tableLayoutPanel4.Size = new System.Drawing.Size(370, 634);
             this.tableLayoutPanel4.TabIndex = 2;
             // 
+            // textBoxIztokDva
+            // 
+            this.textBoxIztokDva.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxIztokDva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIztokDva.Location = new System.Drawing.Point(239, 353);
+            this.textBoxIztokDva.Name = "textBoxIztokDva";
+            this.textBoxIztokDva.Size = new System.Drawing.Size(225, 23);
+            this.textBoxIztokDva.TabIndex = 51;
+            // 
             // label45
             // 
             this.label45.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -523,6 +539,15 @@
             this.label45.Text = "Okvir Ocena";
             this.label45.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // textBoxIztokEna
+            // 
+            this.textBoxIztokEna.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBoxIztokEna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxIztokEna.Location = new System.Drawing.Point(239, 283);
+            this.textBoxIztokEna.Name = "textBoxIztokEna";
+            this.textBoxIztokEna.Size = new System.Drawing.Size(225, 23);
+            this.textBoxIztokEna.TabIndex = 50;
+            // 
             // textBoxnogeOcena
             // 
             this.textBoxnogeOcena.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -532,6 +557,17 @@
             this.textBoxnogeOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxnogeOcena.TabIndex = 79;
             // 
+            // dateTimePickerDrugiIztok
+            // 
+            this.dateTimePickerDrugiIztok.Checked = false;
+            this.dateTimePickerDrugiIztok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerDrugiIztok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDrugiIztok.Location = new System.Drawing.Point(239, 388);
+            this.dateTimePickerDrugiIztok.Name = "dateTimePickerDrugiIztok";
+            this.dateTimePickerDrugiIztok.ShowCheckBox = true;
+            this.dateTimePickerDrugiIztok.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePickerDrugiIztok.TabIndex = 48;
+            // 
             // textBoxokvirOcena
             // 
             this.textBoxokvirOcena.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -540,6 +576,17 @@
             this.textBoxokvirOcena.Name = "textBoxokvirOcena";
             this.textBoxokvirOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxokvirOcena.TabIndex = 75;
+            // 
+            // dateTimePickerPrviIztok
+            // 
+            this.dateTimePickerPrviIztok.Checked = false;
+            this.dateTimePickerPrviIztok.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerPrviIztok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerPrviIztok.Location = new System.Drawing.Point(239, 318);
+            this.dateTimePickerPrviIztok.Name = "dateTimePickerPrviIztok";
+            this.dateTimePickerPrviIztok.ShowCheckBox = true;
+            this.dateTimePickerPrviIztok.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePickerPrviIztok.TabIndex = 46;
             // 
             // label47
             // 
@@ -577,6 +624,17 @@
             this.label43.TabIndex = 70;
             this.label43.Text = "Dolzina kriza izracun Ocena";
             this.label43.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dateTimePickerDatumPregleda
+            // 
+            this.dateTimePickerDatumPregleda.Checked = false;
+            this.dateTimePickerDatumPregleda.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dateTimePickerDatumPregleda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePickerDatumPregleda.Location = new System.Drawing.Point(239, 248);
+            this.dateTimePickerDatumPregleda.Name = "dateTimePickerDatumPregleda";
+            this.dateTimePickerDatumPregleda.ShowCheckBox = true;
+            this.dateTimePickerDatumPregleda.Size = new System.Drawing.Size(225, 23);
+            this.dateTimePickerDatumPregleda.TabIndex = 44;
             // 
             // label44
             // 
@@ -669,6 +727,66 @@
             this.textBoxtelesneSposobnostiSkupajOcena.Name = "textBoxtelesneSposobnostiSkupajOcena";
             this.textBoxtelesneSposobnostiSkupajOcena.Size = new System.Drawing.Size(225, 23);
             this.textBoxtelesneSposobnostiSkupajOcena.TabIndex = 83;
+            // 
+            // label50
+            // 
+            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label50.AutoSize = true;
+            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label50.Location = new System.Drawing.Point(120, 245);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(113, 35);
+            this.label50.TabIndex = 45;
+            this.label50.Text = "Datum pregleda:";
+            // 
+            // label51
+            // 
+            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label51.AutoSize = true;
+            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label51.Location = new System.Drawing.Point(30, 315);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(203, 35);
+            this.label51.TabIndex = 47;
+            this.label51.Text = "Datum pregleda 1. mleč. iztoka";
+            // 
+            // label52
+            // 
+            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(30, 385);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(203, 35);
+            this.label52.TabIndex = 49;
+            this.label52.Text = "Datum pregleda 2. mleč. iztoka";
+            // 
+            // label11
+            // 
+            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(140, 280);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(93, 35);
+            this.label11.TabIndex = 84;
+            this.label11.Text = "Mlečni iztok 1";
+            // 
+            // label53
+            // 
+            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(140, 350);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(93, 35);
+            this.label53.TabIndex = 85;
+            this.label53.Text = "Mlečni iztok 2";
             // 
             // tableLayoutPanel3
             // 
@@ -1586,152 +1704,6 @@
             this.buttonDodajKontrolo.UseVisualStyleBackColor = true;
             this.buttonDodajKontrolo.Click += new System.EventHandler(this.buttonDodajKontrolo_Click);
             // 
-            // buttonZapri
-            // 
-            this.buttonZapri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonZapri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonZapri.Location = new System.Drawing.Point(928, 763);
-            this.buttonZapri.Name = "buttonZapri";
-            this.buttonZapri.Size = new System.Drawing.Size(100, 43);
-            this.buttonZapri.TabIndex = 42;
-            this.buttonZapri.Text = "Zapri";
-            this.buttonZapri.UseVisualStyleBackColor = true;
-            this.buttonZapri.Click += new System.EventHandler(this.buttonZapri_Click);
-            // 
-            // buttonPotrdi
-            // 
-            this.buttonPotrdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.buttonPotrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonPotrdi.Location = new System.Drawing.Point(1034, 763);
-            this.buttonPotrdi.Name = "buttonPotrdi";
-            this.buttonPotrdi.Size = new System.Drawing.Size(100, 43);
-            this.buttonPotrdi.TabIndex = 41;
-            this.buttonPotrdi.Text = "Shrani";
-            this.buttonPotrdi.UseVisualStyleBackColor = true;
-            this.buttonPotrdi.Click += new System.EventHandler(this.buttonPotrdi_Click);
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(385, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(367, 63);
-            this.label1.TabIndex = 43;
-            this.label1.Text = "Podatki krave";
-            // 
-            // dateTimePickerDatumPregleda
-            // 
-            this.dateTimePickerDatumPregleda.Checked = false;
-            this.dateTimePickerDatumPregleda.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDatumPregleda.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDatumPregleda.Location = new System.Drawing.Point(239, 248);
-            this.dateTimePickerDatumPregleda.Name = "dateTimePickerDatumPregleda";
-            this.dateTimePickerDatumPregleda.ShowCheckBox = true;
-            this.dateTimePickerDatumPregleda.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePickerDatumPregleda.TabIndex = 44;
-            // 
-            // label50
-            // 
-            this.label50.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label50.AutoSize = true;
-            this.label50.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label50.Location = new System.Drawing.Point(120, 245);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(113, 35);
-            this.label50.TabIndex = 45;
-            this.label50.Text = "Datum pregleda:";
-            // 
-            // label51
-            // 
-            this.label51.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label51.AutoSize = true;
-            this.label51.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label51.Location = new System.Drawing.Point(30, 315);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(203, 35);
-            this.label51.TabIndex = 47;
-            this.label51.Text = "Datum pregleda 1. mleč. iztoka";
-            // 
-            // dateTimePickerPrviIztok
-            // 
-            this.dateTimePickerPrviIztok.Checked = false;
-            this.dateTimePickerPrviIztok.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerPrviIztok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerPrviIztok.Location = new System.Drawing.Point(239, 318);
-            this.dateTimePickerPrviIztok.Name = "dateTimePickerPrviIztok";
-            this.dateTimePickerPrviIztok.ShowCheckBox = true;
-            this.dateTimePickerPrviIztok.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePickerPrviIztok.TabIndex = 46;
-            // 
-            // label52
-            // 
-            this.label52.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(30, 385);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(203, 35);
-            this.label52.TabIndex = 49;
-            this.label52.Text = "Datum pregleda 2. mleč. iztoka";
-            // 
-            // dateTimePickerDrugiIztok
-            // 
-            this.dateTimePickerDrugiIztok.Checked = false;
-            this.dateTimePickerDrugiIztok.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dateTimePickerDrugiIztok.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDrugiIztok.Location = new System.Drawing.Point(239, 388);
-            this.dateTimePickerDrugiIztok.Name = "dateTimePickerDrugiIztok";
-            this.dateTimePickerDrugiIztok.ShowCheckBox = true;
-            this.dateTimePickerDrugiIztok.Size = new System.Drawing.Size(225, 23);
-            this.dateTimePickerDrugiIztok.TabIndex = 48;
-            // 
-            // textBoxIztokEna
-            // 
-            this.textBoxIztokEna.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxIztokEna.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIztokEna.Location = new System.Drawing.Point(239, 283);
-            this.textBoxIztokEna.Name = "textBoxIztokEna";
-            this.textBoxIztokEna.Size = new System.Drawing.Size(225, 23);
-            this.textBoxIztokEna.TabIndex = 50;
-            // 
-            // textBoxIztokDva
-            // 
-            this.textBoxIztokDva.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.textBoxIztokDva.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIztokDva.Location = new System.Drawing.Point(239, 353);
-            this.textBoxIztokDva.Name = "textBoxIztokDva";
-            this.textBoxIztokDva.Size = new System.Drawing.Size(225, 23);
-            this.textBoxIztokDva.TabIndex = 51;
-            // 
-            // label11
-            // 
-            this.label11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(140, 280);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(93, 35);
-            this.label11.TabIndex = 84;
-            this.label11.Text = "Mlečni iztok 1";
-            // 
-            // label53
-            // 
-            this.label53.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(140, 350);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(93, 35);
-            this.label53.TabIndex = 85;
-            this.label53.Text = "Mlečni iztok 2";
-            // 
             // tabPage5
             // 
             this.tabPage5.Controls.Add(this.flowLayoutPanelPojatve);
@@ -1819,6 +1791,84 @@
             this.flowLayoutPanel5.Size = new System.Drawing.Size(200, 100);
             this.flowLayoutPanel5.TabIndex = 0;
             // 
+            // tabPage7
+            // 
+            this.tabPage7.Controls.Add(this.buttonDodajKorekcijo);
+            this.tabPage7.Controls.Add(this.flowLayoutPanelKorekcije);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Name = "tabPage7";
+            this.tabPage7.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage7.TabIndex = 6;
+            this.tabPage7.Text = "Korekcije parkljev";
+            this.tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // buttonDodajKorekcijo
+            // 
+            this.buttonDodajKorekcijo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajKorekcijo.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajKorekcijo.Location = new System.Drawing.Point(871, 28);
+            this.buttonDodajKorekcijo.Name = "buttonDodajKorekcijo";
+            this.buttonDodajKorekcijo.Size = new System.Drawing.Size(231, 51);
+            this.buttonDodajKorekcijo.TabIndex = 48;
+            this.buttonDodajKorekcijo.Text = "Dodaj korekcijo";
+            this.buttonDodajKorekcijo.UseVisualStyleBackColor = true;
+            this.buttonDodajKorekcijo.Click += new System.EventHandler(this.buttonDodajKorekcijo_Click);
+            // 
+            // flowLayoutPanelKorekcije
+            // 
+            this.flowLayoutPanelKorekcije.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelKorekcije.AutoScroll = true;
+            this.flowLayoutPanelKorekcije.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelKorekcije.Controls.Add(this.flowLayoutPanel6);
+            this.flowLayoutPanelKorekcije.Location = new System.Drawing.Point(16, 85);
+            this.flowLayoutPanelKorekcije.Name = "flowLayoutPanelKorekcije";
+            this.flowLayoutPanelKorekcije.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelKorekcije.TabIndex = 49;
+            // 
+            // flowLayoutPanel6
+            // 
+            this.flowLayoutPanel6.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel6.Name = "flowLayoutPanel6";
+            this.flowLayoutPanel6.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel6.TabIndex = 0;
+            // 
+            // buttonZapri
+            // 
+            this.buttonZapri.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonZapri.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZapri.Location = new System.Drawing.Point(928, 763);
+            this.buttonZapri.Name = "buttonZapri";
+            this.buttonZapri.Size = new System.Drawing.Size(100, 43);
+            this.buttonZapri.TabIndex = 42;
+            this.buttonZapri.Text = "Zapri";
+            this.buttonZapri.UseVisualStyleBackColor = true;
+            this.buttonZapri.Click += new System.EventHandler(this.buttonZapri_Click);
+            // 
+            // buttonPotrdi
+            // 
+            this.buttonPotrdi.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonPotrdi.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPotrdi.Location = new System.Drawing.Point(1034, 763);
+            this.buttonPotrdi.Name = "buttonPotrdi";
+            this.buttonPotrdi.Size = new System.Drawing.Size(100, 43);
+            this.buttonPotrdi.TabIndex = 41;
+            this.buttonPotrdi.Text = "Shrani";
+            this.buttonPotrdi.UseVisualStyleBackColor = true;
+            this.buttonPotrdi.Click += new System.EventHandler(this.buttonPotrdi_Click);
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(385, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(367, 63);
+            this.label1.TabIndex = 43;
+            this.label1.Text = "Podatki krave";
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1852,6 +1902,8 @@
             this.flowLayoutPanelPojatve.ResumeLayout(false);
             this.tabPage6.ResumeLayout(false);
             this.flowLayoutPanelTelitve.ResumeLayout(false);
+            this.tabPage7.ResumeLayout(false);
+            this.flowLayoutPanelKorekcije.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1988,5 +2040,9 @@
         private System.Windows.Forms.Button buttonDodajTelitev;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelTelitve;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel5;
+        private System.Windows.Forms.TabPage tabPage7;
+        private System.Windows.Forms.Button buttonDodajKorekcijo;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelKorekcije;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel6;
     }
 }

@@ -100,6 +100,7 @@ namespace evidenca_krav.Obrazci
             NaloziOsemenitve();
             NaloziPojatve();
             NaloziTelitve();
+            NaloziKorekcije();
         }
 
         private void NaloziMlecneKontrole()
@@ -147,6 +148,18 @@ namespace evidenca_krav.Obrazci
             foreach (TelitevRazred t in telitve)
             {
                 flowLayoutPanelTelitve.Controls.Add(new TelitevCard(db, t));
+            }
+        }
+
+        private void NaloziKorekcije()
+        {
+            flowLayoutPanelKorekcije.Controls.Clear();
+
+            List<KorekcijeParkljevRazred> korekcije = db.PridobiKorekcijeParkljev(Krava.Id);
+
+            foreach (KorekcijeParkljevRazred k in korekcije)
+            {
+                flowLayoutPanelKorekcije.Controls.Add(new KorekcijaParkljevCard(db, k));
             }
         }
 
@@ -359,6 +372,25 @@ namespace evidenca_krav.Obrazci
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri dodajanju telitve: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonDodajKorekcijo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajKorekcijoParkljevForm dodajKorekcijoForm = new DodajKorekcijoParkljevForm(db, Krava);
+
+                if (dodajKorekcijoForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Korekcija parkljev uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                NaloziKorekcije();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju korekcije parkljev: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

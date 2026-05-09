@@ -1550,6 +1550,43 @@ namespace evidenca_krav
             return veterinarji;
         }
 
+        public List<OsebeRazred> PridobiIzvajalce()
+        {
+            List<OsebeRazred> izvajalci = new List<OsebeRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.id, o.ime, o.priimek, o.tel, o.email, zo.zadolzitev " +
+                    "FROM osebe o " +
+                    "INNER JOIN zadolzitve_oseb zo ON o.zadolzitev_id = zo.id " +
+                    "WHERE zo.zadolzitev = @Zadolzitev " +
+                    "ORDER BY o.ime, o.priimek", conn))
+                {
+                    cmd.Parameters.AddWithValue("@Zadolzitev", "Korektor parkljev");
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            izvajalci.Add(new OsebeRazred(
+                                reader.GetInt32(0),
+                                reader.GetString(1),
+                                reader.GetString(2),
+                                reader.GetString(3),
+                                reader.GetString(4),
+                                reader.GetString(5)
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return izvajalci;
+        }
+
         // Odhodi
 
         public List<OdhodiRazred> PridobiOdhode()
@@ -2859,6 +2896,184 @@ namespace evidenca_krav
                     command.Parameters.AddWithValue("@KravaMamaId", t.KravaMamaId);
                     command.Parameters.AddWithValue("@TeleId", t.TeleId);
                     command.Parameters.AddWithValue("@BikId", t.BikId);
+
+                    int rezultat = command.ExecuteNonQuery();
+
+                    if (rezultat > 0)
+                    {
+                        return 0;
+                    }
+                    else
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
+
+        // korekcije parkljev
+        public List<KorekcijeParkljevRazred> PridobiKorekcijeParkljev(int idKrave)
+        {
+            List<KorekcijeParkljevRazred> korekcije = new List<KorekcijeParkljevRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT kp.*, " +
+                    "z.ime AS krava_ime, z.usesna_stevilka AS krava_usesna, " +
+                    "o.ime AS izvajalec_ime, o.priimek AS izvajalec_priimek " +
+                    "FROM korekcije_parkljev kp " +
+                    "INNER JOIN zivali z ON kp.krava_id = z.id " +
+                    "INNER JOIN osebe o ON kp.izvajalec_id = o.id " +
+                    "WHERE kp.krava_id = @IdKrave " +
+                    "ORDER BY kp.datum DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKrave", idKrave);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string krava = reader["krava_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("krava_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["krava_usesna"].ToString()))
+                            {
+                                krava += " (" + reader["krava_usesna"].ToString() + ")";
+                            }
+
+                            string izvajalec = reader["izvajalec_ime"].ToString() + " " + reader["izvajalec_priimek"].ToString();
+
+                            KorekcijeParkljevRazred korekcija = new KorekcijeParkljevRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                krava,
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader["stanje"].ToString(),
+                                reader["pripombe"].ToString(),
+                                reader.GetInt32(reader.GetOrdinal("izvajalec_id")),
+                                izvajalec
+                            );
+
+                            korekcije.Add(korekcija);
+                        }
+                    }
+                }
+            }
+
+            return korekcije;
+        }
+
+        public KorekcijeParkljevRazred PridobiKorekcijoParkljev(int idKorekcije)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query =
+                    "SELECT kp.*, " +
+                    "z.ime AS krava_ime, z.usesna_stevilka AS krava_usesna, " +
+                    "o.ime AS izvajalec_ime, o.priimek AS izvajalec_priimek " +
+                    "FROM korekcije_parkljev kp " +
+                    "INNER JOIN zivali z ON kp.krava_id = z.id " +
+                    "INNER JOIN osebe o ON kp.izvajalec_id = o.id " +
+                    "WHERE kp.id = @IdKorekcije";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdKorekcije", idKorekcije);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string krava = reader["krava_ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("krava_usesna")) &&
+                                !string.IsNullOrWhiteSpace(reader["krava_usesna"].ToString()))
+                            {
+                                krava += " (" + reader["krava_usesna"].ToString() + ")";
+                            }
+
+                            string izvajalec = reader["izvajalec_ime"].ToString() + " " + reader["izvajalec_priimek"].ToString();
+
+                            KorekcijeParkljevRazred korekcija = new KorekcijeParkljevRazred(
+                                reader.GetInt32(reader.GetOrdinal("id")),
+                                reader.GetInt32(reader.GetOrdinal("krava_id")),
+                                krava,
+                                reader.GetDateTime(reader.GetOrdinal("datum")),
+                                reader["stanje"].ToString(),
+                                reader["pripombe"].ToString(),
+                                reader.GetInt32(reader.GetOrdinal("izvajalec_id")),
+                                izvajalec
+                            );
+
+                            return korekcija;
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public int DodajKorekcijoParkljev(DateTime datum, string stanje, string pripombe, int izvajalecId, int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "INSERT INTO korekcije_parkljev (datum, stanje, pripombe, izvajalec_id, krava_id) " +
+                    "VALUES (@Datum, @Stanje, @Pripombe, @IzvajalecId, @KravaId)", conn))
+                {
+                    command.Parameters.AddWithValue("@Datum", datum.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@Stanje", stanje);
+
+                    if (string.IsNullOrWhiteSpace(pripombe))
+                    {
+                        command.Parameters.AddWithValue("@Pripombe", "Ni pripomb.");
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@Pripombe", pripombe);
+                    }
+
+                    command.Parameters.AddWithValue("@IzvajalecId", izvajalecId);
+                    command.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    command.ExecuteNonQuery();
+                }
+
+                return 0;
+            }
+        }
+
+        public int UrediKorekcijoParkljev(KorekcijeParkljevRazred k)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var command = new SQLiteCommand(
+                    "UPDATE korekcije_parkljev SET " +
+                    "datum = @Datum, " +
+                    "stanje = @Stanje, " +
+                    "pripombe = @Pripombe, " +
+                    "izvajalec_id = @IzvajalecId, " +
+                    "krava_id = @KravaId " +
+                    "WHERE id = @Id", conn))
+                {
+                    command.Parameters.AddWithValue("@Id", k.Id);
+                    command.Parameters.AddWithValue("@Datum", k.Datum.ToString("yyyy-MM-dd"));
+                    command.Parameters.AddWithValue("@Stanje", k.Stanje);
+                    command.Parameters.AddWithValue("@Pripombe", k.Pripombe);
+                    command.Parameters.AddWithValue("@IzvajalecId", k.IzvajalecId);
+                    command.Parameters.AddWithValue("@KravaId", k.KravaId);
 
                     int rezultat = command.ExecuteNonQuery();
 

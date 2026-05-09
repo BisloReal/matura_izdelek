@@ -57,3 +57,6 @@ C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Deb
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.NavigationBarUserControls.TelitevCard.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.DodajTelitevForm.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediTelitevForm.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.NavigationBarUserControls.KorekcijaParkljevCard.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.DodajKorekcijoParkljevForm.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediKorekcijoParkljevForm.resources

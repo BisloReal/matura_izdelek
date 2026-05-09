@@ -90,6 +90,12 @@
     <Compile Include="NavigationBarUserControls\Glavno_okno.Designer.cs">
       <DependentUpon>Glavno_okno.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\KorekcijaParkljevCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\KorekcijaParkljevCard.Designer.cs">
+      <DependentUpon>KorekcijaParkljevCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\KravaCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -181,6 +187,12 @@
     <Compile Include="Obrazci\DodajBikaForm.Designer.cs">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\DodajKorekcijoParkljevForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajKorekcijoParkljevForm.Designer.cs">
+      <DependentUpon>DodajKorekcijoParkljevForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\DodajMlecKontrolo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -234,6 +246,12 @@
     </Compile>
     <Compile Include="Obrazci\UrediBikOsForm.Designer.cs">
       <DependentUpon>UrediBikOsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Obrazci\UrediKorekcijoParkljevForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediKorekcijoParkljevForm.Designer.cs">
+      <DependentUpon>UrediKorekcijoParkljevForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Obrazci\UrediKravaForm.cs">
       <SubType>Form</SubType>
@@ -298,6 +316,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Razredi\BikiOsRazred.cs" />
+    <Compile Include="Razredi\KorekcijeParkljevRazred.cs" />
     <Compile Include="Razredi\KraveRazred.cs" />
     <Compile Include="Razredi\MlecneKontroleRazred.cs" />
     <Compile Include="Razredi\OdhodiRazred.cs" />
@@ -317,6 +336,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\Glavno_okno.resx">
       <DependentUpon>Glavno_okno.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\KorekcijaParkljevCard.resx">
+      <DependentUpon>KorekcijaParkljevCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\KravaCard.resx">
       <DependentUpon>KravaCard.cs</DependentUpon>
@@ -363,6 +385,9 @@
     <EmbeddedResource Include="Obrazci\DodajBikaForm.resx">
       <DependentUpon>DodajBikaForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajKorekcijoParkljevForm.resx">
+      <DependentUpon>DodajKorekcijoParkljevForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajMlecKontrolo.resx">
       <DependentUpon>DodajMlecKontrolo.cs</DependentUpon>
     </EmbeddedResource>
@@ -389,6 +414,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediBikOsForm.resx">
       <DependentUpon>UrediBikOsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediKorekcijoParkljevForm.resx">
+      <DependentUpon>UrediKorekcijoParkljevForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediKravaForm.resx">
       <DependentUpon>UrediKravaForm.cs</DependentUpon>
