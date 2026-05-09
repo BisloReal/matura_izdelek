@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.buttonZadolzitvePregled = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.comboBoxZadolzitev = new System.Windows.Forms.ComboBox();
             this.buttonPreklici = new System.Windows.Forms.Button();
@@ -43,17 +42,6 @@
             this.textBoxIme = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // buttonZadolzitvePregled
-            // 
-            this.buttonZadolzitvePregled.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonZadolzitvePregled.Location = new System.Drawing.Point(424, 473);
-            this.buttonZadolzitvePregled.Name = "buttonZadolzitvePregled";
-            this.buttonZadolzitvePregled.Size = new System.Drawing.Size(149, 39);
-            this.buttonZadolzitvePregled.TabIndex = 42;
-            this.buttonZadolzitvePregled.Text = "Dodaj / Uredi";
-            this.buttonZadolzitvePregled.UseVisualStyleBackColor = true;
-            this.buttonZadolzitvePregled.Click += new System.EventHandler(this.buttonZadolzitvePregled_Click);
             // 
             // label3
             // 
@@ -184,7 +172,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(638, 615);
-            this.Controls.Add(this.buttonZadolzitvePregled);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.comboBoxZadolzitev);
             this.Controls.Add(this.buttonPreklici);
@@ -206,8 +193,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button buttonZadolzitvePregled;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBoxZadolzitev;
         private System.Windows.Forms.Button buttonPreklici;

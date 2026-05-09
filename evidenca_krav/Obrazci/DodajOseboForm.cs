@@ -58,16 +58,6 @@ namespace evidenca_krav.Obrazci
             }
         }
 
-        private void buttonZadolzitvePregled_Click(object sender, EventArgs e)
-        {
-            using (ZadolzitveOsebForm zadolzitveOsebForm = new ZadolzitveOsebForm(db))
-            {
-                zadolzitveOsebForm.ShowDialog();
-            }
-
-            comboBoxZadolzitev.DataSource = db.PridobiZadolzitve();
-        }
-
         private void buttonPreklici_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.Abort;
