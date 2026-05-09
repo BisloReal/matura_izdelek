@@ -178,6 +178,18 @@ namespace evidenca_krav.Obrazci
             }
         }
 
+        private void NaloziOstaleSpecifike()
+        {
+            flowLayoutPanelOstaleSpecifike.Controls.Clear();
+
+            List<OstaleSpecifikeRazred> specifike = db.PridobiOstaleSpecifike(Krava.Id);
+
+            foreach (OstaleSpecifikeRazred s in specifike)
+            {
+                flowLayoutPanelOstaleSpecifike.Controls.Add(new SpecifikaCard(db, s));
+            }
+        }
+
         private void NaloziKarence()
         {
             List<KarencaRazred> karence = db.PridobiKarence(Krava.Id);
@@ -562,6 +574,25 @@ namespace evidenca_krav.Obrazci
             catch (Exception ex)
             {
                 MessageBox.Show("Napaka pri dodajanju zdravljenja: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void buttonDodajSpecifiko_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DodajSpecifikoForm dodajSpecifikoForm = new DodajSpecifikoForm(db, Krava);
+
+                if (dodajSpecifikoForm.ShowDialog() == DialogResult.OK)
+                {
+                    MessageBox.Show("Specifika uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+                NaloziOstaleSpecifike();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri dodajanju specifike: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

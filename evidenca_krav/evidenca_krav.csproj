@@ -150,6 +150,12 @@
     <Compile Include="NavigationBarUserControls\PojatevCard.Designer.cs">
       <DependentUpon>PojatevCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\SpecifikaCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\SpecifikaCard.Designer.cs">
+      <DependentUpon>SpecifikaCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\TeleCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -241,6 +247,12 @@
     <Compile Include="Obrazci\DodajPojatevForm.Designer.cs">
       <DependentUpon>DodajPojatevForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\DodajSpecifikoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\DodajSpecifikoForm.Designer.cs">
+      <DependentUpon>DodajSpecifikoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\DodajTelicoForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -319,6 +331,12 @@
     <Compile Include="Obrazci\UrediPojatevForm.Designer.cs">
       <DependentUpon>UrediPojatevForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Obrazci\UrediSpecifikoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obrazci\UrediSpecifikoForm.Designer.cs">
+      <DependentUpon>UrediSpecifikoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Obrazci\UrediTeleForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -365,6 +383,7 @@
     <Compile Include="Razredi\OdhodiRazred.cs" />
     <Compile Include="Razredi\OsebeRazred.cs" />
     <Compile Include="Razredi\OsemenitveRazred.cs" />
+    <Compile Include="Razredi\OstaleSpecifikeClass.cs" />
     <Compile Include="Razredi\PojatveRazred.cs" />
     <Compile Include="Razredi\TeliceRazred.cs" />
     <Compile Include="Razredi\TelitevRazred.cs" />
@@ -412,6 +431,9 @@
     <EmbeddedResource Include="NavigationBarUserControls\PojatevCard.resx">
       <DependentUpon>PojatevCard.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\SpecifikaCard.resx">
+      <DependentUpon>SpecifikaCard.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\TeleCard.resx">
       <DependentUpon>TeleCard.cs</DependentUpon>
     </EmbeddedResource>
@@ -457,6 +479,9 @@
     <EmbeddedResource Include="Obrazci\DodajPojatevForm.resx">
       <DependentUpon>DodajPojatevForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\DodajSpecifikoForm.resx">
+      <DependentUpon>DodajSpecifikoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\DodajTelicoForm.resx">
       <DependentUpon>DodajTelicoForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -495,6 +520,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediPojatevForm.resx">
       <DependentUpon>UrediPojatevForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obrazci\UrediSpecifikoForm.resx">
+      <DependentUpon>UrediSpecifikoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Obrazci\UrediTeleForm.resx">
       <DependentUpon>UrediTeleForm.cs</DependentUpon>

@@ -3608,5 +3608,183 @@ namespace evidenca_krav
                 }
             }
         }
+
+        // specifike
+        public List<OstaleSpecifikeRazred> PridobiOstaleSpecifike(int kravaId)
+        {
+            List<OstaleSpecifikeRazred> specifike = new List<OstaleSpecifikeRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                            SELECT id, specifika, datum, krava_id
+                            FROM ostale_specifike
+                            WHERE krava_id = @KravaId
+                            ORDER BY datum DESC";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            DateTime? datum = null;
+
+                            if (reader["datum"] != DBNull.Value)
+                            {
+                                datum = Convert.ToDateTime(reader["datum"]);
+                            }
+
+                            specifike.Add(new OstaleSpecifikeRazred(
+                                Convert.ToInt32(reader["id"]),
+                                reader["specifika"].ToString(),
+                                datum,
+                                Convert.ToInt32(reader["krava_id"])
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return specifike;
+        }
+
+        public OstaleSpecifikeRazred PridobiOstaloSpecifiko(int id)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string query = @"
+                        SELECT id, specifika, datum, krava_id
+                        FROM ostale_specifike
+                        WHERE id = @Id";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Id", id);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            DateTime? datum = null;
+
+                            if (reader["datum"] != DBNull.Value)
+                            {
+                                datum = Convert.ToDateTime(reader["datum"]);
+                            }
+
+                            return new OstaleSpecifikeRazred(
+                                Convert.ToInt32(reader["id"]),
+                                reader["specifika"].ToString(),
+                                datum,
+                                Convert.ToInt32(reader["krava_id"])
+                            );
+                        }
+                    }
+                }
+            }
+
+            return null;
+        }
+
+        public int DodajOstaloSpecifiko(string specifika, DateTime? datum, int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string preveriKravoQuery = "SELECT COUNT(*) FROM zivali WHERE id = @KravaId";
+
+                using (var preveriCmd = new SQLiteCommand(preveriKravoQuery, conn))
+                {
+                    preveriCmd.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    int count = Convert.ToInt32(preveriCmd.ExecuteScalar());
+
+                    if (count == 0)
+                    {
+                        return -1;
+                    }
+                }
+
+                string query = @"
+                            INSERT INTO ostale_specifike
+                            (specifika, datum, krava_id)
+                            VALUES
+                            (@Specifika, @Datum, @KravaId)";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Specifika", specifika.Trim());
+
+                    if (datum.HasValue)
+                    {
+                        cmd.Parameters.AddWithValue("@Datum", datum.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Datum", DBNull.Value);
+                    }
+
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    cmd.ExecuteNonQuery();
+                    return 0;
+                }
+            }
+        }
+
+        public int UrediOstaloSpecifiko(OstaleSpecifikeRazred specifika)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                string preveriQuery = "SELECT COUNT(*) FROM ostale_specifike WHERE id = @Id";
+
+                using (var preveriCmd = new SQLiteCommand(preveriQuery, conn))
+                {
+                    preveriCmd.Parameters.AddWithValue("@Id", specifika.Id);
+
+                    int count = Convert.ToInt32(preveriCmd.ExecuteScalar());
+
+                    if (count == 0)
+                    {
+                        return -1;
+                    }
+                }
+
+                string query = @"
+                            UPDATE ostale_specifike
+                            SET specifika = @Specifika,
+                                datum = @Datum
+                            WHERE id = @Id";
+
+                using (var cmd = new SQLiteCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@Specifika", specifika.Specifika.Trim());
+
+                    if (specifika.Datum.HasValue)
+                    {
+                        cmd.Parameters.AddWithValue("@Datum", specifika.Datum.Value.ToString("yyyy-MM-dd"));
+                    }
+                    else
+                    {
+                        cmd.Parameters.AddWithValue("@Datum", DBNull.Value);
+                    }
+
+                    cmd.Parameters.AddWithValue("@Id", specifika.Id);
+
+                    cmd.ExecuteNonQuery();
+                    return 0;
+                }
+            }
+        }
     }
 }

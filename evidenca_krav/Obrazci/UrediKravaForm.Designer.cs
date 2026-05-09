@@ -187,6 +187,10 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label64 = new System.Windows.Forms.Label();
             this.dateTimePickerDatumKoncaMlec = new System.Windows.Forms.DateTimePicker();
+            this.tabPage10 = new System.Windows.Forms.TabPage();
+            this.buttonDodajSpecifiko = new System.Windows.Forms.Button();
+            this.flowLayoutPanelOstaleSpecifike = new System.Windows.Forms.FlowLayoutPanel();
+            this.flowLayoutPanel8 = new System.Windows.Forms.FlowLayoutPanel();
             tabPage4 = new System.Windows.Forms.TabPage();
             tabPage4.SuspendLayout();
             this.flowLayoutPanelOs.SuspendLayout();
@@ -208,6 +212,8 @@
             this.tabPage8.SuspendLayout();
             this.flowLayoutPanelZdravljenja.SuspendLayout();
             this.tabPage9.SuspendLayout();
+            this.tabPage10.SuspendLayout();
+            this.flowLayoutPanelOstaleSpecifike.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage4
@@ -267,6 +273,7 @@
             this.tabControl1.Controls.Add(this.tabPage7);
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
+            this.tabControl1.Controls.Add(this.tabPage10);
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -2181,6 +2188,49 @@
             this.dateTimePickerDatumKoncaMlec.Size = new System.Drawing.Size(219, 30);
             this.dateTimePickerDatumKoncaMlec.TabIndex = 116;
             // 
+            // tabPage10
+            // 
+            this.tabPage10.Controls.Add(this.buttonDodajSpecifiko);
+            this.tabPage10.Controls.Add(this.flowLayoutPanelOstaleSpecifike);
+            this.tabPage10.Location = new System.Drawing.Point(4, 22);
+            this.tabPage10.Name = "tabPage10";
+            this.tabPage10.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage10.TabIndex = 9;
+            this.tabPage10.Text = "Ostale specifike";
+            this.tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // buttonDodajSpecifiko
+            // 
+            this.buttonDodajSpecifiko.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.buttonDodajSpecifiko.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonDodajSpecifiko.Location = new System.Drawing.Point(870, 25);
+            this.buttonDodajSpecifiko.Name = "buttonDodajSpecifiko";
+            this.buttonDodajSpecifiko.Size = new System.Drawing.Size(231, 51);
+            this.buttonDodajSpecifiko.TabIndex = 52;
+            this.buttonDodajSpecifiko.Text = "Dodaj specifiko";
+            this.buttonDodajSpecifiko.UseVisualStyleBackColor = true;
+            this.buttonDodajSpecifiko.Click += new System.EventHandler(this.buttonDodajSpecifiko_Click);
+            // 
+            // flowLayoutPanelOstaleSpecifike
+            // 
+            this.flowLayoutPanelOstaleSpecifike.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.flowLayoutPanelOstaleSpecifike.AutoScroll = true;
+            this.flowLayoutPanelOstaleSpecifike.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.flowLayoutPanelOstaleSpecifike.Controls.Add(this.flowLayoutPanel8);
+            this.flowLayoutPanelOstaleSpecifike.Location = new System.Drawing.Point(15, 82);
+            this.flowLayoutPanelOstaleSpecifike.Name = "flowLayoutPanelOstaleSpecifike";
+            this.flowLayoutPanelOstaleSpecifike.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelOstaleSpecifike.TabIndex = 53;
+            // 
+            // flowLayoutPanel8
+            // 
+            this.flowLayoutPanel8.Location = new System.Drawing.Point(3, 3);
+            this.flowLayoutPanel8.Name = "flowLayoutPanel8";
+            this.flowLayoutPanel8.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel8.TabIndex = 0;
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2220,6 +2270,8 @@
             this.flowLayoutPanelZdravljenja.ResumeLayout(false);
             this.tabPage9.ResumeLayout(false);
             this.tabPage9.PerformLayout();
+            this.tabPage10.ResumeLayout(false);
+            this.flowLayoutPanelOstaleSpecifike.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2384,5 +2436,9 @@
         private System.Windows.Forms.Label label61;
         private System.Windows.Forms.ComboBox comboBoxZdravljenjeMesna;
         private System.Windows.Forms.Label label60;
+        private System.Windows.Forms.TabPage tabPage10;
+        private System.Windows.Forms.Button buttonDodajSpecifiko;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelOstaleSpecifike;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel8;
     }
 }
