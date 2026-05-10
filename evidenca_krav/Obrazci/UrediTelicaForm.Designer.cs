@@ -118,9 +118,9 @@
             // 
             tabPage4.Controls.Add(this.buttonDodajOs);
             tabPage4.Controls.Add(this.flowLayoutPanelOs);
-            tabPage4.Location = new System.Drawing.Point(4, 22);
+            tabPage4.Location = new System.Drawing.Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new System.Drawing.Size(1118, 644);
+            tabPage4.Size = new System.Drawing.Size(1118, 637);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Osemenitve";
             tabPage4.UseVisualStyleBackColor = true;
@@ -147,7 +147,7 @@
             this.flowLayoutPanelOs.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanelOs.Location = new System.Drawing.Point(17, 82);
             this.flowLayoutPanelOs.Name = "flowLayoutPanelOs";
-            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 549);
+            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 542);
             this.flowLayoutPanelOs.TabIndex = 45;
             // 
             // flowLayoutPanel3
@@ -398,9 +398,9 @@
             // 
             this.tabPage3.Controls.Add(this.flowLayoutPanelMlecneKontrole);
             this.tabPage3.Controls.Add(this.buttonDodajKontrolo);
-            this.tabPage3.Location = new System.Drawing.Point(4, 22);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage3.Size = new System.Drawing.Size(1118, 637);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mlečne kontrole";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -415,7 +415,7 @@
             this.flowLayoutPanelMlecneKontrole.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanelMlecneKontrole.Location = new System.Drawing.Point(16, 71);
             this.flowLayoutPanelMlecneKontrole.Name = "flowLayoutPanelMlecneKontrole";
-            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 558);
+            this.flowLayoutPanelMlecneKontrole.Size = new System.Drawing.Size(1086, 551);
             this.flowLayoutPanelMlecneKontrole.TabIndex = 44;
             // 
             // flowLayoutPanel2
@@ -441,10 +441,10 @@
             // 
             this.tabPage5.Controls.Add(this.flowLayoutPanelPojatve);
             this.tabPage5.Controls.Add(this.buttonDodajPojatev);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage5.Size = new System.Drawing.Size(1118, 637);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Pojatve";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -459,7 +459,7 @@
             this.flowLayoutPanelPojatve.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanelPojatve.Location = new System.Drawing.Point(17, 74);
             this.flowLayoutPanelPojatve.Name = "flowLayoutPanelPojatve";
-            this.flowLayoutPanelPojatve.Size = new System.Drawing.Size(1086, 553);
+            this.flowLayoutPanelPojatve.Size = new System.Drawing.Size(1086, 546);
             this.flowLayoutPanelPojatve.TabIndex = 46;
             // 
             // flowLayoutPanel4
@@ -528,9 +528,9 @@
             // 
             this.tabPage7.Controls.Add(this.buttonDodajKorekcijo);
             this.tabPage7.Controls.Add(this.flowLayoutPanelKorekcije);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage7.Size = new System.Drawing.Size(1118, 637);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Korekcije parkljev";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -557,7 +557,7 @@
             this.flowLayoutPanelKorekcije.Controls.Add(this.flowLayoutPanel6);
             this.flowLayoutPanelKorekcije.Location = new System.Drawing.Point(16, 85);
             this.flowLayoutPanelKorekcije.Name = "flowLayoutPanelKorekcije";
-            this.flowLayoutPanelKorekcije.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelKorekcije.Size = new System.Drawing.Size(1086, 532);
             this.flowLayoutPanelKorekcije.TabIndex = 49;
             // 
             // flowLayoutPanel6
@@ -571,9 +571,9 @@
             // 
             this.tabPage8.Controls.Add(this.buttonDodajZdravljenje);
             this.tabPage8.Controls.Add(this.flowLayoutPanelZdravljenja);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage8.Size = new System.Drawing.Size(1118, 637);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Zdravljenja";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -600,7 +600,7 @@
             this.flowLayoutPanelZdravljenja.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanelZdravljenja.Location = new System.Drawing.Point(16, 77);
             this.flowLayoutPanelZdravljenja.Name = "flowLayoutPanelZdravljenja";
-            this.flowLayoutPanelZdravljenja.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelZdravljenja.Size = new System.Drawing.Size(1086, 532);
             this.flowLayoutPanelZdravljenja.TabIndex = 51;
             // 
             // flowLayoutPanel7
@@ -630,9 +630,9 @@
             this.tabPage9.Controls.Add(this.label55);
             this.tabPage9.Controls.Add(this.label58);
             this.tabPage9.Controls.Add(this.dateTimePickerDatumKoncaMes);
-            this.tabPage9.Location = new System.Drawing.Point(4, 22);
+            this.tabPage9.Location = new System.Drawing.Point(4, 29);
             this.tabPage9.Name = "tabPage9";
-            this.tabPage9.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage9.Size = new System.Drawing.Size(1118, 637);
             this.tabPage9.TabIndex = 8;
             this.tabPage9.Text = "Karence";
             this.tabPage9.UseVisualStyleBackColor = true;
@@ -642,7 +642,7 @@
             this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(530, 478);
+            this.label59.Location = new System.Drawing.Point(530, 471);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(117, 31);
             this.label59.TabIndex = 123;
@@ -652,7 +652,7 @@
             // 
             this.richTextBoxOpombeMlec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxOpombeMlec.Location = new System.Drawing.Point(653, 356);
+            this.richTextBoxOpombeMlec.Location = new System.Drawing.Point(653, 349);
             this.richTextBoxOpombeMlec.Name = "richTextBoxOpombeMlec";
             this.richTextBoxOpombeMlec.Size = new System.Drawing.Size(453, 252);
             this.richTextBoxOpombeMlec.TabIndex = 122;
@@ -664,7 +664,7 @@
             this.comboBoxVeterinarMlecna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVeterinarMlecna.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVeterinarMlecna.FormattingEnabled = true;
-            this.comboBoxVeterinarMlecna.Location = new System.Drawing.Point(228, 565);
+            this.comboBoxVeterinarMlecna.Location = new System.Drawing.Point(228, 558);
             this.comboBoxVeterinarMlecna.Name = "comboBoxVeterinarMlecna";
             this.comboBoxVeterinarMlecna.Size = new System.Drawing.Size(219, 33);
             this.comboBoxVeterinarMlecna.TabIndex = 121;
@@ -674,7 +674,7 @@
             this.label62.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(131, 568);
+            this.label62.Location = new System.Drawing.Point(131, 561);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(91, 25);
             this.label62.TabIndex = 120;
@@ -686,7 +686,7 @@
             this.comboBoxZdravljenjeMlecna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxZdravljenjeMlecna.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxZdravljenjeMlecna.FormattingEnabled = true;
-            this.comboBoxZdravljenjeMlecna.Location = new System.Drawing.Point(228, 515);
+            this.comboBoxZdravljenjeMlecna.Location = new System.Drawing.Point(228, 508);
             this.comboBoxZdravljenjeMlecna.Name = "comboBoxZdravljenjeMlecna";
             this.comboBoxZdravljenjeMlecna.Size = new System.Drawing.Size(219, 33);
             this.comboBoxZdravljenjeMlecna.TabIndex = 119;
@@ -696,7 +696,7 @@
             this.label63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(115, 518);
+            this.label63.Location = new System.Drawing.Point(115, 511);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(107, 25);
             this.label63.TabIndex = 118;
@@ -707,7 +707,7 @@
             this.label64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(91, 469);
+            this.label64.Location = new System.Drawing.Point(91, 462);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(127, 25);
             this.label64.TabIndex = 117;
@@ -718,7 +718,7 @@
             this.dateTimePickerDatumKoncaMlec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePickerDatumKoncaMlec.Checked = false;
             this.dateTimePickerDatumKoncaMlec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDatumKoncaMlec.Location = new System.Drawing.Point(228, 469);
+            this.dateTimePickerDatumKoncaMlec.Location = new System.Drawing.Point(228, 462);
             this.dateTimePickerDatumKoncaMlec.Name = "dateTimePickerDatumKoncaMlec";
             this.dateTimePickerDatumKoncaMlec.ShowCheckBox = true;
             this.dateTimePickerDatumKoncaMlec.Size = new System.Drawing.Size(219, 30);
@@ -797,7 +797,7 @@
             this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(56, 356);
+            this.label56.Location = new System.Drawing.Point(56, 349);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(422, 63);
             this.label56.TabIndex = 109;

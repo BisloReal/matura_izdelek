@@ -224,9 +224,9 @@
             // 
             tabPage4.Controls.Add(this.buttonDodajOs);
             tabPage4.Controls.Add(this.flowLayoutPanelOs);
-            tabPage4.Location = new System.Drawing.Point(4, 22);
+            tabPage4.Location = new System.Drawing.Point(4, 29);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new System.Drawing.Size(1118, 644);
+            tabPage4.Size = new System.Drawing.Size(1118, 637);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Osemenitve";
             tabPage4.UseVisualStyleBackColor = true;
@@ -253,7 +253,7 @@
             this.flowLayoutPanelOs.Controls.Add(this.flowLayoutPanel3);
             this.flowLayoutPanelOs.Location = new System.Drawing.Point(17, 82);
             this.flowLayoutPanelOs.Name = "flowLayoutPanelOs";
-            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 549);
+            this.flowLayoutPanelOs.Size = new System.Drawing.Size(1086, 542);
             this.flowLayoutPanelOs.TabIndex = 45;
             // 
             // flowLayoutPanel3
@@ -1792,10 +1792,10 @@
             // 
             this.tabPage5.Controls.Add(this.flowLayoutPanelPojatve);
             this.tabPage5.Controls.Add(this.buttonDodajPojatev);
-            this.tabPage5.Location = new System.Drawing.Point(4, 22);
+            this.tabPage5.Location = new System.Drawing.Point(4, 29);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage5.Size = new System.Drawing.Size(1118, 637);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Pojatve";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -1810,7 +1810,7 @@
             this.flowLayoutPanelPojatve.Controls.Add(this.flowLayoutPanel4);
             this.flowLayoutPanelPojatve.Location = new System.Drawing.Point(17, 74);
             this.flowLayoutPanelPojatve.Name = "flowLayoutPanelPojatve";
-            this.flowLayoutPanelPojatve.Size = new System.Drawing.Size(1086, 553);
+            this.flowLayoutPanelPojatve.Size = new System.Drawing.Size(1086, 546);
             this.flowLayoutPanelPojatve.TabIndex = 46;
             // 
             // flowLayoutPanel4
@@ -1836,9 +1836,9 @@
             // 
             this.tabPage6.Controls.Add(this.buttonDodajTelitev);
             this.tabPage6.Controls.Add(this.flowLayoutPanelTelitve);
-            this.tabPage6.Location = new System.Drawing.Point(4, 22);
+            this.tabPage6.Location = new System.Drawing.Point(4, 29);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage6.Size = new System.Drawing.Size(1118, 637);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Telitve";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -1865,7 +1865,7 @@
             this.flowLayoutPanelTelitve.Controls.Add(this.flowLayoutPanel5);
             this.flowLayoutPanelTelitve.Location = new System.Drawing.Point(17, 84);
             this.flowLayoutPanelTelitve.Name = "flowLayoutPanelTelitve";
-            this.flowLayoutPanelTelitve.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelTelitve.Size = new System.Drawing.Size(1086, 532);
             this.flowLayoutPanelTelitve.TabIndex = 47;
             // 
             // flowLayoutPanel5
