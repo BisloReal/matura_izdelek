@@ -31,7 +31,14 @@ namespace evidenca_krav.Razredi
                     return "Ni vpisanih zdravil";
                 }
 
-                return string.Join(", ", Zdravila.Select(z => z.Zdravilo));
+                List<string> imenaZdravil = new List<string>();
+
+                foreach (ZdravilaRazred zdravilo in Zdravila)
+                {
+                    imenaZdravil.Add(zdravilo.Zdravilo);
+                }
+
+                return string.Join(", ", imenaZdravil);
             }
         }
 
