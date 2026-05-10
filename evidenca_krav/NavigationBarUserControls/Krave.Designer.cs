@@ -45,7 +45,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(258, 13);
+            this.label1.Location = new System.Drawing.Point(369, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(155, 55);
             this.label1.TabIndex = 0;
@@ -61,7 +61,7 @@
             this.flowLayoutPanel1.Controls.Add(this.flowLayoutPanel2);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(34, 118);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(633, 267);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(856, 449);
             this.flowLayoutPanel1.TabIndex = 4;
             // 
             // flowLayoutPanel2
@@ -75,7 +75,7 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(474, 82);
+            this.textBox1.Location = new System.Drawing.Point(697, 82);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(193, 30);
             this.textBox1.TabIndex = 5;
@@ -100,7 +100,7 @@
             "Ime mame",
             "Ime očeta",
             "Datum rojstva"});
-            this.comboBox1.Location = new System.Drawing.Point(269, 82);
+            this.comboBox1.Location = new System.Drawing.Point(492, 82);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(199, 33);
             this.comboBox1.TabIndex = 7;
@@ -111,7 +111,7 @@
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(189, 85);
+            this.label2.Location = new System.Drawing.Point(412, 85);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(74, 25);
             this.label2.TabIndex = 8;
@@ -121,7 +121,7 @@
             // 
             this.dateTimePicker1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(474, 82);
+            this.dateTimePicker1.Location = new System.Drawing.Point(697, 82);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(193, 30);
             this.dateTimePicker1.TabIndex = 9;
@@ -139,7 +139,7 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.label1);
             this.Name = "Krave";
-            this.Size = new System.Drawing.Size(700, 400);
+            this.Size = new System.Drawing.Size(923, 582);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
