@@ -16,6 +16,13 @@ namespace evidenca_krav.Razredi
         public string Pasma { get; set; }
         public int PasmaBikId { get; set; }
         public string Izboljsuje { get; set; }
+        public string Ime_Bika
+        {
+            get
+            {
+                return $"{Ime} ({Stevilka})";
+            }
+        }
 
         public BikiOsRazred(int idBik, string ime, string stevilka, string rejec, DateTime datumRoj, int pasmaBikId, string pasma, string izboljsuje)
         {
