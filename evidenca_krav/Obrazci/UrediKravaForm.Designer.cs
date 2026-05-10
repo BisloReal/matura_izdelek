@@ -278,7 +278,7 @@
             this.tabControl1.Controls.Add(this.tabPage8);
             this.tabControl1.Controls.Add(this.tabPage9);
             this.tabControl1.Controls.Add(this.tabPage10);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabControl1.Location = new System.Drawing.Point(12, 75);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
@@ -1879,9 +1879,9 @@
             // 
             this.tabPage7.Controls.Add(this.buttonDodajKorekcijo);
             this.tabPage7.Controls.Add(this.flowLayoutPanelKorekcije);
-            this.tabPage7.Location = new System.Drawing.Point(4, 22);
+            this.tabPage7.Location = new System.Drawing.Point(4, 29);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage7.Size = new System.Drawing.Size(1118, 637);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Korekcije parkljev";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -1908,7 +1908,7 @@
             this.flowLayoutPanelKorekcije.Controls.Add(this.flowLayoutPanel6);
             this.flowLayoutPanelKorekcije.Location = new System.Drawing.Point(16, 85);
             this.flowLayoutPanelKorekcije.Name = "flowLayoutPanelKorekcije";
-            this.flowLayoutPanelKorekcije.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelKorekcije.Size = new System.Drawing.Size(1086, 532);
             this.flowLayoutPanelKorekcije.TabIndex = 49;
             // 
             // flowLayoutPanel6
@@ -1922,9 +1922,9 @@
             // 
             this.tabPage8.Controls.Add(this.buttonDodajZdravljenje);
             this.tabPage8.Controls.Add(this.flowLayoutPanelZdravljenja);
-            this.tabPage8.Location = new System.Drawing.Point(4, 22);
+            this.tabPage8.Location = new System.Drawing.Point(4, 29);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1118, 644);
+            this.tabPage8.Size = new System.Drawing.Size(1118, 637);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Zdravljenja";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -1951,7 +1951,7 @@
             this.flowLayoutPanelZdravljenja.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanelZdravljenja.Location = new System.Drawing.Point(16, 77);
             this.flowLayoutPanelZdravljenja.Name = "flowLayoutPanelZdravljenja";
-            this.flowLayoutPanelZdravljenja.Size = new System.Drawing.Size(1086, 539);
+            this.flowLayoutPanelZdravljenja.Size = new System.Drawing.Size(1086, 532);
             this.flowLayoutPanelZdravljenja.TabIndex = 51;
             // 
             // flowLayoutPanel7
@@ -1990,10 +1990,9 @@
             // 
             // label59
             // 
-            this.label59.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label59.AutoSize = true;
             this.label59.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label59.Location = new System.Drawing.Point(530, 478);
+            this.label59.Location = new System.Drawing.Point(530, 471);
             this.label59.Name = "label59";
             this.label59.Size = new System.Drawing.Size(117, 31);
             this.label59.TabIndex = 123;
@@ -2001,9 +2000,9 @@
             // 
             // richTextBoxOpombeMlec
             // 
-            this.richTextBoxOpombeMlec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.richTextBoxOpombeMlec.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBoxOpombeMlec.Location = new System.Drawing.Point(653, 356);
+            this.richTextBoxOpombeMlec.Location = new System.Drawing.Point(653, 349);
             this.richTextBoxOpombeMlec.Name = "richTextBoxOpombeMlec";
             this.richTextBoxOpombeMlec.Size = new System.Drawing.Size(453, 252);
             this.richTextBoxOpombeMlec.TabIndex = 122;
@@ -2011,21 +2010,19 @@
             // 
             // comboBoxVeterinarMlecna
             // 
-            this.comboBoxVeterinarMlecna.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxVeterinarMlecna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVeterinarMlecna.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxVeterinarMlecna.FormattingEnabled = true;
-            this.comboBoxVeterinarMlecna.Location = new System.Drawing.Point(228, 565);
+            this.comboBoxVeterinarMlecna.Location = new System.Drawing.Point(228, 558);
             this.comboBoxVeterinarMlecna.Name = "comboBoxVeterinarMlecna";
             this.comboBoxVeterinarMlecna.Size = new System.Drawing.Size(219, 33);
             this.comboBoxVeterinarMlecna.TabIndex = 121;
             // 
             // label62
             // 
-            this.label62.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label62.AutoSize = true;
             this.label62.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label62.Location = new System.Drawing.Point(131, 568);
+            this.label62.Location = new System.Drawing.Point(131, 561);
             this.label62.Name = "label62";
             this.label62.Size = new System.Drawing.Size(91, 25);
             this.label62.TabIndex = 120;
@@ -2033,21 +2030,19 @@
             // 
             // comboBoxZdravljenjeMlecna
             // 
-            this.comboBoxZdravljenjeMlecna.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.comboBoxZdravljenjeMlecna.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxZdravljenjeMlecna.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxZdravljenjeMlecna.FormattingEnabled = true;
-            this.comboBoxZdravljenjeMlecna.Location = new System.Drawing.Point(228, 515);
+            this.comboBoxZdravljenjeMlecna.Location = new System.Drawing.Point(228, 508);
             this.comboBoxZdravljenjeMlecna.Name = "comboBoxZdravljenjeMlecna";
             this.comboBoxZdravljenjeMlecna.Size = new System.Drawing.Size(219, 33);
             this.comboBoxZdravljenjeMlecna.TabIndex = 119;
             // 
             // label63
             // 
-            this.label63.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label63.AutoSize = true;
             this.label63.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label63.Location = new System.Drawing.Point(115, 518);
+            this.label63.Location = new System.Drawing.Point(115, 511);
             this.label63.Name = "label63";
             this.label63.Size = new System.Drawing.Size(107, 25);
             this.label63.TabIndex = 118;
@@ -2055,10 +2050,9 @@
             // 
             // label64
             // 
-            this.label64.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label64.AutoSize = true;
             this.label64.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(91, 469);
+            this.label64.Location = new System.Drawing.Point(91, 462);
             this.label64.Name = "label64";
             this.label64.Size = new System.Drawing.Size(127, 25);
             this.label64.TabIndex = 117;
@@ -2066,10 +2060,9 @@
             // 
             // dateTimePickerDatumKoncaMlec
             // 
-            this.dateTimePickerDatumKoncaMlec.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.dateTimePickerDatumKoncaMlec.Checked = false;
             this.dateTimePickerDatumKoncaMlec.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePickerDatumKoncaMlec.Location = new System.Drawing.Point(228, 469);
+            this.dateTimePickerDatumKoncaMlec.Location = new System.Drawing.Point(228, 462);
             this.dateTimePickerDatumKoncaMlec.Name = "dateTimePickerDatumKoncaMlec";
             this.dateTimePickerDatumKoncaMlec.ShowCheckBox = true;
             this.dateTimePickerDatumKoncaMlec.Size = new System.Drawing.Size(219, 30);
@@ -2145,10 +2138,9 @@
             // 
             // label56
             // 
-            this.label56.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label56.AutoSize = true;
             this.label56.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(56, 356);
+            this.label56.Location = new System.Drawing.Point(56, 349);
             this.label56.Name = "label56";
             this.label56.Size = new System.Drawing.Size(422, 63);
             this.label56.TabIndex = 109;
