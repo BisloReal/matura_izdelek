@@ -1,6 +1,7 @@
 ﻿using evidenca_krav.NavigationBar;
 using evidenca_krav.Obrazci;
 using evidenca_krav.Razredi;
+using evidenca_krav.RazredSi;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -78,6 +79,60 @@ namespace evidenca_krav.NavigationBarUserControls
                 odhodUC.Posodobi();
 
                 MessageBox.Show("Zapis je bil uspešno izbrisan.");
+            }
+        }
+
+        private void buttonPogledZivali_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string tip = db.PridobiTipZivali(odhod.KravaId);
+
+                if (tip == "Krava")
+                {
+                    UrediKravaForm urediKravaForm = new UrediKravaForm(db, odhod.KravaId, null);
+                    if (urediKravaForm.ShowDialog() == DialogResult.OK)
+                    {
+                        db.PosodobiStanja();
+                        PosodobiPodatke();
+
+                        MessageBox.Show("Krava uspešno posodobljena!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else if (tip == "Telica")
+                {
+                    TeliceRazred telica = db.PridobiTelico(odhod.KravaId);
+
+                    UrediTelicaForm urediTelicaForm = new UrediTelicaForm(db, telica.Id, null);
+                    if (urediTelicaForm.ShowDialog() == DialogResult.OK)
+                    {
+                        db.PosodobiStanja();
+                        PosodobiPodatke();
+
+                        MessageBox.Show("Telica uspešno posodobljena!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else if (tip == "Tele")
+                {
+                    TeliceRazred tele = db.PridobiTelico(odhod.KravaId);
+
+                    UrediTeleForm urediTeleForm = new UrediTeleForm(db, tele.Id, null);
+                    if (urediTeleForm.ShowDialog() == DialogResult.OK)
+                    {
+                        db.PosodobiStanja();
+                        PosodobiPodatke();
+
+                        MessageBox.Show("Tele uspešno posodobljeno!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Tip živali ni bil najden.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri odpiranju živali: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

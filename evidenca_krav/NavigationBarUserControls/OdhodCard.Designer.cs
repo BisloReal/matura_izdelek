@@ -40,6 +40,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonIzbrisi = new System.Windows.Forms.Button();
+            this.buttonPogledZivali = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelGMid
@@ -165,11 +166,23 @@
             this.buttonIzbrisi.UseVisualStyleBackColor = true;
             this.buttonIzbrisi.Click += new System.EventHandler(this.buttonIzbrisi_Click);
             // 
+            // buttonPogledZivali
+            // 
+            this.buttonPogledZivali.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPogledZivali.Location = new System.Drawing.Point(252, 191);
+            this.buttonPogledZivali.Name = "buttonPogledZivali";
+            this.buttonPogledZivali.Size = new System.Drawing.Size(222, 43);
+            this.buttonPogledZivali.TabIndex = 42;
+            this.buttonPogledZivali.Text = "Pogled živali";
+            this.buttonPogledZivali.UseVisualStyleBackColor = true;
+            this.buttonPogledZivali.Click += new System.EventHandler(this.buttonPogledZivali_Click);
+            // 
             // OdhodCard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Controls.Add(this.buttonPogledZivali);
             this.Controls.Add(this.buttonIzbrisi);
             this.Controls.Add(this.labelGMid);
             this.Controls.Add(this.label7);
@@ -202,5 +215,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonIzbrisi;
+        private System.Windows.Forms.Button buttonPogledZivali;
     }
 }

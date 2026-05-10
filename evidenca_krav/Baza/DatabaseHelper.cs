@@ -382,6 +382,32 @@ namespace evidenca_krav
             }
         }
 
+        public string PridobiTipZivali(int idZivali)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT tz.tip " +
+                    "FROM zivali z " +
+                    "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
+                    "WHERE z.id = @IdZivali", conn))
+                {
+                    cmd.Parameters.AddWithValue("@IdZivali", idZivali);
+
+                    object result = cmd.ExecuteScalar();
+
+                    if (result != null)
+                    {
+                        return result.ToString();
+                    }
+                }
+            }
+
+            return "";
+        }
+
         // TELE
         public List<TeliceRazred> PridobiTeleta()
         {
