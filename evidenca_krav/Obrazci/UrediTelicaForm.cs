@@ -288,9 +288,15 @@ namespace evidenca_krav.Obrazci
                 Telica.ImeOceta = textBoxImeOceta.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(textBoxUsSt.Text))
+                {
                     Telica.UsesnaSt = "/";
+                }
+                    
                 else
+                {
                     Telica.UsesnaSt = textBoxUsSt.Text.Trim();
+                }
+                    
 
                 int izvedba = db.UrediTelico(Telica);
 
