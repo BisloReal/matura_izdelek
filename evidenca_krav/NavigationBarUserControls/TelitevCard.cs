@@ -64,7 +64,22 @@ namespace evidenca_krav.NavigationBarUserControls
 
         private void buttonUrediTelitev_Click(object sender, EventArgs e)
         {
+            try
+            {
+                UrediTelitevForm urediTelitevForm = new UrediTelitevForm(db, telitev, this);
 
+                if (urediTelitevForm.ShowDialog() == DialogResult.OK)
+                {
+                    db.PosodobiStanja();
+                    PosodobiPodatke();
+
+                    MessageBox.Show("Telitev uspešno posodobljena!", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Napaka pri urejanju telitve: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

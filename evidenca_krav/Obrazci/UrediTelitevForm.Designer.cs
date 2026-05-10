@@ -206,6 +206,7 @@
             this.buttonPreklici.TabIndex = 132;
             this.buttonPreklici.Text = "Prekliči";
             this.buttonPreklici.UseVisualStyleBackColor = true;
+            this.buttonPreklici.Click += new System.EventHandler(this.buttonPreklici_Click);
             // 
             // buttonPotrdi
             // 
@@ -216,6 +217,7 @@
             this.buttonPotrdi.TabIndex = 131;
             this.buttonPotrdi.Text = "Shrani";
             this.buttonPotrdi.UseVisualStyleBackColor = true;
+            this.buttonPotrdi.Click += new System.EventHandler(this.buttonPotrdi_Click);
             // 
             // label3
             // 
@@ -239,11 +241,11 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 40F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(214, 9);
+            this.label1.Location = new System.Drawing.Point(221, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(355, 63);
+            this.label1.Size = new System.Drawing.Size(327, 63);
             this.label1.TabIndex = 128;
-            this.label1.Text = "Shrani telitev";
+            this.label1.Text = "Uredi telitev";
             // 
             // UrediTelitevForm
             // 
