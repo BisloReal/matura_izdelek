@@ -1533,12 +1533,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(65, 393);
+            this.label17.Location = new System.Drawing.Point(72, 393);
             this.label17.Margin = new System.Windows.Forms.Padding(3);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(104, 33);
+            this.label17.Size = new System.Drawing.Size(97, 33);
             this.label17.TabIndex = 18;
-            this.label17.Text = "Širina Vspredaj";
+            this.label17.Text = "Širina Spredaj";
             // 
             // label16
             // 
