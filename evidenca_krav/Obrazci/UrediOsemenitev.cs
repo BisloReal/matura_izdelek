@@ -35,6 +35,8 @@ namespace evidenca_krav.Obrazci
             comboBoxVeterinarji.ValueMember = "Id";
             comboBoxVeterinarji.SelectedValue = osemenitev.VeterinarId;
 
+            numericUpDown1.Value = osemenitev.Zaporedna_Stevilka;
+
             KraveRazred krava = db.PridobiKravo(osemenitev.KravaId);
             labelImeKrave.Text = krava.Ime + " (" + krava.UsesnaSt + ")";
 
@@ -104,6 +106,15 @@ namespace evidenca_krav.Obrazci
                     return;
                 }
 
+                if (db.PogledObstajaStOsemenitev(osemenitev.KravaId, Convert.ToInt32(numericUpDown1.Value)) &&
+                    numericUpDown1.Value != osemenitev.Zaporedna_Stevilka)
+                {
+                    MessageBox.Show("Pojatev s to zaporedno številko že obstaja.", "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+
+                osemenitev.Zaporedna_Stevilka = (int)numericUpDown1.Value;
                 osemenitev.BikId = Convert.ToInt32(comboBoxBiki.SelectedValue);
                 osemenitev.VeterinarId = Convert.ToInt32(comboBoxVeterinarji.SelectedValue);
                 osemenitev.Opombe = richTextBox1.Text.Trim();

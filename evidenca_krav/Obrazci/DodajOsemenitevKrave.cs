@@ -1,4 +1,5 @@
-﻿using evidenca_krav.Razredi;
+﻿using evidenca_krav.NavigationBar;
+using evidenca_krav.Razredi;
 using evidenca_krav.RazredSi;
 using System;
 using System.Collections.Generic;
@@ -36,6 +37,8 @@ namespace evidenca_krav.Obrazci
             comboBoxVeterinarji.DataSource = db.PridobiVeterinarje();
             comboBoxVeterinarji.DisplayMember = "ImePriimek";
             comboBoxVeterinarji.ValueMember = "Id";
+
+            numericUpDown1.Value = db.PridobiSteviloOsemenitev(Krava.Id) + 1;
         }
 
         private void buttonPotrdi_Click(object sender, EventArgs e)

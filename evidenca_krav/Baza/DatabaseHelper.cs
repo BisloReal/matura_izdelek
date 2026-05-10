@@ -2289,6 +2289,22 @@ namespace evidenca_krav
             return null;
         }
 
+        public int PridobiSteviloOsemenitev(int kravaId)
+        {
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                using (var cmd = new SQLiteCommand(
+                    "SELECT COUNT(*) FROM osemenitve WHERE krava_id = @KravaId", conn))
+                {
+                    cmd.Parameters.AddWithValue("@KravaId", kravaId);
+
+                    return Convert.ToInt32(cmd.ExecuteScalar());
+                }
+            }
+        }
+
         public int DodajOsemenitev(int zapOs, DateTime datum, int veterinarId, string opombe, int kravaId, int bikId)
         {
             using (var conn = new SQLiteConnection(connectionString))
@@ -2296,11 +2312,11 @@ namespace evidenca_krav
                 conn.Open();
 
                 using (var command = new SQLiteCommand(
-                    "INSERT INTO osemenitve (zap_os, datum, veterinar_id, opombe, krava_id, bik_id) " +
-                    "VALUES (@ZapOs, @Datum, @VeterinarId, @Opombe, @KravaId, @BikId)", conn))
+                    "INSERT INTO osemenitve (zap_os, datum, veterinar_id, opombe, krava_id, bik_id, datum_presusitve) " +
+                    "VALUES (@ZapOs, @Datum, @VeterinarId, @Opombe, @KravaId, @BikId, @DatumPresusitve)", conn))
                 {
                     command.Parameters.AddWithValue("@ZapOs", zapOs);
-                    command.Parameters.AddWithValue("@Datum", datum);
+                    command.Parameters.AddWithValue("@Datum", datum.ToString("yyyy-MM-dd"));
                     command.Parameters.AddWithValue("@VeterinarId", veterinarId);
 
                     if (string.IsNullOrWhiteSpace(opombe))
@@ -2314,6 +2330,9 @@ namespace evidenca_krav
 
                     command.Parameters.AddWithValue("@KravaId", kravaId);
                     command.Parameters.AddWithValue("@BikId", bikId);
+
+                    DateTime datumPresusitve = DateTime.Today.AddMonths(8);
+                    command.Parameters.AddWithValue("@DatumPresusitve", datumPresusitve.ToString("yyyy-MM-dd"));
 
                     command.ExecuteNonQuery();
                 }
@@ -4030,6 +4049,39 @@ namespace evidenca_krav
                                 "Pri živali " + krava + " je od osemenitve minilo 21 dni.",
                                 datum,
                                 "Osemenitev"
+                            ));
+                        }
+                    }
+                }
+
+                // datum presušitve je danes
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.datum_presusitve, z.ime, z.usesna_stevilka " +
+                    "FROM osemenitve o " +
+                    "INNER JOIN zivali z ON o.krava_id = z.id " +
+                    "WHERE o.datum_presusitve IS NOT NULL " +
+                    "AND date(o.datum_presusitve) = date('now') " +
+                    "ORDER BY o.datum_presusitve ASC", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string krava = reader["ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["usesna_stevilka"].ToString()))
+                            {
+                                krava += " (" + reader["usesna_stevilka"].ToString() + ")";
+                            }
+
+                            DateTime datumPresusitve = reader.GetDateTime(reader.GetOrdinal("datum_presusitve"));
+
+                            obvestila.Add(new ObvestiloRazred(
+                                "Presušitev",
+                                "Pri živali " + krava + " je danes predvidena presušitev.",
+                                datumPresusitve,
+                                "Presušitev"
                             ));
                         }
                     }
