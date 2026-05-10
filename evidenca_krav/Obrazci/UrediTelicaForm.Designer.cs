@@ -118,9 +118,9 @@
             // 
             tabPage4.Controls.Add(this.buttonDodajOs);
             tabPage4.Controls.Add(this.flowLayoutPanelOs);
-            tabPage4.Location = new System.Drawing.Point(4, 29);
+            tabPage4.Location = new System.Drawing.Point(4, 22);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new System.Drawing.Size(1118, 637);
+            tabPage4.Size = new System.Drawing.Size(1118, 644);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Osemenitve";
             tabPage4.UseVisualStyleBackColor = true;
@@ -230,10 +230,10 @@
             this.tabPage1.Controls.Add(this.dateTimePicker);
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.textBoxIme);
-            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(1118, 637);
+            this.tabPage1.Size = new System.Drawing.Size(1118, 644);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Osnovni";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -398,9 +398,9 @@
             // 
             this.tabPage3.Controls.Add(this.flowLayoutPanelMlecneKontrole);
             this.tabPage3.Controls.Add(this.buttonDodajKontrolo);
-            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Size = new System.Drawing.Size(1118, 637);
+            this.tabPage3.Size = new System.Drawing.Size(1118, 644);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Mlečne kontrole";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -441,10 +441,10 @@
             // 
             this.tabPage5.Controls.Add(this.flowLayoutPanelPojatve);
             this.tabPage5.Controls.Add(this.buttonDodajPojatev);
-            this.tabPage5.Location = new System.Drawing.Point(4, 29);
+            this.tabPage5.Location = new System.Drawing.Point(4, 22);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage5.Size = new System.Drawing.Size(1118, 637);
+            this.tabPage5.Size = new System.Drawing.Size(1118, 644);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Pojatve";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -528,9 +528,9 @@
             // 
             this.tabPage7.Controls.Add(this.buttonDodajKorekcijo);
             this.tabPage7.Controls.Add(this.flowLayoutPanelKorekcije);
-            this.tabPage7.Location = new System.Drawing.Point(4, 29);
+            this.tabPage7.Location = new System.Drawing.Point(4, 22);
             this.tabPage7.Name = "tabPage7";
-            this.tabPage7.Size = new System.Drawing.Size(1118, 637);
+            this.tabPage7.Size = new System.Drawing.Size(1118, 644);
             this.tabPage7.TabIndex = 6;
             this.tabPage7.Text = "Korekcije parkljev";
             this.tabPage7.UseVisualStyleBackColor = true;
@@ -571,9 +571,9 @@
             // 
             this.tabPage8.Controls.Add(this.buttonDodajZdravljenje);
             this.tabPage8.Controls.Add(this.flowLayoutPanelZdravljenja);
-            this.tabPage8.Location = new System.Drawing.Point(4, 29);
+            this.tabPage8.Location = new System.Drawing.Point(4, 22);
             this.tabPage8.Name = "tabPage8";
-            this.tabPage8.Size = new System.Drawing.Size(1118, 637);
+            this.tabPage8.Size = new System.Drawing.Size(1118, 644);
             this.tabPage8.TabIndex = 7;
             this.tabPage8.Text = "Zdravljenja";
             this.tabPage8.UseVisualStyleBackColor = true;
@@ -853,6 +853,7 @@
             this.buttonDodajSpecifiko.TabIndex = 52;
             this.buttonDodajSpecifiko.Text = "Dodaj specifiko";
             this.buttonDodajSpecifiko.UseVisualStyleBackColor = true;
+            this.buttonDodajSpecifiko.Click += new System.EventHandler(this.buttonDodajSpecifiko_Click);
             // 
             // flowLayoutPanelOstaleSpecifike
             // 

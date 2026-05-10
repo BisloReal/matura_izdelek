@@ -16,7 +16,7 @@ namespace evidenca_krav.Obrazci
 {
     public partial class UrediTelicaForm : Form
     {
-        TeliceRazred Krava;
+        TeliceRazred Telica;
         TelicaCard kravaCard;
         private DatabaseHelper db;
         public UrediTelicaForm(DatabaseHelper dbHelper, int idKrav, TelicaCard kv)
@@ -25,14 +25,14 @@ namespace evidenca_krav.Obrazci
             db = dbHelper;
             kravaCard = kv;
 
-            Krava = db.PridobiTelico(idKrav);
+            Telica = db.PridobiTelico(idKrav);
 
-            textBoxIme.Text = Krava.Ime;
-            textBoxUsSt.Text = Krava.UsesnaSt;
-            textBoxPasma.Text = Krava.Pasma;
-            dateTimePicker.Value = Krava.DatumRoj;
-            textBoxImeMame.Text = Krava.ImeMame;
-            textBoxImeOceta.Text = Krava.ImeOceta;
+            textBoxIme.Text = Telica.Ime;
+            textBoxUsSt.Text = Telica.UsesnaSt;
+            textBoxPasma.Text = Telica.Pasma;
+            dateTimePicker.Value = Telica.DatumRoj;
+            textBoxImeMame.Text = Telica.ImeMame;
+            textBoxImeOceta.Text = Telica.ImeOceta;
 
 
             NaloziMlecneKontrole();
@@ -43,17 +43,18 @@ namespace evidenca_krav.Obrazci
             NaloziZdravljenja();
             NaloziComboBoxeKarence();
             NaloziKarence();
+            NaloziOstaleSpecifike();
         }
 
         private void NaloziMlecneKontrole()
         {
             flowLayoutPanelMlecneKontrole.Controls.Clear();
 
-            List<MlecneKontroleRazred> mlecneKontrole = db.PridobiMlecneKontrole(Krava.Id);
+            List<MlecneKontroleRazred> mlecneKontrole = db.PridobiMlecneKontrole(Telica.Id);
 
             foreach (MlecneKontroleRazred mk in mlecneKontrole)
             {
-                flowLayoutPanelMlecneKontrole.Controls.Add(new MlecKontrolaCard(db, mk, Krava.Id));
+                flowLayoutPanelMlecneKontrole.Controls.Add(new MlecKontrolaCard(db, mk, Telica.Id));
             }
         }
 
@@ -61,7 +62,7 @@ namespace evidenca_krav.Obrazci
         {
             flowLayoutPanelOs.Controls.Clear();
 
-            List<OsemenitveRazred> osemenitve = db.PridobiOsemenitve(Krava.Id);
+            List<OsemenitveRazred> osemenitve = db.PridobiOsemenitve(Telica.Id);
 
             foreach (OsemenitveRazred o in osemenitve)
             {
@@ -73,7 +74,7 @@ namespace evidenca_krav.Obrazci
         {
             flowLayoutPanelPojatve.Controls.Clear();
 
-            List<PojatveRazred> pojatve = db.PridobiPojatve(Krava.Id);
+            List<PojatveRazred> pojatve = db.PridobiPojatve(Telica.Id);
 
             foreach (PojatveRazred p in pojatve)
             {
@@ -85,7 +86,7 @@ namespace evidenca_krav.Obrazci
         {
             flowLayoutPanelTelitve.Controls.Clear();
 
-            List<TelitevRazred> telitve = db.PridobiTelitve(Krava.Id);
+            List<TelitevRazred> telitve = db.PridobiTelitve(Telica.Id);
 
             foreach (TelitevRazred t in telitve)
             {
@@ -97,7 +98,7 @@ namespace evidenca_krav.Obrazci
         {
             flowLayoutPanelKorekcije.Controls.Clear();
 
-            List<KorekcijeParkljevRazred> korekcije = db.PridobiKorekcijeParkljev(Krava.Id);
+            List<KorekcijeParkljevRazred> korekcije = db.PridobiKorekcijeParkljev(Telica.Id);
 
             foreach (KorekcijeParkljevRazred k in korekcije)
             {
@@ -109,7 +110,7 @@ namespace evidenca_krav.Obrazci
         {
             flowLayoutPanelZdravljenja.Controls.Clear();
 
-            List<ZdravljenjaRazred> zdravljenja = db.PridobiZdravljenja(Krava.Id);
+            List<ZdravljenjaRazred> zdravljenja = db.PridobiZdravljenja(Telica.Id);
 
             foreach (ZdravljenjaRazred z in zdravljenja)
             {
@@ -121,7 +122,7 @@ namespace evidenca_krav.Obrazci
         {
             flowLayoutPanelOstaleSpecifike.Controls.Clear();
 
-            List<OstaleSpecifikeRazred> specifike = db.PridobiOstaleSpecifike(Krava.Id);
+            List<OstaleSpecifikeRazred> specifike = db.PridobiOstaleSpecifike(Telica.Id);
 
             foreach (OstaleSpecifikeRazred s in specifike)
             {
@@ -131,7 +132,7 @@ namespace evidenca_krav.Obrazci
 
         private void NaloziKarence()
         {
-            List<KarencaRazred> karence = db.PridobiKarence(Krava.Id);
+            List<KarencaRazred> karence = db.PridobiKarence(Telica.Id);
 
             KarencaRazred mesna = karence.FirstOrDefault(k => k.VrstaKarence == "Mesna");
             KarencaRazred mlecna = karence.FirstOrDefault(k => k.VrstaKarence == "Mlečna");
@@ -175,7 +176,7 @@ namespace evidenca_krav.Obrazci
 
         private void NaloziComboBoxeKarence()
         {
-            List<ZdravljenjaRazred> zdravljenja = db.PridobiZdravljenja(Krava.Id);
+            List<ZdravljenjaRazred> zdravljenja = db.PridobiZdravljenja(Telica.Id);
 
             comboBoxZdravljenjeMesna.DataSource = new List<ZdravljenjaRazred>(zdravljenja);
             comboBoxZdravljenjeMesna.DisplayMember = "Vzrok";
@@ -222,12 +223,12 @@ namespace evidenca_krav.Obrazci
                     veterinarId,
                     dateTimePickerDatumKoncaMes.Value,
                     richTextBoxOpombeMes.Text,
-                    Krava.Id
+                    Telica.Id
                 );
             }
             else
             {
-                db.IzbrisiKarenco(Krava.Id, "Mesna");
+                db.IzbrisiKarenco(Telica.Id, "Mesna");
             }
 
             if (dateTimePickerDatumKoncaMlec.Checked)
@@ -250,12 +251,12 @@ namespace evidenca_krav.Obrazci
                     veterinarId,
                     dateTimePickerDatumKoncaMlec.Value,
                     richTextBoxOpombeMlec.Text,
-                    Krava.Id
+                    Telica.Id
                 );
             }
             else
             {
-                db.IzbrisiKarenco(Krava.Id, "Mlečna");
+                db.IzbrisiKarenco(Telica.Id, "Mlečna");
             }
 
             return true;
@@ -280,18 +281,18 @@ namespace evidenca_krav.Obrazci
 
             try
             {
-                Krava.Ime = textBoxIme.Text.Trim();
-                Krava.DatumRoj = dateTimePicker.Value;
-                Krava.Pasma = textBoxPasma.Text.Trim();
-                Krava.ImeMame = textBoxImeMame.Text.Trim();
-                Krava.ImeOceta = textBoxImeOceta.Text.Trim();
+                Telica.Ime = textBoxIme.Text.Trim();
+                Telica.DatumRoj = dateTimePicker.Value;
+                Telica.Pasma = textBoxPasma.Text.Trim();
+                Telica.ImeMame = textBoxImeMame.Text.Trim();
+                Telica.ImeOceta = textBoxImeOceta.Text.Trim();
 
                 if (string.IsNullOrWhiteSpace(textBoxUsSt.Text))
-                    Krava.UsesnaSt = "/";
+                    Telica.UsesnaSt = "/";
                 else
-                    Krava.UsesnaSt = textBoxUsSt.Text.Trim();
+                    Telica.UsesnaSt = textBoxUsSt.Text.Trim();
 
-                int izvedba = db.UrediTelico(Krava);
+                int izvedba = db.UrediTelico(Telica);
 
                 if (izvedba == 0)
                 {
@@ -319,7 +320,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajMlecKontrolo dodajMlecnoKontrolo = new DodajMlecKontrolo(db, Krava.Id);
+                DodajMlecKontrolo dodajMlecnoKontrolo = new DodajMlecKontrolo(db, Telica.Id);
                 if (dodajMlecnoKontrolo.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("Mlečna kontrola uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -336,7 +337,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db, Krava.UsesnaSt);
+                DodajOdhodForm dodajOdhodForm = new DodajOdhodForm(db, Telica.UsesnaSt);
                 if (dodajOdhodForm.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("Odhod uspešno dodan.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -354,7 +355,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajOsemenitevKrave dodajOsemenitevForm = new DodajOsemenitevKrave(db, Krava);
+                DodajOsemenitevKrave dodajOsemenitevForm = new DodajOsemenitevKrave(db, Telica);
                 if (dodajOsemenitevForm.ShowDialog() == DialogResult.OK)
                 {
                     MessageBox.Show("Osemenitev uspešno dodana.", "Uspeh", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -371,7 +372,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajPojatevForm dodajPojatevForm = new DodajPojatevForm(db, Krava);
+                DodajPojatevForm dodajPojatevForm = new DodajPojatevForm(db, Telica);
 
                 if (dodajPojatevForm.ShowDialog() == DialogResult.OK)
                 {
@@ -390,7 +391,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajTelitevForm dodajTelitevForm = new DodajTelitevForm(db, Krava);
+                DodajTelitevForm dodajTelitevForm = new DodajTelitevForm(db, Telica);
 
                 if (dodajTelitevForm.ShowDialog() == DialogResult.OK)
                 {
@@ -409,7 +410,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajKorekcijoParkljevForm dodajKorekcijoForm = new DodajKorekcijoParkljevForm(db, Krava);
+                DodajKorekcijoParkljevForm dodajKorekcijoForm = new DodajKorekcijoParkljevForm(db, Telica);
 
                 if (dodajKorekcijoForm.ShowDialog() == DialogResult.OK)
                 {
@@ -428,7 +429,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajZdravljenjeForm dodajZdravljenjeForm = new DodajZdravljenjeForm(db, Krava);
+                DodajZdravljenjeForm dodajZdravljenjeForm = new DodajZdravljenjeForm(db, Telica);
 
                 if (dodajZdravljenjeForm.ShowDialog() == DialogResult.OK)
                 {
@@ -447,7 +448,7 @@ namespace evidenca_krav.Obrazci
         {
             try
             {
-                DodajSpecifikoForm dodajSpecifikoForm = new DodajSpecifikoForm(db, Krava);
+                DodajSpecifikoForm dodajSpecifikoForm = new DodajSpecifikoForm(db, Telica);
 
                 if (dodajSpecifikoForm.ShowDialog() == DialogResult.OK)
                 {
