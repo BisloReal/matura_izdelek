@@ -37,7 +37,7 @@ namespace evidenca_krav
         {
             if (index < userControlList.Count)
             {
-                var control = userControlList[index];
+                UserControl control = userControlList[index];
 
                 control.BringToFront();
 
