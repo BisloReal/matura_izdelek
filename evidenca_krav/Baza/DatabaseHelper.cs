@@ -2356,6 +2356,7 @@ namespace evidenca_krav
                     "bik_id = @BikId, " +
                     "veterinar_id = @VeterinarId, " +
                     "opombe = @Opombe, " +
+                    "datum = @Datum, " +
                     "datum_pregleda = @DatumPregleda, " +
                     "izzid_pregleda = @IzzidPregleda, " +
                     "nacin_pregleda = @NacinPregleda, " +
@@ -2370,6 +2371,7 @@ namespace evidenca_krav
                     command.Parameters.AddWithValue("@BikId", o.BikId);
                     command.Parameters.AddWithValue("@VeterinarId", o.VeterinarId);
                     command.Parameters.AddWithValue("@Opombe", o.Opombe);
+                    command.Parameters.AddWithValue("@Datum", o.Datum_Osemenitve);
 
                     if (o.Datum_Pregleda.HasValue)
                     {
@@ -3925,6 +3927,150 @@ namespace evidenca_krav
                     return 0;
                 }
             }
+        }
+
+        // obvestila
+        public List<ObvestiloRazred> PridobiObvestila()
+        {
+            List<ObvestiloRazred> obvestila = new List<ObvestiloRazred>();
+
+            using (var conn = new SQLiteConnection(connectionString))
+            {
+                conn.Open();
+
+                // pojatve 21 dni po začetku
+                using (var cmd = new SQLiteCommand(
+                    "SELECT p.datum, z.ime, z.usesna_stevilka " +
+                    "FROM pojatve p " +
+                    "INNER JOIN zivali z ON p.krava_id = z.id " +
+                    "WHERE p.datum <= date('now', '-21 days') AND p.datum > date('now', '-22 days') " +
+                    "ORDER BY p.datum ASC", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string krava = reader["ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["usesna_stevilka"].ToString()))
+                            {
+                                krava += " (" + reader["usesna_stevilka"].ToString() + ")";
+                            }
+
+                            DateTime datum = reader.GetDateTime(reader.GetOrdinal("datum"));
+
+                            obvestila.Add(new ObvestiloRazred(
+                                "Pojatev",
+                                "Pri živali " + krava + " je od pojatve minilo 21 dni.",
+                                datum,
+                                "Pojatev"
+                            ));
+                        }
+                    }
+                }
+
+                // pojatve 21 dni po koncu (krvav potreb)
+                using (var cmd = new SQLiteCommand(
+                    "SELECT p.datum, z.ime, z.usesna_stevilka " +
+                    "FROM pojatve p " +
+                    "INNER JOIN zivali z ON p.krava_id = z.id " +
+                    "WHERE p.konec_datum <= date('now', '-21 days') AND p.konec_datum > date('now', '-22 days') " +
+                    "ORDER BY p.datum ASC", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string krava = reader["ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["usesna_stevilka"].ToString()))
+                            {
+                                krava += " (" + reader["usesna_stevilka"].ToString() + ")";
+                            }
+
+                            DateTime datum = reader.GetDateTime(reader.GetOrdinal("datum"));
+
+                            obvestila.Add(new ObvestiloRazred(
+                                "Krvav potreb",
+                                "Pri živali " + krava + " je od konca pojatve minilo 21 dni.",
+                                datum,
+                                "Pojatev"
+                            ));
+                        }
+                    }
+                }
+
+                // 21 dni po osemenitvi
+                using (var cmd = new SQLiteCommand(
+                    "SELECT o.datum, z.ime, z.usesna_stevilka " +
+                    "FROM osemenitve o " +
+                    "INNER JOIN zivali z ON o.krava_id = z.id " +
+                    "WHERE date(o.datum) <= date('now', '-21 days') " +
+                    "AND date(o.datum) > date('now', '-22 days') " +
+                    "ORDER BY o.datum ASC", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string krava = reader["ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["usesna_stevilka"].ToString()))
+                            {
+                                krava += " (" + reader["usesna_stevilka"].ToString() + ")";
+                            }
+
+                            DateTime datum = reader.GetDateTime(reader.GetOrdinal("datum"));
+
+                            obvestila.Add(new ObvestiloRazred(
+                                "Osemenitev",
+                                "Pri živali " + krava + " je od osemenitve minilo 21 dni.",
+                                datum,
+                                "Osemenitev"
+                            ));
+                        }
+                    }
+                }
+
+                // ko žival dopolni 12 mesecev
+                using (var cmd = new SQLiteCommand(
+                    "SELECT z.datum_roj, z.ime, z.usesna_stevilka " +
+                    "FROM zivali z " +
+                    "INNER JOIN tip_zivali tz ON z.tip_zivali_id = tz.id " +
+                    "WHERE tz.tip = 'Telica' " +
+                    "AND date(z.datum_roj, '+12 months') = date('now') " +
+                    "AND z.id NOT IN (SELECT krava_mama_id FROM telitve) " +
+                    "ORDER BY z.datum_roj ASC", conn))
+                {
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            string zival = reader["ime"].ToString();
+
+                            if (!reader.IsDBNull(reader.GetOrdinal("usesna_stevilka")) &&
+                                !string.IsNullOrWhiteSpace(reader["usesna_stevilka"].ToString()))
+                            {
+                                zival += " (" + reader["usesna_stevilka"].ToString() + ")";
+                            }
+
+                            DateTime datumRojstva = reader.GetDateTime(reader.GetOrdinal("datum_roj"));
+
+                            obvestila.Add(new ObvestiloRazred(
+                                "Tele je postalo telica",
+                                "Žival " + zival + " je danes dopolnila 12 mesecev in je zdaj telica.",
+                                datumRojstva,
+                                "Telica"
+                            ));
+                        }
+                    }
+                }
+            }
+
+            return obvestila;
         }
     }
 }

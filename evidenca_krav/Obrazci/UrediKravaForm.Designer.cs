@@ -194,6 +194,7 @@
             this.flowLayoutPanelPotomci = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel9 = new System.Windows.Forms.FlowLayoutPanel();
             this.label65 = new System.Windows.Forms.Label();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             tabPage4 = new System.Windows.Forms.TabPage();
             tabPage4.SuspendLayout();
             this.flowLayoutPanelOs.SuspendLayout();
@@ -287,6 +288,7 @@
             // tabPage1
             // 
             this.tabPage1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tabPage1.Controls.Add(this.flowLayoutPanel1);
             this.tabPage1.Controls.Add(this.label65);
             this.tabPage1.Controls.Add(this.flowLayoutPanelPotomci);
             this.tabPage1.Controls.Add(this.label54);
@@ -2267,6 +2269,13 @@
             this.label65.TabIndex = 110;
             this.label65.Text = "Potomci";
             // 
+            // flowLayoutPanel1
+            // 
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 83);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(200, 100);
+            this.flowLayoutPanel1.TabIndex = 111;
+            // 
             // UrediKravaForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -2480,5 +2489,6 @@
         private System.Windows.Forms.Label label65;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanelPotomci;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel9;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
     }
 }

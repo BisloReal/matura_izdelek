@@ -114,6 +114,12 @@
     <Compile Include="NavigationBarUserControls\MlecKontrolaCard.Designer.cs">
       <DependentUpon>MlecKontrolaCard.cs</DependentUpon>
     </Compile>
+    <Compile Include="NavigationBarUserControls\ObvestiloCard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="NavigationBarUserControls\ObvestiloCard.Designer.cs">
+      <DependentUpon>ObvestiloCard.cs</DependentUpon>
+    </Compile>
     <Compile Include="NavigationBarUserControls\OdhodCard.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -380,6 +386,7 @@
     <Compile Include="Razredi\KorekcijeParkljevRazred.cs" />
     <Compile Include="Razredi\KraveRazred.cs" />
     <Compile Include="Razredi\MlecneKontroleRazred.cs" />
+    <Compile Include="Razredi\ObvestiloRazred.cs" />
     <Compile Include="Razredi\OdhodiRazred.cs" />
     <Compile Include="Razredi\OsebeRazred.cs" />
     <Compile Include="Razredi\OsemenitveRazred.cs" />
@@ -412,6 +419,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\MlecKontrolaCard.resx">
       <DependentUpon>MlecKontrolaCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NavigationBarUserControls\ObvestiloCard.resx">
+      <DependentUpon>ObvestiloCard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NavigationBarUserControls\OdhodCard.resx">
       <DependentUpon>OdhodCard.cs</DependentUpon>

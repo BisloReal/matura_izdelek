@@ -70,3 +70,4 @@ C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Deb
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.DodajSpecifikoForm.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.Obrazci.UrediSpecifikoForm.resources
 C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.NavigationBarUserControls.PotomecCard.resources
+C:\Users\ambis\OneDrive\Dokumenti\4. LETNIK\matura_izdelek\evidenca_krav\obj\Debug\evidenca_krav.NavigationBarUserControls.ObvestiloCard.resources

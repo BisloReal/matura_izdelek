@@ -1,4 +1,6 @@
-﻿using System;
+﻿using evidenca_krav.NavigationBarUserControls;
+using evidenca_krav.Razredi;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,11 +19,25 @@ namespace evidenca_krav.NavigationBar
         {
             InitializeComponent();
             db = dbHelper;
+            NaloziObvestila();
         }
 
         private void buttonPosodobi_Click(object sender, EventArgs e)
         {
             db.PosodobiStanja();
+            NaloziObvestila();
+        }
+
+        private void NaloziObvestila()
+        {
+            flowLayoutPanelObvestila.Controls.Clear();
+
+            List<ObvestiloRazred> obvestila = db.PridobiObvestila();
+
+            foreach (ObvestiloRazred ob in obvestila)
+            {
+                flowLayoutPanelObvestila.Controls.Add(new ObvestiloCard(ob));
+            }
         }
     }
 }

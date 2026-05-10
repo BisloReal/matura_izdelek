@@ -39,6 +39,7 @@ namespace evidenca_krav.Obrazci
             labelImeKrave.Text = krava.Ime + " (" + krava.UsesnaSt + ")";
 
             richTextBox1.Text = osemenitev.Opombe;
+            dateTimePicker.Value = osemenitev.Datum_Osemenitve;
 
             if (osemenitev.Datum_Pregleda.HasValue)
             {
@@ -106,6 +107,7 @@ namespace evidenca_krav.Obrazci
                 osemenitev.BikId = Convert.ToInt32(comboBoxBiki.SelectedValue);
                 osemenitev.VeterinarId = Convert.ToInt32(comboBoxVeterinarji.SelectedValue);
                 osemenitev.Opombe = richTextBox1.Text.Trim();
+                osemenitev.Datum_Osemenitve = dateTimePicker.Value;
 
                 if (string.IsNullOrWhiteSpace(osemenitev.Opombe))
                 {
