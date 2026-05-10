@@ -46,7 +46,7 @@ namespace evidenca_krav.NavigationBarUserControls
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Napaka pri dodajanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Napaka pri posodabljanju telice: " + ex.Message, "Napaka", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
