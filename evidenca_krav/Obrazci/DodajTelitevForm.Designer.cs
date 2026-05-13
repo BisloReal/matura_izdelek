@@ -271,6 +271,9 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "DodajTelitevForm";
             this.Text = "DodajTelitevForm";
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

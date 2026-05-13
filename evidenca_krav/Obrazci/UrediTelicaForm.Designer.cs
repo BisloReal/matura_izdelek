@@ -884,6 +884,7 @@
             this.Controls.Add(this.buttonZapri);
             this.Controls.Add(this.buttonPotrdi);
             this.Controls.Add(this.tabControl1);
+            this.MinimizeBox = false;
             this.Name = "UrediTelicaForm";
             this.Text = "UrediTelicaForm";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
